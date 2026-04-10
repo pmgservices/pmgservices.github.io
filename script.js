@@ -10,8 +10,8 @@ const translations = {
     navHowWeWork: "How We Work",
 
     // Hero Section
-    heroTitle: "Your Finance Function, Rebuilt for Decisions That Matter.",
-    heroDesc: "We combine behavioral finance and advanced FP&A, to build finance functions that make faster, cleaner and more informed decisions.",
+    heroTitle: "Your Finance Function rebuilt for decisions that matter.",
+    heroDesc: "We combine behavioral finance and advanced FP&A, to build finance functions that make faster and more informed decisions.",
     btnServices: "See What We Build",
     btnWork: "Work With Us",
 
