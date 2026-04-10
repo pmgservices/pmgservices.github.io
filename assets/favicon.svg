@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Upper curved arc -->
+  <path d="M14,12 C18,0 60,-2 74,30 C82,50 70,68 50,74"
+        stroke="#b61818" stroke-width="14" fill="none"
+        stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Lower diagonal bar -->
+  <path d="M8,78 L50,96"
+        stroke="#b61818" stroke-width="14" fill="none"
+        stroke-linecap="round"/>
+</svg>

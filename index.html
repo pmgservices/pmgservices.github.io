@@ -1,0 +1,1465 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PMG Services | Financial Transformation &amp; Digitalization Consulting</title>
+    <meta name="description" content="PMG Services delivers financial transformation and digitalization consulting — behavioral finance, FP&amp;A, and custom technology for enterprise-scale results." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://pmg-services.net/" />
+    <link rel="icon" href="./assets/favicon.png" type="image/png" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="PMG Services | Financial Transformation &amp; Digitalization Consulting" />
+    <meta property="og:description" content="We apply behavioral science, advanced FP&amp;A, and custom technology to build finance functions that make better decisions." />
+    <meta property="og:image" content="https://pmg-services.net/assets/LOGO_PMG_transparent.png" />
+    <meta property="og:url" content="https://pmg-services.net/" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="PMG Services | Financial Transformation &amp; Digitalization Consulting" />
+    <meta name="twitter:description" content="Behavioral finance, FP&amp;A, and custom technology consulting for enterprise-scale financial transformation." />
+    <meta name="twitter:image" content="https://pmg-services.net/assets/LOGO_PMG_transparent.png" />
+
+    <!-- hreflang -->
+    <link rel="alternate" hreflang="en" href="https://pmg-services.net/" />
+    <link rel="alternate" hreflang="de" href="https://pmg-services.net/?lang=de" />
+
+    <!-- Fonts (preconnect + stylesheet, replaces @import in CSS) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css?v=18" />
+    <link rel="stylesheet" href="mediaqueries.css?v=7" />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "PMG Services",
+      "description": "Financial transformation and digitalization consulting — behavioral finance, FP&A, and custom technology.",
+      "url": "https://pmg-services.net",
+      "logo": "https://pmg-services.net/assets/LOGO_PMG_transparent.png",
+      "serviceType": ["Financial Consulting", "Digitalization", "FP&A", "ERP Integration"],
+      "areaServed": {
+        "@type": "Place",
+        "name": "Europe"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "email": "contact@pmg-services.net"
+      }
+    }
+    </script>
+  </head>
+  <body>
+    <!-- ─── DESKTOP NAV ─── -->
+    <nav id="desktop-nav" aria-label="Main navigation">
+      <div class="logo">
+        <a href="#profile" class="nav-logo-link">
+          <img src="./assets/LOGO_PMG_transparent.png" alt="PMG Services Logo" class="nav-logo nav-logo-dark" />
+          <img src="./assets/LOGO_PMG_white.png" alt="PMG Services Logo" class="nav-logo nav-logo-light" />
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#about-us"   id="nav-aboutus">About</a></li>
+        <li><a href="#about"      id="nav-about">Services</a></li>
+        <li><a href="#experience" id="nav-experience">Technology</a></li>
+        <li><a href="#projects"     id="nav-projects">Projects</a></li>
+        <li><a href="#how-we-work" id="nav-howwework">How We Work</a></li>
+        <li><a href="#contact"     id="nav-contact">Contact</a></li>
+      </ul>
+      <div class="lang-switch">
+        <button class="lang-link active" onclick="localStorage.setItem('pmg-lang','en');setLanguage('en')" aria-label="Switch to English">EN</button>
+        <span class="lang-separator">|</span>
+        <button class="lang-link" onclick="localStorage.setItem('pmg-lang','de');setLanguage('de')" aria-label="Auf Deutsch wechseln">DE</button>
+      </div>
+    </nav>
+
+    <!-- ─── HAMBURGER NAV ─── -->
+    <nav id="hamburger-nav" aria-label="Mobile navigation">
+      <div class="logo">
+        <a href="#profile" class="nav-logo-link">
+          <img src="./assets/LOGO_PMG_transparent.png" alt="PMG Services Logo" class="nav-logo mobile-nav-logo" />
+        </a>
+      </div>
+      <button class="hamburger-icon" onclick="toggleMenu()" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-menu-links">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="menu-links" id="mobile-menu-links">
+        <a href="#about-us"   onclick="toggleMenu()">About</a>
+        <a href="#about"      onclick="toggleMenu()">Services</a>
+        <a href="#experience" onclick="toggleMenu()">Technology</a>
+        <a href="#projects"     onclick="toggleMenu()">Projects</a>
+        <a href="#how-we-work" onclick="toggleMenu()">How We Work</a>
+        <a href="#contact"     onclick="toggleMenu()">Contact</a>
+        <div class="mobile-lang-switch">
+          <button class="lang-link" onclick="localStorage.setItem('pmg-lang','en');setLanguage('en');toggleMenu()">EN</button>
+          <button class="lang-link" onclick="localStorage.setItem('pmg-lang','de');setLanguage('de');toggleMenu()">DE</button>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+
+    <!-- ─── HERO ─── -->
+    <section id="profile" class="centered-hero">
+      <div class="section__text hero-text-box">
+        <div class="hero-accent"></div>
+        <h1 class="title">Your Finance Function, Rebuilt for Decisions That Matter.</h1>
+        <div class="hero-description-text">
+          <p>We combine behavioral science, advanced FP&amp;A, and bespoke technology to build finance functions that make faster, cleaner decisions — at enterprise scale, without the enterprise overhead.</p>
+        </div>
+        <div class="btn-container">
+          <a href="#contact" class="btn btn-color-1">Work With Us</a>
+          <a href="#about" class="btn btn-color-2">See What We Build</a>
+        </div>
+      </div>
+      <button class="scroll-indicator" aria-label="Scroll to next section" onclick="document.getElementById('about-us').scrollIntoView({behavior: 'smooth'})">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M6 9l6 6 6-6"/>
+          <path d="M6 15l6 6 6-6"/>
+        </svg>
+      </button>
+    </section>
+
+    <!-- ─── ABOUT US ─── -->
+    <section id="about-us">
+      <div class="au-container">
+
+        <!-- Left column: sticky statement -->
+        <div class="au-statement">
+          <span class="section-label">Who we are</span>
+          <h2 class="au-headline">We engineer<br><span class="au-headline-accent">financial clarity.</span></h2>
+        </div>
+
+        <!-- Right column: narrative + pillars -->
+        <div class="au-narrative">
+          <p class="au-lead">Most finance transformations stall because the underlying decisions, processes, and tools were never redesigned together. PMG Services fixes that — from the human layer to the data layer.</p>
+          <p class="au-body">We are not a staffing agency. We are not a Big Four offshoot. We are a focused team of finance operators, behavioral scientists, and engineers who have built, automated, and scaled financial systems across Europe's most demanding organizations.</p>
+
+          <!-- Trust pillars — 3 horizontal bars -->
+          <div class="au-pillars">
+            <div class="au-pillar" data-index="1">
+              <div class="au-pillar-line"></div>
+              <div class="au-pillar-content">
+                <div class="au-pillar-num">01</div>
+                <div class="au-pillar-text">
+                  <h3>Behavioral Finance Implementation</h3>
+                  <p>We identify where cognitive bias distorts your financial decisions and redesign the architecture to eliminate it — embedded into your processes, not bolted on.</p>
+                </div>
+              </div>
+            </div>
+            <div class="au-pillar" data-index="2">
+              <div class="au-pillar-line"></div>
+              <div class="au-pillar-content">
+                <div class="au-pillar-num">02</div>
+                <div class="au-pillar-text">
+                  <h3>FP&amp;A (Financial Planning &amp; Analysis)</h3>
+                  <p>We replace static annual budgets with driver-based rolling forecasts your board can act on — real-time KPI visibility, variance analysis, and close cycles cut from weeks to days.</p>
+                </div>
+              </div>
+            </div>
+            <div class="au-pillar" data-index="3">
+              <div class="au-pillar-line"></div>
+              <div class="au-pillar-content">
+                <div class="au-pillar-num">03</div>
+                <div class="au-pillar-text">
+                  <h3>Custom Financial Ecosystem</h3>
+                  <p>We architect bespoke ERP integrations, automation pipelines, and custom financial tools built precisely around your operating model — no generic platforms, no compromises.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="section-divider divider--glass" aria-hidden="true"></div>
+
+    <!-- ─── SERVICES ─── -->
+    <section id="about">
+      <span class="section-label section-reveal">What we do</span>
+      <h2 class="title section-reveal">Services</h2>
+
+      <div class="services-grid-new">
+        
+        <!-- Card 1: Behavioral Finance Implementation -->
+        <div class="service-card">
+          <div class="service-visual-top">
+            <svg viewBox="0 0 300 130" class="service-svg" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Before and after comparison showing how PMG eliminates cognitive bias from financial decisions, reducing forecast error by 34%">
+              <defs>
+                <pattern id="bf-dots" width="14" height="14" patternUnits="userSpaceOnUse">
+                  <circle cx="7" cy="7" r="0.6" fill="#0b1d2c" opacity="0.10"/>
+                </pattern>
+                <filter id="bf-glow" x="-40%" y="-40%" width="180%" height="180%">
+                  <feGaussianBlur stdDeviation="3.5" result="b"/>
+                  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+                <filter id="bf-badge-s" x="-20%" y="-20%" width="140%" height="140%">
+                  <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#b61818" flood-opacity="0.25"/>
+                </filter>
+                <linearGradient id="bf-path-g" x1="0%" y1="100%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#0b1d2c"/>
+                  <stop offset="100%" stop-color="#b61818"/>
+                </linearGradient>
+                <linearGradient id="bf-badge-g" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#b61818"/>
+                  <stop offset="100%" stop-color="#d42020"/>
+                </linearGradient>
+              </defs>
+
+              <!-- Background -->
+              <rect width="300" height="130" rx="6" fill="#f4f6f8"/>
+              <rect width="300" height="130" rx="6" fill="url(#bf-dots)"/>
+              <!-- Left panel subtle warm tint -->
+              <rect x="0" y="0" width="140" height="130" rx="6" fill="#7a1010" opacity="0.018"/>
+
+              <!-- ── LEFT: BEFORE (Bias-driven decisions) ── -->
+              <text x="68" y="12" text-anchor="middle" font-size="6" font-weight="700" fill="#0b1d2c" opacity="0.28" font-family="Space Grotesk,sans-serif" letter-spacing="1.5">BEFORE</text>
+
+              <!-- Start dot -->
+              <circle cx="14" cy="108" r="3.5" fill="#0b1d2c" opacity="0.4"/>
+
+              <!-- Chaotic zigzag: marching-ants = uncertain/unstable signal -->
+              <polyline points="14,108 38,80 20,60 52,44 34,26 88,14 130,20"
+                fill="none" stroke="#0b1d2c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+                stroke-dasharray="4 4" opacity="0.35">
+                <animate attributeName="stroke-dashoffset" from="0" to="8" dur="1.1s" repeatCount="indefinite"/>
+              </polyline>
+
+              <!-- Wrong-turn nodes (bias decision points) -->
+              <circle cx="38" cy="80" r="3" fill="white" stroke="#b61818" stroke-width="1.2" opacity="0.9"/>
+              <circle cx="20" cy="60" r="3" fill="white" stroke="#b61818" stroke-width="1.2" opacity="0.9"/>
+              <circle cx="52" cy="44" r="3" fill="white" stroke="#b61818" stroke-width="1.2" opacity="0.9"/>
+
+              <!-- Bias tag 1: ANCHORING -->
+              <line x1="42" y1="80" x2="45" y2="77" stroke="#b61818" stroke-width="0.6" opacity="0.5"/>
+              <rect x="45" y="72" width="56" height="12" rx="6" fill="white" stroke="#dde1ea" stroke-width="0.8"/>
+              <text x="73" y="81" text-anchor="middle" font-size="6.5" font-weight="600" fill="#b61818" font-family="Space Grotesk,sans-serif" letter-spacing="0.3">ANCHORING</text>
+
+              <!-- Bias tag 2: LOSS AVERSION -->
+              <line x1="24" y1="60" x2="27" y2="57" stroke="#b61818" stroke-width="0.6" opacity="0.5"/>
+              <rect x="27" y="51" width="68" height="12" rx="6" fill="white" stroke="#dde1ea" stroke-width="0.8"/>
+              <text x="61" y="60" text-anchor="middle" font-size="6.5" font-weight="600" fill="#b61818" font-family="Space Grotesk,sans-serif" letter-spacing="0.3">LOSS AVERSION</text>
+
+              <!-- Bias tag 3: OVERCONFIDENCE -->
+              <line x1="55" y1="44" x2="60" y2="41" stroke="#b61818" stroke-width="0.6" opacity="0.5"/>
+              <rect x="60" y="34" width="72" height="12" rx="6" fill="white" stroke="#dde1ea" stroke-width="0.8"/>
+              <text x="96" y="43" text-anchor="middle" font-size="6.5" font-weight="600" fill="#b61818" font-family="Space Grotesk,sans-serif" letter-spacing="0.3">OVERCONFIDENCE</text>
+
+              <!-- Bottom label -->
+              <text x="68" y="124" text-anchor="middle" font-size="6" fill="#0b1d2c" opacity="0.25" font-family="Space Grotesk,sans-serif" letter-spacing="0.8">BIAS-DRIVEN</text>
+
+              <!-- ── CENTER: PMG Divider ── -->
+              <line x1="150" y1="10" x2="150" y2="50" stroke="#b61818" stroke-width="0.8" opacity="0.3" stroke-dasharray="2 2"/>
+              <line x1="150" y1="82" x2="150" y2="122" stroke="#b61818" stroke-width="0.8" opacity="0.3" stroke-dasharray="2 2"/>
+
+              <!-- Center divider badge -->
+              <rect x="137" y="54" width="26" height="24" rx="5" fill="#0b1d2c" opacity="0.07"/>
+              <text x="150" y="70" text-anchor="middle" font-size="5.5" font-weight="700" fill="#b61818" opacity="0.8" font-family="Space Grotesk,sans-serif" letter-spacing="0.8">PMG</text>
+
+              <!-- ── RIGHT: AFTER (Bias-free optimal path) ── -->
+              <text x="224" y="12" text-anchor="middle" font-size="6" font-weight="700" fill="#b61818" opacity="0.6" font-family="Space Grotesk,sans-serif" letter-spacing="1.5">AFTER</text>
+
+              <!-- Start dot -->
+              <circle cx="165" cy="108" r="3.5" fill="#0b1d2c" opacity="0.45"/>
+
+              <!-- Clean rising path — draw-in animation loop -->
+              <path d="M 165,108 Q 210,76 250,48 Q 268,36 284,20"
+                fill="none" stroke="url(#bf-path-g)" stroke-width="2.2" stroke-linecap="round"
+                stroke-dasharray="175" stroke-dashoffset="175">
+                <animate attributeName="stroke-dashoffset" from="175" to="0" dur="2.2s" repeatCount="indefinite"/>
+              </path>
+
+              <!-- Arrowhead at destination — synced to draw-in -->
+              <polygon points="284,20 277,27 281,16" fill="#b61818" opacity="0">
+                <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.88;0.95;1"
+                  calcMode="linear" dur="2.2s" repeatCount="indefinite"/>
+              </polygon>
+
+              <!-- Glowing endpoint — synced to draw-in -->
+              <circle cx="284" cy="20" r="5" fill="#b61818" filter="url(#bf-glow)" opacity="0">
+                <animate attributeName="opacity" values="0;0;1;0.5;1" keyTimes="0;0.88;0.95;0.97;1"
+                  calcMode="linear" dur="2.2s" repeatCount="indefinite"/>
+              </circle>
+
+              <!-- Outcome badge with gradient fill -->
+              <rect x="196" y="84" width="84" height="32" rx="10" fill="url(#bf-badge-g)" filter="url(#bf-badge-s)"/>
+              <text x="238" y="98" text-anchor="middle" font-size="14" font-weight="700" fill="white" font-family="Space Grotesk,sans-serif">-34%</text>
+              <text x="238" y="109" text-anchor="middle" font-size="6" fill="white" opacity="0.85" font-family="Space Grotesk,sans-serif" letter-spacing="0.5">FORECAST ERROR</text>
+
+              <!-- Bottom label -->
+              <text x="224" y="124" text-anchor="middle" font-size="6" fill="#b61818" opacity="0.55" font-family="Space Grotesk,sans-serif" letter-spacing="0.8">BIAS-FREE</text>
+            </svg>
+          </div>
+          <h2 class="service-card-title">Behavioral Finance Implementation</h2>
+          <p class="service-card-desc">Most financial decisions are undermined by cognitive bias before any data reaches the table. We audit your decision architecture, design behavioral nudge frameworks, and embed behavioral governance across your planning and reporting cycles.</p>
+          <ul class="service-features">
+            <li>Decision Bias Audit</li>
+            <li>Nudge Framework Design</li>
+            <li>Behavioral Governance</li>
+            <li>Change &amp; Adoption Mgmt</li>
+          </ul>
+        </div>
+
+        <!-- Card 2: FP&A -->
+        <div class="service-card">
+          <div class="service-visual-top">
+            <svg viewBox="0 0 300 130" class="service-svg" role="img" aria-label="Financial planning dashboard showing bar chart of historical performance with an upward forecast trend line and plus 18 percent growth projection">
+              <defs>
+                <linearGradient id="fp-bar-g" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#0b1d2c" stop-opacity="0.9"/>
+                  <stop offset="100%" stop-color="#0b1d2c" stop-opacity="0.3"/>
+                </linearGradient>
+                <linearGradient id="fp-area-g" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#b61818" stop-opacity="0.12"/>
+                  <stop offset="100%" stop-color="#b61818" stop-opacity="0.01"/>
+                </linearGradient>
+                <linearGradient id="fp-line-g" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#b61818"/>
+                  <stop offset="100%" stop-color="#d42020"/>
+                </linearGradient>
+                <linearGradient id="fp-badge-g" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#b61818"/>
+                  <stop offset="100%" stop-color="#d42020"/>
+                </linearGradient>
+                <filter id="fp-glow" x="-30%" y="-30%" width="160%" height="160%">
+                  <feGaussianBlur in="SourceGraphic" stdDeviation="2.5" result="b"/>
+                  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+                <filter id="fp-badge" x="-15%" y="-20%" width="130%" height="140%">
+                  <feDropShadow dx="0" dy="2" stdDeviation="3.5" flood-color="#b61818" flood-opacity="0.25"/>
+                </filter>
+                <clipPath id="fp-clip"><rect x="28" y="8" width="264" height="105"/></clipPath>
+              </defs>
+
+              <!-- Background -->
+              <rect width="300" height="130" rx="6" fill="#f4f6f8"/>
+
+              <!-- Chart gridlines -->
+              <g stroke="#0b1d2c" stroke-width="0.6" opacity="0.07">
+                <line x1="28" y1="35" x2="292" y2="35"/>
+                <line x1="28" y1="58" x2="292" y2="58"/>
+                <line x1="28" y1="81" x2="292" y2="81"/>
+                <line x1="28" y1="104" x2="292" y2="104"/>
+              </g>
+              <!-- Y-axis spine -->
+              <line x1="28" y1="10" x2="28" y2="106" stroke="#0b1d2c" stroke-width="0.8" opacity="0.12"/>
+
+              <!-- Actual bars (ascending) with rounded tops -->
+              <rect x="38"  y="81" width="26" height="23" rx="4" fill="url(#fp-bar-g)"/>
+              <rect x="76"  y="66" width="26" height="38" rx="4" fill="url(#fp-bar-g)"/>
+              <rect x="114" y="48" width="26" height="56" rx="4" fill="url(#fp-bar-g)"/>
+              <rect x="152" y="36" width="26" height="68" rx="4" fill="url(#fp-bar-g)"/>
+
+              <!-- TODAY divider -->
+              <line x1="194" y1="11" x2="194" y2="107" stroke="#b61818" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.55"/>
+              <rect x="195" y="11" width="38" height="13" rx="6.5" fill="#0b1d2c" opacity="0.08"/>
+              <text x="214" y="21" text-anchor="middle" font-size="6.5" fill="#b61818" font-family="Space Grotesk, sans-serif" font-weight="700" opacity="0.8" letter-spacing="0.8">TODAY</text>
+
+              <!-- Forecast area fill -->
+              <path d="M 178 36 Q 222 22 262 14 L 292 11 L 292 107 L 194 107 Z"
+                    fill="url(#fp-area-g)" clip-path="url(#fp-clip)"/>
+
+              <!-- Forecast line (animated dashed red) -->
+              <path d="M 178 36 Q 226 20 264 12 L 291 10"
+                    fill="none" stroke="url(#fp-line-g)" stroke-width="2.2"
+                    stroke-dasharray="6 4" stroke-linecap="round"
+                    filter="url(#fp-glow)" clip-path="url(#fp-clip)">
+                <animate attributeName="stroke-dashoffset" from="0" to="-20" dur="1.2s" repeatCount="indefinite"/>
+              </path>
+
+              <!-- Actual-forecast junction dot -->
+              <circle cx="178" cy="36" r="4" fill="#0b1d2c"/>
+              <circle cx="178" cy="36" r="2" fill="#f4f6f8"/>
+              <!-- Forecast tip dot (pulsing) -->
+              <circle cx="291" cy="10" r="3.5" fill="#b61818">
+                <animate attributeName="opacity" values="1;0.35;1" dur="1.8s" repeatCount="indefinite"/>
+              </circle>
+
+              <!-- Floating metric badge -->
+              <g filter="url(#fp-badge)">
+                <rect x="230" y="24" width="50" height="24" rx="8" fill="url(#fp-badge-g)"/>
+                <text x="255" y="40" text-anchor="middle" font-size="12" font-weight="700" fill="white" font-family="Space Grotesk, sans-serif">+18%</text>
+              </g>
+
+              <!-- X-axis labels -->
+              <g font-size="7" fill="#0b1d2c" font-family="Space Grotesk, sans-serif" opacity="0.32" text-anchor="middle" letter-spacing="0.6">
+                <text x="51"  y="119">JAN</text>
+                <text x="89"  y="119">FEB</text>
+                <text x="127" y="119">MAR</text>
+                <text x="165" y="119">APR</text>
+                <text x="244" y="119" fill="#b61818" opacity="0.55">FORECAST</text>
+              </g>
+            </svg>
+          </div>
+          <h2 class="service-card-title">FP&amp;A (Financial Planning &amp; Analysis)</h2>
+          <p class="service-card-desc">Static annual budgets are a strategic liability. We build driver-based rolling forecasts, real-time KPI dashboards, and close-cycle automation — giving your CFO the visibility to act, not just report.</p>
+          <ul class="service-features">
+            <li>Driver-Based Forecasting</li>
+            <li>Rolling Budget Cycles</li>
+            <li>KPI Dashboards</li>
+            <li>Variance &amp; Scenario Analysis</li>
+          </ul>
+        </div>
+
+        <!-- Card 3: Custom Financial Ecosystem -->
+        <div class="service-card">
+          <div class="service-visual-top">
+            <svg viewBox="0 0 300 130" class="service-svg" role="img" aria-label="Hub and spoke diagram showing PMG at the center connecting ERP, BI, automation, data, and API systems into a unified financial ecosystem">
+              <defs>
+                <linearGradient id="eco-hub-g" x1="20%" y1="0%" x2="80%" y2="100%">
+                  <stop offset="0%" stop-color="#d42020"/>
+                  <stop offset="100%" stop-color="#8a0f0f"/>
+                </linearGradient>
+                <radialGradient id="eco-aura-g" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#d42020" stop-opacity="0.14"/>
+                  <stop offset="100%" stop-color="#d42020" stop-opacity="0"/>
+                </radialGradient>
+                <filter id="eco-hub-glow" x="-40%" y="-40%" width="180%" height="180%">
+                  <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="b"/>
+                  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+                <filter id="eco-node-shadow" x="-10%" y="-15%" width="120%" height="130%">
+                  <feDropShadow dx="0" dy="1.5" stdDeviation="2.5" flood-color="#0b1d2c" flood-opacity="0.08"/>
+                </filter>
+                <linearGradient id="eco-conn-g" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#b61818" stop-opacity="0.3"/>
+                  <stop offset="100%" stop-color="#0b1d2c" stop-opacity="0.12"/>
+                </linearGradient>
+              </defs>
+
+              <!-- Background -->
+              <rect width="300" height="130" rx="6" fill="#f4f6f8"/>
+
+              <!-- Aura behind hub -->
+              <circle cx="150" cy="65" r="46" fill="url(#eco-aura-g)"/>
+
+              <!-- Connection paths (bezier curves) -->
+              <g fill="none" stroke="#dde1ea" stroke-width="1.5">
+                <path d="M 150 45 L 150 24"/>
+                <path d="M 167 56 Q 192 51, 213 44"/>
+                <path d="M 167 74 Q 192 80, 213 87"/>
+                <path d="M 133 74 Q 108 80, 87 87"/>
+                <path d="M 133 56 Q 108 51, 87 44"/>
+              </g>
+
+              <!-- Animated pulses (hub to nodes) -->
+              <circle r="2.5" fill="#b61818" opacity="0">
+                <animateMotion path="M 150 45 L 150 24" dur="2s" begin="0s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" values="0;0.9;0" dur="2s" begin="0s" repeatCount="indefinite"/>
+              </circle>
+              <circle r="2.5" fill="#b61818" opacity="0">
+                <animateMotion path="M 167 56 Q 192 51, 213 44" dur="2s" begin="0.4s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" values="0;0.9;0" dur="2s" begin="0.4s" repeatCount="indefinite"/>
+              </circle>
+              <circle r="2.5" fill="#b61818" opacity="0">
+                <animateMotion path="M 167 74 Q 192 80, 213 87" dur="2s" begin="0.8s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" values="0;0.9;0" dur="2s" begin="0.8s" repeatCount="indefinite"/>
+              </circle>
+              <circle r="2.5" fill="#b61818" opacity="0">
+                <animateMotion path="M 133 74 Q 108 80, 87 87" dur="2s" begin="1.2s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" values="0;0.9;0" dur="2s" begin="1.2s" repeatCount="indefinite"/>
+              </circle>
+              <circle r="2.5" fill="#b61818" opacity="0">
+                <animateMotion path="M 133 56 Q 108 51, 87 44" dur="2s" begin="1.6s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" values="0;0.9;0" dur="2s" begin="1.6s" repeatCount="indefinite"/>
+              </circle>
+
+              <!-- Module nodes (pill-shaped) -->
+              <rect x="124" y="3"  width="52" height="22" rx="11" fill="white" stroke="#dde1ea" stroke-width="1.2" filter="url(#eco-node-shadow)"/>
+              <text x="150" y="18" text-anchor="middle" font-size="9" font-weight="700" fill="#0b1d2c" font-family="Space Grotesk, sans-serif" letter-spacing="0.5">ERP</text>
+
+              <rect x="213" y="33" width="52" height="22" rx="11" fill="white" stroke="#dde1ea" stroke-width="1.2" filter="url(#eco-node-shadow)"/>
+              <text x="239" y="48" text-anchor="middle" font-size="9" font-weight="700" fill="#0b1d2c" font-family="Space Grotesk, sans-serif" letter-spacing="0.5">BI</text>
+
+              <rect x="213" y="76" width="52" height="22" rx="11" fill="white" stroke="#dde1ea" stroke-width="1.2" filter="url(#eco-node-shadow)"/>
+              <text x="239" y="91" text-anchor="middle" font-size="9" font-weight="700" fill="#0b1d2c" font-family="Space Grotesk, sans-serif" letter-spacing="0.5">AUTO</text>
+
+              <rect x="35"  y="76" width="52" height="22" rx="11" fill="white" stroke="#dde1ea" stroke-width="1.2" filter="url(#eco-node-shadow)"/>
+              <text x="61"  y="91" text-anchor="middle" font-size="9" font-weight="700" fill="#0b1d2c" font-family="Space Grotesk, sans-serif" letter-spacing="0.5">DATA</text>
+
+              <rect x="35"  y="33" width="52" height="22" rx="11" fill="white" stroke="#dde1ea" stroke-width="1.2" filter="url(#eco-node-shadow)"/>
+              <text x="61"  y="48" text-anchor="middle" font-size="9" font-weight="700" fill="#0b1d2c" font-family="Space Grotesk, sans-serif" letter-spacing="0.5">API</text>
+
+              <!-- Pulse ring -->
+              <circle cx="150" cy="65" r="30" fill="none" stroke="#b61818" stroke-width="1.2" opacity="0.3">
+                <animate attributeName="r" values="30;40;30" dur="2.5s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" values="0.3;0;0.3" dur="2.5s" repeatCount="indefinite"/>
+              </circle>
+
+              <!-- Central hexagonal hub -->
+              <polygon points="150,44 168,54 168,76 150,86 132,76 132,54"
+                       fill="url(#eco-hub-g)" filter="url(#eco-hub-glow)"/>
+              <text x="150" y="69" text-anchor="middle" font-size="10.5" font-weight="700" fill="white"
+                    font-family="Space Grotesk, sans-serif" letter-spacing="0.6">PMG</text>
+            </svg>
+          </div>
+          <h2 class="service-card-title">Custom Financial Ecosystem</h2>
+          <p class="service-card-desc">Off-the-shelf platforms were built for the average company. We architect bespoke ERP integrations, automation pipelines, and custom financial tools tailored precisely to your operating model.</p>
+          <ul class="service-features">
+            <li>ERP &amp; BI Integration</li>
+            <li>Process Automation</li>
+            <li>Custom Financial Tooling</li>
+            <li>Machine Learning Implementation</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </section>
+
+    <div class="section-divider divider--arcs" aria-hidden="true"></div>
+
+    <!-- ─── TECHNOLOGY ─── -->
+    <section id="experience">
+      <span class="section-label section-reveal">Our stack</span>
+      <h2 class="title section-reveal" id="exp-title">Technology</h2>
+      <div class="experience-details-container">
+        <div class="about-containers">
+          <div class="details-container tech-card">
+            <h2 class="experience-sub-title" id="tech-sub-1">Financial Planning &amp; Analytics</h2>
+            <div class="article-container">
+              <article class="tech-row"><div class="tech-icon-wrapper"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg></div><div><h3>Power BI</h3><p>Dashboards</p></div></article>
+              <article class="tech-row"><div class="tech-icon-wrapper"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg></div><div><h3>SQL</h3><p>Data</p></div></article>
+              <article class="tech-row"><div class="tech-icon-wrapper"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg></div><div><h3>Python</h3><p>Automation</p></div></article>
+              <article class="tech-row"><div class="tech-icon-wrapper"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg></div><div><h3>Snowflake</h3><p>Warehouse</p></div></article>
+              <article class="tech-row"><div class="tech-icon-wrapper"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div><div><h3>Anaplan</h3><p>FP&amp;A</p></div></article>
+              <article class="tech-row"><div class="tech-icon-wrapper"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg></div><div><h3>Excel</h3><p>Modelling</p></div></article>
+              <article class="tech-row"><div class="tech-icon-wrapper"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"></path><path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"></path></svg></div><div><h3>Tableau</h3><p>Visualization</p></div></article>
+              <article class="tech-row"><div class="tech-icon-wrapper"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg></div><div><h3>dbt</h3><p>Pipelines</p></div></article>
+              <article class="tech-row"><div class="tech-icon-wrapper"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"></circle><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"></path><path d="M16 11c2.2.8 4 2.9 4 5"></path></svg></div><div><h3>Workday</h3><p>Planning</p></div></article>
+            </div>
+          </div>
+          <div class="details-container tech-card">
+            <h2 class="experience-sub-title" id="tech-sub-2">ERP &amp; Integration Platforms</h2>
+            <div class="article-container">
+              <article class="tech-row"><div class="tech-icon-wrapper"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></div><div><h3>SAP</h3><p>ERP</p></div></article>
+              <article class="tech-row"><div class="tech-icon-wrapper"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg></div><div><h3>Oracle</h3><p>Finance</p></div></article>
+              <article class="tech-row"><div class="tech-icon-wrapper"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg></div><div><h3>NetSuite</h3><p>Cloud ERP</p></div></article>
+              <article class="tech-row"><div class="tech-icon-wrapper"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div><div><h3>BlackLine</h3><p>Close Mgmt</p></div></article>
+              <article class="tech-row"><div class="tech-icon-wrapper"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg></div><div><h3>Azure</h3><p>Integration</p></div></article>
+              <article class="tech-row"><div class="tech-icon-wrapper"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg></div><div><h3>Docker</h3><p>Deploy</p></div></article>
+              <article class="tech-row"><div class="tech-icon-wrapper"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"></rect><path d="M8 21h8M12 17v4"></path></svg></div><div><h3>Dynamics 365</h3><p>ERP</p></div></article>
+              <article class="tech-row"><div class="tech-icon-wrapper"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div><div><h3>Salesforce</h3><p>CRM</p></div></article>
+              <article class="tech-row"><div class="tech-icon-wrapper"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"></circle><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"></path><path d="M16 11c2.2.8 4 2.9 4 5"></path></svg></div><div><h3>Workday</h3><p>HCM / Finance</p></div></article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider divider--wheel" aria-hidden="true"></div>
+
+    <!-- ─── PROJECTS ─── -->
+    <section id="projects">
+      <span class="section-label section-reveal">Case studies</span>
+      <h2 class="title section-reveal">Projects</h2>
+
+      <div class="projects-grid-futuristic">
+
+        <!-- Project 1: Custom ERP Integration -->
+        <div class="project-card-future">
+          <div class="project-visual">
+            <svg viewBox="0 0 360 160" class="project-svg" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Data hub architecture diagram showing a central hub connecting to accounting platform, invoice OCR, liquidity engine, and target operating model across 5 entities">
+              <defs>
+                <radialGradient id="erp-bg-g" cx="50%" cy="50%" r="65%">
+                  <stop offset="0%" stop-color="#f8fafb"/>
+                  <stop offset="100%" stop-color="#f0f3f6"/>
+                </radialGradient>
+                <pattern id="erp-grid" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                  <line x1="20" y1="0" x2="20" y2="20" stroke="rgba(11,29,44,0.06)" stroke-width="1"/>
+                  <line x1="0" y1="20" x2="20" y2="20" stroke="rgba(11,29,44,0.06)" stroke-width="1"/>
+                </pattern>
+                <radialGradient id="erp-hub-fill" cx="38%" cy="32%" r="70%">
+                  <stop offset="0%" stop-color="#1e4068"/>
+                  <stop offset="100%" stop-color="#0b1d2c"/>
+                </radialGradient>
+                <filter id="erp-hub-glow" x="-60%" y="-60%" width="220%" height="220%">
+                  <feGaussianBlur stdDeviation="7" result="b"/>
+                  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+                <filter id="erp-particle-glow" x="-120%" y="-120%" width="340%" height="340%">
+                  <feGaussianBlur stdDeviation="2.5" result="b"/>
+                  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+                <filter id="erp-badge-glow" x="-25%" y="-35%" width="150%" height="170%">
+                  <feGaussianBlur stdDeviation="5" result="b"/>
+                  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+                <linearGradient id="erp-spoke-n" x1="0%" y1="100%" x2="0%" y2="0%">
+                  <stop offset="0%" stop-color="#b61818" stop-opacity="0.7"/>
+                  <stop offset="100%" stop-color="#b61818" stop-opacity="0.08"/>
+                </linearGradient>
+                <linearGradient id="erp-spoke-s" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#b61818" stop-opacity="0.7"/>
+                  <stop offset="100%" stop-color="#b61818" stop-opacity="0.08"/>
+                </linearGradient>
+                <linearGradient id="erp-spoke-w" x1="100%" y1="0%" x2="0%" y2="0%">
+                  <stop offset="0%" stop-color="#b61818" stop-opacity="0.7"/>
+                  <stop offset="100%" stop-color="#b61818" stop-opacity="0.08"/>
+                </linearGradient>
+                <linearGradient id="erp-spoke-e" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#b61818" stop-opacity="0.7"/>
+                  <stop offset="100%" stop-color="#b61818" stop-opacity="0.08"/>
+                </linearGradient>
+              </defs>
+
+              <!-- Background -->
+              <rect width="360" height="160" rx="0" fill="url(#erp-bg-g)"/>
+              <rect width="360" height="160" rx="0" fill="url(#erp-grid)"/>
+              <!-- Ambient glow behind hub -->
+              <circle cx="180" cy="80" r="60" fill="#b61818" opacity="0.04"/>
+
+              <!-- ── GRADIENT SPOKES ── -->
+              <line x1="180" y1="31" x2="180" y2="58" stroke="#dde1ea" stroke-width="1.5"/>
+              <line x1="180" y1="102" x2="180" y2="129" stroke="#dde1ea" stroke-width="1.5"/>
+              <line x1="108" y1="80" x2="158" y2="80" stroke="#dde1ea" stroke-width="1.5"/>
+              <line x1="202" y1="80" x2="252" y2="80" stroke="#dde1ea" stroke-width="1.5"/>
+
+              <!-- ── SATELLITE PILLS ── -->
+              <rect x="128" y="9" width="104" height="22" rx="11" fill="white" stroke="#dde1ea" stroke-width="1.5"/>
+              <text x="180" y="23" text-anchor="middle" font-size="7.5" font-weight="600" fill="#0b1d2c" font-family="Space Grotesk,sans-serif" letter-spacing="0.3">ACCOUNTING PLATFORM</text>
+
+              <rect x="16" y="69" width="92" height="22" rx="11" fill="white" stroke="#dde1ea" stroke-width="1.5"/>
+              <text x="62" y="83" text-anchor="middle" font-size="7.5" font-weight="600" fill="#0b1d2c" font-family="Space Grotesk,sans-serif" letter-spacing="0.3">INVOICE OCR</text>
+
+              <rect x="252" y="69" width="92" height="22" rx="11" fill="white" stroke="#dde1ea" stroke-width="1.5"/>
+              <text x="298" y="83" text-anchor="middle" font-size="7.5" font-weight="600" fill="#0b1d2c" font-family="Space Grotesk,sans-serif" letter-spacing="0.3">LIQUIDITY ENGINE</text>
+
+              <rect x="128" y="129" width="104" height="22" rx="11" fill="white" stroke="#dde1ea" stroke-width="1.5"/>
+              <text x="180" y="143" text-anchor="middle" font-size="7.5" font-weight="600" fill="#0b1d2c" font-family="Space Grotesk,sans-serif" letter-spacing="0.3">TARGET OP. MODEL</text>
+
+              <!-- ── PMG HUB ── -->
+              <!-- Wide outer pulse -->
+              <circle cx="180" cy="80" r="22" fill="none" stroke="#b61818" stroke-width="1.5" opacity="0.25">
+                <animate attributeName="r" values="22;40;22" dur="2.6s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" values="0.25;0;0.25" dur="2.6s" repeatCount="indefinite"/>
+              </circle>
+              <!-- Tight inner pulse -->
+              <circle cx="180" cy="80" r="22" fill="none" stroke="#b61818" stroke-width="1" opacity="0.4">
+                <animate attributeName="r" values="22;30;22" dur="2.6s" repeatCount="indefinite" begin="0.5s"/>
+                <animate attributeName="opacity" values="0.4;0;0.4" dur="2.6s" repeatCount="indefinite" begin="0.5s"/>
+              </circle>
+              <!-- Hub glow layer -->
+              <circle cx="180" cy="80" r="22" fill="url(#erp-hub-fill)" filter="url(#erp-hub-glow)"/>
+              <!-- Hub body -->
+              <circle cx="180" cy="80" r="22" fill="url(#erp-hub-fill)"/>
+              <!-- Inner ring accent -->
+              <circle cx="180" cy="80" r="19" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+              <!-- Red arc overlay -->
+              <circle cx="180" cy="80" r="19" fill="none" stroke="#b61818" stroke-width="2.5" stroke-dasharray="62 58" stroke-linecap="round" opacity="0.9"/>
+              <!-- Labels -->
+              <text x="180" y="77" text-anchor="middle" font-size="9" font-weight="700" fill="white" font-family="Space Grotesk,sans-serif" letter-spacing="0.3">DATA</text>
+              <text x="180" y="89" text-anchor="middle" font-size="7" fill="#b61818" font-family="Space Grotesk,sans-serif" letter-spacing="0.8">HUB</text>
+
+              <!-- ── DATA PULSES ── -->
+              <circle r="3.5" fill="#b61818" filter="url(#erp-particle-glow)">
+                <animateMotion dur="1.5s" repeatCount="indefinite" begin="0s"><mpath href="#erp-sn-p"/></animateMotion>
+              </circle>
+              <path id="erp-sn-p" d="M 180,58 L 180,31" fill="none"/>
+
+              <circle r="3" fill="#0b1d2c" opacity="0.5">
+                <animateMotion dur="1.5s" repeatCount="indefinite" begin="0.75s"><mpath href="#erp-ss-p"/></animateMotion>
+              </circle>
+              <path id="erp-ss-p" d="M 180,102 L 180,129" fill="none"/>
+
+              <circle r="3" fill="#0b1d2c" opacity="0.5">
+                <animateMotion dur="1.5s" repeatCount="indefinite" begin="0.375s"><mpath href="#erp-sw-p"/></animateMotion>
+              </circle>
+              <path id="erp-sw-p" d="M 158,80 L 108,80" fill="none"/>
+
+              <circle r="3.5" fill="#b61818" filter="url(#erp-particle-glow)">
+                <animateMotion dur="1.5s" repeatCount="indefinite" begin="1.125s"><mpath href="#erp-se-p"/></animateMotion>
+              </circle>
+              <path id="erp-se-p" d="M 202,80 L 252,80" fill="none"/>
+            </svg>
+          </div>
+          <div class="project-meta">
+            <span class="project-tag">Custom Financial Ecosystem</span>
+          </div>
+          <h2 class="project-title-future">Custom ERP Integration</h2>
+          <p class="project-desc-future">Architected a bespoke financial ecosystem featuring Invoice OCR, Liquidity Engine, and Target Operating Model — custom-built and fully integrated with a third-party accounting platform, eliminating manual data entry and unifying reporting across 5 legal entities.</p>
+          <a href="#" class="project-cta" data-case="erp">View Case Study →</a>
+        </div>
+
+        <!-- Project 2: Driver-Based Forecasting -->
+        <div class="project-card-future">
+          <div class="project-visual">
+            <svg viewBox="0 0 360 160" class="project-svg" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Driver-based forecasting model diagram showing revenue, cost pool, FX macro, and headcount inputs feeding through a driver model to produce a forecast output chart with 98 percent accuracy">
+              <defs>
+                <radialGradient id="dbf-bg-g" cx="65%" cy="50%" r="70%">
+                  <stop offset="0%" stop-color="#f8fafb"/>
+                  <stop offset="100%" stop-color="#f0f3f6"/>
+                </radialGradient>
+                <pattern id="dbf-grid" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                  <line x1="20" y1="0" x2="20" y2="20" stroke="rgba(11,29,44,0.06)" stroke-width="1"/>
+                  <line x1="0" y1="20" x2="20" y2="20" stroke="rgba(11,29,44,0.06)" stroke-width="1"/>
+                </pattern>
+                <radialGradient id="dbf-model-g" cx="38%" cy="32%" r="68%">
+                  <stop offset="0%" stop-color="#d42020"/>
+                  <stop offset="100%" stop-color="#8a0f0f"/>
+                </radialGradient>
+                <filter id="dbf-glow" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur stdDeviation="6" result="blur"/>
+                  <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+                <filter id="dbf-particle-glow" x="-120%" y="-120%" width="340%" height="340%">
+                  <feGaussianBlur stdDeviation="2" result="b"/>
+                  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+                <filter id="dbf-badge-glow" x="-25%" y="-35%" width="150%" height="170%">
+                  <feGaussianBlur stdDeviation="5" result="b"/>
+                  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+                <linearGradient id="dbf-forecast-g" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#0b1d2c" stop-opacity="0.4"/>
+                  <stop offset="100%" stop-color="#b61818"/>
+                </linearGradient>
+                <linearGradient id="dbf-area-g" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#b61818" stop-opacity="0.28"/>
+                  <stop offset="100%" stop-color="#b61818" stop-opacity="0"/>
+                </linearGradient>
+                <linearGradient id="dbf-connector-g" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="rgba(255,255,255,0.12)"/>
+                  <stop offset="100%" stop-color="rgba(182,24,24,0.55)"/>
+                </linearGradient>
+                <clipPath id="dbf-right-clip">
+                  <rect x="220" y="10" width="132" height="148"/>
+                </clipPath>
+              </defs>
+
+              <!-- Background -->
+              <rect width="360" height="160" rx="0" fill="url(#dbf-bg-g)"/>
+              <rect width="360" height="160" rx="0" fill="url(#dbf-grid)"/>
+
+              <!-- Panel dividers -->
+              <line x1="108" y1="10" x2="108" y2="150" stroke="#dde1ea" stroke-width="1" opacity="0.8"/>
+              <line x1="218" y1="10" x2="218" y2="150" stroke="#dde1ea" stroke-width="1" opacity="0.8"/>
+
+              <!-- Section labels -->
+              <text x="54" y="14" text-anchor="middle" font-size="7" font-weight="700" fill="#b61818" font-family="Space Grotesk,sans-serif" letter-spacing="1.2">DRIVERS</text>
+              <text x="163" y="14" text-anchor="middle" font-size="7" font-weight="700" fill="#0b1d2c" font-family="Space Grotesk,sans-serif" letter-spacing="1.2" opacity="0.45">MODEL</text>
+              <text x="286" y="14" text-anchor="middle" font-size="7" font-weight="700" fill="#b61818" font-family="Space Grotesk,sans-serif" letter-spacing="1.2">FORECAST</text>
+
+              <!-- ─── DRIVER INPUT BOXES ─── -->
+              <rect x="8" y="26" width="94" height="24" rx="5" fill="white" stroke="#dde1ea" stroke-width="1.5"/>
+              <rect x="8" y="26" width="4.5" height="24" rx="2.5" fill="#b61818" opacity="0.95"/>
+              <text x="57" y="42" text-anchor="middle" font-size="9" font-weight="600" fill="#0b1d2c" font-family="Space Grotesk,sans-serif" letter-spacing="0.3">REVENUE</text>
+
+              <rect x="8" y="58" width="94" height="24" rx="5" fill="white" stroke="#dde1ea" stroke-width="1.5"/>
+              <rect x="8" y="58" width="4.5" height="24" rx="2.5" fill="#b61818" opacity="0.65"/>
+              <text x="57" y="74" text-anchor="middle" font-size="9" font-weight="600" fill="#0b1d2c" font-family="Space Grotesk,sans-serif" letter-spacing="0.3">COST POOL</text>
+
+              <rect x="8" y="90" width="94" height="24" rx="5" fill="white" stroke="#dde1ea" stroke-width="1.5"/>
+              <rect x="8" y="90" width="4.5" height="24" rx="2.5" fill="#b61818" opacity="0.5"/>
+              <text x="57" y="106" text-anchor="middle" font-size="9" font-weight="600" fill="#0b1d2c" font-family="Space Grotesk,sans-serif" letter-spacing="0.3">FX · MACRO</text>
+
+              <rect x="8" y="122" width="94" height="24" rx="5" fill="white" stroke="#dde1ea" stroke-width="1.5"/>
+              <rect x="8" y="122" width="4.5" height="24" rx="2.5" fill="#b61818" opacity="0.5"/>
+              <text x="57" y="138" text-anchor="middle" font-size="9" font-weight="600" fill="#0b1d2c" font-family="Space Grotesk,sans-serif" letter-spacing="0.3">HEADCOUNT</text>
+
+              <!-- ─── BEZIER CONNECTORS ─── -->
+              <path d="M 102,38 C 118,38 135,60 135,80" fill="none" stroke="#dde1ea" stroke-width="1.5"/>
+              <path d="M 102,70 C 118,70 135,76 135,80" fill="none" stroke="#dde1ea" stroke-width="1.5"/>
+              <path d="M 102,102 C 118,102 135,84 135,80" fill="none" stroke="#dde1ea" stroke-width="1.5"/>
+              <path d="M 102,134 C 118,134 135,100 135,80" fill="none" stroke="#dde1ea" stroke-width="1.5"/>
+
+              <!-- Animated data pulses -->
+              <circle r="3" fill="#b61818">
+                <animateMotion dur="1.8s" repeatCount="indefinite" begin="0s"><mpath href="#dbf-p1"/></animateMotion>
+              </circle>
+              <path id="dbf-p1" d="M 102,38 C 118,38 135,60 135,80" fill="none"/>
+
+              <circle r="2.5" fill="#0b1d2c" opacity="0.45">
+                <animateMotion dur="1.8s" repeatCount="indefinite" begin="0.45s"><mpath href="#dbf-p2"/></animateMotion>
+              </circle>
+              <path id="dbf-p2" d="M 102,70 C 118,70 135,76 135,80" fill="none"/>
+
+              <circle r="2.5" fill="#0b1d2c" opacity="0.45">
+                <animateMotion dur="1.8s" repeatCount="indefinite" begin="0.9s"><mpath href="#dbf-p3"/></animateMotion>
+              </circle>
+              <path id="dbf-p3" d="M 102,102 C 118,102 135,84 135,80" fill="none"/>
+
+              <circle r="3" fill="#b61818">
+                <animateMotion dur="1.8s" repeatCount="indefinite" begin="1.35s"><mpath href="#dbf-p4"/></animateMotion>
+              </circle>
+              <path id="dbf-p4" d="M 102,134 C 118,134 135,100 135,80" fill="none"/>
+
+              <!-- ─── CENTRAL MODEL CIRCLE ─── -->
+              <circle cx="163" cy="80" r="34" fill="#b61818" opacity="0.07"/>
+              <circle cx="163" cy="80" r="30" fill="none" stroke="#b61818" stroke-width="1.5" opacity="0.3">
+                <animate attributeName="r" values="30;44;30" dur="2.4s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" values="0.3;0;0.3" dur="2.4s" repeatCount="indefinite"/>
+              </circle>
+              <circle cx="163" cy="80" r="30" fill="url(#dbf-model-g)" filter="url(#dbf-glow)"/>
+              <circle cx="163" cy="80" r="30" fill="url(#dbf-model-g)"/>
+              <circle cx="163" cy="80" r="27" fill="none" stroke="rgba(255,255,255,0.14)" stroke-width="1"/>
+              <text x="163" y="76" text-anchor="middle" font-size="9" font-weight="700" fill="white" font-family="Space Grotesk,sans-serif" letter-spacing="0.4">DRIVER</text>
+              <text x="163" y="89" text-anchor="middle" font-size="9" font-weight="700" fill="white" font-family="Space Grotesk,sans-serif" letter-spacing="0.4">MODEL</text>
+
+              <!-- Model → forecast connector -->
+              <line x1="193" y1="80" x2="222" y2="80" stroke="#dde1ea" stroke-width="1.5"/>
+              <circle r="3" fill="#b61818">
+                <animateMotion dur="1.2s" repeatCount="indefinite" begin="0.2s"><mpath href="#dbf-out"/></animateMotion>
+              </circle>
+              <path id="dbf-out" d="M 193,80 L 222,80" fill="none"/>
+
+              <!-- ─── FORECAST OUTPUT CHART ─── -->
+              <g clip-path="url(#dbf-right-clip)">
+                <line x1="228" y1="148" x2="348" y2="148" stroke="#dde1ea" stroke-width="1"/>
+                <line x1="228" y1="20" x2="228" y2="148" stroke="#dde1ea" stroke-width="1"/>
+                <polygon points="228,128 258,108 288,86 318,62 348,34 348,148 228,148" fill="url(#dbf-area-g)"/>
+                <polyline points="228,128 258,108 288,86 318,62 348,34"
+                          fill="none" stroke="url(#dbf-forecast-g)" stroke-width="2.5"
+                          stroke-linecap="round" stroke-linejoin="round"
+                          stroke-dasharray="180" stroke-dashoffset="180">
+                  <animate attributeName="stroke-dashoffset" from="180" to="0" dur="2.4s" fill="freeze" repeatCount="indefinite"/>
+                </polyline>
+                <circle cx="228" cy="128" r="3" fill="#0b1d2c" opacity="0.25"/>
+                <circle cx="258" cy="108" r="3" fill="#0b1d2c" opacity="0.4"/>
+                <circle cx="288" cy="86"  r="3" fill="#0b1d2c" opacity="0.55"/>
+                <circle cx="318" cy="62"  r="3.5" fill="#b61818"/>
+                <circle cx="348" cy="34"  r="4" fill="#b61818"/>
+                <circle cx="348" cy="34" r="4" fill="none" stroke="#b61818" stroke-width="1.5" opacity="0">
+                  <animate attributeName="r" values="4;12;4" dur="2s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0.6;0;0.6" dur="2s" repeatCount="indefinite"/>
+                </circle>
+                <text x="228" y="158" text-anchor="middle" font-size="7" fill="#0b1d2c" opacity="0.4" font-family="Space Grotesk,sans-serif">Q1</text>
+                <text x="258" y="158" text-anchor="middle" font-size="7" fill="#0b1d2c" opacity="0.4" font-family="Space Grotesk,sans-serif">Q2</text>
+                <text x="288" y="158" text-anchor="middle" font-size="7" fill="#0b1d2c" opacity="0.4" font-family="Space Grotesk,sans-serif">Q3</text>
+                <text x="318" y="158" text-anchor="middle" font-size="7" fill="#b61818" opacity="0.85" font-family="Space Grotesk,sans-serif">Q4</text>
+                <text x="348" y="158" text-anchor="middle" font-size="7" fill="#b61818" font-family="Space Grotesk,sans-serif">Q5→</text>
+                <!-- Accuracy badge -->
+                <rect x="288" y="20" width="54" height="24" rx="8" fill="#b61818"/>
+                <text x="315" y="36" text-anchor="middle" font-size="11" font-weight="700" fill="white" font-family="Space Grotesk,sans-serif">98%</text>
+              </g>
+            </svg>
+          </div>
+          <div class="project-meta">
+            <span class="project-tag">Predictive Analytics</span>
+          </div>
+          <h2 class="project-title-future">Driver-Based Forecasting</h2>
+          <p class="project-desc-future">Dynamic SQL-powered forecasting model increasing revenue prediction accuracy to 98% across multi-currency markets.</p>
+          <a href="#" class="project-cta" data-case="forecasting">View Case Study →</a>
+        </div>
+
+
+      </div>
+    </section>
+
+    <!-- ─── STATEMENT PIECE — KPI (hidden) ─── -->
+    <section id="kpi-stats" class="kpi-section">
+      <canvas id="kpi-particles"></canvas>
+      <div class="kpi-inner">
+        <div class="kpi-header">
+          <span class="section-label kpi-label">By the numbers</span>
+          <h2 class="kpi-headline">Transformation,<br>measured.</h2>
+        </div>
+        <div class="kpi-showcase">
+
+          <!-- Card 1: Finance Transformations -->
+          <div class="kpi-card" data-delay="0">
+            <svg viewBox="0 0 72 60" class="kpi-visual-svg" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="14" cy="16" r="5" fill="#b61818" class="kpi-dot" style="--dot-delay:0s"/>
+              <circle cx="28" cy="16" r="5" fill="#b61818" class="kpi-dot" style="--dot-delay:0.07s"/>
+              <circle cx="42" cy="16" r="5" fill="#b61818" class="kpi-dot" style="--dot-delay:0.14s"/>
+              <circle cx="56" cy="16" r="5" fill="#b61818" class="kpi-dot" style="--dot-delay:0.21s"/>
+              <circle cx="14" cy="30" r="5" fill="#b61818" class="kpi-dot" style="--dot-delay:0.28s"/>
+              <circle cx="28" cy="30" r="5" fill="#b61818" class="kpi-dot" style="--dot-delay:0.35s"/>
+              <circle cx="42" cy="30" r="5" fill="#b61818" class="kpi-dot" style="--dot-delay:0.42s"/>
+              <circle cx="56" cy="30" r="5" fill="#b61818" class="kpi-dot" style="--dot-delay:0.49s"/>
+              <circle cx="14" cy="44" r="5" fill="#b61818" class="kpi-dot" style="--dot-delay:0.56s"/>
+              <circle cx="28" cy="44" r="5" fill="#b61818" class="kpi-dot" style="--dot-delay:0.63s"/>
+              <circle cx="42" cy="44" r="5" fill="#b61818" class="kpi-dot" style="--dot-delay:0.70s"/>
+              <circle cx="56" cy="44" r="5" fill="none" stroke="#b61818" stroke-width="1.5" stroke-dasharray="3 2" class="kpi-dot" style="--dot-delay:0.77s"/>
+            </svg>
+            <div class="kpi-value-wrap">
+              <span class="kpi-counter" data-target="12" data-decimals="0">0</span><span class="kpi-suffix">+</span>
+            </div>
+            <div class="kpi-divider"></div>
+            <span class="kpi-label-text">Finance Transformations</span>
+            <p class="kpi-micro">Across manufacturing, SaaS &amp; financial services</p>
+          </div>
+
+          <!-- Card 2: Forecast Accuracy (hero) -->
+          <div class="kpi-card kpi-card-hero" data-delay="150" style="--ring-end: 2.5">
+            <svg viewBox="0 0 72 72" class="kpi-visual-svg" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="36" cy="36" r="30" fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="4"/>
+              <circle cx="36" cy="36" r="30" fill="none" stroke="#b61818" stroke-width="4"
+                stroke-linecap="round" stroke-dasharray="188.5" stroke-dashoffset="188.5"
+                transform="rotate(-90 36 36)" class="kpi-ring-prog"/>
+              <text x="36" y="33" text-anchor="middle" font-size="7.5" fill="rgba(255,255,255,0.45)" font-family="Space Grotesk,sans-serif" letter-spacing="0.3">ACCURACY</text>
+              <text x="36" y="44" text-anchor="middle" font-size="12" font-weight="700" fill="white" font-family="Space Grotesk,sans-serif">98.7%</text>
+            </svg>
+            <div class="kpi-value-wrap">
+              <span class="kpi-counter" data-target="98.7" data-decimals="1">0.0</span><span class="kpi-suffix">%</span>
+            </div>
+            <div class="kpi-divider"></div>
+            <span class="kpi-label-text">Forecast Accuracy</span>
+            <p class="kpi-micro">Driver-based models outperforming industry benchmarks</p>
+          </div>
+
+          <!-- Card 3: Faster Close Cycles -->
+          <div class="kpi-card" data-delay="300">
+            <svg viewBox="0 0 72 64" class="kpi-visual-svg" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <text x="6" y="13" font-size="7.5" fill="rgba(255,255,255,0.35)" font-family="Space Grotesk,sans-serif" letter-spacing="0.5">BEFORE</text>
+              <line x1="6" y1="24" x2="66" y2="24" stroke="rgba(255,255,255,0.06)" stroke-width="10" stroke-linecap="round"/>
+              <line x1="6" y1="24" x2="66" y2="24" stroke="rgba(182,24,24,0.30)" stroke-width="10" stroke-linecap="round"
+                stroke-dasharray="60" stroke-dashoffset="60" class="kpi-bar-b"/>
+              <text x="6" y="47" font-size="7.5" fill="rgba(255,255,255,0.35)" font-family="Space Grotesk,sans-serif" letter-spacing="0.5">AFTER</text>
+              <line x1="6" y1="57" x2="66" y2="57" stroke="rgba(255,255,255,0.06)" stroke-width="10" stroke-linecap="round"/>
+              <line x1="6" y1="57" x2="66" y2="57" stroke="#b61818" stroke-width="10" stroke-linecap="round"
+                stroke-dasharray="60" stroke-dashoffset="60" class="kpi-bar-a"/>
+            </svg>
+            <div class="kpi-value-wrap">
+              <span class="kpi-counter" data-target="3" data-decimals="0">0</span><span class="kpi-suffix">x</span>
+            </div>
+            <div class="kpi-divider"></div>
+            <span class="kpi-label-text">Faster Close Cycles</span>
+            <p class="kpi-micro">From weeks to days through automation &amp; integration</p>
+          </div>
+
+          <!-- Card 4: Client Retention -->
+          <div class="kpi-card" data-delay="450" style="--ring-end: 0">
+            <svg viewBox="0 0 72 72" class="kpi-visual-svg" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="36" cy="36" r="30" fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="4"/>
+              <circle cx="36" cy="36" r="30" fill="none" stroke="#b61818" stroke-width="4"
+                stroke-linecap="round" stroke-dasharray="188.5" stroke-dashoffset="188.5"
+                transform="rotate(-90 36 36)" class="kpi-ring-prog"/>
+              <path d="M 25 37 L 33 45 L 49 28" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round"
+                stroke-dasharray="30" stroke-dashoffset="30" class="kpi-check"/>
+            </svg>
+            <div class="kpi-value-wrap">
+              <span class="kpi-counter" data-target="100" data-decimals="0">0</span><span class="kpi-suffix">%</span>
+            </div>
+            <div class="kpi-divider"></div>
+            <span class="kpi-label-text">Client Retention</span>
+            <p class="kpi-micro">Every engagement has extended or expanded</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── HOW WE WORK ─── -->
+    <section id="how-we-work">
+      <span class="section-label section-reveal">Our process</span>
+      <h2 class="title section-reveal">How We Work</h2>
+      <p class="hww-intro section-reveal">Three phases. No ambiguity. Clear ownership at every step.</p>
+      <div class="hww-steps">
+
+        <div class="hww-step">
+          <div class="hww-step-head">
+            <span class="hww-num">01</span>
+            <div class="hww-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              </svg>
+            </div>
+          </div>
+          <h3 class="hww-title">Discover</h3>
+          <p class="hww-desc">We audit your current state — decision architecture, data flows, processes, and technology. You get a clear, unvarnished picture of where value is being lost before we propose anything.</p>
+          <ul class="hww-bullets">
+            <li>Process &amp; decision audit</li>
+            <li>Data quality assessment</li>
+            <li>Technology landscape review</li>
+            <li>Stakeholder alignment sessions</li>
+          </ul>
+        </div>
+
+        <div class="hww-connector" aria-hidden="true"></div>
+
+        <div class="hww-step" style="transition-delay: 0.15s">
+          <div class="hww-step-head">
+            <span class="hww-num">02</span>
+            <div class="hww-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                <path d="M9 9h6M9 13h6M9 17h4"/>
+              </svg>
+            </div>
+          </div>
+          <h3 class="hww-title">Design</h3>
+          <p class="hww-desc">We architect the solution — from behavioral frameworks to technical blueprints. Every design decision is tied to a measurable outcome. No gold-plating, no scope creep.</p>
+          <ul class="hww-bullets">
+            <li>Solution architecture</li>
+            <li>KPI &amp; success metrics</li>
+            <li>Implementation roadmap</li>
+            <li>Risk &amp; change management</li>
+          </ul>
+        </div>
+
+        <div class="hww-connector" aria-hidden="true"></div>
+
+        <div class="hww-step" style="transition-delay: 0.3s">
+          <div class="hww-step-head">
+            <span class="hww-num">03</span>
+            <div class="hww-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 11 12 14 22 4"/>
+                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+              </svg>
+            </div>
+          </div>
+          <h3 class="hww-title">Deploy</h3>
+          <p class="hww-desc">We build, integrate, and embed — with your team, not beside it. Knowledge transfer is built into every sprint so your people own the outcome long after we leave.</p>
+          <ul class="hww-bullets">
+            <li>Agile delivery sprints</li>
+            <li>Integration &amp; testing</li>
+            <li>Team training &amp; adoption</li>
+            <li>Hypercare &amp; handover</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── CONTACT ─── -->
+    <section id="contact">
+      <span class="section-label">Reach out</span>
+      <p class="section__text__p1">Get In Touch</p>
+      <h2 class="title">Contact Us</h2>
+      <div class="contact-form-container">
+        <!-- TODO: Replace YOUR_FORM_ID with your actual Formspree endpoint -->
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form" id="contactForm">
+          <div class="form-group">
+            <label for="email">
+              <span class="label-content">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                  <path d="M22 7l-10 7L2 7"></path>
+                </svg>
+                Email Address
+              </span>
+            </label>
+            <input type="email" id="email" name="email" placeholder="your.email@company.com" required />
+            <span class="field-status" data-field="email"></span>
+          </div>
+          <div class="form-group">
+            <label for="message">
+              <span class="label-content">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>
+                Message
+              </span>
+              <span class="char-counter"><span id="charCount">0</span> / 500</span>
+            </label>
+            <textarea id="message" name="message" placeholder="Tell us about your financial transformation needs..." required maxlength="500"></textarea>
+            <span class="field-status" data-field="message"></span>
+          </div>
+          <div class="privacy-checkbox">
+            <input type="checkbox" id="privacy" name="privacy" required />
+            <label for="privacy">
+              I have read and agree to the <a href="./privacy-policy.html" target="_blank">Privacy Policy</a>
+            </label>
+          </div>
+          <div class="form-actions-inner">
+            <button type="submit" class="btn btn-color-1 contact-submit-btn" id="submitBtn">
+              <span class="btn-text">Send Message</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+            </button>
+          </div>
+        </form>
+      </div>
+      <div class="contact-direct-info">
+        <p class="contact-direct-intro" id="contact-direct-intro">Prefer to reach out directly? Send us an email or connect on LinkedIn.</p>
+        <div class="contact-direct-links">
+          <a href="mailto:contact@pmg-services.net" class="btn btn-color-2 contact-email-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="contact-link-icon" aria-hidden="true">
+              <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+              <path d="M22 7l-10 7L2 7"></path>
+            </svg>
+            contact@pmg-services.net
+          </a>
+          <a href="https://www.linkedin.com/company/p-m-g-services/" target="_blank" rel="noopener noreferrer" class="btn linkedin-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor" class="linkedin-icon" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+    </section>
+
+    </main>
+
+    <!-- ─── CASE STUDY OVERLAY ─── -->
+    <div id="case-study-overlay" class="cs-overlay" role="dialog" aria-modal="true" aria-labelledby="cs-dialog-title">
+      <div class="cs-panel">
+        <button class="cs-back" id="cs-back-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 12H5"></path>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          <span>Back to Projects</span>
+        </button>
+        <div class="cs-content" id="cs-content">
+          <!-- Dynamically injected -->
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── FOOTER ─── -->
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <img src="./assets/LOGO_PMG_white.png" alt="PMG Services" class="footer-logo" />
+            <p class="footer-tagline" id="footer-tagline">Financial Transformation &amp;<br>Digitalization Consulting</p>
+          </div>
+          <div class="footer-contact-col">
+            <h3 class="footer-heading" id="footer-contact-heading">Contact</h3>
+            <a href="mailto:contact@pmg-services.net" class="footer-link">contact@pmg-services.net</a>
+            <a href="https://www.linkedin.com/company/p-m-g-services/" target="_blank" rel="noopener noreferrer" class="footer-link footer-linkedin">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              LinkedIn
+            </a>
+          </div>
+          <div class="footer-legal-col">
+            <h3 class="footer-heading" id="footer-legal-heading">Legal</h3>
+            <a href="./privacy-policy.html" class="footer-link" id="footer-privacy-link">Privacy Policy</a>
+            <a href="./impressum.html" class="footer-link" id="footer-impressum-link">Impressum</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p id="footer-copyright">Copyright &#169; 2026 PMG Services. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <!-- ─── KPI STATEMENT ANIMATION ─── -->
+    <script>
+    (() => {
+      // ── Particle background ──
+      const canvas = document.getElementById('kpi-particles');
+      if (!canvas) return;
+      const section = document.getElementById('kpi-stats');
+      if (!section || getComputedStyle(section).display === 'none') return;
+      const ctx = canvas.getContext('2d');
+      let particles = [];
+      let W, H, mouse = { x: -1000, y: -1000 };
+
+      function resizeCanvas() {
+        W = canvas.width = section.offsetWidth;
+        H = canvas.height = section.offsetHeight;
+      }
+
+      class Particle {
+        constructor() { this.reset(); }
+        reset() {
+          this.x = Math.random() * W;
+          this.y = Math.random() * H;
+          this.size = Math.random() * 1.5 + 0.5;
+          this.speedX = (Math.random() - 0.5) * 0.3;
+          this.speedY = (Math.random() - 0.5) * 0.3;
+          this.opacity = Math.random() * 0.3 + 0.05;
+          this.baseOpacity = this.opacity;
+        }
+        update() {
+          this.x += this.speedX;
+          this.y += this.speedY;
+          if (this.x < 0 || this.x > W) this.speedX *= -1;
+          if (this.y < 0 || this.y > H) this.speedY *= -1;
+          const dx = this.x - mouse.x, dy = this.y - mouse.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          this.opacity = dist < 150 ? this.baseOpacity + (1 - dist / 150) * 0.4 : this.baseOpacity;
+        }
+        draw() {
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(182, 24, 24, ${this.opacity})`;
+          ctx.fill();
+        }
+      }
+
+      function initParticles() {
+        particles = [];
+        const count = Math.min(Math.floor((W * H) / 8000), 120);
+        for (let i = 0; i < count; i++) particles.push(new Particle());
+      }
+
+      function drawConnections() {
+        for (let i = 0; i < particles.length; i++) {
+          for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < 120) {
+              ctx.beginPath();
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.strokeStyle = `rgba(182, 24, 24, ${0.06 * (1 - dist / 120)})`;
+              ctx.lineWidth = 0.5;
+              ctx.stroke();
+            }
+          }
+        }
+      }
+
+      function animateParticles() {
+        ctx.clearRect(0, 0, W, H);
+        particles.forEach(p => { p.update(); p.draw(); });
+        drawConnections();
+        requestAnimationFrame(animateParticles);
+      }
+
+      section.addEventListener('mousemove', (e) => {
+        const rect = canvas.getBoundingClientRect();
+        mouse.x = e.clientX - rect.left;
+        mouse.y = e.clientY - rect.top;
+      });
+      section.addEventListener('mouseleave', () => { mouse.x = -1000; mouse.y = -1000; });
+
+      window.addEventListener('resize', () => { resizeCanvas(); initParticles(); });
+      resizeCanvas();
+      initParticles();
+      animateParticles();
+
+      // ── Counter animation ──
+      let animated = false;
+      function animateCounters() {
+        if (animated) return;
+        animated = true;
+
+        document.querySelectorAll('.kpi-card').forEach(card => {
+          const delay = parseInt(card.dataset.delay) || 0;
+          setTimeout(() => card.classList.add('kpi-visible'), delay);
+        });
+
+        document.querySelectorAll('.kpi-counter').forEach((el, i) => {
+          const target = parseFloat(el.dataset.target);
+          const decimals = parseInt(el.dataset.decimals) || 0;
+          const duration = 2200;
+          const startDelay = (parseInt(el.closest('.kpi-card').dataset.delay) || 0) + 300;
+          const start = performance.now() + startDelay;
+
+          function tick(now) {
+            const elapsed = now - start;
+            if (elapsed < 0) { requestAnimationFrame(tick); return; }
+            const t = Math.min(elapsed / duration, 1);
+            // Ease: fast start, dramatic slow at end
+            const eased = 1 - Math.pow(1 - t, 4);
+            const current = target * eased;
+            el.textContent = current.toFixed(decimals);
+            if (t < 1) requestAnimationFrame(tick);
+            else el.textContent = target.toFixed(decimals);
+          }
+          requestAnimationFrame(tick);
+        });
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => { if (entry.isIntersecting) animateCounters(); });
+      }, { threshold: 0.25 });
+      observer.observe(section);
+    })();
+    </script>
+
+    <!-- ─── CASE STUDY OVERLAY LOGIC ─── -->
+    <script>
+    (() => {
+      const caseStudies = {
+        erp: {
+          tag: 'Custom Financial Ecosystem',
+          title: 'Bespoke financial ecosystem eliminating manual data entry across 5 legal entities',
+          heroSvg: `<svg viewBox="0 0 360 160" class="cs-hero-svg" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Data hub architecture diagram"><defs><radialGradient id="erp-ov-bg-g" cx="50%" cy="50%" r="65%"><stop offset="0%" stop-color="#f8fafb"/><stop offset="100%" stop-color="#f0f3f6"/></radialGradient><pattern id="erp-ov-grid" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><line x1="20" y1="0" x2="20" y2="20" stroke="rgba(11,29,44,0.06)" stroke-width="1"/><line x1="0" y1="20" x2="20" y2="20" stroke="rgba(11,29,44,0.06)" stroke-width="1"/></pattern><radialGradient id="erp-ov-hub-fill" cx="38%" cy="32%" r="70%"><stop offset="0%" stop-color="#1e4068"/><stop offset="100%" stop-color="#0b1d2c"/></radialGradient><filter id="erp-ov-hub-glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter><filter id="erp-ov-particle-glow" x="-120%" y="-120%" width="340%" height="340%"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><rect width="360" height="160" rx="0" fill="url(#erp-ov-bg-g)"/><rect width="360" height="160" rx="0" fill="url(#erp-ov-grid)"/><circle cx="180" cy="80" r="60" fill="#b61818" opacity="0.04"/><line x1="180" y1="31" x2="180" y2="58" stroke="#dde1ea" stroke-width="1.5"/><line x1="180" y1="102" x2="180" y2="129" stroke="#dde1ea" stroke-width="1.5"/><line x1="108" y1="80" x2="158" y2="80" stroke="#dde1ea" stroke-width="1.5"/><line x1="202" y1="80" x2="252" y2="80" stroke="#dde1ea" stroke-width="1.5"/><rect x="128" y="9" width="104" height="22" rx="11" fill="white" stroke="#dde1ea" stroke-width="1.5"/><text x="180" y="23" text-anchor="middle" font-size="7.5" font-weight="600" fill="#0b1d2c" font-family="Space Grotesk,sans-serif" letter-spacing="0.3">ACCOUNTING PLATFORM</text><rect x="16" y="69" width="92" height="22" rx="11" fill="white" stroke="#dde1ea" stroke-width="1.5"/><text x="62" y="83" text-anchor="middle" font-size="7.5" font-weight="600" fill="#0b1d2c" font-family="Space Grotesk,sans-serif" letter-spacing="0.3">INVOICE OCR</text><rect x="252" y="69" width="92" height="22" rx="11" fill="white" stroke="#dde1ea" stroke-width="1.5"/><text x="298" y="83" text-anchor="middle" font-size="7.5" font-weight="600" fill="#0b1d2c" font-family="Space Grotesk,sans-serif" letter-spacing="0.3">LIQUIDITY ENGINE</text><rect x="128" y="129" width="104" height="22" rx="11" fill="white" stroke="#dde1ea" stroke-width="1.5"/><text x="180" y="143" text-anchor="middle" font-size="7.5" font-weight="600" fill="#0b1d2c" font-family="Space Grotesk,sans-serif" letter-spacing="0.3">TARGET OP. MODEL</text><circle cx="180" cy="80" r="22" fill="none" stroke="#b61818" stroke-width="1.5" opacity="0.25"><animate attributeName="r" values="22;40;22" dur="2.6s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.25;0;0.25" dur="2.6s" repeatCount="indefinite"/></circle><circle cx="180" cy="80" r="22" fill="none" stroke="#b61818" stroke-width="1" opacity="0.4"><animate attributeName="r" values="22;30;22" dur="2.6s" repeatCount="indefinite" begin="0.5s"/><animate attributeName="opacity" values="0.4;0;0.4" dur="2.6s" repeatCount="indefinite" begin="0.5s"/></circle><circle cx="180" cy="80" r="22" fill="url(#erp-ov-hub-fill)" filter="url(#erp-ov-hub-glow)"/><circle cx="180" cy="80" r="22" fill="url(#erp-ov-hub-fill)"/><circle cx="180" cy="80" r="19" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/><circle cx="180" cy="80" r="19" fill="none" stroke="#b61818" stroke-width="2.5" stroke-dasharray="62 58" stroke-linecap="round" opacity="0.9"/><text x="180" y="77" text-anchor="middle" font-size="9" font-weight="700" fill="white" font-family="Space Grotesk,sans-serif" letter-spacing="0.3">DATA</text><text x="180" y="89" text-anchor="middle" font-size="7" fill="#b61818" font-family="Space Grotesk,sans-serif" letter-spacing="0.8">HUB</text><circle r="3.5" fill="#b61818" filter="url(#erp-ov-particle-glow)"><animateMotion dur="1.5s" repeatCount="indefinite" begin="0s"><mpath href="#erp-ov-sn-p"/></animateMotion></circle><path id="erp-ov-sn-p" d="M 180,58 L 180,31" fill="none"/><circle r="3" fill="#0b1d2c" opacity="0.5"><animateMotion dur="1.5s" repeatCount="indefinite" begin="0.75s"><mpath href="#erp-ov-ss-p"/></animateMotion></circle><path id="erp-ov-ss-p" d="M 180,102 L 180,129" fill="none"/><circle r="3" fill="#0b1d2c" opacity="0.5"><animateMotion dur="1.5s" repeatCount="indefinite" begin="0.375s"><mpath href="#erp-ov-sw-p"/></animateMotion></circle><path id="erp-ov-sw-p" d="M 158,80 L 108,80" fill="none"/><circle r="3.5" fill="#b61818" filter="url(#erp-ov-particle-glow)"><animateMotion dur="1.5s" repeatCount="indefinite" begin="1.125s"><mpath href="#erp-ov-se-p"/></animateMotion></circle><path id="erp-ov-se-p" d="M 202,80 L 252,80" fill="none"/></svg>`,
+          company: 'A mid-market European services group operating across 5 legal entities in 3 countries. Finance teams were spending over 60 hours per month on manual inter-entity data reconciliation, duplicate entry between systems, and ad-hoc reporting — with no consolidated real-time view of group liquidity or performance.',
+          goal: 'Architect a bespoke, integrated financial ecosystem built around the existing third-party accounting platform — connecting custom-built Invoice OCR, a real-time Liquidity Engine, and a unified Target Operating Model that would eliminate manual data entry and provide instant group-level financial visibility.',
+          approach: [
+            'Conducted a full process audit across all 5 entities to map every manual touchpoint and data flow',
+            'Designed a central Data Hub architecture integrating the existing accounting platform via REST APIs — no rip-and-replace',
+            'Built a custom Invoice OCR module (Python + Azure Cognitive Services) that auto-captures, classifies, and posts invoices with 99.2% accuracy',
+            'Developed a real-time Liquidity Engine pulling live bank balances, AP/AR aging, and committed spend into a single dashboard',
+            'Constructed a Target Operating Model layer enabling group consolidation, intercompany elimination, and entity-level drill-down in Power BI',
+            'Delivered a phased rollout with parallel running period to ensure zero business disruption across all entities'
+          ],
+          results: [
+            {value:'5', label:'Entities Unified'},
+            {value:'0', label:'Manual Entry Points'},
+            {value:'99.2%', label:'OCR Accuracy'},
+            {value:'60h/mo', label:'Admin Time Eliminated'}
+          ],
+          tech: ['Python', 'Azure', 'SQL', 'Power BI', 'REST APIs', 'Azure Cognitive Services', 'NetSuite'],
+          de: {
+            tag: 'Individuelles Finanz-Oekosystem',
+            title: 'Massgeschneidertes Finanz-Oekosystem zur Eliminierung manueller Dateneingabe ueber 5 Gesellschaften',
+            company: 'Eine europaeische Dienstleistungsgruppe mit 5 Gesellschaften in 3 Laendern. Die Finanzteams verbrachten monatlich ueber 60 Stunden mit manueller Datenabstimmung, doppelter Eingabe und Ad-hoc-Reporting -- ohne konsolidierte Echtzeit-Sicht auf Liquiditaet oder Performance.',
+            goal: 'Aufbau eines massgeschneiderten, integrierten Finanz-Oekosystems rund um die bestehende Buchhaltungsplattform -- mit Invoice OCR, Echtzeit-Liquiditaets-Engine und einheitlichem Target Operating Model.',
+            approach: [
+              'Vollstaendiges Prozess-Audit ueber alle 5 Gesellschaften zur Erfassung aller manuellen Kontaktpunkte',
+              'Design einer zentralen Data-Hub-Architektur mit REST-API-Integration der bestehenden Buchhaltungsplattform',
+              'Entwicklung eines Invoice-OCR-Moduls (Python + Azure Cognitive Services) mit 99,2% Genauigkeit',
+              'Aufbau einer Echtzeit-Liquiditaets-Engine mit Live-Banksalden, AP/AR-Aging und zugesagten Ausgaben',
+              'Erstellung einer Target-Operating-Model-Schicht fuer Konzernkonsolidierung und Drill-down in Power BI',
+              'Phasenweise Einfuehrung mit Parallelbetrieb zur Sicherstellung ununterbrochener Geschaeftsablaeufe'
+            ],
+            results: [
+              {value:'5', label:'Gesellschaften vereinheitlicht'},
+              {value:'0', label:'Manuelle Eingabepunkte'},
+              {value:'99,2%', label:'OCR-Genauigkeit'},
+              {value:'60h/Mo', label:'Admin-Zeit eliminiert'}
+            ]
+          }
+        },
+        finops: {
+          tag: 'Cloud Optimization',
+          title: 'Real-time cloud cost governance that reduced AWS OpEx by 22%',
+          heroSvg: `<svg viewBox="0 0 600 300" class="cs-hero-svg"><defs><linearGradient id="cs1-g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#b61818;stop-opacity:0.15"/><stop offset="100%" style="stop-color:#0b1d2c;stop-opacity:0.08"/></linearGradient></defs><rect width="600" height="300" fill="url(#cs1-g)" rx="12"/><circle cx="300" cy="150" r="60" fill="none" stroke="#b61818" stroke-width="2" opacity="0.4"/><circle cx="300" cy="150" r="40" fill="none" stroke="#0b1d2c" stroke-width="1.5" opacity="0.3"/><circle cx="300" cy="150" r="8" fill="#b61818" opacity="0.6"/><circle cx="180" cy="80" r="20" fill="none" stroke="#0b1d2c" stroke-width="1.5" opacity="0.4"/><circle cx="420" cy="80" r="20" fill="none" stroke="#b61818" stroke-width="1.5" opacity="0.4"/><circle cx="180" cy="220" r="20" fill="none" stroke="#b61818" stroke-width="1.5" opacity="0.4"/><circle cx="420" cy="220" r="20" fill="none" stroke="#0b1d2c" stroke-width="1.5" opacity="0.4"/><line x1="200" y1="90" x2="260" y2="130" stroke="#0b1d2c" stroke-width="1" opacity="0.2" stroke-dasharray="4,4"/><line x1="400" y1="90" x2="340" y2="130" stroke="#b61818" stroke-width="1" opacity="0.2" stroke-dasharray="4,4"/><line x1="200" y1="210" x2="260" y2="170" stroke="#b61818" stroke-width="1" opacity="0.2" stroke-dasharray="4,4"/><line x1="400" y1="210" x2="340" y2="170" stroke="#0b1d2c" stroke-width="1" opacity="0.2" stroke-dasharray="4,4"/><text x="180" y="85" text-anchor="middle" fill="#0b1d2c" font-size="11" font-family="Space Grotesk" opacity="0.6">EC2</text><text x="420" y="85" text-anchor="middle" fill="#b61818" font-size="11" font-family="Space Grotesk" opacity="0.6">S3</text><text x="180" y="225" text-anchor="middle" fill="#b61818" font-size="11" font-family="Space Grotesk" opacity="0.6">RDS</text><text x="420" y="225" text-anchor="middle" fill="#0b1d2c" font-size="11" font-family="Space Grotesk" opacity="0.6">Lambda</text><text x="300" y="155" text-anchor="middle" fill="#0b1d2c" font-size="13" font-weight="600" font-family="Space Grotesk">FinOps Hub</text></svg>`,
+          company: 'A fast-scaling SaaS company with over 200 cloud services running across AWS, experiencing uncontrolled cloud cost growth that exceeded 35% quarter-over-quarter. The engineering and finance teams operated in silos, with no shared visibility into unit economics or resource allocation efficiency.',
+          goal: 'Implement a comprehensive FinOps framework creating transparency between engineering spend and business value — real-time cost attribution, automated tagging enforcement, and executive dashboards, all without disrupting active development workflows.',
+          approach: ['Audited 200+ AWS services and mapped each to business units and product lines','Implemented automated resource tagging with compliance enforcement via AWS Config rules','Built custom cost allocation models connecting cloud spend to unit economics (cost per user, cost per transaction)','Deployed real-time Power BI dashboards with daily anomaly detection alerts','Established a cross-functional FinOps review cadence between engineering, finance, and product teams'],
+          results: [{value:'22%',label:'AWS OpEx Reduction'},{value:'€1.8M',label:'Annual Savings'},{value:'100%',label:'Tag Compliance'},{value:'< 24h',label:'Cost Anomaly Detection'}],
+          tech: ['AWS','Power BI','Python','Terraform','AWS Config'],
+          de: {
+            tag: 'Cloud-Optimierung',
+            title: 'Echtzeit-Cloud-Kostensteuerung mit 22% AWS-OpEx-Reduktion',
+            company: 'Ein schnell wachsendes SaaS-Unternehmen mit ueber 200 Cloud-Services auf AWS. Unkontrolliertes Kostenwachstum von 35% pro Quartal. Engineering und Finance arbeiteten isoliert ohne gemeinsame Sicht auf Unit Economics.',
+            goal: 'Implementierung eines umfassenden FinOps-Frameworks fuer Transparenz zwischen Engineering-Ausgaben und Geschaeftswert -- Echtzeit-Kostenzuordnung, automatisierte Tagging-Durchsetzung und Executive-Dashboards.',
+            approach: ['Audit von 200+ AWS-Services mit Zuordnung zu Business Units','Implementierung automatisierter Ressourcen-Tagging mit Compliance-Durchsetzung via AWS Config','Aufbau individueller Kostenzuordnungsmodelle fuer Unit Economics','Echtzeit-Power-BI-Dashboards mit taeglicher Anomalie-Erkennung','Etablierung cross-funktionaler FinOps-Review-Zyklen'],
+            results: [{value:'22%',label:'AWS-OpEx-Reduktion'},{value:'1,8 Mio. EUR',label:'Jaehrliche Einsparungen'},{value:'100%',label:'Tag-Compliance'},{value:'< 24h',label:'Kostenanomalie-Erkennung'}]
+          }
+        },
+        forecasting: {
+          tag: 'Predictive Analytics',
+          title: 'Driver-based forecasting model achieving 98% revenue prediction accuracy',
+          heroSvg: `<svg viewBox="0 0 360 160" class="cs-hero-svg" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Driver-based forecasting model diagram"><defs><radialGradient id="dbf-ov-bg-g" cx="65%" cy="50%" r="70%"><stop offset="0%" stop-color="#f8fafb"/><stop offset="100%" stop-color="#f0f3f6"/></radialGradient><pattern id="dbf-ov-grid" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><line x1="20" y1="0" x2="20" y2="20" stroke="rgba(11,29,44,0.06)" stroke-width="1"/><line x1="0" y1="20" x2="20" y2="20" stroke="rgba(11,29,44,0.06)" stroke-width="1"/></pattern><radialGradient id="dbf-ov-model-g" cx="38%" cy="32%" r="68%"><stop offset="0%" stop-color="#d42020"/><stop offset="100%" stop-color="#8a0f0f"/></radialGradient><filter id="dbf-ov-glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter><filter id="dbf-ov-particle-glow" x="-120%" y="-120%" width="340%" height="340%"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter><linearGradient id="dbf-ov-forecast-g" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#0b1d2c" stop-opacity="0.4"/><stop offset="100%" stop-color="#b61818"/></linearGradient><linearGradient id="dbf-ov-area-g" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#b61818" stop-opacity="0.28"/><stop offset="100%" stop-color="#b61818" stop-opacity="0"/></linearGradient><clipPath id="dbf-ov-right-clip"><rect x="220" y="10" width="132" height="148"/></clipPath></defs><rect width="360" height="160" rx="0" fill="url(#dbf-ov-bg-g)"/><rect width="360" height="160" rx="0" fill="url(#dbf-ov-grid)"/><line x1="108" y1="10" x2="108" y2="150" stroke="#dde1ea" stroke-width="1" opacity="0.8"/><line x1="218" y1="10" x2="218" y2="150" stroke="#dde1ea" stroke-width="1" opacity="0.8"/><text x="54" y="14" text-anchor="middle" font-size="7" font-weight="700" fill="#b61818" font-family="Space Grotesk,sans-serif" letter-spacing="1.2">DRIVERS</text><text x="163" y="14" text-anchor="middle" font-size="7" font-weight="700" fill="#0b1d2c" font-family="Space Grotesk,sans-serif" letter-spacing="1.2" opacity="0.45">MODEL</text><text x="286" y="14" text-anchor="middle" font-size="7" font-weight="700" fill="#b61818" font-family="Space Grotesk,sans-serif" letter-spacing="1.2">FORECAST</text><rect x="8" y="26" width="94" height="24" rx="5" fill="white" stroke="#dde1ea" stroke-width="1.5"/><rect x="8" y="26" width="4.5" height="24" rx="2.5" fill="#b61818" opacity="0.95"/><text x="57" y="42" text-anchor="middle" font-size="9" font-weight="600" fill="#0b1d2c" font-family="Space Grotesk,sans-serif" letter-spacing="0.3">REVENUE</text><rect x="8" y="58" width="94" height="24" rx="5" fill="white" stroke="#dde1ea" stroke-width="1.5"/><rect x="8" y="58" width="4.5" height="24" rx="2.5" fill="#b61818" opacity="0.65"/><text x="57" y="74" text-anchor="middle" font-size="9" font-weight="600" fill="#0b1d2c" font-family="Space Grotesk,sans-serif" letter-spacing="0.3">COST POOL</text><rect x="8" y="90" width="94" height="24" rx="5" fill="white" stroke="#dde1ea" stroke-width="1.5"/><rect x="8" y="90" width="4.5" height="24" rx="2.5" fill="#b61818" opacity="0.5"/><text x="57" y="106" text-anchor="middle" font-size="9" font-weight="600" fill="#0b1d2c" font-family="Space Grotesk,sans-serif" letter-spacing="0.3">FX · MACRO</text><rect x="8" y="122" width="94" height="24" rx="5" fill="white" stroke="#dde1ea" stroke-width="1.5"/><rect x="8" y="122" width="4.5" height="24" rx="2.5" fill="#b61818" opacity="0.5"/><text x="57" y="138" text-anchor="middle" font-size="9" font-weight="600" fill="#0b1d2c" font-family="Space Grotesk,sans-serif" letter-spacing="0.3">HEADCOUNT</text><path d="M 102,38 C 118,38 135,60 135,80" fill="none" stroke="#dde1ea" stroke-width="1.5"/><path d="M 102,70 C 118,70 135,76 135,80" fill="none" stroke="#dde1ea" stroke-width="1.5"/><path d="M 102,102 C 118,102 135,84 135,80" fill="none" stroke="#dde1ea" stroke-width="1.5"/><path d="M 102,134 C 118,134 135,100 135,80" fill="none" stroke="#dde1ea" stroke-width="1.5"/><circle r="3" fill="#b61818"><animateMotion dur="1.8s" repeatCount="indefinite" begin="0s"><mpath href="#dbf-ov-p1"/></animateMotion></circle><path id="dbf-ov-p1" d="M 102,38 C 118,38 135,60 135,80" fill="none"/><circle r="2.5" fill="#0b1d2c" opacity="0.45"><animateMotion dur="1.8s" repeatCount="indefinite" begin="0.45s"><mpath href="#dbf-ov-p2"/></animateMotion></circle><path id="dbf-ov-p2" d="M 102,70 C 118,70 135,76 135,80" fill="none"/><circle r="2.5" fill="#0b1d2c" opacity="0.45"><animateMotion dur="1.8s" repeatCount="indefinite" begin="0.9s"><mpath href="#dbf-ov-p3"/></animateMotion></circle><path id="dbf-ov-p3" d="M 102,102 C 118,102 135,84 135,80" fill="none"/><circle r="3" fill="#b61818"><animateMotion dur="1.8s" repeatCount="indefinite" begin="1.35s"><mpath href="#dbf-ov-p4"/></animateMotion></circle><path id="dbf-ov-p4" d="M 102,134 C 118,134 135,100 135,80" fill="none"/><circle cx="163" cy="80" r="34" fill="#b61818" opacity="0.07"/><circle cx="163" cy="80" r="30" fill="none" stroke="#b61818" stroke-width="1.5" opacity="0.3"><animate attributeName="r" values="30;44;30" dur="2.4s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.3;0;0.3" dur="2.4s" repeatCount="indefinite"/></circle><circle cx="163" cy="80" r="30" fill="url(#dbf-ov-model-g)" filter="url(#dbf-ov-glow)"/><circle cx="163" cy="80" r="30" fill="url(#dbf-ov-model-g)"/><circle cx="163" cy="80" r="27" fill="none" stroke="rgba(255,255,255,0.14)" stroke-width="1"/><text x="163" y="76" text-anchor="middle" font-size="9" font-weight="700" fill="white" font-family="Space Grotesk,sans-serif" letter-spacing="0.4">DRIVER</text><text x="163" y="89" text-anchor="middle" font-size="9" font-weight="700" fill="white" font-family="Space Grotesk,sans-serif" letter-spacing="0.4">MODEL</text><line x1="193" y1="80" x2="222" y2="80" stroke="#dde1ea" stroke-width="1.5"/><circle r="3" fill="#b61818"><animateMotion dur="1.2s" repeatCount="indefinite" begin="0.2s"><mpath href="#dbf-ov-out"/></animateMotion></circle><path id="dbf-ov-out" d="M 193,80 L 222,80" fill="none"/><g clip-path="url(#dbf-ov-right-clip)"><line x1="228" y1="148" x2="348" y2="148" stroke="#dde1ea" stroke-width="1"/><line x1="228" y1="20" x2="228" y2="148" stroke="#dde1ea" stroke-width="1"/><polygon points="228,128 258,108 288,86 318,62 348,34 348,148 228,148" fill="url(#dbf-ov-area-g)"/><polyline points="228,128 258,108 288,86 318,62 348,34" fill="none" stroke="url(#dbf-ov-forecast-g)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="180" stroke-dashoffset="180"><animate attributeName="stroke-dashoffset" from="180" to="0" dur="2.4s" fill="freeze" repeatCount="indefinite"/></polyline><circle cx="228" cy="128" r="3" fill="#0b1d2c" opacity="0.25"/><circle cx="258" cy="108" r="3" fill="#0b1d2c" opacity="0.4"/><circle cx="288" cy="86" r="3" fill="#0b1d2c" opacity="0.55"/><circle cx="318" cy="62" r="3.5" fill="#b61818"/><circle cx="348" cy="34" r="4" fill="#b61818"/><circle cx="348" cy="34" r="4" fill="none" stroke="#b61818" stroke-width="1.5" opacity="0"><animate attributeName="r" values="4;12;4" dur="2s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0;0.6" dur="2s" repeatCount="indefinite"/></circle><text x="228" y="158" text-anchor="middle" font-size="7" fill="#0b1d2c" opacity="0.4" font-family="Space Grotesk,sans-serif">Q1</text><text x="258" y="158" text-anchor="middle" font-size="7" fill="#0b1d2c" opacity="0.4" font-family="Space Grotesk,sans-serif">Q2</text><text x="288" y="158" text-anchor="middle" font-size="7" fill="#0b1d2c" opacity="0.4" font-family="Space Grotesk,sans-serif">Q3</text><text x="318" y="158" text-anchor="middle" font-size="7" fill="#b61818" opacity="0.85" font-family="Space Grotesk,sans-serif">Q4</text><text x="348" y="158" text-anchor="middle" font-size="7" fill="#b61818" font-family="Space Grotesk,sans-serif">Q5→</text><rect x="288" y="20" width="54" height="24" rx="8" fill="#b61818"/><text x="315" y="36" text-anchor="middle" font-size="11" font-weight="700" fill="white" font-family="Space Grotesk,sans-serif">98%</text></g></svg>`,
+          company: 'A multi-entity financial services group operating across 4 European markets with revenues in EUR, CHF, GBP, and PLN. Their legacy Excel-based planning process took 6 weeks per cycle and produced forecasts with ±15% variance — unacceptable for board-level decision making.',
+          goal: 'Replace the static annual budgeting process with an agile, driver-based forecasting model producing rolling 12-month forecasts with less than 3% variance, supporting multi-currency consolidation, updated weekly with minimal manual effort.',
+          approach: ['Identified 28 key operational drivers through stakeholder workshops','Built a modular SQL data pipeline pulling actuals from SAP, CRM, and banking APIs','Developed driver-based forecasting logic in Python with scenario modeling (base, bull, bear)','Created automated Power BI dashboards with drill-down from group P&L to individual cost centers','Implemented weekly automated refresh cycles reducing manual effort from 6 weeks to 2 hours'],
+          results: [{value:'98%',label:'Forecast Accuracy'},{value:'6wk → 2h',label:'Cycle Time'},{value:'4',label:'Currency Markets'},{value:'3',label:'Scenario Models'}],
+          tech: ['SQL','Python','Power BI','SAP','Azure Data Factory'],
+          de: {
+            tag: 'Praediktive Analytik',
+            title: 'Treiberbasiertes Prognosemodell mit 98% Umsatzprognose-Genauigkeit',
+            company: 'Eine Finanzdienstleistungsgruppe mit 4 europaeischen Maerkten und Umsaetzen in EUR, CHF, GBP und PLN. Der Excel-basierte Planungsprozess dauerte 6 Wochen pro Zyklus mit +/-15% Abweichung.',
+            goal: 'Abloesung der statischen Jahresbudgetierung durch ein agiles, treiberbasiertes Prognosemodell mit rollierenden 12-Monats-Forecasts und weniger als 3% Abweichung.',
+            approach: ['Identifikation von 28 operativen Treibern in Stakeholder-Workshops','Aufbau einer modularen SQL-Datenpipeline aus SAP, CRM und Banking-APIs','Entwicklung treiberbasierter Prognoselogik in Python mit Szenariomodellierung','Automatisierte Power-BI-Dashboards mit Drill-down vom Konzern-GuV bis zu einzelnen Kostenstellen','Woechtliche automatisierte Aktualisierungszyklen -- von 6 Wochen auf 2 Stunden'],
+            results: [{value:'98%',label:'Prognosegenauigkeit'},{value:'6 Wo. auf 2 Std.',label:'Zykluszeit'},{value:'4',label:'Waehrungsmaerkte'},{value:'3',label:'Szenariomodelle'}]
+          }
+        },
+        sap: {
+          tag: 'ERP Integration',
+          title: 'SAP S/4HANA migration eliminating 400+ hours of monthly reconciliation',
+          heroSvg: `<svg viewBox="0 0 600 300" class="cs-hero-svg"><defs><linearGradient id="cs3-g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#0b1d2c;stop-opacity:0.1"/><stop offset="100%" style="stop-color:#b61818;stop-opacity:0.08"/></linearGradient><linearGradient id="cs3-flow" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#0b1d2c"/><stop offset="100%" style="stop-color:#b61818"/></linearGradient></defs><rect width="600" height="300" fill="url(#cs3-g)" rx="12"/><rect x="60" y="100" width="140" height="70" rx="8" fill="none" stroke="#0b1d2c" stroke-width="2" opacity="0.4"/><text x="130" y="132" text-anchor="middle" fill="#0b1d2c" font-size="12" font-family="Space Grotesk" font-weight="600" opacity="0.5">Legacy ERP</text><text x="130" y="152" text-anchor="middle" fill="#0b1d2c" font-size="10" font-family="Space Grotesk" opacity="0.35">Manual Processes</text><rect x="400" y="100" width="140" height="70" rx="8" fill="none" stroke="#b61818" stroke-width="2"/><text x="470" y="132" text-anchor="middle" fill="#b61818" font-size="12" font-family="Space Grotesk" font-weight="600">S/4HANA</text><text x="470" y="152" text-anchor="middle" fill="#b61818" font-size="10" font-family="Space Grotesk" opacity="0.6">Automated</text><path d="M 200 135 L 400 135" fill="none" stroke="url(#cs3-flow)" stroke-width="2.5" stroke-dasharray="8,4"><animate attributeName="stroke-dashoffset" from="0" to="-12" dur="1s" repeatCount="indefinite"/></path><circle cx="300" cy="135" r="18" fill="none" stroke="#b61818" stroke-width="2" opacity="0.5"/><text x="300" y="140" text-anchor="middle" fill="#b61818" font-size="10" font-family="Space Grotesk" font-weight="600">ETL</text></svg>`,
+          company: 'A global manufacturing company with €500M+ annual revenue operating on a fragmented ERP landscape — SAP ECC across 3 regions, with separate charts of accounts, conflicting master data, and over 400 hours per month spent on intercompany reconciliation and manual journal entries.',
+          goal: 'Migrate to a unified SAP S/4HANA instance with harmonized chart of accounts, automated intercompany elimination, and real-time financial consolidation — while maintaining business continuity across 12 legal entities in 8 countries.',
+          approach: ['Conducted a 6-week discovery phase mapping all business processes, custom transactions, and integration touchpoints','Designed a unified global chart of accounts with regional flexibility through profit center hierarchies','Built automated intercompany matching and elimination rules replacing manual reconciliation','Implemented parallel run strategy: legacy and S/4HANA running simultaneously for 3 months before cutover','Deployed automated data quality monitoring with exception-based workflows for finance team review'],
+          results: [{value:'400+',label:'Hours Saved / Month'},{value:'12',label:'Entities Unified'},{value:'99.7%',label:'Auto-Match Rate'},{value:'0',label:'Business Disruptions'}],
+          tech: ['SAP S/4HANA','ABAP','Azure','Terraform','BlackLine'],
+          de: {
+            tag: 'ERP-Integration',
+            title: 'SAP S/4HANA-Migration mit Eliminierung von 400+ Stunden monatlicher Abstimmung',
+            company: 'Ein globales Fertigungsunternehmen mit 500+ Mio. EUR Jahresumsatz auf fragmentierter ERP-Landschaft -- SAP ECC in 3 Regionen, unterschiedliche Kontenplaene und ueber 400 Stunden monatlich fuer Intercompany-Abstimmung.',
+            goal: 'Migration auf eine einheitliche SAP S/4HANA-Instanz mit harmonisiertem Kontenplan, automatisierter Intercompany-Eliminierung und Echtzeit-Konsolidierung ueber 12 Gesellschaften in 8 Laendern.',
+            approach: ['6-woechige Discovery-Phase mit Erfassung aller Geschaeftsprozesse und Integrationen','Design eines globalen Kontenplans mit regionaler Flexibilitaet','Aufbau automatisierter Intercompany-Abstimmungsregeln','Parallel-Run-Strategie: Legacy und S/4HANA liefen 3 Monate gleichzeitig','Automatisiertes Datenqualitaets-Monitoring mit Exception-Workflows'],
+            results: [{value:'400+',label:'Stunden gespart / Monat'},{value:'12',label:'Gesellschaften vereinheitlicht'},{value:'99,7%',label:'Auto-Match-Rate'},{value:'0',label:'Geschaeftsunterbrechungen'}]
+          }
+        },
+        liquidity: {
+          tag: 'Real-Time Analytics',
+          title: 'Automated liquidity engine delivering 13-week rolling cash forecasts',
+          heroSvg: `<svg viewBox="0 0 600 300" class="cs-hero-svg"><defs><linearGradient id="cs4-g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#b61818;stop-opacity:0.1"/><stop offset="100%" style="stop-color:#0b1d2c;stop-opacity:0.06"/></linearGradient><radialGradient id="cs4-glow"><stop offset="0%" style="stop-color:#b61818;stop-opacity:0.15"/><stop offset="100%" style="stop-color:#b61818;stop-opacity:0"/></radialGradient></defs><rect width="600" height="300" fill="url(#cs4-g)" rx="12"/><circle cx="300" cy="150" r="80" fill="url(#cs4-glow)"/><circle cx="300" cy="150" r="70" fill="none" stroke="#0b1d2c" stroke-width="1" opacity="0.15"/><circle cx="300" cy="150" r="50" fill="none" stroke="#b61818" stroke-width="2" opacity="0.4"/><circle cx="300" cy="150" r="30" fill="none" stroke="#0b1d2c" stroke-width="1.5" opacity="0.3"/><line x1="300" y1="150" x2="340" y2="120" stroke="#b61818" stroke-width="2.5" stroke-linecap="round"><animateTransform attributeName="transform" type="rotate" from="0 300 150" to="360 300 150" dur="6s" repeatCount="indefinite"/></line><circle cx="300" cy="150" r="4" fill="#b61818"/><text x="300" y="245" text-anchor="middle" fill="#0b1d2c" font-size="12" font-family="Space Grotesk" font-weight="500" opacity="0.4">13-WEEK ROLLING FORECAST</text><rect x="100" y="50" width="80" height="30" rx="4" fill="none" stroke="#0b1d2c" stroke-width="1" opacity="0.25"/><text x="140" y="70" text-anchor="middle" fill="#0b1d2c" font-size="9" font-family="Space Grotesk" opacity="0.4">Bank API</text><rect x="420" y="50" width="80" height="30" rx="4" fill="none" stroke="#b61818" stroke-width="1" opacity="0.25"/><text x="460" y="70" text-anchor="middle" fill="#b61818" font-size="9" font-family="Space Grotesk" opacity="0.4">ERP Feed</text><rect x="100" y="220" width="80" height="30" rx="4" fill="none" stroke="#b61818" stroke-width="1" opacity="0.25"/><text x="140" y="240" text-anchor="middle" fill="#b61818" font-size="9" font-family="Space Grotesk" opacity="0.4">FX Rates</text><rect x="420" y="220" width="80" height="30" rx="4" fill="none" stroke="#0b1d2c" stroke-width="1" opacity="0.25"/><text x="460" y="240" text-anchor="middle" fill="#0b1d2c" font-size="9" font-family="Space Grotesk" opacity="0.4">AP/AR</text></svg>`,
+          company: 'A mid-market technology company with €80M revenue, managing cash across 5 bank accounts in 3 currencies. Their treasury team relied on weekly manual spreadsheet updates, leading to cash visibility gaps, missed early-payment discounts, and reactive liquidity management.',
+          goal: 'Build an automated, real-time liquidity planning engine connecting directly to banking APIs and ERP data, providing a continuously updated 13-week rolling cash forecast with scenario analysis for the CFO and treasury team.',
+          approach: ['Integrated 5 banking APIs (Deutsche Bank, UBS, Revolut Business) for real-time balance and transaction feeds','Built automated AP/AR aging analysis pulling from NetSuite with payment probability scoring','Developed a 13-week rolling forecast model incorporating seasonal patterns, FX hedging, and committed spend','Created Power BI executive dashboard with drill-down from group liquidity to individual bank account level','Implemented automated alert system for liquidity threshold breaches and FX exposure limits'],
+          results: [{value:'13-wk',label:'Rolling Forecast'},{value:'Real-time',label:'Cash Visibility'},{value:'€340K',label:'Discount Captured'},{value:'5',label:'Banks Integrated'}],
+          tech: ['Power BI','Python','NetSuite','Azure Functions','Banking APIs'],
+          de: {
+            tag: 'Echtzeit-Analytik',
+            title: 'Automatisierte Liquiditaets-Engine mit 13-Wochen-Rolling-Cash-Forecast',
+            company: 'Ein mittelstaendisches Technologieunternehmen mit 80 Mio. EUR Umsatz und 5 Bankkonten in 3 Waehrungen. Das Treasury-Team arbeitete mit woechentlichen manuellen Spreadsheet-Updates ohne Echtzeit-Liquiditaetssicht.',
+            goal: 'Aufbau einer automatisierten Echtzeit-Liquiditaetsplanung mit direkter Banking-API-Anbindung und ERP-Daten fuer einen kontinuierlich aktualisierten 13-Wochen-Rolling-Cash-Forecast.',
+            approach: ['Integration von 5 Banking-APIs (Deutsche Bank, UBS, Revolut Business) fuer Echtzeit-Saldoabfragen','Automatisierte AP/AR-Aging-Analyse aus NetSuite mit Zahlungswahrscheinlichkeits-Scoring','Entwicklung eines 13-Wochen-Rolling-Forecast-Modells mit saisonalen Mustern und FX-Hedging','Power-BI-Dashboard mit Drill-down von Gesamtliquiditaet bis einzelne Bankkonten','Automatisiertes Alarmsystem fuer Liquiditaetsschwellen und FX-Exposure-Limits'],
+            results: [{value:'13 Wo.',label:'Rolling Forecast'},{value:'Echtzeit',label:'Cash-Sichtbarkeit'},{value:'340.000 EUR',label:'Skonto erfasst'},{value:'5',label:'Banken integriert'}]
+          }
+        }
+      };
+
+      function getActiveLang() {
+        const active = document.querySelector('.lang-link.active');
+        return active && active.textContent.trim().toLowerCase() === 'de' ? 'de' : 'en';
+      }
+
+      function renderCaseStudy(key) {
+        const cs = caseStudies[key];
+        if (!cs) return;
+        const lang = getActiveLang();
+        const isDe = lang === 'de' && cs.de;
+        const tag = isDe ? cs.de.tag : cs.tag;
+        const title = isDe ? cs.de.title : cs.title;
+        const company = isDe ? cs.de.company : cs.company;
+        const goal = isDe ? cs.de.goal : cs.goal;
+        const approach = isDe ? cs.de.approach : cs.approach;
+        const results = isDe ? cs.de.results : cs.results;
+        const sectionLabels = isDe
+          ? { company: 'Unternehmen', goal: 'Ziel', approach: 'Unser Ansatz', results: 'Ergebnisse', tech: 'Technologie-Stack' }
+          : { company: 'Company', goal: 'Goal', approach: 'Our Approach', results: 'Results', tech: 'Technology Stack' };
+
+        const resultsHtml = results.map(r => `<div class="cs-result-item"><span class="cs-result-value">${r.value}</span><span class="cs-result-label">${r.label}</span></div>`).join('');
+        const approachHtml = approach.map(a => `<li>${a}</li>`).join('');
+        const techHtml = cs.tech.map(t => `<span class="cs-tech-tag">${t}</span>`).join('');
+
+        document.getElementById('cs-content').innerHTML = `
+          <div class="cs-tag-line"><span class="cs-tag">${tag}</span></div>
+          <h2 class="cs-title" id="cs-dialog-title">${title}</h2>
+          <div class="cs-hero-visual">${cs.heroSvg}</div>
+          <div class="cs-two-col">
+            <div class="cs-section"><h2 class="cs-section-title">${sectionLabels.company}</h2><p class="cs-section-text">${company}</p></div>
+            <div class="cs-section"><h2 class="cs-section-title">${sectionLabels.goal}</h2><p class="cs-section-text">${goal}</p></div>
+          </div>
+          <div class="cs-section"><h2 class="cs-section-title">${sectionLabels.approach}</h2><ul class="cs-approach-list">${approachHtml}</ul></div>
+          <div class="cs-section cs-results-section"><h2 class="cs-section-title">${sectionLabels.results}</h2><div class="cs-results-grid">${resultsHtml}</div></div>
+          <div class="cs-section"><h2 class="cs-section-title">${sectionLabels.tech}</h2><div class="cs-tech-list">${techHtml}</div></div>
+        `;
+      }
+
+      document.querySelectorAll('.project-cta[data-case]').forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          renderCaseStudy(link.getAttribute('data-case'));
+          const overlay = document.getElementById('case-study-overlay');
+          overlay.classList.add('active');
+          document.body.style.overflow = 'hidden';
+          overlay.querySelector('.cs-panel').scrollTop = 0;
+        });
+      });
+
+      document.getElementById('cs-back-btn').addEventListener('click', () => {
+        document.getElementById('case-study-overlay').classList.remove('active');
+        document.body.style.overflow = '';
+      });
+
+      document.getElementById('case-study-overlay').addEventListener('click', (e) => {
+        if (e.target === e.currentTarget) {
+          e.currentTarget.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          document.getElementById('case-study-overlay').classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      });
+    })();
+    </script>
+
+  </body>
+</html>
