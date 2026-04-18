@@ -50,9 +50,9 @@ const translations = {
     // Projects Section
     projectsTitle: "Projects",
     p1Name: "Custom ERP Integration",
-    p1Desc: "A finance operation was running entirely on manual data entry. We built a bespoke ecosystem — Invoice OCR, Liquidity Engine, and Target Operating Model tooling — fully integrated with their existing accounting platform, eliminating manual entry entirely.",
+    p1Desc: "An aviation startup was running its finance operation entirely on manual data entry. We built a bespoke ecosystem — Invoice OCR, Liquidity Engine, and Target Operating Model tooling — fully integrated with their existing accounting platform, eliminating manual entry entirely.",
     p2Name: "Driver-Based Forecasting",
-    p2Desc: "Revenue forecasting accuracy improved after we replaced a static annual budget with a dynamic, driver-based SQL forecasting model — giving the finance team a live view of where the business was heading, not where it had been.",
+    p2Desc: "For a pharmaceutical company, we built an Anaplan-based driver forecasting model with scenario planning — replacing a static annual budget and achieving 98% revenue prediction accuracy across major European markets.",
     p3Name: "",
     p3Desc: "",
     p4Name: "",
@@ -171,9 +171,9 @@ const translations = {
     // Projects Section
     projectsTitle: "Projekte",
     p1Name: "Custom ERP Integration",
-    p1Desc: "Entwicklung eines maßgeschneiderten Finanzökosystems mit Invoice OCR, Liquidity Engine und Target Operating Model — vollständig integriert in eine Drittanbieter-Buchhaltungsplattform.",
+    p1Desc: "Ein Luftfahrt-Startup betrieb seine Finanzabteilung vollstaendig manuell. Wir entwickelten ein massgeschneidertes Oekosystem — Invoice OCR, Liquidity Engine und Target Operating Model — vollstaendig integriert in die bestehende Buchhaltungsplattform.",
     p2Name: "Treiberbasierte Prognose",
-    p2Desc: "Ersatz der statischen Budgetierung durch ein dynamisches SQL-Prognosemodell, das die Genauigkeit der Umsatzvorhersage auf 98% erhöhte.",
+    p2Desc: "Fuer ein Pharmaunternehmen haben wir ein Anaplan-basiertes treibergesteuertes Prognosemodell mit Szenarioplanung entwickelt — mit 98% Umsatzprognose-Genauigkeit in den wichtigsten europaeischen Maerkten.",
     p3Name: "",
     p3Desc: "",
     p4Name: "",
