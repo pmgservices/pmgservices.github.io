@@ -2874,6 +2874,10 @@ body.dark-theme, nav.dark-theme {
     justify-content: center;
   }
 
+  .about-containers {
+    flex-direction: column;
+  }
+
   .article-container {
     grid-template-columns: 1fr 1fr !important;
   }
