@@ -56,6 +56,10 @@
   }
   .about-containers {
     margin-top: 0;
+    flex-direction: column;
+  }
+  .details-container {
+    width: 100%;
   }
   .services-grid-new {
     grid-template-columns: 1fr;
