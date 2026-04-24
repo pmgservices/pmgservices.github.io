@@ -264,29 +264,55 @@ nav.nav-scrolled {
 .hamburger-icon span {
   width: 100%;
   height: 2px;
-  background: rgba(255, 255, 255, 0.85);
-  border-radius: 2px;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.nav-scrolled .hamburger-icon span {
   background: var(--navy);
-}
+  border-radius: 2px;
   transform-origin: center;
+  transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.22s ease;
 }
 
-/* Hamburger to X animation */
+/* × drawn with pseudo-elements — hidden by default */
+.hamburger-icon::before,
+.hamburger-icon::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 2px;
+  background: var(--navy);
+  border-radius: 2px;
+  opacity: 0;
+  transform: scaleX(0);
+  transition: transform 0.32s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.2s ease;
+}
+
+/* Open: bars scale away (staggered), then × scales in */
 .hamburger-icon.open span:nth-child(1) {
-  transform: translateY(9.5px) rotate(45deg);
+  opacity: 0;
+  transform: scaleX(0);
+  transition-delay: 0ms;
 }
-
 .hamburger-icon.open span:nth-child(2) {
   opacity: 0;
   transform: scaleX(0);
+  transition-delay: 50ms;
 }
-
 .hamburger-icon.open span:nth-child(3) {
-  transform: translateY(-9.5px) rotate(-45deg);
+  opacity: 0;
+  transform: scaleX(0);
+  transition-delay: 100ms;
+}
+.hamburger-icon.open::before {
+  opacity: 1;
+  transform: rotate(45deg) scaleX(1);
+  transition-delay: 120ms;
+}
+.hamburger-icon.open::after {
+  opacity: 1;
+  transform: rotate(-45deg) scaleX(1);
+  transition-delay: 160ms;
 }
 
 .mobile-nav-logo {
@@ -308,7 +334,8 @@ nav.nav-scrolled {
 }
 
 .menu-links.open {
-  max-height: 420px;
+  max-height: calc(100dvh - 4.5rem);
+  overflow-y: auto;
 }
 
 .menu-links a {
