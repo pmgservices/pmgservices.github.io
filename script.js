@@ -8,10 +8,11 @@ const translations = {
     navAbout: "About",
     navExperience: "Experience",
     navHowWeWork: "How We Work",
+    navFaq: "FAQ",
 
     // Hero Section
-    heroTitle: "Your Finance Function rebuilt for decisions that matter.",
-    heroDesc: "We combine behavioral finance and advanced FP&A, to build finance functions that make faster and more informed decisions.",
+    heroTitle: "Financial Transformation & FP&A Consulting for European Businesses.",
+    heroDesc: "Most European finance teams spend more time closing last month than planning next quarter. We change that — replacing spreadsheet-based finance with driver-based models, automation, and behavioral discipline built to last.",
     btnServices: "See What We Build",
     btnWork: "Work With Us",
 
@@ -79,8 +80,8 @@ const translations = {
     // About Us Section
     auLabel: "Who we are",
     auHeadline: "We engineer<br><span class=\"au-headline-accent\">financial clarity.</span>",
-    auLead: "Most finance transformations stall because the underlying decisions, processes, and tools were never redesigned together. PMG Services fixes that — from the human layer to the data layer.",
-    auBody: "We are a focused team of finance operators, behavioral scientists, and engineers who have built, automated, and scaled financial systems at growth-stage and enterprise-level organizations across Europe.",
+    auLead: "Most finance transformations fail because they treat the symptom — the spreadsheet, the ERP, the dashboard — without changing the underlying decision architecture. We fix both.",
+    auBody: "We are not a staffing agency. We are not a Big Four offshoot. We are a focused team of finance operators, behavioral scientists, and engineers who have built, automated, and scaled financial systems for companies across Germany, Switzerland, the Netherlands, and the broader European market.",
     auPillar1Title: "Behavioral Finance Implementation",
     auPillar1Desc: "We identify where cognitive bias distorts your financial decisions and redesign the architecture to eliminate it.",
     auPillar2Title: "FP&A (Financial Planning & Analysis)",
@@ -91,7 +92,7 @@ const translations = {
     // How We Work Section
     hwwLabel: "Our process",
     hwwTitle: "How We Work",
-    hwwIntro: "Three phases. No ambiguity. Clear ownership at every step.",
+    hwwIntro: "From diagnosis to deployment. No open-ended retainers, no scope creep — just clear phases with defined deliverables at each gate.",
     hwwStep1Title: "Discover",
     hwwStep1Desc: "We audit your current state — decision architecture, data flows, processes, and technology. You get a clear, unvarnished picture of where value is being lost before we propose anything.",
     hwwStep1Bullets: [
@@ -129,6 +130,7 @@ const translations = {
     navAbout: "Über uns",
     navExperience: "Erfahrung",
     navHowWeWork: "Wie wir arbeiten",
+    navFaq: "FAQ",
 
     // Hero Section
     heroTitle: "Finanzielle Transformation & Digitalisierung",
@@ -201,7 +203,7 @@ const translations = {
     auLabel: "Wer wir sind",
     auHeadline: "Wir entwickeln<br><span class=\"au-headline-accent\">finanzielle Klarheit.</span>",
     auLead: "Die meisten Finanztransformationen scheitern, weil die zugrundeliegenden Entscheidungen, Prozesse und Tools nie gemeinsam neu gestaltet wurden. PMG Services ändert das — von der menschlichen Ebene bis zur Datenebene.",
-    auBody: "Wir sind keine Personalvermittlung. Wir sind kein Big-Four-Ableger. Wir sind ein fokussiertes Team aus Finanzexperten, Verhaltenswissenschaftlern und Ingenieuren, die Finanzsysteme in Europas anspruchsvollsten Organisationen aufgebaut, automatisiert und skaliert haben.",
+    auBody: "Wir sind keine Personalvermittlung. Wir sind kein Big-Four-Ableger. Wir sind ein fokussiertes Team aus Finanzexperten, Verhaltenswissenschaftlern und Ingenieuren, die Finanzsysteme für Unternehmen in Deutschland, der Schweiz, den Niederlanden und dem gesamten europäischen Markt aufgebaut, automatisiert und skaliert haben.",
     auPillar1Title: "Behavioral Finance Implementation",
     auPillar1Desc: "Wir identifizieren, wo kognitive Verzerrungen Ihre Finanzentscheidungen beeinflussen, und gestalten die Architektur so um, dass diese eliminiert werden — eingebettet in Ihre Prozesse, nicht aufgesetzt.",
     auPillar2Title: "FP&A (Finanzplanung & -analyse)",
@@ -261,13 +263,14 @@ function setLanguage(lang) {
 
   // Hamburger Nav Links (About, Services, Technology, Projects, How We Work, Contact)
   const mobileLinks = document.querySelectorAll('.menu-links a');
-  if (mobileLinks.length >= 6) {
+  if (mobileLinks.length >= 7) {
     mobileLinks[0].innerText = t.navAbout;
     mobileLinks[1].innerText = t.navServices;
     mobileLinks[2].innerText = t.navTech;
     mobileLinks[3].innerText = t.navProjects;
     mobileLinks[4].innerText = t.navHowWeWork;
-    mobileLinks[5].innerText = t.navContact;
+    mobileLinks[5].innerText = t.navFaq;
+    mobileLinks[6].innerText = t.navContact;
   }
 
   // Hero Section
@@ -363,9 +366,11 @@ function setLanguage(lang) {
   const footerImpressumLink = document.getElementById('footer-impressum-link');
   if (footerImpressumLink) footerImpressumLink.innerText = t.footerImpressumLink;
 
-  // Navigation — How We Work
+  // Navigation — How We Work + FAQ
   const navHww = document.getElementById('nav-howwework');
   if (navHww) navHww.innerText = t.navHowWeWork;
+  const navFaq = document.getElementById('nav-faq');
+  if (navFaq) navFaq.innerText = t.navFaq;
 
   // About Us Section
   const auLabel = document.querySelector('#about-us .section-label');
@@ -427,6 +432,16 @@ function toggleMenu() {
   const isOpen = menu.classList.contains("open");
   icon.setAttribute("aria-expanded", isOpen ? "true" : "false");
 }
+
+// Close mobile menu on outside click
+document.addEventListener("click", function(e) {
+  const menu = document.querySelector(".menu-links");
+  const icon = document.querySelector(".hamburger-icon");
+  if (menu && menu.classList.contains("open") &&
+      !menu.contains(e.target) && !icon.contains(e.target)) {
+    toggleMenu();
+  }
+});
 
 // --- Scroll Progress Indicator ---
 (function() {
@@ -503,7 +518,7 @@ function toggleMenu() {
     });
   }, observerOptions);
   
-  document.querySelectorAll('.service-card, .project-card-future, .details-container, .au-pillar, .hww-step').forEach(card => {
+  document.querySelectorAll('.service-card, .project-card-future, .details-container, .au-pillar, .hww-step, .qs-card, .faq-item, .problem-card').forEach(card => {
     observer.observe(card);
   });
 
@@ -530,6 +545,50 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
+
+// --- Cursor Dot ---
+(function() {
+  if (window.matchMedia('(pointer: coarse)').matches) return;
+  const dot = document.getElementById('cursor-dot');
+  if (!dot) return;
+
+  let mx = 0, my = 0, cx = 0, cy = 0;
+
+  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+  document.addEventListener('mouseleave', () => dot.classList.remove('cursor-visible'));
+  document.addEventListener('mouseenter', () => dot.classList.add('cursor-visible'));
+
+  const interactives = 'a, button, .service-card, .project-card-future, .faq-question, .problem-card';
+  document.addEventListener('mouseover', e => {
+    if (e.target.closest(interactives)) dot.classList.add('cursor-hover');
+  });
+  document.addEventListener('mouseout', e => {
+    if (e.target.closest(interactives)) dot.classList.remove('cursor-hover');
+  });
+
+  dot.classList.add('cursor-visible');
+  (function animate() {
+    cx += (mx - cx) * 0.14;
+    cy += (my - cy) * 0.14;
+    dot.style.left = (cx - 3.5) + 'px';
+    dot.style.top  = (cy - 3.5) + 'px';
+    requestAnimationFrame(animate);
+  })();
+})();
+
+// --- Back to Top Button ---
+(function() {
+  const btn = document.getElementById('back-to-top');
+  if (!btn) return;
+
+  window.addEventListener('scroll', function() {
+    btn.classList.toggle('visible', window.scrollY > 400);
+  }, { passive: true });
+
+  btn.addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();
 
 // --- Interactive Contact Form ---
 (function() {

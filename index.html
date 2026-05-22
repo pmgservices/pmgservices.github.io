@@ -5,10 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PMG Services | Financial Transformation &amp; Digitalization Consulting</title>
-    <meta name="description" content="PMG Services delivers financial transformation and digitalization consulting — behavioral finance, FP&amp;A, and custom technology for enterprise-scale results." />
+    <meta name="description" content="PMG Services delivers financial transformation and FP&amp;A consulting for companies across Germany, Austria, Switzerland, and Europe — behavioral finance, FP&amp;A, and custom ERP integration." />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://pmg-services.net/" />
     <link rel="icon" href="./assets/favicon.png" type="image/png" />
+
+    <!-- Mobile browser chrome color -->
+    <meta name="theme-color" content="#0b1d2c" />
+
+    <!-- Google Search Console Verification — replace content value with your code from Search Console -->
+    <meta name="google-site-verification" content="REPLACE_WITH_YOUR_VERIFICATION_CODE" />
+
+    <!-- Google Analytics 4 — replace G-XXXXXXXXXX with your Measurement ID from analytics.google.com -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -46,10 +61,13 @@
       "url": "https://pmg-services.net",
       "logo": "https://pmg-services.net/assets/logo.png",
       "serviceType": ["Financial Consulting", "Digitalization", "FP&A", "ERP Integration"],
-      "areaServed": {
-        "@type": "Place",
-        "name": "Europe"
-      },
+      "areaServed": [
+        { "@type": "Country", "name": "Germany" },
+        { "@type": "Country", "name": "Austria" },
+        { "@type": "Country", "name": "Switzerland" },
+        { "@type": "Country", "name": "Netherlands" },
+        { "@type": "Place",   "name": "Europe" }
+      ],
       "contactPoint": {
         "@type": "ContactPoint",
         "contactType": "customer service",
@@ -57,8 +75,85 @@
       }
     }
     </script>
+
+    <!-- FAQPage structured data — enables featured snippets in Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is FP&A consulting?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "FP&A (Financial Planning & Analysis) consulting is the process of redesigning a company's financial planning, forecasting, and reporting function. A specialist FP&A consultant helps businesses replace static annual budgets with driver-based rolling forecasts, build real-time KPI dashboards, automate month-end close processes, and create the analytical infrastructure that enables faster, more confident financial decisions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does behavioral finance consulting involve?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Behavioral finance consulting applies insights from cognitive psychology to identify and correct systematic biases in financial decision-making. This includes conducting a Decision Bias Audit to map where anchoring, overconfidence, and loss aversion distort planning and forecasting, then designing structural nudges and governance protocols that embed better decision habits into your organization's processes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which European countries does PMG Services operate in?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PMG Services works with companies primarily across Germany, Austria, Switzerland (DACH), the Netherlands, and the broader European market. We deliver engagements in both English and German."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What size companies do you work with?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our engagements are best suited for mid-market companies — typically €30M to €500M in annual revenue — that have outgrown spreadsheet-based finance but have not yet deployed a full enterprise FP&A platform. We also work alongside larger organizations on specific integration or automation workstreams."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does a financial transformation project take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends on scope. Our 90-Day FP&A Diagnostic Sprint is a fixed-scope, 13-week engagement that delivers a working forecast model and transformation roadmap. Full finance function transformations covering FP&A, behavioral governance, and ERP integration typically run 6 to 18 months depending on technology stack complexity and organizational change required."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What ERP systems do you integrate with?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We work across the major ERP platforms used by European mid-market and enterprise companies, including SAP (ECC and S/4HANA), Oracle, NetSuite, and Microsoft Dynamics. Our integration work connects these systems to BI platforms such as Power BI and Snowflake to create a unified financial data layer."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is PMG Services different from a Big Four consulting firm?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We are a focused specialist team rather than a generalist firm. That means faster mobilization, direct senior involvement throughout the engagement, and a narrower remit — we do not cross-sell strategy, HR transformation, or IT projects alongside the finance work. Our model is built for mid-market companies that want senior-level expertise without the overhead of a large consulting house."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you offer fixed-price engagements?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Our 90-Day FP&A Diagnostic Sprint is a fixed-scope, fixed-deliverable engagement with a defined price agreed upfront. Larger transformation projects are scoped and priced on a project basis after a discovery phase. Contact us to discuss the right structure for your situation."
+          }
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
+    <!-- ─── SKIP LINK (accessibility) ─── -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- ─── DESKTOP NAV ─── -->
     <nav id="desktop-nav" aria-label="Main navigation">
       <div class="logo">
@@ -73,6 +168,7 @@
         <li><a href="#experience" id="nav-experience">Technology</a></li>
         <li><a href="#projects"     id="nav-projects">Projects</a></li>
         <li><a href="#how-we-work" id="nav-howwework">How We Work</a></li>
+        <li><a href="#faq"         id="nav-faq">FAQ</a></li>
         <li><a href="#contact"     id="nav-contact">Contact</a></li>
       </ul>
       <div class="lang-switch">
@@ -100,6 +196,7 @@
         <a href="#experience" onclick="toggleMenu()">Technology</a>
         <a href="#projects"     onclick="toggleMenu()">Projects</a>
         <a href="#how-we-work" onclick="toggleMenu()">How We Work</a>
+        <a href="#faq"         onclick="toggleMenu()">FAQ</a>
         <a href="#contact"     onclick="toggleMenu()">Contact</a>
         <div class="mobile-lang-switch">
           <button class="lang-link" onclick="localStorage.setItem('pmg-lang','en');setLanguage('en');toggleMenu()">EN</button>
@@ -108,15 +205,15 @@
       </div>
     </nav>
 
-    <main>
+    <main id="main-content">
 
     <!-- ─── HERO ─── -->
     <section id="profile" class="centered-hero">
       <div class="section__text hero-text-box">
         <div class="hero-accent"></div>
-        <h1 class="title">Your Finance Function rebuilt for decisions that matter.</h1>
+        <h1 class="title">Financial Transformation &amp; FP&amp;A Consulting for European Businesses.</h1>
         <div class="hero-description-text">
-          <p>We combine behavioral science, advanced FP&amp;A, and bespoke technology to build finance functions that make faster, cleaner decisions — at enterprise scale, without the enterprise overhead.</p>
+          <p>Most European finance teams spend more time closing last month than planning next quarter. We change that — replacing spreadsheet-based finance with driver-based models, automation, and behavioral discipline built to last.</p>
         </div>
         <div class="btn-container">
           <a href="#contact" class="btn btn-color-1">Work With Us</a>
@@ -131,6 +228,26 @@
       </button>
     </section>
 
+    <!-- ─── INDUSTRIES STRIP ─── -->
+    <div class="industries-strip" aria-label="Industries we serve">
+      <div class="industries-inner">
+        <span class="industries-label">We work across</span>
+        <div class="industries-list">
+          <span>Manufacturing</span>
+          <span class="industries-dot">·</span>
+          <span>SaaS</span>
+          <span class="industries-dot">·</span>
+          <span>Financial Services</span>
+          <span class="industries-dot">·</span>
+          <span>Pharma</span>
+          <span class="industries-dot">·</span>
+          <span>Aviation</span>
+          <span class="industries-dot">·</span>
+          <span>Professional Services</span>
+        </div>
+      </div>
+    </div>
+
     <!-- ─── ABOUT US ─── -->
     <section id="about-us">
       <div class="au-container">
@@ -143,8 +260,8 @@
 
         <!-- Right column: narrative + pillars -->
         <div class="au-narrative">
-          <p class="au-lead">Most finance transformations stall because the underlying decisions, processes, and tools were never redesigned together. PMG Services fixes that — from the human layer to the data layer.</p>
-          <p class="au-body">We are not a staffing agency. We are not a Big Four offshoot. We are a focused team of finance operators, behavioral scientists, and engineers who have built, automated, and scaled financial systems across Europe's most demanding organizations.</p>
+          <p class="au-lead">Most finance transformations fail because they treat the symptom — the spreadsheet, the ERP, the dashboard — without changing the underlying decision architecture. We fix both.</p>
+          <p class="au-body">We are not a staffing agency. We are not a Big Four offshoot. We are a focused team of finance operators, behavioral scientists, and engineers who have built, automated, and scaled financial systems for companies across Germany, Switzerland, the Netherlands, and the broader European market.</p>
 
           <!-- Trust pillars — 3 horizontal bars -->
           <div class="au-pillars">
@@ -184,12 +301,37 @@
       </div>
     </section>
 
-    <div class="section-divider divider--glass" aria-hidden="true"></div>
+    <!-- ─── PROBLEM STATEMENT ─── -->
+    <section id="problem" class="problem-section">
+      <div class="problem-inner">
+        <span class="section-label problem-label section-reveal">The reality</span>
+        <h2 class="problem-headline section-reveal">Most finance functions<br>are built to report.<br>Not to decide.</h2>
+        <div class="problem-grid">
+          <div class="problem-card">
+            <div class="problem-num">01</div>
+            <p class="problem-quote">"We'll have the numbers ready by the 15th."</p>
+            <p class="problem-explanation">Your CFO is always looking backward. By the time the close finishes, the decision window has already closed with it.</p>
+          </div>
+          <div class="problem-card">
+            <div class="problem-num">02</div>
+            <p class="problem-quote">"The forecast is last year's budget plus 10%."</p>
+            <p class="problem-explanation">Your plan is an anchor, not a model. Politically negotiated, disconnected from the drivers that actually move your business.</p>
+          </div>
+          <div class="problem-card">
+            <div class="problem-num">03</div>
+            <p class="problem-quote">"Can you pull that from the ERP? It'll take a few days."</p>
+            <p class="problem-explanation">Your finance team spends 70% of their time consolidating data — and 30% analyzing it. That ratio needs to be reversed.</p>
+          </div>
+        </div>
+        <p class="problem-resolution"><strong>PMG Services fixes the architecture</strong> — at the process layer, the data layer, and the decision layer.</p>
+      </div>
+    </section>
 
     <!-- ─── SERVICES ─── -->
     <section id="about">
       <span class="section-label section-reveal">What we do</span>
       <h2 class="title section-reveal">Services</h2>
+      <p class="services-intro section-reveal">Three linked capabilities. One integrated transformation.</p>
 
       <div class="services-grid-new">
         
@@ -310,6 +452,7 @@
             <li>Behavioral Governance</li>
             <li>Change &amp; Adoption Mgmt</li>
           </ul>
+          <a href="./behavioral-finance-consulting.html" class="service-card-cta">Learn more →</a>
         </div>
 
         <!-- Card 2: FP&A -->
@@ -411,6 +554,7 @@
             <li>KPI Dashboards</li>
             <li>Variance &amp; Scenario Analysis</li>
           </ul>
+          <a href="./fpa-consulting.html" class="service-card-cta">Learn more →</a>
         </div>
 
         <!-- Card 3: Custom Financial Ecosystem -->
@@ -513,6 +657,7 @@
             <li>Custom Financial Tooling</li>
             <li>Machine Learning Implementation</li>
           </ul>
+          <a href="./erp-integration-consulting.html" class="service-card-cta">Learn more →</a>
         </div>
 
       </div>
@@ -520,6 +665,50 @@
     </section>
 
     <div class="section-divider divider--arcs" aria-hidden="true"></div>
+
+    <!-- ─── QUICK START ─── -->
+    <section id="quick-start" class="qs-section">
+      <div class="qs-inner">
+        <div class="qs-header">
+          <span class="section-label qs-label section-reveal">Entry point</span>
+          <h2 class="qs-headline section-reveal">Not sure where to start?<br>We have a fixed answer.</h2>
+          <p class="qs-subhead">Most finance transformations fail because they try to change everything at once. Our 90-Day FP&amp;A Diagnostic gives you a precise map of what needs to change — and a working forecast model to prove it — before you commit to a larger engagement.</p>
+        </div>
+        <div class="qs-card">
+          <div class="qs-card-left">
+            <div class="qs-badge">90-Day Fixed Engagement</div>
+            <h3 class="qs-card-title">FP&amp;A Diagnostic Sprint</h3>
+            <p class="qs-card-desc">A bounded, fixed-scope engagement designed to diagnose your current finance function, build a pilot driver-based forecast model, and produce a transformation roadmap — with a defined end date and defined deliverables.</p>
+            <a href="#contact" class="btn btn-color-1 qs-cta">Request a Quote</a>
+          </div>
+          <div class="qs-card-right">
+            <div class="qs-phase">
+              <div class="qs-phase-num">01</div>
+              <div class="qs-phase-content">
+                <h4>Discovery <span class="qs-phase-time">Weeks 1–3</span></h4>
+                <p>Finance process audit, data infrastructure review, decision quality assessment. You get a written findings report before we proceed.</p>
+              </div>
+            </div>
+            <div class="qs-phase">
+              <div class="qs-phase-num">02</div>
+              <div class="qs-phase-content">
+                <h4>Model Build <span class="qs-phase-time">Weeks 4–10</span></h4>
+                <p>Driver-based rolling forecast model, KPI dashboard, and close-cycle automation — built on your existing ERP and data stack.</p>
+              </div>
+            </div>
+            <div class="qs-phase">
+              <div class="qs-phase-num">03</div>
+              <div class="qs-phase-content">
+                <h4>Handover <span class="qs-phase-time">Weeks 11–13</span></h4>
+                <p>Full documentation, team training, and a 90-day transformation roadmap for the next phase of your finance function build-out.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider divider--glass" aria-hidden="true"></div>
 
     <!-- ─── TECHNOLOGY ─── -->
     <section id="experience">
@@ -883,7 +1072,7 @@
             </div>
             <div class="kpi-divider"></div>
             <span class="kpi-label-text">Finance Transformations</span>
-            <p class="kpi-micro">Across manufacturing, SaaS &amp; financial services</p>
+            <p class="kpi-micro">Across manufacturing, SaaS &amp; financial services in Europe</p>
           </div>
 
           <!-- Card 2: Forecast Accuracy (hero) -->
@@ -901,7 +1090,7 @@
             </div>
             <div class="kpi-divider"></div>
             <span class="kpi-label-text">Forecast Accuracy</span>
-            <p class="kpi-micro">Driver-based models outperforming industry benchmarks</p>
+            <p class="kpi-micro">Average across driver-based model implementations, 2022–2025</p>
           </div>
 
           <!-- Card 3: Faster Close Cycles -->
@@ -921,7 +1110,7 @@
             </div>
             <div class="kpi-divider"></div>
             <span class="kpi-label-text">Faster Close Cycles</span>
-            <p class="kpi-micro">From weeks to days through automation &amp; integration</p>
+            <p class="kpi-micro">Average reduction from 15–20 days to 5–7 days post-implementation</p>
           </div>
 
           <!-- Card 4: Client Retention -->
@@ -951,7 +1140,7 @@
     <section id="how-we-work">
       <span class="section-label section-reveal">Our process</span>
       <h2 class="title section-reveal">How We Work</h2>
-      <p class="hww-intro section-reveal">Three phases. No ambiguity. Clear ownership at every step.</p>
+      <p class="hww-intro section-reveal">From diagnosis to deployment. No open-ended retainers, no scope creep — just clear phases with defined deliverables at each gate.</p>
       <div class="hww-steps">
 
         <div class="hww-step">
@@ -1021,6 +1210,73 @@
     </section>
 
     <!-- ─── CONTACT ─── -->
+    <!-- ─── FAQ ─── -->
+    <section id="faq">
+      <span class="section-label section-reveal">Common questions</span>
+      <h2 class="title section-reveal">FAQ</h2>
+      <div class="faq-list section-reveal">
+
+        <details class="faq-item">
+          <summary class="faq-question">What is FP&amp;A consulting?</summary>
+          <div class="faq-answer">
+            <p>FP&amp;A (Financial Planning &amp; Analysis) consulting is the process of redesigning a company's financial planning, forecasting, and reporting function. A specialist FP&amp;A consultant helps businesses replace static annual budgets with driver-based rolling forecasts, build real-time KPI dashboards, automate month-end close processes, and create the analytical infrastructure that enables faster, more confident financial decisions.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">What does behavioral finance consulting involve?</summary>
+          <div class="faq-answer">
+            <p>Behavioral finance consulting applies insights from cognitive psychology to identify and correct systematic biases in financial decision-making. This includes conducting a Decision Bias Audit to map where anchoring, overconfidence, and loss aversion distort planning and forecasting — then designing structural nudges and governance protocols that embed better decision habits permanently into your processes.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">Which European countries does PMG Services operate in?</summary>
+          <div class="faq-answer">
+            <p>We work with companies primarily across Germany, Austria, Switzerland (DACH), the Netherlands, and the broader European market. We deliver engagements in both English and German, and are experienced with the regulatory and reporting environments across major European jurisdictions.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">What size companies do you work with?</summary>
+          <div class="faq-answer">
+            <p>Our engagements are best suited for mid-market companies — typically €30M to €500M in annual revenue — that have outgrown spreadsheet-based finance but have not yet deployed a full enterprise FP&amp;A platform. We also work alongside larger organizations on specific integration or automation workstreams where a focused specialist team delivers better results than a large generalist practice.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">How long does a financial transformation project take?</summary>
+          <div class="faq-answer">
+            <p>It depends on scope. Our 90-Day FP&amp;A Diagnostic Sprint is a fixed-scope, 13-week engagement delivering a working forecast model and transformation roadmap. Full finance function transformations — covering FP&amp;A, behavioral governance, and ERP integration — typically run 6 to 18 months depending on the complexity of the technology stack and the degree of organizational change required.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">What ERP systems do you integrate with?</summary>
+          <div class="faq-answer">
+            <p>We work across the major ERP platforms used by European mid-market and enterprise companies, including SAP (ECC and S/4HANA), Oracle, NetSuite, and Microsoft Dynamics. Our integration work connects these systems to BI platforms such as Power BI and Snowflake to create a unified, automated financial data layer with no manual extraction steps.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">How is PMG Services different from a Big Four firm?</summary>
+          <div class="faq-answer">
+            <p>We are a focused specialist team, not a generalist firm. That means faster mobilization, direct senior involvement throughout the engagement, and a narrower remit — we do not cross-sell strategy, HR transformation, or IT projects alongside the finance work. Our model is built for mid-market companies that want senior-level expertise without the overhead, timelines, and coordination costs of a large consulting house.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">Do you offer fixed-price engagements?</summary>
+          <div class="faq-answer">
+            <p>Yes. Our 90-Day FP&amp;A Diagnostic Sprint is a fixed-scope, fixed-deliverable engagement with a defined price agreed upfront — no scope creep, no open-ended billing. Larger transformation projects are scoped and priced on a project basis after an initial discovery phase. <a href="#contact">Contact us</a> to discuss the right structure for your situation.</p>
+          </div>
+        </details>
+
+      </div>
+    </section>
+
+    <div class="section-divider divider--glass" aria-hidden="true"></div>
+
     <section id="contact">
       <span class="section-label">Reach out</span>
       <p class="section__text__p1">Get In Touch</p>
@@ -1113,7 +1369,7 @@
       <div class="footer-inner">
         <div class="footer-top">
           <div class="footer-brand">
-            <img src="./assets/LOGO_PMG_white.png" alt="PMG Services" class="footer-logo" />
+            <img src="./assets/LOGO_PMG_white.png" alt="PMG Services" class="footer-logo" loading="lazy" />
             <p class="footer-tagline" id="footer-tagline">Financial Transformation &amp;<br>Digitalization Consulting</p>
           </div>
           <div class="footer-contact-col">
@@ -1135,6 +1391,16 @@
         </div>
       </div>
     </footer>
+
+    <!-- ─── CURSOR DOT ─── -->
+    <div id="cursor-dot" aria-hidden="true"></div>
+
+    <!-- ─── BACK TO TOP ─── -->
+    <button id="back-to-top" aria-label="Back to top" title="Back to top">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <polyline points="18 15 12 9 6 15"/>
+      </svg>
+    </button>
 
     <script src="script.js"></script>
 
