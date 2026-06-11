@@ -420,6 +420,12 @@ function setLanguage(lang) {
   // Contact direct intro
   const contactDirectIntro = document.getElementById('contact-direct-intro');
   if (contactDirectIntro) contactDirectIntro.innerText = t.contactDirectIntro;
+
+  // Keep the document language attribute in sync (SEO + screen readers)
+  document.documentElement.lang = lang;
+
+  // Re-split the hero headline into animated words after text replacement
+  if (window.splitHeroTitle) window.splitHeroTitle();
 }
 
 // --- Menu Toggle ---
@@ -688,8 +694,281 @@ document.head.appendChild(style);
 
 // Duplicate observer for .details-container removed — handled by IIFE observer above.
 
-// Apply translations on page load
+// Apply translations on page load (?lang=de|en in the URL wins, so the
+// hreflang alternate URLs actually serve the right language)
 document.addEventListener('DOMContentLoaded', () => {
+  const params = new URLSearchParams(window.location.search);
+  const urlLang = params.get('lang');
+  if (urlLang === 'de' || urlLang === 'en') {
+    localStorage.setItem('pmg-lang', urlLang);
+  }
   const lang = localStorage.getItem('pmg-lang') || 'en';
   setLanguage(lang);
+
+  // Form submission confirmation (Formspree redirects back with ?sent=1)
+  if (params.get('sent') === '1') {
+    const form = document.getElementById('contactForm');
+    if (form) {
+      const note = document.createElement('div');
+      note.className = 'form-success-note';
+      note.setAttribute('role', 'status');
+      note.textContent = lang === 'de'
+        ? 'Vielen Dank! Ihre Nachricht wurde gesendet — wir melden uns innerhalb von 1–2 Werktagen.'
+        : "Thank you! Your message has been sent — we'll get back to you within 1–2 business days.";
+      form.parentElement.insertBefore(note, form);
+      if (window.pmgTrack) pmgTrack('generate_lead', { method: 'contact_form_confirmed' });
+    }
+  }
 });
+
+// ═══════════════════════════════════════════════════
+// INTERACTIVITY PACK — hero word reveal, hero particle
+// network, industries marquee, card tilt, magnetic
+// buttons, GA4 event tracking.
+// ═══════════════════════════════════════════════════
+
+const pmgReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const pmgCoarsePointer = window.matchMedia('(pointer: coarse)').matches;
+
+// --- Hero Headline Word Reveal ---
+window.splitHeroTitle = function () {
+  const h1 = document.querySelector('#profile .title');
+  if (!h1 || pmgReducedMotion) return;
+  const words = h1.textContent.trim().split(/\s+/);
+  h1.innerHTML = words
+    .map((w, i) => {
+      const safe = w.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      return `<span class="hero-word" style="--wi:${i}">${safe}</span>`;
+    })
+    .join(' ');
+  h1.classList.add('title-split');
+};
+
+// --- Hero Particle Network (mouse-reactive) ---
+(function () {
+  if (pmgReducedMotion) return;
+  const canvas = document.getElementById('hero-particles');
+  const hero = document.getElementById('profile');
+  if (!canvas || !hero) return;
+  const ctx = canvas.getContext('2d');
+  let W, H, particles = [], running = false, rafId = null;
+  const mouse = { x: -9999, y: -9999 };
+
+  function resize() {
+    W = canvas.width = hero.offsetWidth;
+    H = canvas.height = hero.offsetHeight;
+  }
+
+  function makeParticle() {
+    return {
+      x: Math.random() * W,
+      y: Math.random() * H,
+      vx: (Math.random() - 0.5) * 0.25,
+      vy: (Math.random() - 0.5) * 0.25,
+      r: Math.random() * 1.6 + 0.6,
+      o: Math.random() * 0.25 + 0.08
+    };
+  }
+
+  function init() {
+    particles = [];
+    const count = Math.min(Math.floor((W * H) / 16000), 90);
+    for (let i = 0; i < count; i++) particles.push(makeParticle());
+  }
+
+  function step() {
+    ctx.clearRect(0, 0, W, H);
+    for (const p of particles) {
+      p.x += p.vx;
+      p.y += p.vy;
+      if (p.x < 0 || p.x > W) p.vx *= -1;
+      if (p.y < 0 || p.y > H) p.vy *= -1;
+
+      // Gentle repulsion away from the cursor
+      const dx = p.x - mouse.x, dy = p.y - mouse.y;
+      const dist = Math.hypot(dx, dy);
+      if (dist < 110 && dist > 0.001) {
+        const push = (1 - dist / 110) * 0.6;
+        p.x += (dx / dist) * push;
+        p.y += (dy / dist) * push;
+      }
+
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(255,255,255,${p.o})`;
+      ctx.fill();
+    }
+
+    // Particle-to-particle links
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const a = particles[i], b = particles[j];
+        const d = Math.hypot(a.x - b.x, a.y - b.y);
+        if (d < 110) {
+          ctx.beginPath();
+          ctx.moveTo(a.x, a.y);
+          ctx.lineTo(b.x, b.y);
+          ctx.strokeStyle = `rgba(255,255,255,${0.05 * (1 - d / 110)})`;
+          ctx.lineWidth = 0.5;
+          ctx.stroke();
+        }
+      }
+      // Red links to the cursor — the "interactive" signature
+      const p = particles[i];
+      const dm = Math.hypot(p.x - mouse.x, p.y - mouse.y);
+      if (dm < 160) {
+        ctx.beginPath();
+        ctx.moveTo(p.x, p.y);
+        ctx.lineTo(mouse.x, mouse.y);
+        ctx.strokeStyle = `rgba(182,24,24,${0.35 * (1 - dm / 160)})`;
+        ctx.lineWidth = 0.7;
+        ctx.stroke();
+      }
+    }
+
+    if (running) rafId = requestAnimationFrame(step);
+  }
+
+  // Only animate while the hero is on screen
+  const visObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !running) {
+        running = true;
+        rafId = requestAnimationFrame(step);
+      } else if (!entry.isIntersecting && running) {
+        running = false;
+        if (rafId) cancelAnimationFrame(rafId);
+      }
+    });
+  }, { threshold: 0.05 });
+  visObserver.observe(hero);
+
+  hero.addEventListener('mousemove', (e) => {
+    const rect = canvas.getBoundingClientRect();
+    mouse.x = e.clientX - rect.left;
+    mouse.y = e.clientY - rect.top;
+  });
+  hero.addEventListener('mouseleave', () => { mouse.x = -9999; mouse.y = -9999; });
+
+  window.addEventListener('resize', () => { resize(); init(); });
+  resize();
+  init();
+})();
+
+// --- Industries Infinite Marquee ---
+(function () {
+  const marquee = document.querySelector('.industries-marquee');
+  const list = marquee && marquee.querySelector('.industries-list');
+  if (!marquee || !list || pmgReducedMotion) return;
+  // Duplicate the items once; translateX(-50%) loops seamlessly.
+  const clone = document.createElement('div');
+  clone.setAttribute('aria-hidden', 'true');
+  clone.style.display = 'contents';
+  clone.innerHTML = list.innerHTML;
+  list.appendChild(clone);
+  marquee.classList.add('marquee-on');
+})();
+
+// --- 3D Card Tilt + Glare ---
+(function () {
+  if (pmgCoarsePointer || pmgReducedMotion) return;
+  const cards = document.querySelectorAll('.service-card, .project-card-future, .kpi-card, .qs-card');
+  cards.forEach(card => {
+    card.classList.add('tilt-card');
+    let rx = 0, ry = 0, raf = null;
+
+    card.addEventListener('pointermove', e => {
+      const r = card.getBoundingClientRect();
+      const px = (e.clientX - r.left) / r.width;
+      const py = (e.clientY - r.top) / r.height;
+      card.style.setProperty('--gx', (px * 100).toFixed(1) + '%');
+      card.style.setProperty('--gy', (py * 100).toFixed(1) + '%');
+      rx = (0.5 - py) * 5;
+      ry = (px - 0.5) * 7;
+      if (raf) return;
+      raf = requestAnimationFrame(() => {
+        card.style.transform = `perspective(900px) rotateX(${rx.toFixed(2)}deg) rotateY(${ry.toFixed(2)}deg) translateY(-4px)`;
+        raf = null;
+      });
+    });
+    card.addEventListener('pointerenter', () => card.classList.add('tilting'));
+    card.addEventListener('pointerleave', () => {
+      card.classList.remove('tilting');
+      card.style.transform = '';
+    });
+  });
+})();
+
+// --- Magnetic Buttons (hero CTAs + form submit) ---
+(function () {
+  if (pmgCoarsePointer || pmgReducedMotion) return;
+  document.querySelectorAll('#profile .btn-container .btn, .contact-submit-btn').forEach(btn => {
+    btn.classList.add('btn-magnetic');
+    btn.addEventListener('pointermove', e => {
+      const r = btn.getBoundingClientRect();
+      const dx = (e.clientX - (r.left + r.width / 2)) / r.width;
+      const dy = (e.clientY - (r.top + r.height / 2)) / r.height;
+      btn.style.transform = `translate(${(dx * 8).toFixed(1)}px, ${(dy * 6).toFixed(1)}px)`;
+    });
+    btn.addEventListener('pointerleave', () => { btn.style.transform = ''; });
+  });
+})();
+
+// --- GA4 Event Tracking (no-ops until consent is granted — see consent.js) ---
+(function () {
+  const track = (name, params) => { if (window.pmgTrack) pmgTrack(name, params); };
+
+  // Hero + section CTA clicks
+  document.querySelectorAll('a[href="#contact"]').forEach(a => {
+    a.addEventListener('click', () => track('cta_click', {
+      cta_text: a.textContent.trim().slice(0, 60),
+      cta_location: (a.closest('section') || {}).id || 'nav'
+    }));
+  });
+
+  // Contact form submit (fires before the Formspree redirect)
+  const form = document.getElementById('contactForm');
+  if (form) form.addEventListener('submit', () => track('generate_lead', { method: 'contact_form' }));
+
+  // FAQ engagement
+  document.querySelectorAll('.faq-item').forEach(d => {
+    d.addEventListener('toggle', () => {
+      if (d.open) {
+        const q = d.querySelector('.faq-question');
+        track('faq_open', { question: q ? q.textContent.trim().slice(0, 80) : '' });
+      }
+    });
+  });
+
+  // Case study opens
+  document.querySelectorAll('.project-card-future').forEach(c => {
+    c.addEventListener('click', () => {
+      const t = c.querySelector('.project-title-future');
+      track('case_study_open', { title: t ? t.textContent.trim() : '' });
+    });
+  });
+
+  // Language switch
+  document.querySelectorAll('.lang-link').forEach(b => {
+    b.addEventListener('click', () => track('language_switch', { language: b.textContent.trim() }));
+  });
+
+  // Outbound: email + LinkedIn
+  document.querySelectorAll('a[href^="mailto:"]').forEach(a =>
+    a.addEventListener('click', () => track('email_click', { location: (a.closest('footer') ? 'footer' : 'contact') })));
+  document.querySelectorAll('a[href*="linkedin.com"]').forEach(a =>
+    a.addEventListener('click', () => track('linkedin_click', { location: (a.closest('footer') ? 'footer' : 'contact') })));
+
+  // Scroll depth: 25 / 50 / 75 / 90 %
+  const marks = [25, 50, 75, 90];
+  const fired = {};
+  window.addEventListener('scroll', () => {
+    const pct = ((window.scrollY + window.innerHeight) / document.documentElement.scrollHeight) * 100;
+    marks.forEach(m => {
+      if (pct >= m && !fired[m]) {
+        fired[m] = true;
+        track('scroll_depth', { percent: m });
+      }
+    });
+  }, { passive: true });
+})();

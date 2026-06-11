@@ -13,14 +13,8 @@
     <!-- Google Search Console Verification — replace content value with your code from Search Console -->
     <meta name="google-site-verification" content="REPLACE_WITH_YOUR_VERIFICATION_CODE" />
 
-    <!-- Google Analytics 4 — replace G-XXXXXXXXXX with your Measurement ID -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
-    </script>
+    <!-- Google Analytics 4 — GDPR-compliant: loads only after cookie consent. Set GA_ID in consent.js. -->
+    <script src="consent.js?v=1" defer></script>
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -35,7 +29,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" />
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="style.css?v=18" />
+    <link rel="stylesheet" href="style.css?v=19" />
     <link rel="stylesheet" href="mediaqueries.css?v=7" />
 
     <!-- JSON-LD -->

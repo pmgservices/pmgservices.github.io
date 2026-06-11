@@ -16,14 +16,9 @@
     <!-- Google Search Console Verification — replace content value with your code from Search Console -->
     <meta name="google-site-verification" content="REPLACE_WITH_YOUR_VERIFICATION_CODE" />
 
-    <!-- Google Analytics 4 — replace G-XXXXXXXXXX with your Measurement ID from analytics.google.com -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
-    </script>
+    <!-- Google Analytics 4 — GDPR-compliant: loads only after cookie consent.
+         Set your Measurement ID once in consent.js (GA_ID constant). -->
+    <script src="consent.js?v=1" defer></script>
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -48,7 +43,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" />
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="style.css?v=18" />
+    <link rel="stylesheet" href="style.css?v=20" />
     <link rel="stylesheet" href="mediaqueries.css?v=7" />
 
     <!-- JSON-LD Structured Data -->
@@ -209,6 +204,7 @@
 
     <!-- ─── HERO ─── -->
     <section id="profile" class="centered-hero">
+      <canvas id="hero-particles" aria-hidden="true"></canvas>
       <div class="section__text hero-text-box">
         <div class="hero-accent"></div>
         <h1 class="title">Financial Transformation &amp; FP&amp;A Consulting for European Businesses.</h1>
@@ -232,18 +228,21 @@
     <div class="industries-strip" aria-label="Industries we serve">
       <div class="industries-inner">
         <span class="industries-label">We work across</span>
-        <div class="industries-list">
-          <span>Manufacturing</span>
-          <span class="industries-dot">·</span>
-          <span>SaaS</span>
-          <span class="industries-dot">·</span>
-          <span>Financial Services</span>
-          <span class="industries-dot">·</span>
-          <span>Pharma</span>
-          <span class="industries-dot">·</span>
-          <span>Aviation</span>
-          <span class="industries-dot">·</span>
-          <span>Professional Services</span>
+        <div class="industries-marquee">
+          <div class="industries-list">
+            <span>Manufacturing</span>
+            <span class="industries-dot">·</span>
+            <span>SaaS</span>
+            <span class="industries-dot">·</span>
+            <span>Financial Services</span>
+            <span class="industries-dot">·</span>
+            <span>Pharma</span>
+            <span class="industries-dot">·</span>
+            <span>Aviation</span>
+            <span class="industries-dot">·</span>
+            <span>Professional Services</span>
+            <span class="industries-dot">·</span>
+          </div>
         </div>
       </div>
     </div>
@@ -338,110 +337,29 @@
         <!-- Card 1: Behavioral Finance Implementation -->
         <div class="service-card">
           <div class="service-visual-top">
-            <svg viewBox="0 0 300 130" class="service-svg" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Before and after comparison showing how PMG eliminates cognitive bias from financial decisions, reducing forecast error by 34%">
+            <svg viewBox="0 0 300 130" class="service-svg" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three noisy input lines pass through a red PMG filter and emerge as one calibrated rising trend, reducing forecast error by 34 percent">
               <defs>
-                <pattern id="bf-dots" width="14" height="14" patternUnits="userSpaceOnUse">
-                  <circle cx="7" cy="7" r="0.6" fill="#0b1d2c" opacity="0.10"/>
-                </pattern>
-                <filter id="bf-glow" x="-40%" y="-40%" width="180%" height="180%">
-                  <feGaussianBlur stdDeviation="3.5" result="b"/>
-                  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-                </filter>
-                <filter id="bf-badge-s" x="-20%" y="-20%" width="140%" height="140%">
-                  <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#b61818" flood-opacity="0.25"/>
-                </filter>
-                <linearGradient id="bf-path-g" x1="0%" y1="100%" x2="100%" y2="0%">
-                  <stop offset="0%" stop-color="#0b1d2c"/>
-                  <stop offset="100%" stop-color="#b61818"/>
-                </linearGradient>
-                <linearGradient id="bf-badge-g" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#b61818"/>
-                  <stop offset="100%" stop-color="#d42020"/>
-                </linearGradient>
+                <pattern id="s1-dots" width="16" height="16" patternUnits="userSpaceOnUse"><circle cx="8" cy="8" r="0.7" fill="#0b1d2c" opacity="0.05"/></pattern>
+                <linearGradient id="s1-sig" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0b1d2c"/><stop offset="1" stop-color="#b61818"/></linearGradient>
               </defs>
-
-              <!-- Background -->
-              <rect width="300" height="130" rx="6" fill="#f4f6f8"/>
-              <rect width="300" height="130" rx="6" fill="url(#bf-dots)"/>
-              <!-- Left panel subtle warm tint -->
-              <rect x="0" y="0" width="140" height="130" rx="6" fill="#7a1010" opacity="0.018"/>
-
-              <!-- ── LEFT: BEFORE (Bias-driven decisions) ── -->
-              <text x="68" y="12" text-anchor="middle" font-size="6" font-weight="700" fill="#0b1d2c" opacity="0.28" font-family="Space Grotesk,sans-serif" letter-spacing="1.5">BEFORE</text>
-
-              <!-- Start dot -->
-              <circle cx="14" cy="108" r="3.5" fill="#0b1d2c" opacity="0.4"/>
-
-              <!-- Chaotic zigzag: marching-ants = uncertain/unstable signal -->
-              <polyline points="14,108 38,80 20,60 52,44 34,26 88,14 130,20"
-                fill="none" stroke="#0b1d2c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
-                stroke-dasharray="4 4" opacity="0.35">
-                <animate attributeName="stroke-dashoffset" from="0" to="8" dur="1.1s" repeatCount="indefinite"/>
-              </polyline>
-
-              <!-- Wrong-turn nodes (bias decision points) -->
-              <circle cx="38" cy="80" r="3" fill="white" stroke="#b61818" stroke-width="1.2" opacity="0.9"/>
-              <circle cx="20" cy="60" r="3" fill="white" stroke="#b61818" stroke-width="1.2" opacity="0.9"/>
-              <circle cx="52" cy="44" r="3" fill="white" stroke="#b61818" stroke-width="1.2" opacity="0.9"/>
-
-              <!-- Bias tag 1: ANCHORING -->
-              <line x1="42" y1="80" x2="45" y2="77" stroke="#b61818" stroke-width="0.6" opacity="0.5"/>
-              <rect x="45" y="72" width="56" height="12" rx="6" fill="white" stroke="#dde1ea" stroke-width="0.8"/>
-              <text x="73" y="81" text-anchor="middle" font-size="6.5" font-weight="600" fill="#b61818" font-family="Space Grotesk,sans-serif" letter-spacing="0.3">ANCHORING</text>
-
-              <!-- Bias tag 2: LOSS AVERSION -->
-              <line x1="24" y1="60" x2="27" y2="57" stroke="#b61818" stroke-width="0.6" opacity="0.5"/>
-              <rect x="27" y="51" width="68" height="12" rx="6" fill="white" stroke="#dde1ea" stroke-width="0.8"/>
-              <text x="61" y="60" text-anchor="middle" font-size="6.5" font-weight="600" fill="#b61818" font-family="Space Grotesk,sans-serif" letter-spacing="0.3">LOSS AVERSION</text>
-
-              <!-- Bias tag 3: OVERCONFIDENCE -->
-              <line x1="55" y1="44" x2="60" y2="41" stroke="#b61818" stroke-width="0.6" opacity="0.5"/>
-              <rect x="60" y="34" width="72" height="12" rx="6" fill="white" stroke="#dde1ea" stroke-width="0.8"/>
-              <text x="96" y="43" text-anchor="middle" font-size="6.5" font-weight="600" fill="#b61818" font-family="Space Grotesk,sans-serif" letter-spacing="0.3">OVERCONFIDENCE</text>
-
-              <!-- Bottom label -->
-              <text x="68" y="124" text-anchor="middle" font-size="6" fill="#0b1d2c" opacity="0.25" font-family="Space Grotesk,sans-serif" letter-spacing="0.8">BIAS-DRIVEN</text>
-
-              <!-- ── CENTER: PMG Divider ── -->
-              <line x1="150" y1="10" x2="150" y2="50" stroke="#b61818" stroke-width="0.8" opacity="0.3" stroke-dasharray="2 2"/>
-              <line x1="150" y1="82" x2="150" y2="122" stroke="#b61818" stroke-width="0.8" opacity="0.3" stroke-dasharray="2 2"/>
-
-              <!-- Center divider badge -->
-              <rect x="137" y="54" width="26" height="24" rx="5" fill="#0b1d2c" opacity="0.07"/>
-              <text x="150" y="70" text-anchor="middle" font-size="5.5" font-weight="700" fill="#b61818" opacity="0.8" font-family="Space Grotesk,sans-serif" letter-spacing="0.8">PMG</text>
-
-              <!-- ── RIGHT: AFTER (Bias-free optimal path) ── -->
-              <text x="224" y="12" text-anchor="middle" font-size="6" font-weight="700" fill="#b61818" opacity="0.6" font-family="Space Grotesk,sans-serif" letter-spacing="1.5">AFTER</text>
-
-              <!-- Start dot -->
-              <circle cx="165" cy="108" r="3.5" fill="#0b1d2c" opacity="0.45"/>
-
-              <!-- Clean rising path — draw-in animation loop -->
-              <path d="M 165,108 Q 210,76 250,48 Q 268,36 284,20"
-                fill="none" stroke="url(#bf-path-g)" stroke-width="2.2" stroke-linecap="round"
-                stroke-dasharray="175" stroke-dashoffset="175">
-                <animate attributeName="stroke-dashoffset" from="175" to="0" dur="2.2s" repeatCount="indefinite"/>
-              </path>
-
-              <!-- Arrowhead at destination — synced to draw-in -->
-              <polygon points="284,20 277,27 281,16" fill="#b61818" opacity="0">
-                <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.88;0.95;1"
-                  calcMode="linear" dur="2.2s" repeatCount="indefinite"/>
-              </polygon>
-
-              <!-- Glowing endpoint — synced to draw-in -->
-              <circle cx="284" cy="20" r="5" fill="#b61818" filter="url(#bf-glow)" opacity="0">
-                <animate attributeName="opacity" values="0;0;1;0.5;1" keyTimes="0;0.88;0.95;0.97;1"
-                  calcMode="linear" dur="2.2s" repeatCount="indefinite"/>
-              </circle>
-
-              <!-- Outcome badge with gradient fill -->
-              <rect x="196" y="84" width="84" height="32" rx="10" fill="url(#bf-badge-g)" filter="url(#bf-badge-s)"/>
-              <text x="238" y="98" text-anchor="middle" font-size="14" font-weight="700" fill="white" font-family="Space Grotesk,sans-serif">-34%</text>
-              <text x="238" y="109" text-anchor="middle" font-size="6" fill="white" opacity="0.85" font-family="Space Grotesk,sans-serif" letter-spacing="0.5">FORECAST ERROR</text>
-
-              <!-- Bottom label -->
-              <text x="224" y="124" text-anchor="middle" font-size="6" fill="#b61818" opacity="0.55" font-family="Space Grotesk,sans-serif" letter-spacing="0.8">BIAS-FREE</text>
+              <rect width="300" height="130" rx="8" fill="#f8fafb"/>
+              <rect width="300" height="130" rx="8" fill="url(#s1-dots)"/>
+              <rect x="0.5" y="0.5" width="299" height="129" rx="7.5" fill="none" stroke="#e7ebf0"/>
+              <text x="20" y="22" font-size="6.5" font-weight="600" fill="#0b1d2c" opacity="0.4" letter-spacing="1.6" font-family="Space Grotesk,sans-serif">NOISE</text>
+              <text x="280" y="22" text-anchor="end" font-size="6.5" font-weight="700" fill="#b61818" letter-spacing="1.6" font-family="Space Grotesk,sans-serif">SIGNAL</text>
+              <polyline class="svg-draw" style="--len:170" points="20,48 38,40 56,54 74,42 92,56 110,44 124,50" fill="none" stroke="#0b1d2c" stroke-opacity="0.2" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/>
+              <polyline class="svg-draw" style="--len:170;--d:.12s" points="20,66 40,72 58,60 78,70 96,58 112,68 124,64" fill="none" stroke="#0b1d2c" stroke-opacity="0.2" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/>
+              <polyline class="svg-draw" style="--len:170;--d:.24s" points="20,88 38,80 58,90 76,78 94,88 110,80 124,82" fill="none" stroke="#0b1d2c" stroke-opacity="0.2" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/>
+              <rect class="svg-rise" style="--d:.45s" x="128" y="34" width="4" height="62" rx="2" fill="#b61818"/>
+              <text class="svg-fade" style="--d:.6s" x="130" y="108" text-anchor="middle" font-size="5.5" font-weight="700" fill="#b61818" letter-spacing="1.4" font-family="Space Grotesk,sans-serif">PMG</text>
+              <path class="svg-draw" style="--len:210;--d:.65s" d="M136,72 C 172,70 204,60 232,50 C 252,43 266,40 276,38" fill="none" stroke="url(#s1-sig)" stroke-width="2.2" stroke-linecap="round"/>
+              <circle class="svg-pop" style="--d:1.6s" cx="276" cy="38" r="3.5" fill="#b61818"/>
+              <circle class="svg-pulse-ring" cx="276" cy="38" r="7" fill="none" stroke="#b61818" stroke-width="1"/>
+              <g class="svg-fade" style="--d:1.15s">
+                <rect x="170" y="96" width="106" height="20" rx="10" fill="#ffffff" stroke="#e2e7ed"/>
+                <text x="181" y="109.5" font-size="8" font-weight="700" fill="#b61818" font-family="Space Grotesk,sans-serif">&#8722;34%</text>
+                <text x="207" y="109" font-size="5.8" font-weight="600" fill="#0b1d2c" opacity="0.55" letter-spacing="0.8" font-family="Space Grotesk,sans-serif">FORECAST ERROR</text>
+              </g>
             </svg>
           </div>
           <h2 class="service-card-title">Behavioral Finance Implementation</h2>
@@ -458,91 +376,37 @@
         <!-- Card 2: FP&A -->
         <div class="service-card">
           <div class="service-visual-top">
-            <svg viewBox="0 0 300 130" class="service-svg" role="img" aria-label="Financial planning dashboard showing bar chart of historical performance with an upward forecast trend line and plus 18 percent growth projection">
+            <svg viewBox="0 0 300 130" class="service-svg" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Fan chart where actual performance meets today and projects forward as a forecast confidence cone with 18 percent projected growth">
               <defs>
-                <linearGradient id="fp-bar-g" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" stop-color="#0b1d2c" stop-opacity="0.9"/>
-                  <stop offset="100%" stop-color="#0b1d2c" stop-opacity="0.3"/>
-                </linearGradient>
-                <linearGradient id="fp-area-g" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" stop-color="#b61818" stop-opacity="0.12"/>
-                  <stop offset="100%" stop-color="#b61818" stop-opacity="0.01"/>
-                </linearGradient>
-                <linearGradient id="fp-line-g" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stop-color="#b61818"/>
-                  <stop offset="100%" stop-color="#d42020"/>
-                </linearGradient>
-                <linearGradient id="fp-badge-g" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#b61818"/>
-                  <stop offset="100%" stop-color="#d42020"/>
-                </linearGradient>
-                <filter id="fp-glow" x="-30%" y="-30%" width="160%" height="160%">
-                  <feGaussianBlur in="SourceGraphic" stdDeviation="2.5" result="b"/>
-                  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-                </filter>
-                <filter id="fp-badge" x="-15%" y="-20%" width="130%" height="140%">
-                  <feDropShadow dx="0" dy="2" stdDeviation="3.5" flood-color="#b61818" flood-opacity="0.25"/>
-                </filter>
-                <clipPath id="fp-clip"><rect x="28" y="8" width="264" height="105"/></clipPath>
+                <pattern id="s2-dots" width="16" height="16" patternUnits="userSpaceOnUse"><circle cx="8" cy="8" r="0.7" fill="#0b1d2c" opacity="0.05"/></pattern>
+                <linearGradient id="s2-cone" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#b61818" stop-opacity="0.10"/><stop offset="1" stop-color="#b61818" stop-opacity="0.03"/></linearGradient>
               </defs>
-
-              <!-- Background -->
-              <rect width="300" height="130" rx="6" fill="#f4f6f8"/>
-
-              <!-- Chart gridlines -->
-              <g stroke="#0b1d2c" stroke-width="0.6" opacity="0.07">
-                <line x1="28" y1="35" x2="292" y2="35"/>
-                <line x1="28" y1="58" x2="292" y2="58"/>
-                <line x1="28" y1="81" x2="292" y2="81"/>
-                <line x1="28" y1="104" x2="292" y2="104"/>
+              <rect width="300" height="130" rx="8" fill="#f8fafb"/>
+              <rect width="300" height="130" rx="8" fill="url(#s2-dots)"/>
+              <rect x="0.5" y="0.5" width="299" height="129" rx="7.5" fill="none" stroke="#e7ebf0"/>
+              <text x="22" y="22" font-size="6.5" font-weight="600" fill="#0b1d2c" opacity="0.4" letter-spacing="1.6" font-family="Space Grotesk,sans-serif">ACTUALS</text>
+              <text x="282" y="22" text-anchor="end" font-size="6.5" font-weight="700" fill="#b61818" letter-spacing="1.6" font-family="Space Grotesk,sans-serif">FORECAST</text>
+              <line x1="20" y1="104" x2="282" y2="104" stroke="#dfe5ec" stroke-width="1.2"/>
+              <text x="44" y="116" text-anchor="middle" font-size="5.5" fill="#0b1d2c" opacity="0.35" font-family="Space Grotesk,sans-serif">Q1</text>
+              <text x="92" y="116" text-anchor="middle" font-size="5.5" fill="#0b1d2c" opacity="0.35" font-family="Space Grotesk,sans-serif">Q2</text>
+              <text x="140" y="116" text-anchor="middle" font-size="5.5" fill="#0b1d2c" opacity="0.35" font-family="Space Grotesk,sans-serif">Q3</text>
+              <text x="188" y="116" text-anchor="middle" font-size="5.5" fill="#0b1d2c" opacity="0.35" font-family="Space Grotesk,sans-serif">Q4</text>
+              <text x="236" y="116" text-anchor="middle" font-size="5.5" fill="#b61818" opacity="0.6" font-family="Space Grotesk,sans-serif">FY+1</text>
+              <g class="svg-fade" style="--d:.5s">
+                <line x1="164" y1="30" x2="164" y2="104" stroke="#0b1d2c" stroke-opacity="0.25" stroke-width="1" stroke-dasharray="2 3"/>
+                <text x="164" y="24" text-anchor="middle" font-size="5.5" font-weight="600" fill="#0b1d2c" opacity="0.45" letter-spacing="1.5" font-family="Space Grotesk,sans-serif">TODAY</text>
               </g>
-              <!-- Y-axis spine -->
-              <line x1="28" y1="10" x2="28" y2="106" stroke="#0b1d2c" stroke-width="0.8" opacity="0.12"/>
-
-              <!-- Actual bars (ascending) with rounded tops -->
-              <rect x="38"  y="81" width="26" height="23" rx="4" fill="url(#fp-bar-g)"/>
-              <rect x="76"  y="66" width="26" height="38" rx="4" fill="url(#fp-bar-g)"/>
-              <rect x="114" y="48" width="26" height="56" rx="4" fill="url(#fp-bar-g)"/>
-              <rect x="152" y="36" width="26" height="68" rx="4" fill="url(#fp-bar-g)"/>
-
-              <!-- TODAY divider -->
-              <line x1="194" y1="11" x2="194" y2="107" stroke="#b61818" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.55"/>
-              <rect x="195" y="11" width="38" height="13" rx="6.5" fill="#0b1d2c" opacity="0.08"/>
-              <text x="214" y="21" text-anchor="middle" font-size="6.5" fill="#b61818" font-family="Space Grotesk, sans-serif" font-weight="700" opacity="0.8" letter-spacing="0.8">TODAY</text>
-
-              <!-- Forecast area fill -->
-              <path d="M 178 36 Q 222 22 262 14 L 292 11 L 292 107 L 194 107 Z"
-                    fill="url(#fp-area-g)" clip-path="url(#fp-clip)"/>
-
-              <!-- Forecast line (animated dashed red) -->
-              <path d="M 178 36 Q 226 20 264 12 L 291 10"
-                    fill="none" stroke="url(#fp-line-g)" stroke-width="2.2"
-                    stroke-dasharray="6 4" stroke-linecap="round"
-                    filter="url(#fp-glow)" clip-path="url(#fp-clip)">
-                <animate attributeName="stroke-dashoffset" from="0" to="-20" dur="1.2s" repeatCount="indefinite"/>
-              </path>
-
-              <!-- Actual-forecast junction dot -->
-              <circle cx="178" cy="36" r="4" fill="#0b1d2c"/>
-              <circle cx="178" cy="36" r="2" fill="#f4f6f8"/>
-              <!-- Forecast tip dot (pulsing) -->
-              <circle cx="291" cy="10" r="3.5" fill="#b61818">
-                <animate attributeName="opacity" values="1;0.35;1" dur="1.8s" repeatCount="indefinite"/>
-              </circle>
-
-              <!-- Floating metric badge -->
-              <g filter="url(#fp-badge)">
-                <rect x="230" y="24" width="50" height="24" rx="8" fill="url(#fp-badge-g)"/>
-                <text x="255" y="40" text-anchor="middle" font-size="12" font-weight="700" fill="white" font-family="Space Grotesk, sans-serif">+18%</text>
-              </g>
-
-              <!-- X-axis labels -->
-              <g font-size="7" fill="#0b1d2c" font-family="Space Grotesk, sans-serif" opacity="0.32" text-anchor="middle" letter-spacing="0.6">
-                <text x="51"  y="119">JAN</text>
-                <text x="89"  y="119">FEB</text>
-                <text x="127" y="119">MAR</text>
-                <text x="165" y="119">APR</text>
-                <text x="244" y="119" fill="#b61818" opacity="0.55">FORECAST</text>
+              <path class="svg-draw" style="--len:190" d="M24,86 C 64,84 112,78 164,62" fill="none" stroke="#0b1d2c" stroke-width="2.2" stroke-linecap="round"/>
+              <path class="svg-fade" style="--d:.75s" d="M164,62 L282,30 L282,90 Z" fill="url(#s2-cone)"/>
+              <path class="svg-draw" style="--len:170;--d:.85s" d="M164,62 L282,30" fill="none" stroke="#b61818" stroke-opacity="0.35" stroke-width="1" stroke-dasharray="3 3"/>
+              <path class="svg-draw" style="--len:170;--d:.95s" d="M164,62 L282,90" fill="none" stroke="#b61818" stroke-opacity="0.35" stroke-width="1" stroke-dasharray="3 3"/>
+              <path class="svg-draw" style="--len:170;--d:1.05s" d="M164,62 C 204,56 244,48 278,40" fill="none" stroke="#b61818" stroke-width="2.2" stroke-linecap="round"/>
+              <circle class="svg-pop" style="--d:2s" cx="278" cy="40" r="3.5" fill="#b61818"/>
+              <circle class="svg-pulse-ring" cx="278" cy="40" r="7" fill="none" stroke="#b61818" stroke-width="1"/>
+              <g class="svg-fade" style="--d:1.4s">
+                <rect x="168" y="92" width="110" height="20" rx="10" fill="#ffffff" stroke="#e2e7ed"/>
+                <text x="179" y="105.5" font-size="8" font-weight="700" fill="#b61818" font-family="Space Grotesk,sans-serif">+18%</text>
+                <text x="204" y="105" font-size="5.8" font-weight="600" fill="#0b1d2c" opacity="0.55" letter-spacing="0.8" font-family="Space Grotesk,sans-serif">PROJECTED GROWTH</text>
               </g>
             </svg>
           </div>
@@ -560,93 +424,36 @@
         <!-- Card 3: Custom Financial Ecosystem -->
         <div class="service-card">
           <div class="service-visual-top">
-            <svg viewBox="0 0 300 130" class="service-svg" role="img" aria-label="Hub and spoke diagram showing PMG at the center connecting ERP, BI, automation, data, and API systems into a unified financial ecosystem">
+            <svg viewBox="0 0 300 130" class="service-svg" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Orbital diagram with a PMG core connecting ERP, BI, data, API and automation systems into one integrated ecosystem">
               <defs>
-                <linearGradient id="eco-hub-g" x1="20%" y1="0%" x2="80%" y2="100%">
-                  <stop offset="0%" stop-color="#d42020"/>
-                  <stop offset="100%" stop-color="#8a0f0f"/>
-                </linearGradient>
-                <radialGradient id="eco-aura-g" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%" stop-color="#d42020" stop-opacity="0.14"/>
-                  <stop offset="100%" stop-color="#d42020" stop-opacity="0"/>
-                </radialGradient>
-                <filter id="eco-hub-glow" x="-40%" y="-40%" width="180%" height="180%">
-                  <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="b"/>
-                  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-                </filter>
-                <filter id="eco-node-shadow" x="-10%" y="-15%" width="120%" height="130%">
-                  <feDropShadow dx="0" dy="1.5" stdDeviation="2.5" flood-color="#0b1d2c" flood-opacity="0.08"/>
-                </filter>
-                <linearGradient id="eco-conn-g" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stop-color="#b61818" stop-opacity="0.3"/>
-                  <stop offset="100%" stop-color="#0b1d2c" stop-opacity="0.12"/>
-                </linearGradient>
+                <pattern id="s3-dots" width="16" height="16" patternUnits="userSpaceOnUse"><circle cx="8" cy="8" r="0.7" fill="#0b1d2c" opacity="0.05"/></pattern>
+                <radialGradient id="s3-core" cx="38%" cy="32%" r="70%"><stop offset="0" stop-color="#1e4068"/><stop offset="1" stop-color="#0b1d2c"/></radialGradient>
               </defs>
-
-              <!-- Background -->
-              <rect width="300" height="130" rx="6" fill="#f4f6f8"/>
-
-              <!-- Aura behind hub -->
-              <circle cx="150" cy="65" r="46" fill="url(#eco-aura-g)"/>
-
-              <!-- Connection paths (bezier curves) -->
-              <g fill="none" stroke="#dde1ea" stroke-width="1.5">
-                <path d="M 150 45 L 150 24"/>
-                <path d="M 167 56 Q 192 51, 213 44"/>
-                <path d="M 167 74 Q 192 80, 213 87"/>
-                <path d="M 133 74 Q 108 80, 87 87"/>
-                <path d="M 133 56 Q 108 51, 87 44"/>
+              <rect width="300" height="130" rx="8" fill="#f8fafb"/>
+              <rect width="300" height="130" rx="8" fill="url(#s3-dots)"/>
+              <rect x="0.5" y="0.5" width="299" height="129" rx="7.5" fill="none" stroke="#e7ebf0"/>
+              <g class="svg-fade" style="--d:.15s"><circle cx="150" cy="68" r="30" fill="none" stroke="#e1e7ee" stroke-width="1.2"/></g>
+              <g class="svg-fade" style="--d:.25s"><g class="svg-orbit-slow"><circle cx="150" cy="68" r="48" fill="none" stroke="#d8dee6" stroke-width="1" stroke-dasharray="1 5" stroke-linecap="round"/></g></g>
+              <g class="svg-fade" style="--d:.4s" stroke="#0b1d2c" stroke-opacity="0.12" stroke-width="1">
+                <line x1="150" y1="53" x2="150" y2="20"/>
+                <line x1="165" y1="68" x2="198" y2="68"/>
+                <line x1="135" y1="68" x2="102" y2="68"/>
+                <line x1="139" y1="57" x2="129" y2="47"/>
+                <line x1="161" y1="79" x2="171" y2="89"/>
               </g>
-
-              <!-- Animated pulses (hub to nodes) -->
-              <circle r="2.5" fill="#b61818" opacity="0">
-                <animateMotion path="M 150 45 L 150 24" dur="2s" begin="0s" repeatCount="indefinite"/>
-                <animate attributeName="opacity" values="0;0.9;0" dur="2s" begin="0s" repeatCount="indefinite"/>
-              </circle>
-              <circle r="2.5" fill="#b61818" opacity="0">
-                <animateMotion path="M 167 56 Q 192 51, 213 44" dur="2s" begin="0.4s" repeatCount="indefinite"/>
-                <animate attributeName="opacity" values="0;0.9;0" dur="2s" begin="0.4s" repeatCount="indefinite"/>
-              </circle>
-              <circle r="2.5" fill="#b61818" opacity="0">
-                <animateMotion path="M 167 74 Q 192 80, 213 87" dur="2s" begin="0.8s" repeatCount="indefinite"/>
-                <animate attributeName="opacity" values="0;0.9;0" dur="2s" begin="0.8s" repeatCount="indefinite"/>
-              </circle>
-              <circle r="2.5" fill="#b61818" opacity="0">
-                <animateMotion path="M 133 74 Q 108 80, 87 87" dur="2s" begin="1.2s" repeatCount="indefinite"/>
-                <animate attributeName="opacity" values="0;0.9;0" dur="2s" begin="1.2s" repeatCount="indefinite"/>
-              </circle>
-              <circle r="2.5" fill="#b61818" opacity="0">
-                <animateMotion path="M 133 56 Q 108 51, 87 44" dur="2s" begin="1.6s" repeatCount="indefinite"/>
-                <animate attributeName="opacity" values="0;0.9;0" dur="2s" begin="1.6s" repeatCount="indefinite"/>
-              </circle>
-
-              <!-- Module nodes (pill-shaped) -->
-              <rect x="124" y="3"  width="52" height="22" rx="11" fill="white" stroke="#dde1ea" stroke-width="1.2" filter="url(#eco-node-shadow)"/>
-              <text x="150" y="18" text-anchor="middle" font-size="9" font-weight="700" fill="#0b1d2c" font-family="Space Grotesk, sans-serif" letter-spacing="0.5">ERP</text>
-
-              <rect x="213" y="33" width="52" height="22" rx="11" fill="white" stroke="#dde1ea" stroke-width="1.2" filter="url(#eco-node-shadow)"/>
-              <text x="239" y="48" text-anchor="middle" font-size="9" font-weight="700" fill="#0b1d2c" font-family="Space Grotesk, sans-serif" letter-spacing="0.5">BI</text>
-
-              <rect x="213" y="76" width="52" height="22" rx="11" fill="white" stroke="#dde1ea" stroke-width="1.2" filter="url(#eco-node-shadow)"/>
-              <text x="239" y="91" text-anchor="middle" font-size="9" font-weight="700" fill="#0b1d2c" font-family="Space Grotesk, sans-serif" letter-spacing="0.5">AUTO</text>
-
-              <rect x="35"  y="76" width="52" height="22" rx="11" fill="white" stroke="#dde1ea" stroke-width="1.2" filter="url(#eco-node-shadow)"/>
-              <text x="61"  y="91" text-anchor="middle" font-size="9" font-weight="700" fill="#0b1d2c" font-family="Space Grotesk, sans-serif" letter-spacing="0.5">DATA</text>
-
-              <rect x="35"  y="33" width="52" height="22" rx="11" fill="white" stroke="#dde1ea" stroke-width="1.2" filter="url(#eco-node-shadow)"/>
-              <text x="61"  y="48" text-anchor="middle" font-size="9" font-weight="700" fill="#0b1d2c" font-family="Space Grotesk, sans-serif" letter-spacing="0.5">API</text>
-
-              <!-- Pulse ring -->
-              <circle cx="150" cy="65" r="30" fill="none" stroke="#b61818" stroke-width="1.2" opacity="0.3">
-                <animate attributeName="r" values="30;40;30" dur="2.5s" repeatCount="indefinite"/>
-                <animate attributeName="opacity" values="0.3;0;0.3" dur="2.5s" repeatCount="indefinite"/>
-              </circle>
-
-              <!-- Central hexagonal hub -->
-              <polygon points="150,44 168,54 168,76 150,86 132,76 132,54"
-                       fill="url(#eco-hub-g)" filter="url(#eco-hub-glow)"/>
-              <text x="150" y="69" text-anchor="middle" font-size="10.5" font-weight="700" fill="white"
-                    font-family="Space Grotesk, sans-serif" letter-spacing="0.6">PMG</text>
+              <g class="svg-pop">
+                <rect x="135" y="53" width="30" height="30" rx="9" fill="url(#s3-core)"/>
+                <rect x="136" y="54" width="28" height="28" rx="8" fill="none" stroke="#ffffff" stroke-opacity="0.1"/>
+                <text x="150" y="66.5" text-anchor="middle" font-size="8.5" font-weight="700" fill="#ffffff" letter-spacing="0.5" font-family="Space Grotesk,sans-serif">PMG</text>
+                <text x="150" y="75" text-anchor="middle" font-size="4.8" font-weight="600" fill="#b61818" letter-spacing="1.8" font-family="Space Grotesk,sans-serif">CORE</text>
+              </g>
+              <g class="svg-pop" style="--d:.55s"><circle cx="150" cy="20" r="2.8" fill="#b61818"/><text x="150" y="13" text-anchor="middle" font-size="6" font-weight="600" fill="#0b1d2c" opacity="0.5" letter-spacing="1" font-family="Space Grotesk,sans-serif">ERP</text></g>
+              <g class="svg-pop" style="--d:.65s"><circle cx="198" cy="68" r="2.8" fill="#b61818"/><text x="205" y="70.5" font-size="6" font-weight="600" fill="#0b1d2c" opacity="0.5" letter-spacing="1" font-family="Space Grotesk,sans-serif">BI</text></g>
+              <g class="svg-pop" style="--d:.75s"><circle cx="102" cy="68" r="2.8" fill="#b61818"/><text x="95" y="70.5" text-anchor="end" font-size="6" font-weight="600" fill="#0b1d2c" opacity="0.5" letter-spacing="1" font-family="Space Grotesk,sans-serif">DATA</text></g>
+              <g class="svg-pop" style="--d:.85s"><circle cx="129" cy="47" r="2.4" fill="#0b1d2c" opacity="0.55"/><text x="123" y="44" text-anchor="end" font-size="6" font-weight="600" fill="#0b1d2c" opacity="0.5" letter-spacing="1" font-family="Space Grotesk,sans-serif">API</text></g>
+              <g class="svg-pop" style="--d:.95s"><circle cx="171" cy="89" r="2.4" fill="#0b1d2c" opacity="0.55"/><text x="177" y="97" font-size="6" font-weight="600" fill="#0b1d2c" opacity="0.5" letter-spacing="1" font-family="Space Grotesk,sans-serif">AUTO</text></g>
+              <g class="svg-orbit"><circle cx="180" cy="68" r="2" fill="#b61818" opacity="0.75"/></g>
+              <text class="svg-fade" style="--d:1.2s" x="150" y="124" text-anchor="middle" font-size="5.5" font-weight="600" fill="#0b1d2c" opacity="0.35" letter-spacing="1.6" font-family="Space Grotesk,sans-serif">ONE INTEGRATED DATA LAYER</text>
             </svg>
           </div>
           <h2 class="service-card-title">Custom Financial Ecosystem</h2>
@@ -754,119 +561,49 @@
         <!-- Project 1: Custom ERP Integration -->
         <div class="project-card-future">
           <div class="project-visual">
-            <svg viewBox="0 0 360 160" class="project-svg" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Data hub architecture diagram showing a central hub connecting to accounting platform, invoice OCR, liquidity engine, and target operating model">
+            <svg viewBox="0 0 360 160" class="project-svg" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Integration pipeline where invoice OCR, accounting and liquidity systems flow into a central data hub that feeds a live finance dashboard">
               <defs>
-                <radialGradient id="erp-bg-g" cx="50%" cy="50%" r="65%">
-                  <stop offset="0%" stop-color="#f8fafb"/>
-                  <stop offset="100%" stop-color="#f0f3f6"/>
-                </radialGradient>
-                <pattern id="erp-grid" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-                  <line x1="20" y1="0" x2="20" y2="20" stroke="rgba(11,29,44,0.06)" stroke-width="1"/>
-                  <line x1="0" y1="20" x2="20" y2="20" stroke="rgba(11,29,44,0.06)" stroke-width="1"/>
-                </pattern>
-                <radialGradient id="erp-hub-fill" cx="38%" cy="32%" r="70%">
-                  <stop offset="0%" stop-color="#1e4068"/>
-                  <stop offset="100%" stop-color="#0b1d2c"/>
-                </radialGradient>
-                <filter id="erp-hub-glow" x="-60%" y="-60%" width="220%" height="220%">
-                  <feGaussianBlur stdDeviation="7" result="b"/>
-                  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-                </filter>
-                <filter id="erp-particle-glow" x="-120%" y="-120%" width="340%" height="340%">
-                  <feGaussianBlur stdDeviation="2.5" result="b"/>
-                  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-                </filter>
-                <filter id="erp-badge-glow" x="-25%" y="-35%" width="150%" height="170%">
-                  <feGaussianBlur stdDeviation="5" result="b"/>
-                  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-                </filter>
-                <linearGradient id="erp-spoke-n" x1="0%" y1="100%" x2="0%" y2="0%">
-                  <stop offset="0%" stop-color="#b61818" stop-opacity="0.7"/>
-                  <stop offset="100%" stop-color="#b61818" stop-opacity="0.08"/>
-                </linearGradient>
-                <linearGradient id="erp-spoke-s" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" stop-color="#b61818" stop-opacity="0.7"/>
-                  <stop offset="100%" stop-color="#b61818" stop-opacity="0.08"/>
-                </linearGradient>
-                <linearGradient id="erp-spoke-w" x1="100%" y1="0%" x2="0%" y2="0%">
-                  <stop offset="0%" stop-color="#b61818" stop-opacity="0.7"/>
-                  <stop offset="100%" stop-color="#b61818" stop-opacity="0.08"/>
-                </linearGradient>
-                <linearGradient id="erp-spoke-e" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stop-color="#b61818" stop-opacity="0.7"/>
-                  <stop offset="100%" stop-color="#b61818" stop-opacity="0.08"/>
-                </linearGradient>
+              <pattern id="p1-dots" width="16" height="16" patternUnits="userSpaceOnUse"><circle cx="8" cy="8" r="0.7" fill="#0b1d2c" opacity="0.05"/></pattern>
+              <radialGradient id="p1-hub" cx="38%" cy="32%" r="70%"><stop offset="0" stop-color="#1e4068"/><stop offset="1" stop-color="#0b1d2c"/></radialGradient>
               </defs>
-
-              <!-- Background -->
-              <rect width="360" height="160" rx="0" fill="url(#erp-bg-g)"/>
-              <rect width="360" height="160" rx="0" fill="url(#erp-grid)"/>
-              <!-- Ambient glow behind hub -->
-              <circle cx="180" cy="80" r="60" fill="#b61818" opacity="0.04"/>
-
-              <!-- ── GRADIENT SPOKES ── -->
-              <line x1="180" y1="31" x2="180" y2="58" stroke="#dde1ea" stroke-width="1.5"/>
-              <line x1="180" y1="102" x2="180" y2="129" stroke="#dde1ea" stroke-width="1.5"/>
-              <line x1="108" y1="80" x2="158" y2="80" stroke="#dde1ea" stroke-width="1.5"/>
-              <line x1="202" y1="80" x2="252" y2="80" stroke="#dde1ea" stroke-width="1.5"/>
-
-              <!-- ── SATELLITE PILLS ── -->
-              <rect x="128" y="9" width="104" height="22" rx="11" fill="white" stroke="#dde1ea" stroke-width="1.5"/>
-              <text x="180" y="23" text-anchor="middle" font-size="7.5" font-weight="600" fill="#0b1d2c" font-family="Space Grotesk,sans-serif" letter-spacing="0.3">ACCOUNTING PLATFORM</text>
-
-              <rect x="16" y="69" width="92" height="22" rx="11" fill="white" stroke="#dde1ea" stroke-width="1.5"/>
-              <text x="62" y="83" text-anchor="middle" font-size="7.5" font-weight="600" fill="#0b1d2c" font-family="Space Grotesk,sans-serif" letter-spacing="0.3">INVOICE OCR</text>
-
-              <rect x="252" y="69" width="92" height="22" rx="11" fill="white" stroke="#dde1ea" stroke-width="1.5"/>
-              <text x="298" y="83" text-anchor="middle" font-size="7.5" font-weight="600" fill="#0b1d2c" font-family="Space Grotesk,sans-serif" letter-spacing="0.3">LIQUIDITY ENGINE</text>
-
-              <rect x="128" y="129" width="104" height="22" rx="11" fill="white" stroke="#dde1ea" stroke-width="1.5"/>
-              <text x="180" y="143" text-anchor="middle" font-size="7.5" font-weight="600" fill="#0b1d2c" font-family="Space Grotesk,sans-serif" letter-spacing="0.3">TARGET OP. MODEL</text>
-
-              <!-- ── PMG HUB ── -->
-              <!-- Wide outer pulse -->
-              <circle cx="180" cy="80" r="22" fill="none" stroke="#b61818" stroke-width="1.5" opacity="0.25">
-                <animate attributeName="r" values="22;40;22" dur="2.6s" repeatCount="indefinite"/>
-                <animate attributeName="opacity" values="0.25;0;0.25" dur="2.6s" repeatCount="indefinite"/>
-              </circle>
-              <!-- Tight inner pulse -->
-              <circle cx="180" cy="80" r="22" fill="none" stroke="#b61818" stroke-width="1" opacity="0.4">
-                <animate attributeName="r" values="22;30;22" dur="2.6s" repeatCount="indefinite" begin="0.5s"/>
-                <animate attributeName="opacity" values="0.4;0;0.4" dur="2.6s" repeatCount="indefinite" begin="0.5s"/>
-              </circle>
-              <!-- Hub glow layer -->
-              <circle cx="180" cy="80" r="22" fill="url(#erp-hub-fill)" filter="url(#erp-hub-glow)"/>
-              <!-- Hub body -->
-              <circle cx="180" cy="80" r="22" fill="url(#erp-hub-fill)"/>
-              <!-- Inner ring accent -->
-              <circle cx="180" cy="80" r="19" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
-              <!-- Red arc overlay -->
-              <circle cx="180" cy="80" r="19" fill="none" stroke="#b61818" stroke-width="2.5" stroke-dasharray="62 58" stroke-linecap="round" opacity="0.9"/>
-              <!-- Labels -->
-              <text x="180" y="77" text-anchor="middle" font-size="9" font-weight="700" fill="white" font-family="Space Grotesk,sans-serif" letter-spacing="0.3">DATA</text>
-              <text x="180" y="89" text-anchor="middle" font-size="7" fill="#b61818" font-family="Space Grotesk,sans-serif" letter-spacing="0.8">HUB</text>
-
-              <!-- ── DATA PULSES ── -->
-              <circle r="3.5" fill="#b61818" filter="url(#erp-particle-glow)">
-                <animateMotion dur="1.5s" repeatCount="indefinite" begin="0s"><mpath href="#erp-sn-p"/></animateMotion>
-              </circle>
-              <path id="erp-sn-p" d="M 180,58 L 180,31" fill="none"/>
-
-              <circle r="3" fill="#0b1d2c" opacity="0.5">
-                <animateMotion dur="1.5s" repeatCount="indefinite" begin="0.75s"><mpath href="#erp-ss-p"/></animateMotion>
-              </circle>
-              <path id="erp-ss-p" d="M 180,102 L 180,129" fill="none"/>
-
-              <circle r="3" fill="#0b1d2c" opacity="0.5">
-                <animateMotion dur="1.5s" repeatCount="indefinite" begin="0.375s"><mpath href="#erp-sw-p"/></animateMotion>
-              </circle>
-              <path id="erp-sw-p" d="M 158,80 L 108,80" fill="none"/>
-
-              <circle r="3.5" fill="#b61818" filter="url(#erp-particle-glow)">
-                <animateMotion dur="1.5s" repeatCount="indefinite" begin="1.125s"><mpath href="#erp-se-p"/></animateMotion>
-              </circle>
-              <path id="erp-se-p" d="M 202,80 L 252,80" fill="none"/>
-            </svg>
+              <rect width="360" height="160" rx="8" fill="#f8fafb"/>
+              <rect width="360" height="160" rx="8" fill="url(#p1-dots)"/>
+              <rect x="0.5" y="0.5" width="359" height="159" rx="7.5" fill="none" stroke="#e7ebf0"/>
+              <text x="16" y="16" font-size="6" font-weight="600" fill="#0b1d2c" opacity="0.4" letter-spacing="1.6" font-family="Space Grotesk,sans-serif">SOURCES</text>
+              <text x="244" y="26" font-size="6" font-weight="700" fill="#b61818" letter-spacing="1.6" font-family="Space Grotesk,sans-serif">LIVE OUTPUT</text>
+              <g class="svg-fade">
+              <rect x="16" y="24" width="88" height="24" rx="7" fill="#ffffff" stroke="#e2e7ed"/><rect x="16" y="24" width="3.5" height="24" rx="1.75" fill="#b61818" opacity="0.9"/>
+              <text x="62" y="39.5" text-anchor="middle" font-size="7" font-weight="600" fill="#0b1d2c" letter-spacing="0.4" font-family="Space Grotesk,sans-serif">INVOICE OCR</text>
+              </g>
+              <g class="svg-fade" style="--d:.12s">
+              <rect x="16" y="68" width="88" height="24" rx="7" fill="#ffffff" stroke="#e2e7ed"/><rect x="16" y="68" width="3.5" height="24" rx="1.75" fill="#b61818" opacity="0.6"/>
+              <text x="62" y="83.5" text-anchor="middle" font-size="7" font-weight="600" fill="#0b1d2c" letter-spacing="0.4" font-family="Space Grotesk,sans-serif">ACCOUNTING</text>
+              </g>
+              <g class="svg-fade" style="--d:.24s">
+              <rect x="16" y="112" width="88" height="24" rx="7" fill="#ffffff" stroke="#e2e7ed"/><rect x="16" y="112" width="3.5" height="24" rx="1.75" fill="#b61818" opacity="0.35"/>
+              <text x="62" y="127.5" text-anchor="middle" font-size="7" font-weight="600" fill="#0b1d2c" letter-spacing="0.4" font-family="Space Grotesk,sans-serif">LIQUIDITY</text>
+              </g>
+              <path class="svg-draw" style="--len:120;--d:.35s" d="M104,36 C 130,36 138,62 152,72" fill="none" stroke="#d3dae3" stroke-width="1.3"/>
+              <path class="svg-draw" style="--len:120;--d:.48s" d="M104,80 L152,80" fill="none" stroke="#d3dae3" stroke-width="1.3"/>
+              <path class="svg-draw" style="--len:120;--d:.6s" d="M104,124 C 130,124 138,98 152,88" fill="none" stroke="#d3dae3" stroke-width="1.3"/>
+              <g class="svg-pop" style="--d:.75s">
+              <rect x="152" y="54" width="64" height="52" rx="11" fill="url(#p1-hub)"/>
+              <rect x="153" y="55" width="62" height="50" rx="10" fill="none" stroke="#ffffff" stroke-opacity="0.09"/>
+              <text x="184" y="78" text-anchor="middle" font-size="8" font-weight="700" fill="#ffffff" letter-spacing="1" font-family="Space Grotesk,sans-serif">DATA HUB</text>
+              <rect x="174" y="85" width="20" height="2" rx="1" fill="#b61818"/>
+              </g>
+              <path class="svg-draw" style="--len:70;--d:.9s" d="M216,80 L244,80" fill="none" stroke="#d3dae3" stroke-width="1.3"/>
+              <g class="svg-pop" style="--d:1.05s">
+              <rect x="244" y="34" width="100" height="92" rx="9" fill="#ffffff" stroke="#e2e7ed"/>
+              <circle cx="254" cy="44" r="1.7" fill="#dfe5ec"/><circle cx="261" cy="44" r="1.7" fill="#dfe5ec"/><circle cx="268" cy="44" r="1.7" fill="#dfe5ec"/>
+              <line x1="250" y1="52" x2="338" y2="52" stroke="#eef1f5" stroke-width="1"/>
+              </g>
+              <rect class="svg-rise" style="--d:1.2s" x="260" y="88" width="14" height="26" rx="2" fill="#0b1d2c" opacity="0.18"/>
+              <rect class="svg-rise" style="--d:1.35s" x="284" y="72" width="14" height="42" rx="2" fill="#0b1d2c" opacity="0.38"/>
+              <rect class="svg-rise" style="--d:1.5s" x="308" y="52" width="14" height="62" rx="2" fill="#b61818" opacity="0.9"/>
+              <circle r="2.5" fill="#b61818" opacity="0.8"><animateMotion dur="2.8s" repeatCount="indefinite" begin="2.2s" path="M104,80 L152,80"/></circle>
+              <circle r="2.5" fill="#0b1d2c" opacity="0.45"><animateMotion dur="2.8s" repeatCount="indefinite" begin="3.6s" path="M216,80 L244,80"/></circle>
+              </svg>
           </div>
           <div class="project-meta">
             <span class="project-tag">Custom Financial Ecosystem</span>
@@ -879,155 +616,49 @@
         <!-- Project 2: Driver-Based Forecasting -->
         <div class="project-card-future">
           <div class="project-visual">
-            <svg viewBox="0 0 360 160" class="project-svg" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Driver-based forecasting model diagram showing revenue, cost pool, market data, and procedures inputs feeding through a driver model to produce a forecast output chart with 98 percent accuracy">
+            <svg viewBox="0 0 360 160" class="project-svg" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Driver model forecast where revenue, cost, market and procedure drivers feed a central model producing a 98 percent accurate forecast curve">
               <defs>
-                <radialGradient id="dbf-bg-g" cx="65%" cy="50%" r="70%">
-                  <stop offset="0%" stop-color="#f8fafb"/>
-                  <stop offset="100%" stop-color="#f0f3f6"/>
-                </radialGradient>
-                <pattern id="dbf-grid" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-                  <line x1="20" y1="0" x2="20" y2="20" stroke="rgba(11,29,44,0.06)" stroke-width="1"/>
-                  <line x1="0" y1="20" x2="20" y2="20" stroke="rgba(11,29,44,0.06)" stroke-width="1"/>
-                </pattern>
-                <radialGradient id="dbf-model-g" cx="38%" cy="32%" r="68%">
-                  <stop offset="0%" stop-color="#d42020"/>
-                  <stop offset="100%" stop-color="#8a0f0f"/>
-                </radialGradient>
-                <filter id="dbf-glow" x="-50%" y="-50%" width="200%" height="200%">
-                  <feGaussianBlur stdDeviation="6" result="blur"/>
-                  <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-                </filter>
-                <filter id="dbf-particle-glow" x="-120%" y="-120%" width="340%" height="340%">
-                  <feGaussianBlur stdDeviation="2" result="b"/>
-                  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-                </filter>
-                <filter id="dbf-badge-glow" x="-25%" y="-35%" width="150%" height="170%">
-                  <feGaussianBlur stdDeviation="5" result="b"/>
-                  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-                </filter>
-                <linearGradient id="dbf-forecast-g" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stop-color="#0b1d2c" stop-opacity="0.4"/>
-                  <stop offset="100%" stop-color="#b61818"/>
-                </linearGradient>
-                <linearGradient id="dbf-area-g" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" stop-color="#b61818" stop-opacity="0.28"/>
-                  <stop offset="100%" stop-color="#b61818" stop-opacity="0"/>
-                </linearGradient>
-                <linearGradient id="dbf-connector-g" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stop-color="rgba(255,255,255,0.12)"/>
-                  <stop offset="100%" stop-color="rgba(182,24,24,0.55)"/>
-                </linearGradient>
-                <clipPath id="dbf-right-clip">
-                  <rect x="220" y="10" width="132" height="148"/>
-                </clipPath>
+              <pattern id="p2-dots" width="16" height="16" patternUnits="userSpaceOnUse"><circle cx="8" cy="8" r="0.7" fill="#0b1d2c" opacity="0.05"/></pattern>
+              <radialGradient id="p2-core" cx="38%" cy="32%" r="70%"><stop offset="0" stop-color="#1e4068"/><stop offset="1" stop-color="#0b1d2c"/></radialGradient>
               </defs>
-
-              <!-- Background -->
-              <rect width="360" height="160" rx="0" fill="url(#dbf-bg-g)"/>
-              <rect width="360" height="160" rx="0" fill="url(#dbf-grid)"/>
-
-              <!-- Panel dividers -->
-              <line x1="108" y1="10" x2="108" y2="150" stroke="#dde1ea" stroke-width="1" opacity="0.8"/>
-              <line x1="218" y1="10" x2="218" y2="150" stroke="#dde1ea" stroke-width="1" opacity="0.8"/>
-
-              <!-- Section labels -->
-              <text x="54" y="14" text-anchor="middle" font-size="7" font-weight="700" fill="#b61818" font-family="Space Grotesk,sans-serif" letter-spacing="1.2">DRIVERS</text>
-              <text x="163" y="14" text-anchor="middle" font-size="7" font-weight="700" fill="#0b1d2c" font-family="Space Grotesk,sans-serif" letter-spacing="1.2" opacity="0.45">MODEL</text>
-              <text x="286" y="14" text-anchor="middle" font-size="7" font-weight="700" fill="#b61818" font-family="Space Grotesk,sans-serif" letter-spacing="1.2">FORECAST</text>
-
-              <!-- ─── DRIVER INPUT BOXES ─── -->
-              <rect x="8" y="26" width="94" height="24" rx="5" fill="white" stroke="#dde1ea" stroke-width="1.5"/>
-              <rect x="8" y="26" width="4.5" height="24" rx="2.5" fill="#b61818" opacity="0.95"/>
-              <text x="57" y="42" text-anchor="middle" font-size="9" font-weight="600" fill="#0b1d2c" font-family="Space Grotesk,sans-serif" letter-spacing="0.3">REVENUE</text>
-
-              <rect x="8" y="58" width="94" height="24" rx="5" fill="white" stroke="#dde1ea" stroke-width="1.5"/>
-              <rect x="8" y="58" width="4.5" height="24" rx="2.5" fill="#b61818" opacity="0.65"/>
-              <text x="57" y="74" text-anchor="middle" font-size="9" font-weight="600" fill="#0b1d2c" font-family="Space Grotesk,sans-serif" letter-spacing="0.3">COST POOL</text>
-
-              <rect x="8" y="90" width="94" height="24" rx="5" fill="white" stroke="#dde1ea" stroke-width="1.5"/>
-              <rect x="8" y="90" width="4.5" height="24" rx="2.5" fill="#b61818" opacity="0.5"/>
-              <text x="57" y="106" text-anchor="middle" font-size="9" font-weight="600" fill="#0b1d2c" font-family="Space Grotesk,sans-serif" letter-spacing="0.3">MARKET DATA</text>
-
-              <rect x="8" y="122" width="94" height="24" rx="5" fill="white" stroke="#dde1ea" stroke-width="1.5"/>
-              <rect x="8" y="122" width="4.5" height="24" rx="2.5" fill="#b61818" opacity="0.5"/>
-              <text x="57" y="138" text-anchor="middle" font-size="9" font-weight="600" fill="#0b1d2c" font-family="Space Grotesk,sans-serif" letter-spacing="0.3">PROCEDURES</text>
-
-              <!-- ─── BEZIER CONNECTORS ─── -->
-              <path d="M 102,38 C 118,38 135,60 135,80" fill="none" stroke="#dde1ea" stroke-width="1.5"/>
-              <path d="M 102,70 C 118,70 135,76 135,80" fill="none" stroke="#dde1ea" stroke-width="1.5"/>
-              <path d="M 102,102 C 118,102 135,84 135,80" fill="none" stroke="#dde1ea" stroke-width="1.5"/>
-              <path d="M 102,134 C 118,134 135,100 135,80" fill="none" stroke="#dde1ea" stroke-width="1.5"/>
-
-              <!-- Animated data pulses -->
-              <circle r="3" fill="#b61818">
-                <animateMotion dur="1.8s" repeatCount="indefinite" begin="0s"><mpath href="#dbf-p1"/></animateMotion>
-              </circle>
-              <path id="dbf-p1" d="M 102,38 C 118,38 135,60 135,80" fill="none"/>
-
-              <circle r="2.5" fill="#0b1d2c" opacity="0.45">
-                <animateMotion dur="1.8s" repeatCount="indefinite" begin="0.45s"><mpath href="#dbf-p2"/></animateMotion>
-              </circle>
-              <path id="dbf-p2" d="M 102,70 C 118,70 135,76 135,80" fill="none"/>
-
-              <circle r="2.5" fill="#0b1d2c" opacity="0.45">
-                <animateMotion dur="1.8s" repeatCount="indefinite" begin="0.9s"><mpath href="#dbf-p3"/></animateMotion>
-              </circle>
-              <path id="dbf-p3" d="M 102,102 C 118,102 135,84 135,80" fill="none"/>
-
-              <circle r="3" fill="#b61818">
-                <animateMotion dur="1.8s" repeatCount="indefinite" begin="1.35s"><mpath href="#dbf-p4"/></animateMotion>
-              </circle>
-              <path id="dbf-p4" d="M 102,134 C 118,134 135,100 135,80" fill="none"/>
-
-              <!-- ─── CENTRAL MODEL CIRCLE ─── -->
-              <circle cx="163" cy="80" r="34" fill="#b61818" opacity="0.07"/>
-              <circle cx="163" cy="80" r="30" fill="none" stroke="#b61818" stroke-width="1.5" opacity="0.3">
-                <animate attributeName="r" values="30;44;30" dur="2.4s" repeatCount="indefinite"/>
-                <animate attributeName="opacity" values="0.3;0;0.3" dur="2.4s" repeatCount="indefinite"/>
-              </circle>
-              <circle cx="163" cy="80" r="30" fill="url(#dbf-model-g)" filter="url(#dbf-glow)"/>
-              <circle cx="163" cy="80" r="30" fill="url(#dbf-model-g)"/>
-              <circle cx="163" cy="80" r="27" fill="none" stroke="rgba(255,255,255,0.14)" stroke-width="1"/>
-              <text x="163" y="76" text-anchor="middle" font-size="9" font-weight="700" fill="white" font-family="Space Grotesk,sans-serif" letter-spacing="0.4">DRIVER</text>
-              <text x="163" y="89" text-anchor="middle" font-size="9" font-weight="700" fill="white" font-family="Space Grotesk,sans-serif" letter-spacing="0.4">MODEL</text>
-
-              <!-- Model → forecast connector -->
-              <line x1="193" y1="80" x2="222" y2="80" stroke="#dde1ea" stroke-width="1.5"/>
-              <circle r="3" fill="#b61818">
-                <animateMotion dur="1.2s" repeatCount="indefinite" begin="0.2s"><mpath href="#dbf-out"/></animateMotion>
-              </circle>
-              <path id="dbf-out" d="M 193,80 L 222,80" fill="none"/>
-
-              <!-- ─── FORECAST OUTPUT CHART ─── -->
-              <g clip-path="url(#dbf-right-clip)">
-                <line x1="228" y1="148" x2="348" y2="148" stroke="#dde1ea" stroke-width="1"/>
-                <line x1="228" y1="20" x2="228" y2="148" stroke="#dde1ea" stroke-width="1"/>
-                <polygon points="228,128 258,108 288,86 318,62 348,34 348,148 228,148" fill="url(#dbf-area-g)"/>
-                <polyline points="228,128 258,108 288,86 318,62 348,34"
-                          fill="none" stroke="url(#dbf-forecast-g)" stroke-width="2.5"
-                          stroke-linecap="round" stroke-linejoin="round"
-                          stroke-dasharray="180" stroke-dashoffset="180">
-                  <animate attributeName="stroke-dashoffset" from="180" to="0" dur="2.4s" fill="freeze" repeatCount="indefinite"/>
-                </polyline>
-                <circle cx="228" cy="128" r="3" fill="#0b1d2c" opacity="0.25"/>
-                <circle cx="258" cy="108" r="3" fill="#0b1d2c" opacity="0.4"/>
-                <circle cx="288" cy="86"  r="3" fill="#0b1d2c" opacity="0.55"/>
-                <circle cx="318" cy="62"  r="3.5" fill="#b61818"/>
-                <circle cx="348" cy="34"  r="4" fill="#b61818"/>
-                <circle cx="348" cy="34" r="4" fill="none" stroke="#b61818" stroke-width="1.5" opacity="0">
-                  <animate attributeName="r" values="4;12;4" dur="2s" repeatCount="indefinite"/>
-                  <animate attributeName="opacity" values="0.6;0;0.6" dur="2s" repeatCount="indefinite"/>
-                </circle>
-                <text x="228" y="158" text-anchor="middle" font-size="7" fill="#0b1d2c" opacity="0.4" font-family="Space Grotesk,sans-serif">Q1</text>
-                <text x="258" y="158" text-anchor="middle" font-size="7" fill="#0b1d2c" opacity="0.4" font-family="Space Grotesk,sans-serif">Q2</text>
-                <text x="288" y="158" text-anchor="middle" font-size="7" fill="#0b1d2c" opacity="0.4" font-family="Space Grotesk,sans-serif">Q3</text>
-                <text x="318" y="158" text-anchor="middle" font-size="7" fill="#b61818" opacity="0.85" font-family="Space Grotesk,sans-serif">Q4</text>
-                <text x="348" y="158" text-anchor="middle" font-size="7" fill="#b61818" font-family="Space Grotesk,sans-serif">Q5→</text>
-                <!-- Accuracy badge -->
-                <rect x="288" y="20" width="54" height="24" rx="8" fill="#b61818"/>
-                <text x="315" y="36" text-anchor="middle" font-size="11" font-weight="700" fill="white" font-family="Space Grotesk,sans-serif">98%</text>
+              <rect width="360" height="160" rx="8" fill="#f8fafb"/>
+              <rect width="360" height="160" rx="8" fill="url(#p2-dots)"/>
+              <rect x="0.5" y="0.5" width="359" height="159" rx="7.5" fill="none" stroke="#e7ebf0"/>
+              <text x="16" y="14" font-size="6" font-weight="700" fill="#b61818" letter-spacing="1.6" font-family="Space Grotesk,sans-serif">DRIVERS</text>
+              <text x="176" y="14" text-anchor="middle" font-size="6" font-weight="600" fill="#0b1d2c" opacity="0.4" letter-spacing="1.6" font-family="Space Grotesk,sans-serif">MODEL</text>
+              <g class="svg-fade" style="--d:.05s"><rect x="16" y="24" width="94" height="22" rx="6" fill="#ffffff" stroke="#e2e7ed"/><rect x="16" y="24" width="3.5" height="22" rx="1.75" fill="#b61818" opacity="0.9"/><text x="65" y="38.5" text-anchor="middle" font-size="7" font-weight="600" fill="#0b1d2c" letter-spacing="0.4" font-family="Space Grotesk,sans-serif">REVENUE</text></g>
+              <g class="svg-fade" style="--d:.15s"><rect x="16" y="58" width="94" height="22" rx="6" fill="#ffffff" stroke="#e2e7ed"/><rect x="16" y="58" width="3.5" height="22" rx="1.75" fill="#b61818" opacity="0.65"/><text x="65" y="72.5" text-anchor="middle" font-size="7" font-weight="600" fill="#0b1d2c" letter-spacing="0.4" font-family="Space Grotesk,sans-serif">COST POOL</text></g>
+              <g class="svg-fade" style="--d:.25s"><rect x="16" y="92" width="94" height="22" rx="6" fill="#ffffff" stroke="#e2e7ed"/><rect x="16" y="92" width="3.5" height="22" rx="1.75" fill="#b61818" opacity="0.45"/><text x="65" y="106.5" text-anchor="middle" font-size="7" font-weight="600" fill="#0b1d2c" letter-spacing="0.4" font-family="Space Grotesk,sans-serif">MARKET DATA</text></g>
+              <g class="svg-fade" style="--d:.35s"><rect x="16" y="126" width="94" height="22" rx="6" fill="#ffffff" stroke="#e2e7ed"/><rect x="16" y="126" width="3.5" height="22" rx="1.75" fill="#b61818" opacity="0.3"/><text x="65" y="140.5" text-anchor="middle" font-size="7" font-weight="600" fill="#0b1d2c" letter-spacing="0.4" font-family="Space Grotesk,sans-serif">PROCEDURES</text></g>
+              <path class="svg-draw" style="--len:130;--d:.45s" d="M110,35 C 136,35 146,60 155,70" fill="none" stroke="#d3dae3" stroke-width="1.3"/>
+              <path class="svg-draw" style="--len:130;--d:.55s" d="M110,69 C 134,69 145,74 153,78" fill="none" stroke="#d3dae3" stroke-width="1.3"/>
+              <path class="svg-draw" style="--len:130;--d:.65s" d="M110,103 C 134,103 145,86 153,82" fill="none" stroke="#d3dae3" stroke-width="1.3"/>
+              <path class="svg-draw" style="--len:130;--d:.75s" d="M110,137 C 136,137 146,100 155,90" fill="none" stroke="#d3dae3" stroke-width="1.3"/>
+              <g class="svg-pop" style="--d:.85s">
+              <circle cx="176" cy="80" r="23" fill="url(#p2-core)"/>
+              <circle cx="176" cy="80" r="27.5" fill="none" stroke="#b61818" stroke-opacity="0.35" stroke-width="1" stroke-dasharray="2 3"/>
+              <text x="176" y="78" text-anchor="middle" font-size="7.5" font-weight="700" fill="#ffffff" letter-spacing="0.8" font-family="Space Grotesk,sans-serif">DRIVER</text>
+              <text x="176" y="88" text-anchor="middle" font-size="7.5" font-weight="700" fill="#ffffff" letter-spacing="0.8" font-family="Space Grotesk,sans-serif">MODEL</text>
               </g>
-            </svg>
+              <path class="svg-draw" style="--len:60;--d:1s" d="M204,80 L218,80" fill="none" stroke="#d3dae3" stroke-width="1.3"/>
+              <line x1="222" y1="132" x2="344" y2="132" stroke="#dfe5ec" stroke-width="1.2"/>
+              <line x1="222" y1="30" x2="222" y2="132" stroke="#eef1f5" stroke-width="1"/>
+              <text x="252" y="142" text-anchor="middle" font-size="5.5" fill="#0b1d2c" opacity="0.35" font-family="Space Grotesk,sans-serif">Q1</text>
+              <text x="282" y="142" text-anchor="middle" font-size="5.5" fill="#0b1d2c" opacity="0.35" font-family="Space Grotesk,sans-serif">Q2</text>
+              <text x="312" y="142" text-anchor="middle" font-size="5.5" fill="#0b1d2c" opacity="0.35" font-family="Space Grotesk,sans-serif">Q3</text>
+              <text x="340" y="142" text-anchor="middle" font-size="5.5" fill="#b61818" opacity="0.6" font-family="Space Grotesk,sans-serif">Q4</text>
+              <path class="svg-fade" style="--d:1.5s" d="M222,114 L344,30 L344,64 L222,124 Z" fill="#b61818" opacity="0.07"/>
+              <path class="svg-draw" style="--len:220;--d:1.15s" d="M222,120 C 258,108 300,78 344,46" fill="none" stroke="#b61818" stroke-width="2.2" stroke-linecap="round"/>
+              <circle class="svg-pop" style="--d:1.5s" cx="250" cy="108" r="2.5" fill="#0b1d2c" opacity="0.35"/>
+              <circle class="svg-pop" style="--d:1.6s" cx="280" cy="90" r="2.5" fill="#0b1d2c" opacity="0.45"/>
+              <circle class="svg-pop" style="--d:1.7s" cx="312" cy="69" r="2.5" fill="#0b1d2c" opacity="0.55"/>
+              <circle class="svg-pop" style="--d:1.85s" cx="344" cy="46" r="4" fill="#b61818"/>
+              <circle class="svg-pulse-ring" cx="344" cy="46" r="8" fill="none" stroke="#b61818" stroke-width="1"/>
+              <g class="svg-fade" style="--d:2s">
+              <text x="344" y="20" text-anchor="end" font-size="12" font-weight="700" fill="#b61818" font-family="Space Grotesk,sans-serif">98%</text>
+              <text x="344" y="28" text-anchor="end" font-size="5.5" font-weight="600" fill="#0b1d2c" opacity="0.45" letter-spacing="1.2" font-family="Space Grotesk,sans-serif">FORECAST ACCURACY</text>
+              </g>
+              </svg>
           </div>
           <div class="project-meta">
             <span class="project-tag">Predictive Analytics</span>
@@ -1284,7 +915,7 @@
       <div class="contact-form-container">
         <!-- TODO: Replace YOUR_FORM_ID with your actual Formspree endpoint -->
         <form action="https://formspree.io/f/xkoplpva" method="POST" class="contact-form" id="contactForm">
-         <input type="hidden" name="_next" value="https://pmgservices.github.io/index.html#contact">
+         <input type="hidden" name="_next" value="https://pmg-services.net/?sent=1#contact">
           <div class="form-group">
             <label for="email">
               <span class="label-content">
@@ -1402,7 +1033,7 @@
       </svg>
     </button>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=2"></script>
 
     <!-- ─── KPI STATEMENT ANIMATION ─── -->
     <script>
@@ -1539,7 +1170,7 @@
         erp: {
           tag: 'Custom Financial Ecosystem',
           title: 'Bespoke financial ecosystem for an aviation startup',
-          heroSvg: `<svg viewBox="0 0 360 160" class="cs-hero-svg" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Data hub architecture diagram"><defs><radialGradient id="erp-ov-bg-g" cx="50%" cy="50%" r="65%"><stop offset="0%" stop-color="#f8fafb"/><stop offset="100%" stop-color="#f0f3f6"/></radialGradient><pattern id="erp-ov-grid" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><line x1="20" y1="0" x2="20" y2="20" stroke="rgba(11,29,44,0.06)" stroke-width="1"/><line x1="0" y1="20" x2="20" y2="20" stroke="rgba(11,29,44,0.06)" stroke-width="1"/></pattern><radialGradient id="erp-ov-hub-fill" cx="38%" cy="32%" r="70%"><stop offset="0%" stop-color="#1e4068"/><stop offset="100%" stop-color="#0b1d2c"/></radialGradient><filter id="erp-ov-hub-glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter><filter id="erp-ov-particle-glow" x="-120%" y="-120%" width="340%" height="340%"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><rect width="360" height="160" rx="0" fill="url(#erp-ov-bg-g)"/><rect width="360" height="160" rx="0" fill="url(#erp-ov-grid)"/><circle cx="180" cy="80" r="60" fill="#b61818" opacity="0.04"/><line x1="180" y1="31" x2="180" y2="58" stroke="#dde1ea" stroke-width="1.5"/><line x1="180" y1="102" x2="180" y2="129" stroke="#dde1ea" stroke-width="1.5"/><line x1="108" y1="80" x2="158" y2="80" stroke="#dde1ea" stroke-width="1.5"/><line x1="202" y1="80" x2="252" y2="80" stroke="#dde1ea" stroke-width="1.5"/><rect x="128" y="9" width="104" height="22" rx="11" fill="white" stroke="#dde1ea" stroke-width="1.5"/><text x="180" y="23" text-anchor="middle" font-size="7.5" font-weight="600" fill="#0b1d2c" font-family="Space Grotesk,sans-serif" letter-spacing="0.3">ACCOUNTING PLATFORM</text><rect x="16" y="69" width="92" height="22" rx="11" fill="white" stroke="#dde1ea" stroke-width="1.5"/><text x="62" y="83" text-anchor="middle" font-size="7.5" font-weight="600" fill="#0b1d2c" font-family="Space Grotesk,sans-serif" letter-spacing="0.3">INVOICE OCR</text><rect x="252" y="69" width="92" height="22" rx="11" fill="white" stroke="#dde1ea" stroke-width="1.5"/><text x="298" y="83" text-anchor="middle" font-size="7.5" font-weight="600" fill="#0b1d2c" font-family="Space Grotesk,sans-serif" letter-spacing="0.3">LIQUIDITY ENGINE</text><rect x="128" y="129" width="104" height="22" rx="11" fill="white" stroke="#dde1ea" stroke-width="1.5"/><text x="180" y="143" text-anchor="middle" font-size="7.5" font-weight="600" fill="#0b1d2c" font-family="Space Grotesk,sans-serif" letter-spacing="0.3">TARGET OP. MODEL</text><circle cx="180" cy="80" r="22" fill="none" stroke="#b61818" stroke-width="1.5" opacity="0.25"><animate attributeName="r" values="22;40;22" dur="2.6s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.25;0;0.25" dur="2.6s" repeatCount="indefinite"/></circle><circle cx="180" cy="80" r="22" fill="none" stroke="#b61818" stroke-width="1" opacity="0.4"><animate attributeName="r" values="22;30;22" dur="2.6s" repeatCount="indefinite" begin="0.5s"/><animate attributeName="opacity" values="0.4;0;0.4" dur="2.6s" repeatCount="indefinite" begin="0.5s"/></circle><circle cx="180" cy="80" r="22" fill="url(#erp-ov-hub-fill)" filter="url(#erp-ov-hub-glow)"/><circle cx="180" cy="80" r="22" fill="url(#erp-ov-hub-fill)"/><circle cx="180" cy="80" r="19" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/><circle cx="180" cy="80" r="19" fill="none" stroke="#b61818" stroke-width="2.5" stroke-dasharray="62 58" stroke-linecap="round" opacity="0.9"/><text x="180" y="77" text-anchor="middle" font-size="9" font-weight="700" fill="white" font-family="Space Grotesk,sans-serif" letter-spacing="0.3">DATA</text><text x="180" y="89" text-anchor="middle" font-size="7" fill="#b61818" font-family="Space Grotesk,sans-serif" letter-spacing="0.8">HUB</text><circle r="3.5" fill="#b61818" filter="url(#erp-ov-particle-glow)"><animateMotion dur="1.5s" repeatCount="indefinite" begin="0s"><mpath href="#erp-ov-sn-p"/></animateMotion></circle><path id="erp-ov-sn-p" d="M 180,58 L 180,31" fill="none"/><circle r="3" fill="#0b1d2c" opacity="0.5"><animateMotion dur="1.5s" repeatCount="indefinite" begin="0.75s"><mpath href="#erp-ov-ss-p"/></animateMotion></circle><path id="erp-ov-ss-p" d="M 180,102 L 180,129" fill="none"/><circle r="3" fill="#0b1d2c" opacity="0.5"><animateMotion dur="1.5s" repeatCount="indefinite" begin="0.375s"><mpath href="#erp-ov-sw-p"/></animateMotion></circle><path id="erp-ov-sw-p" d="M 158,80 L 108,80" fill="none"/><circle r="3.5" fill="#b61818" filter="url(#erp-ov-particle-glow)"><animateMotion dur="1.5s" repeatCount="indefinite" begin="1.125s"><mpath href="#erp-ov-se-p"/></animateMotion></circle><path id="erp-ov-se-p" d="M 202,80 L 252,80" fill="none"/></svg>`,
+          heroSvg: `<svg viewBox="0 0 360 160" class="cs-hero-svg" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Integration pipeline where invoice OCR, accounting and liquidity systems flow into a central data hub that feeds a live finance dashboard"> <defs> <pattern id="o1-dots" width="16" height="16" patternUnits="userSpaceOnUse"><circle cx="8" cy="8" r="0.7" fill="#0b1d2c" opacity="0.05"/></pattern> <radialGradient id="o1-hub" cx="38%" cy="32%" r="70%"><stop offset="0" stop-color="#1e4068"/><stop offset="1" stop-color="#0b1d2c"/></radialGradient> </defs> <rect width="360" height="160" rx="8" fill="#f8fafb"/> <rect width="360" height="160" rx="8" fill="url(#o1-dots)"/> <rect x="0.5" y="0.5" width="359" height="159" rx="7.5" fill="none" stroke="#e7ebf0"/> <text x="16" y="16" font-size="6" font-weight="600" fill="#0b1d2c" opacity="0.4" letter-spacing="1.6" font-family="Space Grotesk,sans-serif">SOURCES</text> <text x="244" y="26" font-size="6" font-weight="700" fill="#b61818" letter-spacing="1.6" font-family="Space Grotesk,sans-serif">LIVE OUTPUT</text> <g class="svg-fade"> <rect x="16" y="24" width="88" height="24" rx="7" fill="#ffffff" stroke="#e2e7ed"/><rect x="16" y="24" width="3.5" height="24" rx="1.75" fill="#b61818" opacity="0.9"/> <text x="62" y="39.5" text-anchor="middle" font-size="7" font-weight="600" fill="#0b1d2c" letter-spacing="0.4" font-family="Space Grotesk,sans-serif">INVOICE OCR</text> </g> <g class="svg-fade" style="--d:.12s"> <rect x="16" y="68" width="88" height="24" rx="7" fill="#ffffff" stroke="#e2e7ed"/><rect x="16" y="68" width="3.5" height="24" rx="1.75" fill="#b61818" opacity="0.6"/> <text x="62" y="83.5" text-anchor="middle" font-size="7" font-weight="600" fill="#0b1d2c" letter-spacing="0.4" font-family="Space Grotesk,sans-serif">ACCOUNTING</text> </g> <g class="svg-fade" style="--d:.24s"> <rect x="16" y="112" width="88" height="24" rx="7" fill="#ffffff" stroke="#e2e7ed"/><rect x="16" y="112" width="3.5" height="24" rx="1.75" fill="#b61818" opacity="0.35"/> <text x="62" y="127.5" text-anchor="middle" font-size="7" font-weight="600" fill="#0b1d2c" letter-spacing="0.4" font-family="Space Grotesk,sans-serif">LIQUIDITY</text> </g> <path class="svg-draw" style="--len:120;--d:.35s" d="M104,36 C 130,36 138,62 152,72" fill="none" stroke="#d3dae3" stroke-width="1.3"/> <path class="svg-draw" style="--len:120;--d:.48s" d="M104,80 L152,80" fill="none" stroke="#d3dae3" stroke-width="1.3"/> <path class="svg-draw" style="--len:120;--d:.6s" d="M104,124 C 130,124 138,98 152,88" fill="none" stroke="#d3dae3" stroke-width="1.3"/> <g class="svg-pop" style="--d:.75s"> <rect x="152" y="54" width="64" height="52" rx="11" fill="url(#o1-hub)"/> <rect x="153" y="55" width="62" height="50" rx="10" fill="none" stroke="#ffffff" stroke-opacity="0.09"/> <text x="184" y="78" text-anchor="middle" font-size="8" font-weight="700" fill="#ffffff" letter-spacing="1" font-family="Space Grotesk,sans-serif">DATA HUB</text> <rect x="174" y="85" width="20" height="2" rx="1" fill="#b61818"/> </g> <path class="svg-draw" style="--len:70;--d:.9s" d="M216,80 L244,80" fill="none" stroke="#d3dae3" stroke-width="1.3"/> <g class="svg-pop" style="--d:1.05s"> <rect x="244" y="34" width="100" height="92" rx="9" fill="#ffffff" stroke="#e2e7ed"/> <circle cx="254" cy="44" r="1.7" fill="#dfe5ec"/><circle cx="261" cy="44" r="1.7" fill="#dfe5ec"/><circle cx="268" cy="44" r="1.7" fill="#dfe5ec"/> <line x1="250" y1="52" x2="338" y2="52" stroke="#eef1f5" stroke-width="1"/> </g> <rect class="svg-rise" style="--d:1.2s" x="260" y="88" width="14" height="26" rx="2" fill="#0b1d2c" opacity="0.18"/> <rect class="svg-rise" style="--d:1.35s" x="284" y="72" width="14" height="42" rx="2" fill="#0b1d2c" opacity="0.38"/> <rect class="svg-rise" style="--d:1.5s" x="308" y="52" width="14" height="62" rx="2" fill="#b61818" opacity="0.9"/> <circle r="2.5" fill="#b61818" opacity="0.8"><animateMotion dur="2.8s" repeatCount="indefinite" begin="2.2s" path="M104,80 L152,80"/></circle> <circle r="2.5" fill="#0b1d2c" opacity="0.45"><animateMotion dur="2.8s" repeatCount="indefinite" begin="3.6s" path="M216,80 L244,80"/></circle> </svg>`,
           company: 'A startup in the aviation industry running its finance operation entirely on manual data entry and spreadsheets. The finance team was spending significant time on duplicate entry, ad-hoc reporting, and manual invoice processing — with no structured forecasting or scenario planning capability.',
           goal: 'Architect a bespoke, integrated financial ecosystem built around the existing accounting platform — connecting custom-built Invoice OCR, a Liquidity Engine for financial planning and forecasting, and a Target Operating Model for modeling revenue streams across different scenarios.',
           approach: [
@@ -1597,7 +1228,7 @@
         forecasting: {
           tag: 'Predictive Analytics',
           title: 'Driver-based forecasting model achieving 98% revenue prediction accuracy',
-          heroSvg: `<svg viewBox="0 0 360 160" class="cs-hero-svg" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Driver-based forecasting model diagram"><defs><radialGradient id="dbf-ov-bg-g" cx="65%" cy="50%" r="70%"><stop offset="0%" stop-color="#f8fafb"/><stop offset="100%" stop-color="#f0f3f6"/></radialGradient><pattern id="dbf-ov-grid" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><line x1="20" y1="0" x2="20" y2="20" stroke="rgba(11,29,44,0.06)" stroke-width="1"/><line x1="0" y1="20" x2="20" y2="20" stroke="rgba(11,29,44,0.06)" stroke-width="1"/></pattern><radialGradient id="dbf-ov-model-g" cx="38%" cy="32%" r="68%"><stop offset="0%" stop-color="#d42020"/><stop offset="100%" stop-color="#8a0f0f"/></radialGradient><filter id="dbf-ov-glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter><filter id="dbf-ov-particle-glow" x="-120%" y="-120%" width="340%" height="340%"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter><linearGradient id="dbf-ov-forecast-g" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#0b1d2c" stop-opacity="0.4"/><stop offset="100%" stop-color="#b61818"/></linearGradient><linearGradient id="dbf-ov-area-g" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#b61818" stop-opacity="0.28"/><stop offset="100%" stop-color="#b61818" stop-opacity="0"/></linearGradient><clipPath id="dbf-ov-right-clip"><rect x="220" y="10" width="132" height="148"/></clipPath></defs><rect width="360" height="160" rx="0" fill="url(#dbf-ov-bg-g)"/><rect width="360" height="160" rx="0" fill="url(#dbf-ov-grid)"/><line x1="108" y1="10" x2="108" y2="150" stroke="#dde1ea" stroke-width="1" opacity="0.8"/><line x1="218" y1="10" x2="218" y2="150" stroke="#dde1ea" stroke-width="1" opacity="0.8"/><text x="54" y="14" text-anchor="middle" font-size="7" font-weight="700" fill="#b61818" font-family="Space Grotesk,sans-serif" letter-spacing="1.2">DRIVERS</text><text x="163" y="14" text-anchor="middle" font-size="7" font-weight="700" fill="#0b1d2c" font-family="Space Grotesk,sans-serif" letter-spacing="1.2" opacity="0.45">MODEL</text><text x="286" y="14" text-anchor="middle" font-size="7" font-weight="700" fill="#b61818" font-family="Space Grotesk,sans-serif" letter-spacing="1.2">FORECAST</text><rect x="8" y="26" width="94" height="24" rx="5" fill="white" stroke="#dde1ea" stroke-width="1.5"/><rect x="8" y="26" width="4.5" height="24" rx="2.5" fill="#b61818" opacity="0.95"/><text x="57" y="42" text-anchor="middle" font-size="9" font-weight="600" fill="#0b1d2c" font-family="Space Grotesk,sans-serif" letter-spacing="0.3">REVENUE</text><rect x="8" y="58" width="94" height="24" rx="5" fill="white" stroke="#dde1ea" stroke-width="1.5"/><rect x="8" y="58" width="4.5" height="24" rx="2.5" fill="#b61818" opacity="0.65"/><text x="57" y="74" text-anchor="middle" font-size="9" font-weight="600" fill="#0b1d2c" font-family="Space Grotesk,sans-serif" letter-spacing="0.3">COST POOL</text><rect x="8" y="90" width="94" height="24" rx="5" fill="white" stroke="#dde1ea" stroke-width="1.5"/><rect x="8" y="90" width="4.5" height="24" rx="2.5" fill="#b61818" opacity="0.5"/><text x="57" y="106" text-anchor="middle" font-size="9" font-weight="600" fill="#0b1d2c" font-family="Space Grotesk,sans-serif" letter-spacing="0.3">MARKET DATA</text><rect x="8" y="122" width="94" height="24" rx="5" fill="white" stroke="#dde1ea" stroke-width="1.5"/><rect x="8" y="122" width="4.5" height="24" rx="2.5" fill="#b61818" opacity="0.5"/><text x="57" y="138" text-anchor="middle" font-size="9" font-weight="600" fill="#0b1d2c" font-family="Space Grotesk,sans-serif" letter-spacing="0.3">PROCEDURES</text><path d="M 102,38 C 118,38 135,60 135,80" fill="none" stroke="#dde1ea" stroke-width="1.5"/><path d="M 102,70 C 118,70 135,76 135,80" fill="none" stroke="#dde1ea" stroke-width="1.5"/><path d="M 102,102 C 118,102 135,84 135,80" fill="none" stroke="#dde1ea" stroke-width="1.5"/><path d="M 102,134 C 118,134 135,100 135,80" fill="none" stroke="#dde1ea" stroke-width="1.5"/><circle r="3" fill="#b61818"><animateMotion dur="1.8s" repeatCount="indefinite" begin="0s"><mpath href="#dbf-ov-p1"/></animateMotion></circle><path id="dbf-ov-p1" d="M 102,38 C 118,38 135,60 135,80" fill="none"/><circle r="2.5" fill="#0b1d2c" opacity="0.45"><animateMotion dur="1.8s" repeatCount="indefinite" begin="0.45s"><mpath href="#dbf-ov-p2"/></animateMotion></circle><path id="dbf-ov-p2" d="M 102,70 C 118,70 135,76 135,80" fill="none"/><circle r="2.5" fill="#0b1d2c" opacity="0.45"><animateMotion dur="1.8s" repeatCount="indefinite" begin="0.9s"><mpath href="#dbf-ov-p3"/></animateMotion></circle><path id="dbf-ov-p3" d="M 102,102 C 118,102 135,84 135,80" fill="none"/><circle r="3" fill="#b61818"><animateMotion dur="1.8s" repeatCount="indefinite" begin="1.35s"><mpath href="#dbf-ov-p4"/></animateMotion></circle><path id="dbf-ov-p4" d="M 102,134 C 118,134 135,100 135,80" fill="none"/><circle cx="163" cy="80" r="34" fill="#b61818" opacity="0.07"/><circle cx="163" cy="80" r="30" fill="none" stroke="#b61818" stroke-width="1.5" opacity="0.3"><animate attributeName="r" values="30;44;30" dur="2.4s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.3;0;0.3" dur="2.4s" repeatCount="indefinite"/></circle><circle cx="163" cy="80" r="30" fill="url(#dbf-ov-model-g)" filter="url(#dbf-ov-glow)"/><circle cx="163" cy="80" r="30" fill="url(#dbf-ov-model-g)"/><circle cx="163" cy="80" r="27" fill="none" stroke="rgba(255,255,255,0.14)" stroke-width="1"/><text x="163" y="76" text-anchor="middle" font-size="9" font-weight="700" fill="white" font-family="Space Grotesk,sans-serif" letter-spacing="0.4">DRIVER</text><text x="163" y="89" text-anchor="middle" font-size="9" font-weight="700" fill="white" font-family="Space Grotesk,sans-serif" letter-spacing="0.4">MODEL</text><line x1="193" y1="80" x2="222" y2="80" stroke="#dde1ea" stroke-width="1.5"/><circle r="3" fill="#b61818"><animateMotion dur="1.2s" repeatCount="indefinite" begin="0.2s"><mpath href="#dbf-ov-out"/></animateMotion></circle><path id="dbf-ov-out" d="M 193,80 L 222,80" fill="none"/><g clip-path="url(#dbf-ov-right-clip)"><line x1="228" y1="148" x2="348" y2="148" stroke="#dde1ea" stroke-width="1"/><line x1="228" y1="20" x2="228" y2="148" stroke="#dde1ea" stroke-width="1"/><polygon points="228,128 258,108 288,86 318,62 348,34 348,148 228,148" fill="url(#dbf-ov-area-g)"/><polyline points="228,128 258,108 288,86 318,62 348,34" fill="none" stroke="url(#dbf-ov-forecast-g)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="180" stroke-dashoffset="180"><animate attributeName="stroke-dashoffset" from="180" to="0" dur="2.4s" fill="freeze" repeatCount="indefinite"/></polyline><circle cx="228" cy="128" r="3" fill="#0b1d2c" opacity="0.25"/><circle cx="258" cy="108" r="3" fill="#0b1d2c" opacity="0.4"/><circle cx="288" cy="86" r="3" fill="#0b1d2c" opacity="0.55"/><circle cx="318" cy="62" r="3.5" fill="#b61818"/><circle cx="348" cy="34" r="4" fill="#b61818"/><circle cx="348" cy="34" r="4" fill="none" stroke="#b61818" stroke-width="1.5" opacity="0"><animate attributeName="r" values="4;12;4" dur="2s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0;0.6" dur="2s" repeatCount="indefinite"/></circle><text x="228" y="158" text-anchor="middle" font-size="7" fill="#0b1d2c" opacity="0.4" font-family="Space Grotesk,sans-serif">Q1</text><text x="258" y="158" text-anchor="middle" font-size="7" fill="#0b1d2c" opacity="0.4" font-family="Space Grotesk,sans-serif">Q2</text><text x="288" y="158" text-anchor="middle" font-size="7" fill="#0b1d2c" opacity="0.4" font-family="Space Grotesk,sans-serif">Q3</text><text x="318" y="158" text-anchor="middle" font-size="7" fill="#b61818" opacity="0.85" font-family="Space Grotesk,sans-serif">Q4</text><text x="348" y="158" text-anchor="middle" font-size="7" fill="#b61818" font-family="Space Grotesk,sans-serif">Q5→</text><rect x="288" y="20" width="54" height="24" rx="8" fill="#b61818"/><text x="315" y="36" text-anchor="middle" font-size="11" font-weight="700" fill="white" font-family="Space Grotesk,sans-serif">98%</text></g></svg>`,
+          heroSvg: `<svg viewBox="0 0 360 160" class="cs-hero-svg" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Driver model forecast where revenue, cost, market and procedure drivers feed a central model producing a 98 percent accurate forecast curve"> <defs> <pattern id="o2-dots" width="16" height="16" patternUnits="userSpaceOnUse"><circle cx="8" cy="8" r="0.7" fill="#0b1d2c" opacity="0.05"/></pattern> <radialGradient id="o2-core" cx="38%" cy="32%" r="70%"><stop offset="0" stop-color="#1e4068"/><stop offset="1" stop-color="#0b1d2c"/></radialGradient> </defs> <rect width="360" height="160" rx="8" fill="#f8fafb"/> <rect width="360" height="160" rx="8" fill="url(#o2-dots)"/> <rect x="0.5" y="0.5" width="359" height="159" rx="7.5" fill="none" stroke="#e7ebf0"/> <text x="16" y="14" font-size="6" font-weight="700" fill="#b61818" letter-spacing="1.6" font-family="Space Grotesk,sans-serif">DRIVERS</text> <text x="176" y="14" text-anchor="middle" font-size="6" font-weight="600" fill="#0b1d2c" opacity="0.4" letter-spacing="1.6" font-family="Space Grotesk,sans-serif">MODEL</text> <g class="svg-fade" style="--d:.05s"><rect x="16" y="24" width="94" height="22" rx="6" fill="#ffffff" stroke="#e2e7ed"/><rect x="16" y="24" width="3.5" height="22" rx="1.75" fill="#b61818" opacity="0.9"/><text x="65" y="38.5" text-anchor="middle" font-size="7" font-weight="600" fill="#0b1d2c" letter-spacing="0.4" font-family="Space Grotesk,sans-serif">REVENUE</text></g> <g class="svg-fade" style="--d:.15s"><rect x="16" y="58" width="94" height="22" rx="6" fill="#ffffff" stroke="#e2e7ed"/><rect x="16" y="58" width="3.5" height="22" rx="1.75" fill="#b61818" opacity="0.65"/><text x="65" y="72.5" text-anchor="middle" font-size="7" font-weight="600" fill="#0b1d2c" letter-spacing="0.4" font-family="Space Grotesk,sans-serif">COST POOL</text></g> <g class="svg-fade" style="--d:.25s"><rect x="16" y="92" width="94" height="22" rx="6" fill="#ffffff" stroke="#e2e7ed"/><rect x="16" y="92" width="3.5" height="22" rx="1.75" fill="#b61818" opacity="0.45"/><text x="65" y="106.5" text-anchor="middle" font-size="7" font-weight="600" fill="#0b1d2c" letter-spacing="0.4" font-family="Space Grotesk,sans-serif">MARKET DATA</text></g> <g class="svg-fade" style="--d:.35s"><rect x="16" y="126" width="94" height="22" rx="6" fill="#ffffff" stroke="#e2e7ed"/><rect x="16" y="126" width="3.5" height="22" rx="1.75" fill="#b61818" opacity="0.3"/><text x="65" y="140.5" text-anchor="middle" font-size="7" font-weight="600" fill="#0b1d2c" letter-spacing="0.4" font-family="Space Grotesk,sans-serif">PROCEDURES</text></g> <path class="svg-draw" style="--len:130;--d:.45s" d="M110,35 C 136,35 146,60 155,70" fill="none" stroke="#d3dae3" stroke-width="1.3"/> <path class="svg-draw" style="--len:130;--d:.55s" d="M110,69 C 134,69 145,74 153,78" fill="none" stroke="#d3dae3" stroke-width="1.3"/> <path class="svg-draw" style="--len:130;--d:.65s" d="M110,103 C 134,103 145,86 153,82" fill="none" stroke="#d3dae3" stroke-width="1.3"/> <path class="svg-draw" style="--len:130;--d:.75s" d="M110,137 C 136,137 146,100 155,90" fill="none" stroke="#d3dae3" stroke-width="1.3"/> <g class="svg-pop" style="--d:.85s"> <circle cx="176" cy="80" r="23" fill="url(#o2-core)"/> <circle cx="176" cy="80" r="27.5" fill="none" stroke="#b61818" stroke-opacity="0.35" stroke-width="1" stroke-dasharray="2 3"/> <text x="176" y="78" text-anchor="middle" font-size="7.5" font-weight="700" fill="#ffffff" letter-spacing="0.8" font-family="Space Grotesk,sans-serif">DRIVER</text> <text x="176" y="88" text-anchor="middle" font-size="7.5" font-weight="700" fill="#ffffff" letter-spacing="0.8" font-family="Space Grotesk,sans-serif">MODEL</text> </g> <path class="svg-draw" style="--len:60;--d:1s" d="M204,80 L218,80" fill="none" stroke="#d3dae3" stroke-width="1.3"/> <line x1="222" y1="132" x2="344" y2="132" stroke="#dfe5ec" stroke-width="1.2"/> <line x1="222" y1="30" x2="222" y2="132" stroke="#eef1f5" stroke-width="1"/> <text x="252" y="142" text-anchor="middle" font-size="5.5" fill="#0b1d2c" opacity="0.35" font-family="Space Grotesk,sans-serif">Q1</text> <text x="282" y="142" text-anchor="middle" font-size="5.5" fill="#0b1d2c" opacity="0.35" font-family="Space Grotesk,sans-serif">Q2</text> <text x="312" y="142" text-anchor="middle" font-size="5.5" fill="#0b1d2c" opacity="0.35" font-family="Space Grotesk,sans-serif">Q3</text> <text x="340" y="142" text-anchor="middle" font-size="5.5" fill="#b61818" opacity="0.6" font-family="Space Grotesk,sans-serif">Q4</text> <path class="svg-fade" style="--d:1.5s" d="M222,114 L344,30 L344,64 L222,124 Z" fill="#b61818" opacity="0.07"/> <path class="svg-draw" style="--len:220;--d:1.15s" d="M222,120 C 258,108 300,78 344,46" fill="none" stroke="#b61818" stroke-width="2.2" stroke-linecap="round"/> <circle class="svg-pop" style="--d:1.5s" cx="250" cy="108" r="2.5" fill="#0b1d2c" opacity="0.35"/> <circle class="svg-pop" style="--d:1.6s" cx="280" cy="90" r="2.5" fill="#0b1d2c" opacity="0.45"/> <circle class="svg-pop" style="--d:1.7s" cx="312" cy="69" r="2.5" fill="#0b1d2c" opacity="0.55"/> <circle class="svg-pop" style="--d:1.85s" cx="344" cy="46" r="4" fill="#b61818"/> <circle class="svg-pulse-ring" cx="344" cy="46" r="8" fill="none" stroke="#b61818" stroke-width="1"/> <g class="svg-fade" style="--d:2s"> <text x="344" y="20" text-anchor="end" font-size="12" font-weight="700" fill="#b61818" font-family="Space Grotesk,sans-serif">98%</text> <text x="344" y="28" text-anchor="end" font-size="5.5" font-weight="600" fill="#0b1d2c" opacity="0.45" letter-spacing="1.2" font-family="Space Grotesk,sans-serif">FORECAST ACCURACY</text> </g> </svg>`,
           company: 'A pharmaceutical company operating across all major European markets. Their legacy Excel-based planning process took 6 weeks per cycle and produced forecasts with ±15% variance — unacceptable for board-level decision making.',
           goal: 'Build an Anaplan-based driver forecasting model with scenario planning, producing rolling 12-month forecasts with less than 3% variance and enabling rapid what-if analysis across multiple operational scenarios.',
           approach: ['Identified 28 key operational drivers through stakeholder workshops','Built an Anaplan data pipeline pulling actuals from Sales360','Developed driver-based forecasting logic in Anaplan with different forecast and operational plan scenarios','Created Anaplan dashboards with drill-down from group P&L to individual cost centers'],
