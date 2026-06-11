@@ -11,8 +11,8 @@ const translations = {
     navFaq: "FAQ",
 
     // Hero Section
-    heroTitle: "Financial Transformation & FP&A Consulting for European Businesses.",
-    heroDesc: "Most European finance teams spend more time closing last month than planning next quarter. We change that — replacing spreadsheet-based finance with driver-based models, automation, and behavioral discipline built to last.",
+    heroTitle: "Financial Transformation & FP&A Consulting.",
+    heroDesc: "Most finance teams spend more time closing last month than planning next quarter. We change that — replacing spreadsheet-based finance with driver-based models, automation, and behavioral discipline built to last.",
     btnServices: "See What We Build",
     btnWork: "Work With Us",
 
@@ -53,7 +53,7 @@ const translations = {
     p1Name: "Custom ERP Integration",
     p1Desc: "An aviation startup was running its finance operation entirely on manual data entry. We built a bespoke ecosystem — Invoice OCR, Liquidity Engine, and Target Operating Model tooling — fully integrated with their existing accounting platform, eliminating manual entry entirely.",
     p2Name: "Driver-Based Forecasting",
-    p2Desc: "For a pharmaceutical company, we built an Anaplan-based driver forecasting model with scenario planning — replacing a static annual budget and achieving 98% revenue prediction accuracy across major European markets.",
+    p2Desc: "For a pharmaceutical company, we built an Anaplan-based driver forecasting model with scenario planning — replacing a static annual budget and achieving 98% revenue prediction accuracy across all major markets.",
     p3Name: "",
     p3Desc: "",
     p4Name: "",
@@ -81,7 +81,7 @@ const translations = {
     auLabel: "Who we are",
     auHeadline: "We engineer<br><span class=\"au-headline-accent\">financial clarity.</span>",
     auLead: "Most finance transformations fail because they treat the symptom — the spreadsheet, the ERP, the dashboard — without changing the underlying decision architecture. We fix both.",
-    auBody: "We are not a staffing agency. We are not a Big Four offshoot. We are a focused team of finance operators, behavioral scientists, and engineers who have built, automated, and scaled financial systems for companies across Germany, Switzerland, the Netherlands, and the broader European market.",
+    auBody: "We are not a staffing agency. We are not a Big Four offshoot. We are a focused team of finance operators, behavioral scientists, and engineers who have built, automated, and scaled financial systems for companies around the world.",
     auPillar1Title: "Behavioral Finance Implementation",
     auPillar1Desc: "We identify where cognitive bias distorts your financial decisions and redesign the architecture to eliminate it.",
     auPillar2Title: "FP&A (Financial Planning & Analysis)",
@@ -175,7 +175,7 @@ const translations = {
     p1Name: "Custom ERP Integration",
     p1Desc: "Ein Luftfahrt-Startup betrieb seine Finanzabteilung vollstaendig manuell. Wir entwickelten ein massgeschneidertes Oekosystem — Invoice OCR, Liquidity Engine und Target Operating Model — vollstaendig integriert in die bestehende Buchhaltungsplattform.",
     p2Name: "Treiberbasierte Prognose",
-    p2Desc: "Fuer ein Pharmaunternehmen haben wir ein Anaplan-basiertes treibergesteuertes Prognosemodell mit Szenarioplanung entwickelt — mit 98% Umsatzprognose-Genauigkeit in den wichtigsten europaeischen Maerkten.",
+    p2Desc: "Fuer ein Pharmaunternehmen haben wir ein Anaplan-basiertes treibergesteuertes Prognosemodell mit Szenarioplanung entwickelt — mit 98% Umsatzprognose-Genauigkeit in den wichtigsten Maerkten weltweit.",
     p3Name: "",
     p3Desc: "",
     p4Name: "",
@@ -203,7 +203,7 @@ const translations = {
     auLabel: "Wer wir sind",
     auHeadline: "Wir entwickeln<br><span class=\"au-headline-accent\">finanzielle Klarheit.</span>",
     auLead: "Die meisten Finanztransformationen scheitern, weil die zugrundeliegenden Entscheidungen, Prozesse und Tools nie gemeinsam neu gestaltet wurden. PMG Services ändert das — von der menschlichen Ebene bis zur Datenebene.",
-    auBody: "Wir sind keine Personalvermittlung. Wir sind kein Big-Four-Ableger. Wir sind ein fokussiertes Team aus Finanzexperten, Verhaltenswissenschaftlern und Ingenieuren, die Finanzsysteme für Unternehmen in Deutschland, der Schweiz, den Niederlanden und dem gesamten europäischen Markt aufgebaut, automatisiert und skaliert haben.",
+    auBody: "Wir sind keine Personalvermittlung. Wir sind kein Big-Four-Ableger. Wir sind ein fokussiertes Team aus Finanzexperten, Verhaltenswissenschaftlern und Ingenieuren, die Finanzsysteme für Unternehmen weltweit aufgebaut, automatisiert und skaliert haben.",
     auPillar1Title: "Behavioral Finance Implementation",
     auPillar1Desc: "Wir identifizieren, wo kognitive Verzerrungen Ihre Finanzentscheidungen beeinflussen, und gestalten die Architektur so um, dass diese eliminiert werden — eingebettet in Ihre Prozesse, nicht aufgesetzt.",
     auPillar2Title: "FP&A (Finanzplanung & -analyse)",
@@ -257,20 +257,18 @@ function setLanguage(lang) {
   // Navigation (desktop)
   document.getElementById('nav-aboutus').innerText  = t.navAbout;
   document.getElementById('nav-about').innerText    = t.navServices;
-  document.getElementById('nav-experience').innerText = t.navTech;
   document.getElementById('nav-projects').innerText = t.navProjects;
   document.getElementById('nav-contact').innerText  = t.navContact;
 
-  // Hamburger Nav Links (About, Services, Technology, Projects, How We Work, Contact)
+  // Hamburger Nav Links (About, Services, Projects, How We Work, FAQ, Contact)
   const mobileLinks = document.querySelectorAll('.menu-links a');
-  if (mobileLinks.length >= 7) {
+  if (mobileLinks.length >= 6) {
     mobileLinks[0].innerText = t.navAbout;
     mobileLinks[1].innerText = t.navServices;
-    mobileLinks[2].innerText = t.navTech;
-    mobileLinks[3].innerText = t.navProjects;
-    mobileLinks[4].innerText = t.navHowWeWork;
-    mobileLinks[5].innerText = t.navFaq;
-    mobileLinks[6].innerText = t.navContact;
+    mobileLinks[2].innerText = t.navProjects;
+    mobileLinks[3].innerText = t.navHowWeWork;
+    mobileLinks[4].innerText = t.navFaq;
+    mobileLinks[5].innerText = t.navContact;
   }
 
   // Hero Section
@@ -311,13 +309,6 @@ function setLanguage(lang) {
       }
     });
   });
-
-  // Technology
-  document.getElementById('exp-title').innerText = t.techTitle;
-  const techSub1El = document.getElementById('tech-sub-1');
-  const techSub2El = document.getElementById('tech-sub-2');
-  if (techSub1El) techSub1El.innerText = t.techSub1;
-  if (techSub2El) techSub2El.innerText = t.techSub2;
 
   // Projects
   document.querySelector('#projects .title').innerText = t.projectsTitle;
@@ -423,9 +414,6 @@ function setLanguage(lang) {
 
   // Keep the document language attribute in sync (SEO + screen readers)
   document.documentElement.lang = lang;
-
-  // Re-split the hero headline into animated words after text replacement
-  if (window.splitHeroTitle) window.splitHeroTitle();
 }
 
 // --- Menu Toggle ---
@@ -448,29 +436,6 @@ document.addEventListener("click", function(e) {
     toggleMenu();
   }
 });
-
-// --- Scroll Progress Indicator ---
-(function() {
-  const progressBar = document.createElement('div');
-  progressBar.style.cssText = `
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 3px;
-    background: linear-gradient(90deg, #b61818, #d42020);
-    width: 0%;
-    z-index: 9999;
-    transition: width 0.1s ease;
-  `;
-  document.body.appendChild(progressBar);
-  
-  window.addEventListener('scroll', () => {
-    const scrollTop = window.pageYOffset;
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const scrollPercent = (scrollTop / docHeight) * 100;
-    progressBar.style.width = scrollPercent + '%';
-  });
-})();
 
 // --- Nav Dark/Light Toggle on Scroll ---
 (function() {
@@ -729,20 +694,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const pmgReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const pmgCoarsePointer = window.matchMedia('(pointer: coarse)').matches;
-
-// --- Hero Headline Word Reveal ---
-window.splitHeroTitle = function () {
-  const h1 = document.querySelector('#profile .title');
-  if (!h1 || pmgReducedMotion) return;
-  const words = h1.textContent.trim().split(/\s+/);
-  h1.innerHTML = words
-    .map((w, i) => {
-      const safe = w.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-      return `<span class="hero-word" style="--wi:${i}">${safe}</span>`;
-    })
-    .join(' ');
-  h1.classList.add('title-split');
-};
 
 // --- Hero Particle Network (mouse-reactive) ---
 (function () {
