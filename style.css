@@ -3653,24 +3653,6 @@ body.dark-theme, nav.dark-theme {
   pointer-events: none;
 }
 
-/* ── Hero headline word-by-word reveal ──────────── */
-#profile .title.title-split {
-  animation: none;
-  opacity: 1;
-  transform: none;
-}
-.hero-word {
-  display: inline-block;
-  opacity: 0;
-  transform: translateY(0.55em);
-  filter: blur(8px);
-  animation: heroWordIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  animation-delay: calc(0.25s + var(--wi, 0) * 0.06s);
-}
-@keyframes heroWordIn {
-  to { opacity: 1; transform: translateY(0); filter: blur(0); }
-}
-
 /* ── Industries strip → infinite marquee ────────── */
 .industries-marquee {
   flex: 1;
@@ -3811,12 +3793,6 @@ body.dark-theme, nav.dark-theme {
 /* ── Reduced motion: switch the new effects off ──── */
 @media (prefers-reduced-motion: reduce) {
   #hero-particles { display: none; }
-  .hero-word {
-    opacity: 1;
-    transform: none;
-    filter: none;
-    animation: none;
-  }
   .industries-marquee.marquee-on .industries-list {
     animation: none;
     flex-wrap: wrap;
