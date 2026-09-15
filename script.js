@@ -81,11 +81,9 @@ const translations = {
     // About Us Section
     auLabel: "Who we are",
     auHeadline: "You have the data.<br><span class=\"au-headline-accent\">We make it useful.</span>",
-    auLead: "If your team has the data but struggles to turn it into useful insights, or simply spends too much time on manual work, that's when we come in.",
-    auBody: "We turn your data into reliable forecasts and clear management reporting that give you a better view of where your business is heading and what to do next.",
-    auFounderRole: "FOUNDER & CEO",
+    auLead: "If your team has the data but not the answers — or spends its best hours rebuilding the same spreadsheets — that is where we come in. We build the forecast models, reporting and automation that turn what you already hold into decisions you can defend.",
+    auFounderRole: "Founder & CEO",
     founderCta: "Book a discovery call",
-    auFounderBio: "I founded PMG Services to close the gap between the data finance teams already hold and the decisions they actually have to make. We build the forecast models, reporting and automation that make that data usable — and we build them to run without us.",
 
     // How We Work Section
     hwwLabel: "Our process",
@@ -201,11 +199,9 @@ const translations = {
     // About Us Section
     auLabel: "Wer wir sind",
     auHeadline: "Sie haben die Daten.<br><span class=\"au-headline-accent\">Wir machen sie nutzbar.</span>",
-    auLead: "Wenn Ihr Team die Daten hat, aber Schwierigkeiten hat, daraus verwertbare Erkenntnisse zu gewinnen, oder schlicht zu viel Zeit mit manueller Arbeit verbringt: genau dann kommen wir ins Spiel.",
-    auBody: "Wir machen aus Ihren Daten verlässliche Forecasts und ein klares Management-Reporting, das Ihnen zeigt, wohin sich Ihr Unternehmen entwickelt und was als Nächstes zu tun ist.",
-    auFounderRole: "GRÜNDER & CEO",
+    auLead: "Wenn Ihr Team die Daten hat, aber nicht die Antworten — oder seine beste Zeit damit verbringt, dieselben Tabellen neu zu bauen — genau dann kommen wir ins Spiel. Wir bauen die Forecast-Modelle, das Reporting und die Automatisierung, die aus Ihren Daten belastbare Entscheidungen machen.",
+    auFounderRole: "Gründer & CEO",
     founderCta: "Erstgespräch buchen",
-    auFounderBio: "Ich habe PMG Services gegründet, um die Lücke zwischen den Daten, die Finanzteams bereits haben, und den Entscheidungen, die sie treffen müssen, zu schließen. Wir bauen die Forecast-Modelle, das Reporting und die Automatisierung, die diese Daten nutzbar machen — und zwar so, dass sie ohne uns laufen.",
 
     // How We Work Section
     hwwLabel: "Unser Prozess",
@@ -375,12 +371,8 @@ function setLanguage(lang) {
   if (auHeadline) auHeadline.innerHTML = t.auHeadline;
   const auLead = document.querySelector('.au-lead');
   if (auLead) auLead.innerText = t.auLead;
-  const auBody = document.querySelector('.au-body');
-  if (auBody) auBody.innerText = t.auBody;
   const founderRole = document.getElementById('founder-role');
   if (founderRole) founderRole.innerText = t.auFounderRole;
-  const founderBio = document.getElementById('founder-bio');
-  if (founderBio) founderBio.innerText = t.auFounderBio;
   const founderCta = document.getElementById('founder-cta');
   if (founderCta) founderCta.innerText = t.founderCta;
 
