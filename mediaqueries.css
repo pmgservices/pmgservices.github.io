@@ -70,9 +70,28 @@
 }
 
 @media screen and (max-width: 600px) {
+  /* The hero is taller than a phone viewport once the headline, copy,
+     buttons and figures are stacked, so it grows instead of clipping. */
   #profile {
-    height: 100vh;
+    height: auto;
+    min-height: 100vh;
     margin: 0;
+    padding-top: 7rem;
+    padding-bottom: 4.5rem;
+  }
+  #profile .title {
+    font-size: clamp(2.1rem, 8.5vw, 3rem);
+    letter-spacing: -0.03em;
+  }
+  #profile .btn-container {
+    flex-direction: column;
+    width: 100%;
+  }
+  #profile .btn-container .btn {
+    width: 100%;
+  }
+  #profile .scroll-indicator {
+    display: none;
   }
   article {
     font-size: 1rem;
