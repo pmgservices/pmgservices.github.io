@@ -83,12 +83,9 @@ const translations = {
     auHeadline: "You have the data.<br><span class=\"au-headline-accent\">We make it useful.</span>",
     auLead: "If your team has the data but struggles to turn it into useful insights, or simply spends too much time on manual work, that's when we come in.",
     auBody: "We turn your data into reliable forecasts and clear management reporting that give you a better view of where your business is heading and what to do next.",
-    auPillar1Title: "FP&A (Financial Planning & Analysis)",
-    auPillar1Desc: "Driver-based forecasting, rolling budgets, and management reporting your board can actually read. When something changes in the business, the plan changes with it.",
-    auPillar2Title: "Financial Process Automation",
-    auPillar2Desc: "A lot of finance work is moving numbers between systems by hand. We automate the collection, reconciliation and reporting steps so your team stops rebuilding the same files every month.",
-    auPillar3Title: "Custom Financial Ecosystem",
-    auPillar3Desc: "When off-the-shelf tools don't fit how you operate, we build what does: ERP and BI integrations, data pipelines, and finance tools made for your business.",
+    auFounderRole: "FOUNDER & CEO",
+    founderCta: "Book a discovery call",
+    auFounderBio: "I founded PMG Services to close the gap between the data finance teams already hold and the decisions they actually have to make. We build the forecast models, reporting and automation that make that data usable — and we build them to run without us.",
 
     // How We Work Section
     hwwLabel: "Our process",
@@ -206,12 +203,9 @@ const translations = {
     auHeadline: "Sie haben die Daten.<br><span class=\"au-headline-accent\">Wir machen sie nutzbar.</span>",
     auLead: "Wenn Ihr Team die Daten hat, aber Schwierigkeiten hat, daraus verwertbare Erkenntnisse zu gewinnen, oder schlicht zu viel Zeit mit manueller Arbeit verbringt: genau dann kommen wir ins Spiel.",
     auBody: "Wir machen aus Ihren Daten verlässliche Forecasts und ein klares Management-Reporting, das Ihnen zeigt, wohin sich Ihr Unternehmen entwickelt und was als Nächstes zu tun ist.",
-    auPillar1Title: "FP&A (Finanzplanung & -analyse)",
-    auPillar1Desc: "Treiberbasierte Forecasts, rollierende Budgets und ein Management-Reporting, das Ihr Vorstand tatsächlich liest. Ändert sich etwas im Geschäft, ändert sich der Plan mit.",
-    auPillar2Title: "Automatisierung von Finanzprozessen",
-    auPillar2Desc: "Ein großer Teil der Finanzarbeit besteht darin, Zahlen manuell zwischen Systemen zu bewegen. Wir automatisieren Erfassung, Abstimmung und Reporting, damit Ihr Team nicht jeden Monat dieselben Dateien neu baut.",
-    auPillar3Title: "Individuelles Finanz-Ökosystem",
-    auPillar3Desc: "Wenn Standardlösungen nicht zu Ihren Abläufen passen, bauen wir, was passt: ERP- und BI-Integrationen, Datenpipelines und Finanztools für Ihr Unternehmen.",
+    auFounderRole: "GRÜNDER & CEO",
+    founderCta: "Erstgespräch buchen",
+    auFounderBio: "Ich habe PMG Services gegründet, um die Lücke zwischen den Daten, die Finanzteams bereits haben, und den Entscheidungen, die sie treffen müssen, zu schließen. Wir bauen die Forecast-Modelle, das Reporting und die Automatisierung, die diese Daten nutzbar machen — und zwar so, dass sie ohne uns laufen.",
 
     // How We Work Section
     hwwLabel: "Unser Prozess",
@@ -383,15 +377,12 @@ function setLanguage(lang) {
   if (auLead) auLead.innerText = t.auLead;
   const auBody = document.querySelector('.au-body');
   if (auBody) auBody.innerText = t.auBody;
-  const auPillars = document.querySelectorAll('.au-pillar');
-  if (auPillars.length >= 3) {
-    auPillars[0].querySelector('h3').innerText = t.auPillar1Title;
-    auPillars[0].querySelector('p').innerText = t.auPillar1Desc;
-    auPillars[1].querySelector('h3').innerText = t.auPillar2Title;
-    auPillars[1].querySelector('p').innerText = t.auPillar2Desc;
-    auPillars[2].querySelector('h3').innerText = t.auPillar3Title;
-    auPillars[2].querySelector('p').innerText = t.auPillar3Desc;
-  }
+  const founderRole = document.getElementById('founder-role');
+  if (founderRole) founderRole.innerText = t.auFounderRole;
+  const founderBio = document.getElementById('founder-bio');
+  if (founderBio) founderBio.innerText = t.auFounderBio;
+  const founderCta = document.getElementById('founder-cta');
+  if (founderCta) founderCta.innerText = t.founderCta;
 
   // How We Work Section
   const hwwLabel = document.querySelector('#how-we-work .section-label');

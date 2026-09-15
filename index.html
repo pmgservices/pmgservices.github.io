@@ -39,7 +39,7 @@
     <link rel="stylesheet" href="./assets/fonts/fonts.css?v=1" />
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="style.css?v=26" />
+    <link rel="stylesheet" href="style.css?v=28" />
     <link rel="stylesheet" href="mediaqueries.css?v=9" />
 
     <!-- JSON-LD Structured Data -->
@@ -253,50 +253,28 @@
     <section id="about-us">
       <div class="au-container">
 
-        <!-- Left column: sticky statement -->
+        <figure class="au-photo">
+          <picture>
+            <source type="image/webp"
+                    srcset="./assets/founder-piotr-ganski-620.webp 620w, ./assets/founder-piotr-ganski-1240.webp 1240w"
+                    sizes="(max-width: 860px) 88vw, 42vw">
+            <img src="./assets/founder-piotr-ganski-620.jpg"
+                 srcset="./assets/founder-piotr-ganski-620.jpg 620w, ./assets/founder-piotr-ganski-1240.jpg 1240w"
+                 sizes="(max-width: 860px) 88vw, 42vw"
+                 width="1240" height="1456" decoding="async"
+                 alt="Piotr Ganski, founder and CEO of PMG Services, outside the New York Stock Exchange">
+          </picture>
+        </figure>
+
         <div class="au-statement">
           <span class="section-label">Who we are</span>
           <h2 class="au-headline">You have the data.<br><span class="au-headline-accent">We make it useful.</span></h2>
-        </div>
-
-        <!-- Right column: narrative + pillars -->
-        <div class="au-narrative">
-          <p class="au-lead">If your team has the data but struggles to turn it into useful insights, or simply spends too much time on manual work, that's when we come in.</p>
-          <p class="au-body">We turn your data into reliable forecasts and clear management reporting that give you a better view of where your business is heading and what to do next.</p>
-
-          <!-- Trust pillars — 3 horizontal bars -->
-          <div class="au-pillars">
-            <div class="au-pillar" data-index="1">
-              <div class="au-pillar-line"></div>
-              <div class="au-pillar-content">
-                <div class="au-pillar-num">01</div>
-                <div class="au-pillar-text">
-                  <h3>FP&amp;A (Financial Planning &amp; Analysis)</h3>
-                  <p>Driver-based forecasting, rolling budgets, and management reporting your board can actually read. When something changes in the business, the plan changes with it.</p>
-                </div>
-              </div>
-            </div>
-            <div class="au-pillar" data-index="2">
-              <div class="au-pillar-line"></div>
-              <div class="au-pillar-content">
-                <div class="au-pillar-num">02</div>
-                <div class="au-pillar-text">
-                  <h3>Financial Process Automation</h3>
-                  <p>A lot of finance work is moving numbers between systems by hand. We automate the collection, reconciliation and reporting steps so your team stops rebuilding the same files every month.</p>
-                </div>
-              </div>
-            </div>
-            <div class="au-pillar" data-index="3">
-              <div class="au-pillar-line"></div>
-              <div class="au-pillar-content">
-                <div class="au-pillar-num">03</div>
-                <div class="au-pillar-text">
-                  <h3>Custom Financial Ecosystem</h3>
-                  <p>When off-the-shelf tools don't fit how you operate, we build what does: ERP and BI integrations, data pipelines, and finance tools made for your business.</p>
-                </div>
-              </div>
-            </div>
+          <p class="au-lead">If your team has the data but not the answers &mdash; or spends its best hours rebuilding the same spreadsheets &mdash; that is where we come in. We build the forecast models, reporting and automation that turn what you already hold into decisions you can defend.</p>
+          <div class="au-signature">
+            <span class="au-sig-name">Piotr Ganski</span>
+            <span class="au-sig-role" id="founder-role">Founder &amp; CEO</span>
           </div>
+          <a href="#contact" class="btn btn-color-1 au-cta" id="founder-cta">Book a discovery call</a>
         </div>
 
       </div>
@@ -1034,7 +1012,7 @@
       </svg>
     </button>
 
-    <script src="script.js?v=14"></script>
+    <script src="script.js?v=16"></script>
 
     <!-- ─── KPI STATEMENT ANIMATION ─── -->
     <script>

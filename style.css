@@ -917,7 +917,7 @@ section {
 
 #about-us {
   height: auto;
-  padding: 5.5rem var(--page-gutter);
+  padding: 6rem var(--page-gutter);
   position: relative;
   background-color: #ffffff;
   max-width: none;
@@ -929,16 +929,47 @@ section {
   max-width: var(--content-max);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 0.42fr 0.58fr;
-  gap: 5rem;
-  align-items: start;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: clamp(2.5rem, 5vw, 4.5rem);
+  align-items: center;
+}
+
+/* Portrait keeps its own 3:3.5 frame rather than a circle crop, so the
+   Exchange facade behind the subject survives. */
+.au-photo {
+  margin: 0;
+  position: relative;
+  align-self: stretch;
+  display: flex;
+}
+
+.au-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: 0 26px 60px rgba(11, 29, 44, 0.18);
+}
+
+/* The red tab, carried from the hero kicker and the chart cards. */
+.au-photo::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -16px;
+  width: 64px;
+  height: 4px;
+  background: var(--red);
 }
 
 /* ── Left column: Statement ── */
 
 .au-statement {
-  position: sticky;
-  top: 7rem;
+  /* was sticky, to hold position while the pillar list scrolled past.
+     The pillars moved to the Services section, so it just parked in a
+     half-empty column. */
+  padding: 0;
 }
 
 .au-statement .section-label {
@@ -1000,11 +1031,48 @@ section {
 }
 
 .au-lead {
-  font-size: 1.1rem;
-  line-height: 1.65;
-  color: var(--navy);
-  font-weight: 500;
-  margin-bottom: 1rem;
+  font-size: clamp(1.02rem, 1.15vw, 1.12rem);
+  line-height: 1.75;
+  color: var(--text-body);
+  font-weight: 400;
+  margin: 1.5rem 0 2rem;
+  max-width: 52ch;
+}
+
+/* Signed like a statement rather than captioned like a bio. */
+.au-signature {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding-left: 1rem;
+  border-left: 3px solid var(--red);
+  margin-bottom: 2.25rem;
+}
+
+.au-sig-name {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: var(--text-primary);
+}
+
+.au-sig-role {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.au-cta { margin-top: 0; }
+
+@media (max-width: 860px) {
+  #about-us { padding: 4rem var(--page-gutter); }
+  .au-container { grid-template-columns: 1fr; gap: 2.5rem; }
+  .au-photo { max-width: 400px; }
+  .au-photo img { height: auto; }
+  .au-lead { max-width: none; }
 }
 
 .au-body {
@@ -1015,6 +1083,92 @@ section {
 }
 
 /* ── Pillars ── */
+
+/* ═══════════════════════════════════════════════════
+   FOUNDER — sits directly under the hero. Large portrait on
+   the left, statement on the right. The photo keeps its own
+   3:3.5 frame rather than being cropped to a circle, so the
+   Exchange facade behind the subject survives.
+   ═══════════════════════════════════════════════════ */
+
+.founder-section {
+  padding: 7rem var(--page-gutter);
+  background: var(--off-white);
+}
+
+.founder-inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(2.5rem, 6vw, 5.5rem);
+  align-items: center;
+}
+
+.founder-photo {
+  margin: 0;
+  position: relative;
+  align-self: start;
+}
+
+.founder-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 30px 70px rgba(11, 29, 44, 0.20);
+}
+
+/* The red tab, carried from the hero kicker and the chart cards. */
+.founder-photo::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -18px;
+  width: 72px;
+  height: 4px;
+  background: var(--red);
+}
+
+.founder-role {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: var(--red);
+  margin-bottom: 1rem;
+}
+
+.founder-name {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(2.2rem, 4.2vw, 3.4rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  color: var(--text-primary);
+  margin: 0 0 1.5rem;
+}
+
+.founder-bio {
+  font-size: clamp(1.02rem, 1.25vw, 1.2rem);
+  line-height: 1.8;
+  color: var(--text-body);
+  margin: 0 0 2.25rem;
+  max-width: 48ch;
+}
+
+.founder-cta { margin-top: 0; }
+
+@media (max-width: 860px) {
+  .founder-section { padding: 4.5rem var(--page-gutter); }
+  .founder-inner {
+    grid-template-columns: 1fr;
+    gap: 2.75rem;
+    justify-items: start;
+  }
+  .founder-photo { max-width: 420px; width: 100%; }
+  .founder-bio { max-width: none; }
+}
 
 .au-pillars {
   display: flex;

@@ -19,7 +19,9 @@
       "WebFetch(domain:oceniamy.to)",
       "WebFetch(domain:www.gowork.pl)",
       "Bash(curl -s \"https://wl-api.mf.gov.pl/api/search/nip/5342699106?date=2026-09-15\")",
-      "Bash(python -c ' *)"
+      "Bash(python -c ' *)",
+      "Bash(sed -i 's|script\\\\.js?v=14|script.js?v=15|' index.html)",
+      "Bash(python -)"
     ]
   }
 }
