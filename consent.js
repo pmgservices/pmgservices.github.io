@@ -3,7 +3,7 @@
    Setup: replace GA_ID below with your Measurement ID from analytics.google.com
    (Admin → Data Streams → Web). One edit here covers every page of the site. */
 (function () {
-  var GA_ID = 'G-XXXXXXXXXX';
+  var GA_ID = 'G-K1NFMP2KP5';
 
   window.dataLayer = window.dataLayer || [];
   function gtag() { dataLayer.push(arguments); }

@@ -18,7 +18,7 @@
 
     <!-- Google Analytics 4 — GDPR-compliant: loads only after cookie consent.
          Set your Measurement ID once in consent.js (GA_ID constant). -->
-    <script src="consent.js?v=1" defer></script>
+    <script src="consent.js?v=2" defer></script>
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -40,7 +40,7 @@
     <!-- Fonts (preconnect + stylesheet, replaces @import in CSS) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="style.css?v=21" />
@@ -402,9 +402,9 @@
                 <line x1="218" y1="50" x2="278" y2="50" stroke="#eef1f5" stroke-width="1"/>
                 <text x="218" y="47" font-size="5.6" font-weight="700" fill="#0b1d2c" opacity="0.5" letter-spacing="1.2" font-family="Space Grotesk,sans-serif">LEDGER</text>
               </g>
-              <rect class="svg-fade" style="--d:1.45s" x="218" y="56" width="44" height="3" rx="1.5" fill="#0b1d2c" opacity="0.14"/>
-              <rect class="svg-fade" style="--d:1.55s" x="218" y="65" width="56" height="3" rx="1.5" fill="#0b1d2c" opacity="0.14"/>
-              <rect class="svg-fade" style="--d:1.65s" x="218" y="74" width="36" height="3" rx="1.5" fill="#b61818" opacity="0.85"/>
+              <rect class="svg-fade" style="--d:1.45s;--o:.14" x="218" y="56" width="44" height="3" rx="1.5" fill="#0b1d2c" opacity="0.14"/>
+              <rect class="svg-fade" style="--d:1.55s;--o:.14" x="218" y="65" width="56" height="3" rx="1.5" fill="#0b1d2c" opacity="0.14"/>
+              <rect class="svg-fade" style="--d:1.65s;--o:.85" x="218" y="74" width="36" height="3" rx="1.5" fill="#b61818" opacity="0.85"/>
               <g class="svg-fade" style="--d:1.8s">
                 <rect x="96" y="104" width="140" height="18" rx="9" fill="#ffffff" stroke="#e2e7ed"/>
                 <text x="166" y="115.5" text-anchor="middle" font-size="5.8" font-weight="700" fill="#0b1d2c" opacity="0.6" letter-spacing="1.1" font-family="Space Grotesk,sans-serif">STRAIGHT-THROUGH PROCESSING</text>
@@ -456,7 +456,7 @@
               <g class="svg-pop" style="--d:.85s"><circle cx="129" cy="47" r="2.4" fill="#0b1d2c" opacity="0.55"/><text x="123" y="44" text-anchor="end" font-size="6" font-weight="600" fill="#0b1d2c" opacity="0.5" letter-spacing="1" font-family="Space Grotesk,sans-serif">API</text></g>
               <g class="svg-pop" style="--d:.95s"><circle cx="171" cy="89" r="2.4" fill="#0b1d2c" opacity="0.55"/><text x="177" y="97" font-size="6" font-weight="600" fill="#0b1d2c" opacity="0.5" letter-spacing="1" font-family="Space Grotesk,sans-serif">AUTO</text></g>
               <g class="svg-orbit"><circle cx="180" cy="68" r="2" fill="#b61818" opacity="0.75"/></g>
-              <text class="svg-fade" style="--d:1.2s" x="150" y="124" text-anchor="middle" font-size="5.5" font-weight="600" fill="#0b1d2c" opacity="0.35" letter-spacing="1.6" font-family="Space Grotesk,sans-serif">ONE INTEGRATED DATA LAYER</text>
+              <text class="svg-fade" style="--d:1.2s;--o:.35" x="150" y="124" text-anchor="middle" font-size="5.5" font-weight="600" fill="#0b1d2c" opacity="0.35" letter-spacing="1.6" font-family="Space Grotesk,sans-serif">ONE INTEGRATED DATA LAYER</text>
             </svg>
           </div>
           <h2 class="service-card-title">Custom Financial Ecosystem</h2>
@@ -530,49 +530,77 @@
         <!-- Project 1: Custom ERP Integration -->
         <div class="project-card-future">
           <div class="project-visual">
-            <svg viewBox="0 0 360 160" class="project-svg" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Integration pipeline where invoice OCR, accounting and liquidity systems flow into a central data hub that feeds a live finance dashboard">
-              <defs>
-              <pattern id="p1-dots" width="16" height="16" patternUnits="userSpaceOnUse"><circle cx="8" cy="8" r="0.7" fill="#0b1d2c" opacity="0.05"/></pattern>
-              <radialGradient id="p1-hub" cx="38%" cy="32%" r="70%"><stop offset="0" stop-color="#1e4068"/><stop offset="1" stop-color="#0b1d2c"/></radialGradient>
-              </defs>
-              <rect width="360" height="160" rx="8" fill="#f8fafb"/>
-              <rect width="360" height="160" rx="8" fill="url(#p1-dots)"/>
-              <rect x="0.5" y="0.5" width="359" height="159" rx="7.5" fill="none" stroke="#e7ebf0"/>
-              <text x="16" y="16" font-size="6" font-weight="600" fill="#0b1d2c" opacity="0.4" letter-spacing="1.6" font-family="Space Grotesk,sans-serif">SOURCES</text>
-              <text x="244" y="26" font-size="6" font-weight="700" fill="#b61818" letter-spacing="1.6" font-family="Space Grotesk,sans-serif">LIVE OUTPUT</text>
-              <g class="svg-fade">
-              <rect x="16" y="24" width="88" height="24" rx="7" fill="#ffffff" stroke="#e2e7ed"/><rect x="16" y="24" width="3.5" height="24" rx="1.75" fill="#b61818" opacity="0.9"/>
-              <text x="62" y="39.5" text-anchor="middle" font-size="7" font-weight="600" fill="#0b1d2c" letter-spacing="0.4" font-family="Space Grotesk,sans-serif">INVOICE OCR</text>
-              </g>
-              <g class="svg-fade" style="--d:.12s">
-              <rect x="16" y="68" width="88" height="24" rx="7" fill="#ffffff" stroke="#e2e7ed"/><rect x="16" y="68" width="3.5" height="24" rx="1.75" fill="#b61818" opacity="0.6"/>
-              <text x="62" y="83.5" text-anchor="middle" font-size="7" font-weight="600" fill="#0b1d2c" letter-spacing="0.4" font-family="Space Grotesk,sans-serif">ACCOUNTING</text>
-              </g>
-              <g class="svg-fade" style="--d:.24s">
-              <rect x="16" y="112" width="88" height="24" rx="7" fill="#ffffff" stroke="#e2e7ed"/><rect x="16" y="112" width="3.5" height="24" rx="1.75" fill="#b61818" opacity="0.35"/>
-              <text x="62" y="127.5" text-anchor="middle" font-size="7" font-weight="600" fill="#0b1d2c" letter-spacing="0.4" font-family="Space Grotesk,sans-serif">LIQUIDITY</text>
-              </g>
-              <path class="svg-draw" style="--len:120;--d:.35s" d="M104,36 C 130,36 138,62 152,72" fill="none" stroke="#d3dae3" stroke-width="1.3"/>
-              <path class="svg-draw" style="--len:120;--d:.48s" d="M104,80 L152,80" fill="none" stroke="#d3dae3" stroke-width="1.3"/>
-              <path class="svg-draw" style="--len:120;--d:.6s" d="M104,124 C 130,124 138,98 152,88" fill="none" stroke="#d3dae3" stroke-width="1.3"/>
-              <g class="svg-pop" style="--d:.75s">
-              <rect x="152" y="54" width="64" height="52" rx="11" fill="url(#p1-hub)"/>
-              <rect x="153" y="55" width="62" height="50" rx="10" fill="none" stroke="#ffffff" stroke-opacity="0.09"/>
-              <text x="184" y="78" text-anchor="middle" font-size="8" font-weight="700" fill="#ffffff" letter-spacing="1" font-family="Space Grotesk,sans-serif">DATA HUB</text>
-              <rect x="174" y="85" width="20" height="2" rx="1" fill="#b61818"/>
-              </g>
-              <path class="svg-draw" style="--len:70;--d:.9s" d="M216,80 L244,80" fill="none" stroke="#d3dae3" stroke-width="1.3"/>
-              <g class="svg-pop" style="--d:1.05s">
-              <rect x="244" y="34" width="100" height="92" rx="9" fill="#ffffff" stroke="#e2e7ed"/>
-              <circle cx="254" cy="44" r="1.7" fill="#dfe5ec"/><circle cx="261" cy="44" r="1.7" fill="#dfe5ec"/><circle cx="268" cy="44" r="1.7" fill="#dfe5ec"/>
-              <line x1="250" y1="52" x2="338" y2="52" stroke="#eef1f5" stroke-width="1"/>
-              </g>
-              <rect class="svg-rise" style="--d:1.2s" x="260" y="88" width="14" height="26" rx="2" fill="#0b1d2c" opacity="0.18"/>
-              <rect class="svg-rise" style="--d:1.35s" x="284" y="72" width="14" height="42" rx="2" fill="#0b1d2c" opacity="0.38"/>
-              <rect class="svg-rise" style="--d:1.5s" x="308" y="52" width="14" height="62" rx="2" fill="#b61818" opacity="0.9"/>
-              <circle r="2.5" fill="#b61818" opacity="0.8"><animateMotion dur="2.8s" repeatCount="indefinite" begin="2.2s" path="M104,80 L152,80"/></circle>
-              <circle r="2.5" fill="#0b1d2c" opacity="0.45"><animateMotion dur="2.8s" repeatCount="indefinite" begin="3.6s" path="M216,80 L244,80"/></circle>
-              </svg>
+            <svg class="project-svg" viewBox="0 0 360 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Chart: monthly manual admin time at an aviation startup before and after building an integrated finance system. Invoice entry falls from 32 hours to 4, cash reporting from 20 to 3 and ad-hoc analysis from 23 to 8, returning 60 hours a month to the finance team.">
+  <rect width="360" height="160" rx="8" fill="var(--ct-paper)"/>
+  <rect x="0.5" y="0.5" width="359" height="159" rx="7.5" fill="none" stroke="var(--ct-rule)"/>
+
+  <!-- Furniture -->
+  <rect class="ct-tab" x="14" y="11" width="19" height="2.6"/>
+  <text class="ct-title" x="14" y="27">Where the finance month went</text>
+  <text class="ct-sub" x="14" y="38">Manual admin time, hours per month</text>
+  <g class="svg-fade" style="--d:1.5s">
+    <text class="ct-stat" x="346" y="30" text-anchor="end">60h</text>
+    <text class="ct-note" x="346" y="39" text-anchor="end">RETURNED PER MONTH</text>
+  </g>
+
+  <!-- Value-axis gridlines. The category axis is vertical here, so the
+       gridlines run perpendicular to it, as on any horizontal bar chart. -->
+  <g class="ct-gridline">
+    <line x1="160" y1="54" x2="160" y2="118"/>
+    <line x1="210" y1="54" x2="210" y2="118"/>
+    <line x1="260" y1="54" x2="260" y2="118"/>
+    <line x1="310" y1="54" x2="310" y2="118"/>
+  </g>
+  <line class="ct-zero" x1="110" y1="54" x2="110" y2="118"/>
+
+  <!-- Series labels, stated once -->
+  <g class="svg-fade" style="--d:1.2s">
+    <text class="ct-lbl" x="130" y="59" text-anchor="middle" fill="var(--ct-s1)">After</text>
+    <text class="ct-lbl" x="270" y="59" text-anchor="middle" fill="var(--ct-s4)">Before</text>
+  </g>
+
+  <!-- Invoice entry: 32h -> 4h -->
+  <g class="svg-fade" style="--d:.15s">
+    <text class="ct-lbl" x="14" y="69" fill="var(--ct-ink)">Invoice entry</text>
+    <line x1="130" y1="66" x2="270" y2="66" stroke="var(--ct-s5)" stroke-width="2.4" stroke-linecap="round"/>
+    <circle cx="270" cy="66" r="3.2" fill="var(--ct-s4)"/>
+    <circle cx="130" cy="66" r="3.2" fill="var(--ct-s1)"/>
+    <text class="ct-axis" x="124" y="68.8" text-anchor="end">4</text>
+    <text class="ct-axis" x="276" y="68.8">32</text>
+  </g>
+
+  <!-- Cash reporting: 20h -> 3h -->
+  <g class="svg-fade" style="--d:.3s">
+    <text class="ct-lbl" x="14" y="91" fill="var(--ct-ink)">Cash reporting</text>
+    <line x1="125" y1="88" x2="210" y2="88" stroke="var(--ct-s5)" stroke-width="2.4" stroke-linecap="round"/>
+    <circle cx="210" cy="88" r="3.2" fill="var(--ct-s4)"/>
+    <circle cx="125" cy="88" r="3.2" fill="var(--ct-s1)"/>
+    <text class="ct-axis" x="119" y="90.8" text-anchor="end">3</text>
+    <text class="ct-axis" x="216" y="90.8">20</text>
+  </g>
+
+  <!-- Ad-hoc analysis: 23h -> 8h -->
+  <g class="svg-fade" style="--d:.45s">
+    <text class="ct-lbl" x="14" y="113" fill="var(--ct-ink)">Ad-hoc analysis</text>
+    <line x1="150" y1="110" x2="225" y2="110" stroke="var(--ct-s5)" stroke-width="2.4" stroke-linecap="round"/>
+    <circle cx="225" cy="110" r="3.2" fill="var(--ct-s4)"/>
+    <circle cx="150" cy="110" r="3.2" fill="var(--ct-s1)"/>
+    <text class="ct-axis" x="144" y="112.8" text-anchor="end">8</text>
+    <text class="ct-axis" x="231" y="112.8">23</text>
+  </g>
+
+  <!-- Value axis -->
+  <g class="ct-tick"><line x1="110" y1="118" x2="110" y2="120.5"/><line x1="160" y1="118" x2="160" y2="120.5"/><line x1="210" y1="118" x2="210" y2="120.5"/><line x1="260" y1="118" x2="260" y2="120.5"/><line x1="310" y1="118" x2="310" y2="120.5"/></g>
+  <text class="ct-axis" x="110" y="128" text-anchor="middle">0</text>
+  <text class="ct-axis" x="160" y="128" text-anchor="middle">10</text>
+  <text class="ct-axis" x="210" y="128" text-anchor="middle">20</text>
+  <text class="ct-axis" x="260" y="128" text-anchor="middle">30</text>
+  <text class="ct-axis" x="310" y="128" text-anchor="middle">40</text>
+
+  <!-- Source -->
+  <line class="ct-rule-line" x1="14" y1="141" x2="346" y2="141"/>
+  <text class="ct-src" x="14" y="151">Source: PMG Services client engagement</text>
+</svg>
           </div>
           <div class="project-meta">
             <span class="project-tag">Custom Financial Ecosystem</span>
@@ -585,49 +613,65 @@
         <!-- Project 2: Driver-Based Forecasting -->
         <div class="project-card-future">
           <div class="project-visual">
-            <svg viewBox="0 0 360 160" class="project-svg" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Driver model forecast where revenue, cost, market and procedure drivers feed a central model producing a 98 percent accurate forecast curve">
-              <defs>
-              <pattern id="p2-dots" width="16" height="16" patternUnits="userSpaceOnUse"><circle cx="8" cy="8" r="0.7" fill="#0b1d2c" opacity="0.05"/></pattern>
-              <radialGradient id="p2-core" cx="38%" cy="32%" r="70%"><stop offset="0" stop-color="#1e4068"/><stop offset="1" stop-color="#0b1d2c"/></radialGradient>
-              </defs>
-              <rect width="360" height="160" rx="8" fill="#f8fafb"/>
-              <rect width="360" height="160" rx="8" fill="url(#p2-dots)"/>
-              <rect x="0.5" y="0.5" width="359" height="159" rx="7.5" fill="none" stroke="#e7ebf0"/>
-              <text x="16" y="14" font-size="6" font-weight="700" fill="#b61818" letter-spacing="1.6" font-family="Space Grotesk,sans-serif">DRIVERS</text>
-              <text x="176" y="14" text-anchor="middle" font-size="6" font-weight="600" fill="#0b1d2c" opacity="0.4" letter-spacing="1.6" font-family="Space Grotesk,sans-serif">MODEL</text>
-              <g class="svg-fade" style="--d:.05s"><rect x="16" y="24" width="94" height="22" rx="6" fill="#ffffff" stroke="#e2e7ed"/><rect x="16" y="24" width="3.5" height="22" rx="1.75" fill="#b61818" opacity="0.9"/><text x="65" y="38.5" text-anchor="middle" font-size="7" font-weight="600" fill="#0b1d2c" letter-spacing="0.4" font-family="Space Grotesk,sans-serif">REVENUE</text></g>
-              <g class="svg-fade" style="--d:.15s"><rect x="16" y="58" width="94" height="22" rx="6" fill="#ffffff" stroke="#e2e7ed"/><rect x="16" y="58" width="3.5" height="22" rx="1.75" fill="#b61818" opacity="0.65"/><text x="65" y="72.5" text-anchor="middle" font-size="7" font-weight="600" fill="#0b1d2c" letter-spacing="0.4" font-family="Space Grotesk,sans-serif">COST POOL</text></g>
-              <g class="svg-fade" style="--d:.25s"><rect x="16" y="92" width="94" height="22" rx="6" fill="#ffffff" stroke="#e2e7ed"/><rect x="16" y="92" width="3.5" height="22" rx="1.75" fill="#b61818" opacity="0.45"/><text x="65" y="106.5" text-anchor="middle" font-size="7" font-weight="600" fill="#0b1d2c" letter-spacing="0.4" font-family="Space Grotesk,sans-serif">MARKET DATA</text></g>
-              <g class="svg-fade" style="--d:.35s"><rect x="16" y="126" width="94" height="22" rx="6" fill="#ffffff" stroke="#e2e7ed"/><rect x="16" y="126" width="3.5" height="22" rx="1.75" fill="#b61818" opacity="0.3"/><text x="65" y="140.5" text-anchor="middle" font-size="7" font-weight="600" fill="#0b1d2c" letter-spacing="0.4" font-family="Space Grotesk,sans-serif">PROCEDURES</text></g>
-              <path class="svg-draw" style="--len:130;--d:.45s" d="M110,35 C 136,35 146,60 155,70" fill="none" stroke="#d3dae3" stroke-width="1.3"/>
-              <path class="svg-draw" style="--len:130;--d:.55s" d="M110,69 C 134,69 145,74 153,78" fill="none" stroke="#d3dae3" stroke-width="1.3"/>
-              <path class="svg-draw" style="--len:130;--d:.65s" d="M110,103 C 134,103 145,86 153,82" fill="none" stroke="#d3dae3" stroke-width="1.3"/>
-              <path class="svg-draw" style="--len:130;--d:.75s" d="M110,137 C 136,137 146,100 155,90" fill="none" stroke="#d3dae3" stroke-width="1.3"/>
-              <g class="svg-pop" style="--d:.85s">
-              <circle cx="176" cy="80" r="23" fill="url(#p2-core)"/>
-              <circle cx="176" cy="80" r="27.5" fill="none" stroke="#b61818" stroke-opacity="0.35" stroke-width="1" stroke-dasharray="2 3"/>
-              <text x="176" y="78" text-anchor="middle" font-size="7.5" font-weight="700" fill="#ffffff" letter-spacing="0.8" font-family="Space Grotesk,sans-serif">DRIVER</text>
-              <text x="176" y="88" text-anchor="middle" font-size="7.5" font-weight="700" fill="#ffffff" letter-spacing="0.8" font-family="Space Grotesk,sans-serif">MODEL</text>
-              </g>
-              <path class="svg-draw" style="--len:60;--d:1s" d="M204,80 L218,80" fill="none" stroke="#d3dae3" stroke-width="1.3"/>
-              <line x1="222" y1="132" x2="344" y2="132" stroke="#dfe5ec" stroke-width="1.2"/>
-              <line x1="222" y1="30" x2="222" y2="132" stroke="#eef1f5" stroke-width="1"/>
-              <text x="252" y="142" text-anchor="middle" font-size="5.5" fill="#0b1d2c" opacity="0.35" font-family="Space Grotesk,sans-serif">Q1</text>
-              <text x="282" y="142" text-anchor="middle" font-size="5.5" fill="#0b1d2c" opacity="0.35" font-family="Space Grotesk,sans-serif">Q2</text>
-              <text x="312" y="142" text-anchor="middle" font-size="5.5" fill="#0b1d2c" opacity="0.35" font-family="Space Grotesk,sans-serif">Q3</text>
-              <text x="340" y="142" text-anchor="middle" font-size="5.5" fill="#b61818" opacity="0.6" font-family="Space Grotesk,sans-serif">Q4</text>
-              <path class="svg-fade" style="--d:1.5s" d="M222,114 L344,30 L344,64 L222,124 Z" fill="#b61818" opacity="0.07"/>
-              <path class="svg-draw" style="--len:220;--d:1.15s" d="M222,120 C 258,108 300,78 344,46" fill="none" stroke="#b61818" stroke-width="2.2" stroke-linecap="round"/>
-              <circle class="svg-pop" style="--d:1.5s" cx="250" cy="108" r="2.5" fill="#0b1d2c" opacity="0.35"/>
-              <circle class="svg-pop" style="--d:1.6s" cx="280" cy="90" r="2.5" fill="#0b1d2c" opacity="0.45"/>
-              <circle class="svg-pop" style="--d:1.7s" cx="312" cy="69" r="2.5" fill="#0b1d2c" opacity="0.55"/>
-              <circle class="svg-pop" style="--d:1.85s" cx="344" cy="46" r="4" fill="#b61818"/>
-              <circle class="svg-pulse-ring" cx="344" cy="46" r="8" fill="none" stroke="#b61818" stroke-width="1"/>
-              <g class="svg-fade" style="--d:2s">
-              <text x="344" y="20" text-anchor="end" font-size="12" font-weight="700" fill="#b61818" font-family="Space Grotesk,sans-serif">98%</text>
-              <text x="344" y="28" text-anchor="end" font-size="5.5" font-weight="600" fill="#0b1d2c" opacity="0.45" letter-spacing="1.2" font-family="Space Grotesk,sans-serif">FORECAST ACCURACY</text>
-              </g>
-              </svg>
+            <svg class="project-svg" viewBox="0 0 360 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Chart: quarterly revenue forecast error for a pharmaceutical group. A shaded band showing the model's error range narrows from plus or minus 15 percent in the first quarter to plus or minus 3 percent by the fourth, with realised error converging on zero and forecast accuracy reaching 98 percent.">
+  <rect width="360" height="160" rx="8" fill="var(--ct-paper)"/>
+  <rect x="0.5" y="0.5" width="359" height="159" rx="7.5" fill="none" stroke="var(--ct-rule)"/>
+
+  <!-- Furniture -->
+  <rect class="ct-tab" x="14" y="11" width="19" height="2.6"/>
+  <text class="ct-title" x="14" y="27">Closing the forecast gap</text>
+  <text class="ct-sub" x="14" y="38">Revenue forecast error, %; band shows model range</text>
+  <g class="svg-fade" style="--d:1.5s">
+    <text class="ct-stat" x="346" y="30" text-anchor="end">98%</text>
+    <text class="ct-note" x="346" y="39" text-anchor="end">FORECAST ACCURACY</text>
+  </g>
+
+  <!-- Drivers -->
+  <text class="ct-note" x="14" y="50">DRIVERS · 28 IN MODEL</text>
+  <line class="ct-rule-line" x1="14" y1="54" x2="92" y2="54"/>
+  <g class="svg-fade" style="--d:.05s"><rect x="14" y="58.6" width="2.8" height="2.8" fill="var(--ct-s1)"/><text class="ct-lbl" x="21" y="65" fill="var(--ct-ink)">Revenue</text></g>
+  <g class="svg-fade" style="--d:.12s"><rect x="14" y="74.6" width="2.8" height="2.8" fill="var(--ct-s2)"/><text class="ct-lbl" x="21" y="81" fill="var(--ct-ink)">Cost pool</text></g>
+  <g class="svg-fade" style="--d:.19s"><rect x="14" y="90.6" width="2.8" height="2.8" fill="var(--ct-s3)"/><text class="ct-lbl" x="21" y="97" fill="var(--ct-ink)">Market data</text></g>
+  <g class="svg-fade" style="--d:.26s"><rect x="14" y="106.6" width="2.8" height="2.8" fill="var(--ct-s4)"/><text class="ct-lbl" x="21" y="113" fill="var(--ct-ink)">Procedures</text></g>
+
+  <!-- Drivers gather into one forecast -->
+  <g class="ct-connector">
+    <path class="svg-draw" style="--len:10;--d:.32s" d="M94,60 H104"/>
+    <path class="svg-draw" style="--len:10;--d:.38s" d="M94,76 H104"/>
+    <path class="svg-draw" style="--len:10;--d:.44s" d="M94,92 H104"/>
+    <path class="svg-draw" style="--len:10;--d:.50s" d="M94,108 H104"/>
+    <path class="svg-draw" style="--len:48;--d:.54s" d="M104,60 V108"/>
+    <path class="svg-draw" style="--len:12;--d:.66s" d="M104,84 H116"/>
+  </g>
+
+  <!-- Plot -->
+  <line class="ct-gridline" x1="120" y1="50" x2="318" y2="50"/>
+  <line class="ct-gridline" x1="120" y1="118" x2="318" y2="118"/>
+
+  <path class="ct-band svg-fade" style="--d:.85s" d="M120,50 C 180,58 250,72 318,77.2 L318,90.8 C 250,96 180,110 120,118 Z" fill="var(--ct-s3)" fill-opacity="0.14"/>
+  <path class="ct-band svg-fade" style="--d:1s" d="M120,68.1 C 180,72 250,79 318,80.8 L318,87.2 C 250,89 180,96 120,99.9 Z" fill="var(--ct-s3)" fill-opacity="0.3"/>
+
+  <line class="ct-zero" x1="120" y1="84" x2="318" y2="84"/>
+
+  <path class="ct-series svg-draw" style="--len:240;--d:.7s" d="M120,55.7 C 142,72 165,95 186,99.9 C 208,105 232,81 252,74.9 C 274,68 298,83 318,86" stroke="var(--ct-ink)"/>
+  <circle class="svg-pop" style="--d:1.35s" cx="318" cy="86" r="2.8" fill="var(--ct-accent)"/>
+
+  <text class="ct-lbl ct-focal svg-fade" style="--d:1.45s" x="316" y="70" text-anchor="end">&#177;3% by Q4</text>
+
+  <!-- Axes -->
+  <g class="ct-tick"><line x1="120" y1="118" x2="120" y2="120.5"/><line x1="186" y1="118" x2="186" y2="120.5"/><line x1="252" y1="118" x2="252" y2="120.5"/><line x1="318" y1="118" x2="318" y2="120.5"/></g>
+  <text class="ct-axis" x="120" y="130" text-anchor="middle">Q1</text>
+  <text class="ct-axis" x="186" y="130" text-anchor="middle">Q2</text>
+  <text class="ct-axis" x="252" y="130" text-anchor="middle">Q3</text>
+  <text class="ct-axis" x="318" y="130" text-anchor="middle">Q4</text>
+  <text class="ct-axis" x="326" y="52.8">15</text>
+  <text class="ct-axis" x="326" y="86.8">0</text>
+  <text class="ct-axis" x="326" y="120.8">&#8722;15</text>
+
+  <!-- Source -->
+  <line class="ct-rule-line" x1="14" y1="141" x2="346" y2="141"/>
+  <text class="ct-src" x="14" y="151">Source: PMG Services client engagement</text>
+</svg>
           </div>
           <div class="project-meta">
             <span class="project-tag">Predictive Analytics</span>
@@ -1139,7 +1183,77 @@
         erp: {
           tag: 'Custom Financial Ecosystem',
           title: 'Bespoke financial ecosystem for an aviation startup',
-          heroSvg: `<svg viewBox="0 0 360 160" class="cs-hero-svg" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Integration pipeline where invoice OCR, accounting and liquidity systems flow into a central data hub that feeds a live finance dashboard"> <defs> <pattern id="o1-dots" width="16" height="16" patternUnits="userSpaceOnUse"><circle cx="8" cy="8" r="0.7" fill="#0b1d2c" opacity="0.05"/></pattern> <radialGradient id="o1-hub" cx="38%" cy="32%" r="70%"><stop offset="0" stop-color="#1e4068"/><stop offset="1" stop-color="#0b1d2c"/></radialGradient> </defs> <rect width="360" height="160" rx="8" fill="#f8fafb"/> <rect width="360" height="160" rx="8" fill="url(#o1-dots)"/> <rect x="0.5" y="0.5" width="359" height="159" rx="7.5" fill="none" stroke="#e7ebf0"/> <text x="16" y="16" font-size="6" font-weight="600" fill="#0b1d2c" opacity="0.4" letter-spacing="1.6" font-family="Space Grotesk,sans-serif">SOURCES</text> <text x="244" y="26" font-size="6" font-weight="700" fill="#b61818" letter-spacing="1.6" font-family="Space Grotesk,sans-serif">LIVE OUTPUT</text> <g class="svg-fade"> <rect x="16" y="24" width="88" height="24" rx="7" fill="#ffffff" stroke="#e2e7ed"/><rect x="16" y="24" width="3.5" height="24" rx="1.75" fill="#b61818" opacity="0.9"/> <text x="62" y="39.5" text-anchor="middle" font-size="7" font-weight="600" fill="#0b1d2c" letter-spacing="0.4" font-family="Space Grotesk,sans-serif">INVOICE OCR</text> </g> <g class="svg-fade" style="--d:.12s"> <rect x="16" y="68" width="88" height="24" rx="7" fill="#ffffff" stroke="#e2e7ed"/><rect x="16" y="68" width="3.5" height="24" rx="1.75" fill="#b61818" opacity="0.6"/> <text x="62" y="83.5" text-anchor="middle" font-size="7" font-weight="600" fill="#0b1d2c" letter-spacing="0.4" font-family="Space Grotesk,sans-serif">ACCOUNTING</text> </g> <g class="svg-fade" style="--d:.24s"> <rect x="16" y="112" width="88" height="24" rx="7" fill="#ffffff" stroke="#e2e7ed"/><rect x="16" y="112" width="3.5" height="24" rx="1.75" fill="#b61818" opacity="0.35"/> <text x="62" y="127.5" text-anchor="middle" font-size="7" font-weight="600" fill="#0b1d2c" letter-spacing="0.4" font-family="Space Grotesk,sans-serif">LIQUIDITY</text> </g> <path class="svg-draw" style="--len:120;--d:.35s" d="M104,36 C 130,36 138,62 152,72" fill="none" stroke="#d3dae3" stroke-width="1.3"/> <path class="svg-draw" style="--len:120;--d:.48s" d="M104,80 L152,80" fill="none" stroke="#d3dae3" stroke-width="1.3"/> <path class="svg-draw" style="--len:120;--d:.6s" d="M104,124 C 130,124 138,98 152,88" fill="none" stroke="#d3dae3" stroke-width="1.3"/> <g class="svg-pop" style="--d:.75s"> <rect x="152" y="54" width="64" height="52" rx="11" fill="url(#o1-hub)"/> <rect x="153" y="55" width="62" height="50" rx="10" fill="none" stroke="#ffffff" stroke-opacity="0.09"/> <text x="184" y="78" text-anchor="middle" font-size="8" font-weight="700" fill="#ffffff" letter-spacing="1" font-family="Space Grotesk,sans-serif">DATA HUB</text> <rect x="174" y="85" width="20" height="2" rx="1" fill="#b61818"/> </g> <path class="svg-draw" style="--len:70;--d:.9s" d="M216,80 L244,80" fill="none" stroke="#d3dae3" stroke-width="1.3"/> <g class="svg-pop" style="--d:1.05s"> <rect x="244" y="34" width="100" height="92" rx="9" fill="#ffffff" stroke="#e2e7ed"/> <circle cx="254" cy="44" r="1.7" fill="#dfe5ec"/><circle cx="261" cy="44" r="1.7" fill="#dfe5ec"/><circle cx="268" cy="44" r="1.7" fill="#dfe5ec"/> <line x1="250" y1="52" x2="338" y2="52" stroke="#eef1f5" stroke-width="1"/> </g> <rect class="svg-rise" style="--d:1.2s" x="260" y="88" width="14" height="26" rx="2" fill="#0b1d2c" opacity="0.18"/> <rect class="svg-rise" style="--d:1.35s" x="284" y="72" width="14" height="42" rx="2" fill="#0b1d2c" opacity="0.38"/> <rect class="svg-rise" style="--d:1.5s" x="308" y="52" width="14" height="62" rx="2" fill="#b61818" opacity="0.9"/> <circle r="2.5" fill="#b61818" opacity="0.8"><animateMotion dur="2.8s" repeatCount="indefinite" begin="2.2s" path="M104,80 L152,80"/></circle> <circle r="2.5" fill="#0b1d2c" opacity="0.45"><animateMotion dur="2.8s" repeatCount="indefinite" begin="3.6s" path="M216,80 L244,80"/></circle> </svg>`,
+          heroSvg: `<svg class="cs-hero-svg" viewBox="0 0 360 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Chart: monthly manual admin time at an aviation startup before and after building an integrated finance system. Invoice entry falls from 32 hours to 4, cash reporting from 20 to 3 and ad-hoc analysis from 23 to 8, returning 60 hours a month to the finance team.">
+  <rect width="360" height="160" rx="8" fill="var(--ct-paper)"/>
+  <rect x="0.5" y="0.5" width="359" height="159" rx="7.5" fill="none" stroke="var(--ct-rule)"/>
+
+  <!-- Furniture -->
+  <rect class="ct-tab" x="14" y="11" width="19" height="2.6"/>
+  <text class="ct-title" x="14" y="27">Where the finance month went</text>
+  <text class="ct-sub" x="14" y="38">Manual admin time, hours per month</text>
+  <g class="svg-fade" style="--d:1.5s">
+    <text class="ct-stat" x="346" y="30" text-anchor="end">60h</text>
+    <text class="ct-note" x="346" y="39" text-anchor="end">RETURNED PER MONTH</text>
+  </g>
+
+  <!-- Value-axis gridlines. The category axis is vertical here, so the
+       gridlines run perpendicular to it, as on any horizontal bar chart. -->
+  <g class="ct-gridline">
+    <line x1="160" y1="54" x2="160" y2="118"/>
+    <line x1="210" y1="54" x2="210" y2="118"/>
+    <line x1="260" y1="54" x2="260" y2="118"/>
+    <line x1="310" y1="54" x2="310" y2="118"/>
+  </g>
+  <line class="ct-zero" x1="110" y1="54" x2="110" y2="118"/>
+
+  <!-- Series labels, stated once -->
+  <g class="svg-fade" style="--d:1.2s">
+    <text class="ct-lbl" x="130" y="59" text-anchor="middle" fill="var(--ct-s1)">After</text>
+    <text class="ct-lbl" x="270" y="59" text-anchor="middle" fill="var(--ct-s4)">Before</text>
+  </g>
+
+  <!-- Invoice entry: 32h -> 4h -->
+  <g class="svg-fade" style="--d:.15s">
+    <text class="ct-lbl" x="14" y="69" fill="var(--ct-ink)">Invoice entry</text>
+    <line x1="130" y1="66" x2="270" y2="66" stroke="var(--ct-s5)" stroke-width="2.4" stroke-linecap="round"/>
+    <circle cx="270" cy="66" r="3.2" fill="var(--ct-s4)"/>
+    <circle cx="130" cy="66" r="3.2" fill="var(--ct-s1)"/>
+    <text class="ct-axis" x="124" y="68.8" text-anchor="end">4</text>
+    <text class="ct-axis" x="276" y="68.8">32</text>
+  </g>
+
+  <!-- Cash reporting: 20h -> 3h -->
+  <g class="svg-fade" style="--d:.3s">
+    <text class="ct-lbl" x="14" y="91" fill="var(--ct-ink)">Cash reporting</text>
+    <line x1="125" y1="88" x2="210" y2="88" stroke="var(--ct-s5)" stroke-width="2.4" stroke-linecap="round"/>
+    <circle cx="210" cy="88" r="3.2" fill="var(--ct-s4)"/>
+    <circle cx="125" cy="88" r="3.2" fill="var(--ct-s1)"/>
+    <text class="ct-axis" x="119" y="90.8" text-anchor="end">3</text>
+    <text class="ct-axis" x="216" y="90.8">20</text>
+  </g>
+
+  <!-- Ad-hoc analysis: 23h -> 8h -->
+  <g class="svg-fade" style="--d:.45s">
+    <text class="ct-lbl" x="14" y="113" fill="var(--ct-ink)">Ad-hoc analysis</text>
+    <line x1="150" y1="110" x2="225" y2="110" stroke="var(--ct-s5)" stroke-width="2.4" stroke-linecap="round"/>
+    <circle cx="225" cy="110" r="3.2" fill="var(--ct-s4)"/>
+    <circle cx="150" cy="110" r="3.2" fill="var(--ct-s1)"/>
+    <text class="ct-axis" x="144" y="112.8" text-anchor="end">8</text>
+    <text class="ct-axis" x="231" y="112.8">23</text>
+  </g>
+
+  <!-- Value axis -->
+  <g class="ct-tick"><line x1="110" y1="118" x2="110" y2="120.5"/><line x1="160" y1="118" x2="160" y2="120.5"/><line x1="210" y1="118" x2="210" y2="120.5"/><line x1="260" y1="118" x2="260" y2="120.5"/><line x1="310" y1="118" x2="310" y2="120.5"/></g>
+  <text class="ct-axis" x="110" y="128" text-anchor="middle">0</text>
+  <text class="ct-axis" x="160" y="128" text-anchor="middle">10</text>
+  <text class="ct-axis" x="210" y="128" text-anchor="middle">20</text>
+  <text class="ct-axis" x="260" y="128" text-anchor="middle">30</text>
+  <text class="ct-axis" x="310" y="128" text-anchor="middle">40</text>
+
+  <!-- Source -->
+  <line class="ct-rule-line" x1="14" y1="141" x2="346" y2="141"/>
+  <text class="ct-src" x="14" y="151">Source: PMG Services client engagement</text>
+</svg>`,
           company: 'A startup in the aviation industry running its finance operation entirely on manual data entry and spreadsheets. The finance team was spending significant time on duplicate entry, ad-hoc reporting, and manual invoice processing — with no structured forecasting or scenario planning capability.',
           goal: 'Architect a bespoke, integrated financial ecosystem built around the existing accounting platform — connecting custom-built Invoice OCR, a Liquidity Engine for financial planning and forecasting, and a Target Operating Model for modeling revenue streams across different scenarios.',
           approach: [
@@ -1197,7 +1311,65 @@
         forecasting: {
           tag: 'Predictive Analytics',
           title: 'Driver-based forecasting model achieving 98% revenue prediction accuracy',
-          heroSvg: `<svg viewBox="0 0 360 160" class="cs-hero-svg" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Driver model forecast where revenue, cost, market and procedure drivers feed a central model producing a 98 percent accurate forecast curve"> <defs> <pattern id="o2-dots" width="16" height="16" patternUnits="userSpaceOnUse"><circle cx="8" cy="8" r="0.7" fill="#0b1d2c" opacity="0.05"/></pattern> <radialGradient id="o2-core" cx="38%" cy="32%" r="70%"><stop offset="0" stop-color="#1e4068"/><stop offset="1" stop-color="#0b1d2c"/></radialGradient> </defs> <rect width="360" height="160" rx="8" fill="#f8fafb"/> <rect width="360" height="160" rx="8" fill="url(#o2-dots)"/> <rect x="0.5" y="0.5" width="359" height="159" rx="7.5" fill="none" stroke="#e7ebf0"/> <text x="16" y="14" font-size="6" font-weight="700" fill="#b61818" letter-spacing="1.6" font-family="Space Grotesk,sans-serif">DRIVERS</text> <text x="176" y="14" text-anchor="middle" font-size="6" font-weight="600" fill="#0b1d2c" opacity="0.4" letter-spacing="1.6" font-family="Space Grotesk,sans-serif">MODEL</text> <g class="svg-fade" style="--d:.05s"><rect x="16" y="24" width="94" height="22" rx="6" fill="#ffffff" stroke="#e2e7ed"/><rect x="16" y="24" width="3.5" height="22" rx="1.75" fill="#b61818" opacity="0.9"/><text x="65" y="38.5" text-anchor="middle" font-size="7" font-weight="600" fill="#0b1d2c" letter-spacing="0.4" font-family="Space Grotesk,sans-serif">REVENUE</text></g> <g class="svg-fade" style="--d:.15s"><rect x="16" y="58" width="94" height="22" rx="6" fill="#ffffff" stroke="#e2e7ed"/><rect x="16" y="58" width="3.5" height="22" rx="1.75" fill="#b61818" opacity="0.65"/><text x="65" y="72.5" text-anchor="middle" font-size="7" font-weight="600" fill="#0b1d2c" letter-spacing="0.4" font-family="Space Grotesk,sans-serif">COST POOL</text></g> <g class="svg-fade" style="--d:.25s"><rect x="16" y="92" width="94" height="22" rx="6" fill="#ffffff" stroke="#e2e7ed"/><rect x="16" y="92" width="3.5" height="22" rx="1.75" fill="#b61818" opacity="0.45"/><text x="65" y="106.5" text-anchor="middle" font-size="7" font-weight="600" fill="#0b1d2c" letter-spacing="0.4" font-family="Space Grotesk,sans-serif">MARKET DATA</text></g> <g class="svg-fade" style="--d:.35s"><rect x="16" y="126" width="94" height="22" rx="6" fill="#ffffff" stroke="#e2e7ed"/><rect x="16" y="126" width="3.5" height="22" rx="1.75" fill="#b61818" opacity="0.3"/><text x="65" y="140.5" text-anchor="middle" font-size="7" font-weight="600" fill="#0b1d2c" letter-spacing="0.4" font-family="Space Grotesk,sans-serif">PROCEDURES</text></g> <path class="svg-draw" style="--len:130;--d:.45s" d="M110,35 C 136,35 146,60 155,70" fill="none" stroke="#d3dae3" stroke-width="1.3"/> <path class="svg-draw" style="--len:130;--d:.55s" d="M110,69 C 134,69 145,74 153,78" fill="none" stroke="#d3dae3" stroke-width="1.3"/> <path class="svg-draw" style="--len:130;--d:.65s" d="M110,103 C 134,103 145,86 153,82" fill="none" stroke="#d3dae3" stroke-width="1.3"/> <path class="svg-draw" style="--len:130;--d:.75s" d="M110,137 C 136,137 146,100 155,90" fill="none" stroke="#d3dae3" stroke-width="1.3"/> <g class="svg-pop" style="--d:.85s"> <circle cx="176" cy="80" r="23" fill="url(#o2-core)"/> <circle cx="176" cy="80" r="27.5" fill="none" stroke="#b61818" stroke-opacity="0.35" stroke-width="1" stroke-dasharray="2 3"/> <text x="176" y="78" text-anchor="middle" font-size="7.5" font-weight="700" fill="#ffffff" letter-spacing="0.8" font-family="Space Grotesk,sans-serif">DRIVER</text> <text x="176" y="88" text-anchor="middle" font-size="7.5" font-weight="700" fill="#ffffff" letter-spacing="0.8" font-family="Space Grotesk,sans-serif">MODEL</text> </g> <path class="svg-draw" style="--len:60;--d:1s" d="M204,80 L218,80" fill="none" stroke="#d3dae3" stroke-width="1.3"/> <line x1="222" y1="132" x2="344" y2="132" stroke="#dfe5ec" stroke-width="1.2"/> <line x1="222" y1="30" x2="222" y2="132" stroke="#eef1f5" stroke-width="1"/> <text x="252" y="142" text-anchor="middle" font-size="5.5" fill="#0b1d2c" opacity="0.35" font-family="Space Grotesk,sans-serif">Q1</text> <text x="282" y="142" text-anchor="middle" font-size="5.5" fill="#0b1d2c" opacity="0.35" font-family="Space Grotesk,sans-serif">Q2</text> <text x="312" y="142" text-anchor="middle" font-size="5.5" fill="#0b1d2c" opacity="0.35" font-family="Space Grotesk,sans-serif">Q3</text> <text x="340" y="142" text-anchor="middle" font-size="5.5" fill="#b61818" opacity="0.6" font-family="Space Grotesk,sans-serif">Q4</text> <path class="svg-fade" style="--d:1.5s" d="M222,114 L344,30 L344,64 L222,124 Z" fill="#b61818" opacity="0.07"/> <path class="svg-draw" style="--len:220;--d:1.15s" d="M222,120 C 258,108 300,78 344,46" fill="none" stroke="#b61818" stroke-width="2.2" stroke-linecap="round"/> <circle class="svg-pop" style="--d:1.5s" cx="250" cy="108" r="2.5" fill="#0b1d2c" opacity="0.35"/> <circle class="svg-pop" style="--d:1.6s" cx="280" cy="90" r="2.5" fill="#0b1d2c" opacity="0.45"/> <circle class="svg-pop" style="--d:1.7s" cx="312" cy="69" r="2.5" fill="#0b1d2c" opacity="0.55"/> <circle class="svg-pop" style="--d:1.85s" cx="344" cy="46" r="4" fill="#b61818"/> <circle class="svg-pulse-ring" cx="344" cy="46" r="8" fill="none" stroke="#b61818" stroke-width="1"/> <g class="svg-fade" style="--d:2s"> <text x="344" y="20" text-anchor="end" font-size="12" font-weight="700" fill="#b61818" font-family="Space Grotesk,sans-serif">98%</text> <text x="344" y="28" text-anchor="end" font-size="5.5" font-weight="600" fill="#0b1d2c" opacity="0.45" letter-spacing="1.2" font-family="Space Grotesk,sans-serif">FORECAST ACCURACY</text> </g> </svg>`,
+          heroSvg: `<svg class="cs-hero-svg" viewBox="0 0 360 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Chart: quarterly revenue forecast error for a pharmaceutical group. A shaded band showing the model's error range narrows from plus or minus 15 percent in the first quarter to plus or minus 3 percent by the fourth, with realised error converging on zero and forecast accuracy reaching 98 percent.">
+  <rect width="360" height="160" rx="8" fill="var(--ct-paper)"/>
+  <rect x="0.5" y="0.5" width="359" height="159" rx="7.5" fill="none" stroke="var(--ct-rule)"/>
+
+  <!-- Furniture -->
+  <rect class="ct-tab" x="14" y="11" width="19" height="2.6"/>
+  <text class="ct-title" x="14" y="27">Closing the forecast gap</text>
+  <text class="ct-sub" x="14" y="38">Revenue forecast error, %; band shows model range</text>
+  <g class="svg-fade" style="--d:1.5s">
+    <text class="ct-stat" x="346" y="30" text-anchor="end">98%</text>
+    <text class="ct-note" x="346" y="39" text-anchor="end">FORECAST ACCURACY</text>
+  </g>
+
+  <!-- Drivers -->
+  <text class="ct-note" x="14" y="50">DRIVERS · 28 IN MODEL</text>
+  <line class="ct-rule-line" x1="14" y1="54" x2="92" y2="54"/>
+  <g class="svg-fade" style="--d:.05s"><rect x="14" y="58.6" width="2.8" height="2.8" fill="var(--ct-s1)"/><text class="ct-lbl" x="21" y="65" fill="var(--ct-ink)">Revenue</text></g>
+  <g class="svg-fade" style="--d:.12s"><rect x="14" y="74.6" width="2.8" height="2.8" fill="var(--ct-s2)"/><text class="ct-lbl" x="21" y="81" fill="var(--ct-ink)">Cost pool</text></g>
+  <g class="svg-fade" style="--d:.19s"><rect x="14" y="90.6" width="2.8" height="2.8" fill="var(--ct-s3)"/><text class="ct-lbl" x="21" y="97" fill="var(--ct-ink)">Market data</text></g>
+  <g class="svg-fade" style="--d:.26s"><rect x="14" y="106.6" width="2.8" height="2.8" fill="var(--ct-s4)"/><text class="ct-lbl" x="21" y="113" fill="var(--ct-ink)">Procedures</text></g>
+
+  <!-- Drivers gather into one forecast -->
+  <g class="ct-connector">
+    <path class="svg-draw" style="--len:10;--d:.32s" d="M94,60 H104"/>
+    <path class="svg-draw" style="--len:10;--d:.38s" d="M94,76 H104"/>
+    <path class="svg-draw" style="--len:10;--d:.44s" d="M94,92 H104"/>
+    <path class="svg-draw" style="--len:10;--d:.50s" d="M94,108 H104"/>
+    <path class="svg-draw" style="--len:48;--d:.54s" d="M104,60 V108"/>
+    <path class="svg-draw" style="--len:12;--d:.66s" d="M104,84 H116"/>
+  </g>
+
+  <!-- Plot -->
+  <line class="ct-gridline" x1="120" y1="50" x2="318" y2="50"/>
+  <line class="ct-gridline" x1="120" y1="118" x2="318" y2="118"/>
+
+  <path class="ct-band svg-fade" style="--d:.85s" d="M120,50 C 180,58 250,72 318,77.2 L318,90.8 C 250,96 180,110 120,118 Z" fill="var(--ct-s3)" fill-opacity="0.14"/>
+  <path class="ct-band svg-fade" style="--d:1s" d="M120,68.1 C 180,72 250,79 318,80.8 L318,87.2 C 250,89 180,96 120,99.9 Z" fill="var(--ct-s3)" fill-opacity="0.3"/>
+
+  <line class="ct-zero" x1="120" y1="84" x2="318" y2="84"/>
+
+  <path class="ct-series svg-draw" style="--len:240;--d:.7s" d="M120,55.7 C 142,72 165,95 186,99.9 C 208,105 232,81 252,74.9 C 274,68 298,83 318,86" stroke="var(--ct-ink)"/>
+  <circle class="svg-pop" style="--d:1.35s" cx="318" cy="86" r="2.8" fill="var(--ct-accent)"/>
+
+  <text class="ct-lbl ct-focal svg-fade" style="--d:1.45s" x="316" y="70" text-anchor="end">&#177;3% by Q4</text>
+
+  <!-- Axes -->
+  <g class="ct-tick"><line x1="120" y1="118" x2="120" y2="120.5"/><line x1="186" y1="118" x2="186" y2="120.5"/><line x1="252" y1="118" x2="252" y2="120.5"/><line x1="318" y1="118" x2="318" y2="120.5"/></g>
+  <text class="ct-axis" x="120" y="130" text-anchor="middle">Q1</text>
+  <text class="ct-axis" x="186" y="130" text-anchor="middle">Q2</text>
+  <text class="ct-axis" x="252" y="130" text-anchor="middle">Q3</text>
+  <text class="ct-axis" x="318" y="130" text-anchor="middle">Q4</text>
+  <text class="ct-axis" x="326" y="52.8">15</text>
+  <text class="ct-axis" x="326" y="86.8">0</text>
+  <text class="ct-axis" x="326" y="120.8">&#8722;15</text>
+
+  <!-- Source -->
+  <line class="ct-rule-line" x1="14" y1="141" x2="346" y2="141"/>
+  <text class="ct-src" x="14" y="151">Source: PMG Services client engagement</text>
+</svg>`,
           company: 'A pharmaceutical company operating across all major markets. Their legacy Excel-based planning process took 6 weeks per cycle and produced forecasts with ±15% variance — unacceptable for board-level decision making.',
           goal: 'Build an Anaplan-based driver forecasting model with scenario planning, producing rolling 12-month forecasts with less than 3% variance and enabling rapid what-if analysis across multiple operational scenarios.',
           approach: ['Identified 28 key operational drivers through stakeholder workshops','Built an Anaplan data pipeline pulling actuals from Sales360','Developed driver-based forecasting logic in Anaplan with different forecast and operational plan scenarios','Created Anaplan dashboards with drill-down from group P&L to individual cost centers'],

@@ -8,7 +8,9 @@
       "Bash(git checkout *)",
       "Bash(git merge *)",
       "Bash(git branch *)",
-      "Bash(git stash *)"
+      "Bash(git stash *)",
+      "Bash(git fetch *)",
+      "WebSearch"
     ]
   }
 }

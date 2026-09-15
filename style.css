@@ -654,40 +654,31 @@ section {
   color: rgba(255, 255, 255, 0.68);
 }
 
-/* Btn-color-2 variant for dark hero background */
+/* Secondary button on the dark hero. White on the navy overlay measures
+   about 11:1; the previous rule painted #000 here and measured 1.87:1. */
 #profile .btn-color-2 {
-  color: rgba(255, 255, 255, 0.85);
-  border-color: rgba(255, 255, 255, 0.3);
-  background: transparent;
-}
-
-#profile .btn-color-2:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.7);
-  color: #fff;
-  text-decoration: none;
-  box-shadow: none;
-}
-
-/* Hero buttons on light background image */
-#profile .btn-color-2 {
-  background: transparent;
-  color: #000000;
-  border: 2px solid rgba(0, 0, 0, 0.6);
-}
-
-#profile .btn-color-2:hover {
-  background: var(--navy);
-  border-color: var(--navy);
   color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+#profile .btn-color-2:hover {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: var(--navy);
+  text-decoration: none;
+}
+
+#profile .btn:focus-visible {
+  outline-color: #ffffff;
 }
 
 #profile .scroll-indicator svg {
-  stroke: rgba(11, 29, 44, 0.45);
+  stroke: rgba(255, 255, 255, 0.45);
 }
 
 #profile .scroll-indicator:hover svg {
-  stroke: var(--red);
+  stroke: #ffffff;
 }
 
 /* ─── SECTION DIVIDER BANDS ─── */
@@ -1367,6 +1358,9 @@ section {
   height: auto;
   border-radius: 12px;
   max-height: 340px;
+  /* Charts are authored for ~1.4px per viewBox unit; letting the hero
+     run full-bleed would blow the type up well past its design size. */
+  max-width: 620px;
 }
 
 .cs-body {
@@ -2097,13 +2091,13 @@ section {
 .service-svg {
   width: 100%;
   height: 100%;
-  opacity: 0.95;
-  transition: all 0.4s ease;
+  transition: opacity 0.4s ease;
 }
 
+/* Charts are not scaled on hover: magnifying hairline rules and
+   6-8px type softens them and costs the precision the chart is for. */
 .service-card:hover .service-svg {
   opacity: 1;
-  transform: scale(1.05);
 }
 
 /* Card title */
@@ -2905,13 +2899,11 @@ section {
 .project-svg {
   width: 100%;
   height: 100%;
-  opacity: 0.95;
-  transition: all 0.4s ease;
+  transition: opacity 0.4s ease;
 }
 
 .project-card-future:hover .project-svg {
   opacity: 1;
-  transform: scale(1.05);
 }
 
 /* Project metadata */
@@ -3802,6 +3794,69 @@ body.dark-theme, nav.dark-theme {
 }
 
 /* ═══════════════════════════════════════════════════
+   CHART SYSTEM — editorial chart furniture shared by every
+   data visual on the site. Conventions follow newspaper
+   practice: one accent colour reserved for the focal point,
+   horizontal gridlines only, no y-axis line, no legend
+   (series are labelled directly), unit stated in the
+   subtitle, source line at the foot.
+
+   Every chart is authored so that 1 viewBox unit renders at
+   roughly 1.4px, which is why the sizes below are shared
+   across viewBoxes of different dimensions.
+   ═══════════════════════════════════════════════════ */
+
+.service-svg,
+.project-svg,
+.cs-hero-svg {
+  /* Ink and neutrals */
+  --ct-ink:    #0b1d2c;   /* titles, zero baseline — the only black */
+  --ct-sub:    #44606e;   /* subtitles, series labels */
+  --ct-mute:   #8697a1;   /* axis labels, source line */
+  --ct-grid:   #dbe2e7;   /* horizontal gridlines */
+  --ct-rule:   #e7ebf0;   /* hairline separators */
+  --ct-panel:  #eef2f5;   /* highlight / forecast shading */
+  --ct-paper:  #ffffff;
+  /* The accent is reserved for the red tab and ONE focal callout
+     per chart. It is never used to plot a series. */
+  --ct-accent: #b61818;
+  /* Neutral steel ramp — secondary series and uncertainty bands */
+  --ct-s1: #24475c;
+  --ct-s2: #3d6379;
+  --ct-s3: #5b7d91;
+  --ct-s4: #7d99aa;
+  --ct-s5: #a3bac6;
+
+  font-family: "Roboto Condensed", "Fira Sans Condensed", "Space Grotesk", system-ui, sans-serif;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Type scale (values are viewBox units) ── */
+.ct-title  { font-size: 12.5px; font-weight: 700; fill: var(--ct-ink); }
+.ct-sub    { font-size: 8.8px;  font-weight: 400; fill: var(--ct-sub); }
+.ct-lbl    { font-size: 8.4px;  font-weight: 500; fill: var(--ct-sub); }
+.ct-axis   { font-size: 8px;    font-weight: 400; fill: var(--ct-mute); }
+.ct-src    { font-size: 7.2px;  font-weight: 400; fill: var(--ct-mute); }
+.ct-stat   { font-size: 22px;   font-weight: 700; fill: var(--ct-accent); }
+.ct-kicker { font-size: 7.2px;  font-weight: 700; fill: var(--ct-accent); letter-spacing: 0.14em; }
+.ct-note   { font-size: 7.6px;  font-weight: 500; fill: var(--ct-mute);   letter-spacing: 0.09em; }
+.ct-focal  { fill: var(--ct-accent); font-weight: 700; }
+
+/* ── Furniture ── */
+.ct-tab       { fill: var(--ct-accent); }
+.ct-gridline  { stroke: var(--ct-grid); stroke-width: 0.7; }
+.ct-rule-line { stroke: var(--ct-rule); stroke-width: 1; }
+.ct-tick      { stroke: var(--ct-mute); stroke-width: 0.7; }
+.ct-zero      { stroke: var(--ct-ink);  stroke-width: 1; }       /* black is for zero only */
+.ct-axisline  { stroke: var(--ct-ink);  stroke-width: 0.9; }
+.ct-connector { stroke: var(--ct-s5);   stroke-width: 0.9; fill: none; stroke-linecap: round; }
+.ct-series    { fill: none; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+.ct-series-2  { fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; stroke: var(--ct-s4); }
+/* Uncertainty bands carry no contour — a stroked edge would imply
+   a hard threshold the forecast does not have. */
+.ct-band      { stroke: none; }
+
+/* ═══════════════════════════════════════════════════
    SVG VISUAL SYSTEM v2 — services & projects card art.
    Play-once, scroll-orchestrated reveals. Elements are
    staged via --d (delay) and --len (path length).
@@ -3863,10 +3918,13 @@ body.dark-theme, nav.dark-theme {
   animation-delay: var(--d, 0s);
 }
 
+/* --o carries the element's intended resting opacity. A CSS animation
+   overrides the SVG opacity="" presentation attribute, so anything meant
+   to sit below full strength must declare it here instead. */
 @keyframes svgDraw   { to { stroke-dashoffset: 0; } }
-@keyframes svgFadeIn { to { opacity: 1; transform: translateY(0); } }
-@keyframes svgPopIn  { to { opacity: 1; transform: scale(1); } }
-@keyframes svgRiseIn { to { opacity: 1; transform: scaleY(1); } }
+@keyframes svgFadeIn { to { opacity: var(--o, 1); transform: translateY(0); } }
+@keyframes svgPopIn  { to { opacity: var(--o, 1); transform: scale(1); } }
+@keyframes svgRiseIn { to { opacity: var(--o, 1); transform: scaleY(1); } }
 
 /* Ambient accents — one focal pulse per visual, slow orbits */
 .svg-pulse-ring {

@@ -1,0 +1,60 @@
+<svg viewBox="0 0 360 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Chart: net cash position at a mid-market technology company, in millions of euros. Four weeks of settled actuals give way at the present week to a 13-week rolling forecast, drawn as a dashed central line inside a fan that widens with the horizon; the forward view lets treasury commit cash early enough to capture 340 thousand euros of early-payment discounts.">
+  <rect width="360" height="160" rx="8" fill="var(--ct-paper)"/>
+  <rect x="0.5" y="0.5" width="359" height="159" rx="7.5" fill="none" stroke="var(--ct-rule)"/>
+
+  <!-- Furniture -->
+  <rect class="ct-tab" x="14" y="11" width="19" height="2.6"/>
+  <text class="ct-title" x="14" y="27">Cash, thirteen weeks ahead</text>
+  <text class="ct-sub" x="14" y="38">Net cash position, &#8364;m; band shows forecast range</text>
+  <g class="svg-fade" style="--d:1.5s">
+    <text class="ct-stat" x="346" y="30" text-anchor="end">&#8364;340K</text>
+    <text class="ct-note" x="346" y="39" text-anchor="end">EARLY-PAYMENT DISCOUNT</text>
+  </g>
+
+  <!-- Forecast horizon -->
+  <rect class="svg-fade" style="--d:.1s" x="85.53" y="50" width="232.47" height="68" fill="var(--ct-panel)"/>
+
+  <!-- Gridlines -->
+  <line class="ct-gridline" x1="14" y1="50" x2="318" y2="50"/>
+  <line class="ct-gridline" x1="14" y1="72.67" x2="318" y2="72.67"/>
+  <line class="ct-gridline" x1="14" y1="95.33" x2="318" y2="95.33"/>
+
+  <!-- Forecast fan: outer then inner, no contour -->
+  <path class="ct-band svg-fade" style="--d:.85s" fill="var(--ct-s3)" fill-opacity="0.14" d="M85.53,77.77 L103.41,76.41 L121.29,74.48 L139.18,74.25 L157.06,75.16 L174.94,72.66 L192.82,70.17 L210.71,68.82 L228.59,68.58 L246.47,66.09 L264.35,63.6 L282.24,63.37 L300.12,60.88 L318,59.52 L318,80.14 L300.12,79.92 L282.24,80.83 L264.35,79.46 L246.47,80.37 L228.59,81.28 L210.71,79.92 L192.82,79.69 L174.94,80.6 L157.06,81.5 L139.18,79.01 L121.29,77.66 L103.41,77.99 Z"/>
+  <path class="ct-band svg-fade" style="--d:1s" fill="var(--ct-s3)" fill-opacity="0.3" d="M85.53,77.77 L103.41,76.86 L121.29,75.39 L139.18,75.61 L157.06,76.97 L174.94,74.93 L192.82,72.89 L210.71,71.99 L228.59,72.21 L246.47,70.17 L264.35,68.13 L282.24,68.36 L300.12,66.32 L318,65.41 L318,74.25 L300.12,74.48 L282.24,75.84 L264.35,74.93 L246.47,76.29 L228.59,77.65 L210.71,76.75 L192.82,76.97 L174.94,78.33 L157.06,79.69 L139.18,77.65 L121.29,76.75 L103.41,77.54 Z"/>
+
+  <line class="ct-zero" x1="14" y1="118" x2="318" y2="118"/>
+
+  <!-- Settled actuals -->
+  <path class="ct-series svg-draw" style="--len:90;--d:.35s" d="M14,82.87 L31.88,85.13 L49.76,78.9 L67.65,81.73 L85.53,77.77" stroke="var(--ct-s1)"/>
+  <!-- 13-week rolling forecast, same colour, dashed -->
+  <path class="ct-series svg-fade" style="--d:1.1s" stroke-dasharray="3.5 2.5" stroke="var(--ct-s1)" d="M85.53,77.77 L103.41,77.2 L121.29,76.07 L139.18,76.63 L157.06,78.33 L174.94,76.63 L192.82,74.93 L210.71,74.37 L228.59,74.93 L246.47,73.23 L264.35,71.53 L282.24,72.1 L300.12,70.4 L318,69.83"/>
+
+  <text class="ct-note svg-fade" style="--d:.2s" x="14" y="58">ACTUAL</text>
+  <text class="ct-note svg-fade" style="--d:.25s" x="89" y="58">FORECAST</text>
+
+  <circle class="svg-pop" style="--d:1.35s" cx="85.53" cy="77.77" r="2.8" fill="var(--ct-accent)"/>
+  <text class="ct-lbl ct-focal svg-fade" style="--d:1.45s" x="85.53" y="70" text-anchor="middle">Real-time position</text>
+
+  <!-- Axes -->
+  <g class="ct-tick">
+    <line x1="14" y1="118" x2="14" y2="120.5"/>
+    <line x1="85.53" y1="118" x2="85.53" y2="120.5"/>
+    <line x1="157.06" y1="118" x2="157.06" y2="120.5"/>
+    <line x1="228.59" y1="118" x2="228.59" y2="120.5"/>
+    <line x1="318" y1="118" x2="318" y2="120.5"/>
+  </g>
+  <text class="ct-axis" x="14" y="130" text-anchor="middle">&#8722;4w</text>
+  <text class="ct-axis" x="85.53" y="130" text-anchor="middle">Now</text>
+  <text class="ct-axis" x="157.06" y="130" text-anchor="middle">+4w</text>
+  <text class="ct-axis" x="228.59" y="130" text-anchor="middle">+8w</text>
+  <text class="ct-axis" x="318" y="130" text-anchor="middle">+13w</text>
+  <text class="ct-axis" x="322" y="52.8">12</text>
+  <text class="ct-axis" x="322" y="75.47">8</text>
+  <text class="ct-axis" x="322" y="98.13">4</text>
+  <text class="ct-axis" x="322" y="120.8">0</text>
+
+  <!-- Source -->
+  <line class="ct-rule-line" x1="14" y1="141" x2="346" y2="141"/>
+  <text class="ct-src" x="14" y="151">Source: PMG Services client engagement</text>
+</svg>
