@@ -93,9 +93,9 @@ const translations = {
     // How We Work Section
     hwwLabel: "Our process",
     hwwTitle: "How We Work",
-    hwwIntro: "From diagnosis to deployment. No open-ended retainers, no scope creep — just clear phases with defined deliverables at each gate.",
+    hwwIntro: "Three phases with a defined end. You know what you get at each stage, and what it costs, before we start.",
     hwwStep1Title: "Discover",
-    hwwStep1Desc: "We audit your current state — decision architecture, data flows, processes, and technology. You get a clear, unvarnished picture of where value is being lost before we propose anything.",
+    hwwStep1Desc: "We look at how your finance function actually runs today: the data, the processes, the tools, and the spreadsheets nobody has documented. You get an honest write-up before we propose anything.",
     hwwStep1Bullets: [
       "Process & decision audit",
       "Data quality assessment",
@@ -111,7 +111,7 @@ const translations = {
       "Risk & change management"
     ],
     hwwStep3Title: "Deploy",
-    hwwStep3Desc: "We build, integrate, and embed — with your team, not beside it. Knowledge transfer is built into every sprint so your people own the outcome long after we leave.",
+    hwwStep3Desc: "We build it with your team rather than around them, handing over documentation and training as we go, so nothing depends on us still being there afterwards.",
     hwwStep3Bullets: [
       "Agile delivery sprints",
       "Integration & testing",
@@ -216,9 +216,9 @@ const translations = {
     // How We Work Section
     hwwLabel: "Unser Prozess",
     hwwTitle: "Wie wir arbeiten",
-    hwwIntro: "Drei Phasen. Keine Unklarheit. Klare Verantwortung in jedem Schritt.",
+    hwwIntro: "Drei Phasen mit einem definierten Ende. Sie wissen vorab, was Sie in jeder Phase bekommen und was es kostet.",
     hwwStep1Title: "Entdecken",
-    hwwStep1Desc: "Wir prüfen Ihren aktuellen Stand — Entscheidungsarchitektur, Datenflüsse, Prozesse und Technologie. Sie erhalten ein klares, ungeschöntes Bild davon, wo Wert verloren geht, bevor wir etwas vorschlagen.",
+    hwwStep1Desc: "Wir sehen uns an, wie Ihre Finanzfunktion heute tatsächlich arbeitet: die Daten, die Prozesse, die Tools und die Tabellen, die nie jemand dokumentiert hat. Sie bekommen eine ehrliche Bestandsaufnahme, bevor wir etwas vorschlagen.",
     hwwStep1Bullets: [
       "Prozess- & Entscheidungs-Audit",
       "Datenqualitätsbewertung",
@@ -234,7 +234,7 @@ const translations = {
       "Risiko- & Change-Management"
     ],
     hwwStep3Title: "Umsetzen",
-    hwwStep3Desc: "Wir bauen, integrieren und verankern — mit Ihrem Team, nicht daneben. Wissenstransfer ist in jeden Sprint eingebaut, damit Ihre Mitarbeiter das Ergebnis lange nach unserem Abschied beherrschen.",
+    hwwStep3Desc: "Wir bauen gemeinsam mit Ihrem Team statt an ihm vorbei und übergeben Dokumentation und Schulung laufend, damit am Ende nichts davon abhängt, dass wir noch da sind.",
     hwwStep3Bullets: [
       "Agile Delivery-Sprints",
       "Integration & Testing",
