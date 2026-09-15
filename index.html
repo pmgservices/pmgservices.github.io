@@ -13,12 +13,10 @@
     <!-- Mobile browser chrome color -->
     <meta name="theme-color" content="#0b1d2c" />
 
-    <!-- Google Search Console Verification — replace content value with your code from Search Console -->
-    <meta name="google-site-verification" content="REPLACE_WITH_YOUR_VERIFICATION_CODE" />
 
     <!-- Google Analytics 4 — GDPR-compliant: loads only after cookie consent.
          Set your Measurement ID once in consent.js (GA_ID constant). -->
-    <script src="consent.js?v=2" defer></script>
+    <script src="consent.js?v=3" defer></script>
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -37,10 +35,8 @@
     <link rel="alternate" hreflang="en" href="https://pmg-services.net/" />
     <link rel="alternate" hreflang="de" href="https://pmg-services.net/?lang=de" />
 
-    <!-- Fonts (preconnect + stylesheet, replaces @import in CSS) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" />
+    <!-- Fonts — self-hosted. No request reaches Google before consent (GDPR / LG München I, 2022). -->
+    <link rel="stylesheet" href="./assets/fonts/fonts.css?v=1" />
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="style.css?v=24" />
@@ -1042,6 +1038,7 @@
             <h3 class="footer-heading" id="footer-legal-heading">Legal</h3>
             <a href="./privacy-policy.html" class="footer-link" id="footer-privacy-link">Privacy Policy</a>
             <a href="./impressum.html" class="footer-link" id="footer-impressum-link">Impressum</a>
+            <a href="#" class="footer-link" id="footer-cookie-link" onclick="event.preventDefault();if(window.pmgOpenConsent)pmgOpenConsent();">Cookie Settings</a>
           </div>
         </div>
         <div class="footer-bottom">

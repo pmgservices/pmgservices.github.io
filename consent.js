@@ -42,15 +42,8 @@
     try { localStorage.setItem(key, val); } catch (e) { /* private mode */ }
   }
 
-  var choice = getStored('pmg-consent');
-  if (choice === 'granted') {
-    gtag('consent', 'update', { analytics_storage: 'granted' });
-    loadGA();
-    return;
-  }
-  if (choice === 'denied') return;
-
-  // ── No stored choice → show the consent banner ──
+  // ── Banner text (defined before the stored-choice check so the banner can be
+  //    re-opened later from the footer link) ──
   var texts = {
     en: {
       msg: 'We use cookies for anonymous analytics to understand how visitors use this site. No marketing or advertising trackers.',
@@ -90,11 +83,36 @@
       if (decision === 'granted') {
         gtag('consent', 'update', { analytics_storage: 'granted' });
         loadGA();
+      } else {
+        // Withdrawn: stop further collection and clear analytics cookies already set
+        gtag('consent', 'update', { analytics_storage: 'denied' });
+        document.cookie.split(';').forEach(function (c) {
+          var name = c.split('=')[0].trim();
+          if (name.indexOf('_ga') === 0) {
+            var expire = '=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/';
+            document.cookie = name + expire;
+            document.cookie = name + expire + ';domain=.' + location.hostname;
+          }
+        });
       }
     }
     banner.querySelector('.consent-accept').addEventListener('click', function () { close('granted'); });
     banner.querySelector('.consent-decline').addEventListener('click', function () { close('denied'); });
   }
+
+  // Re-open the banner so a visitor can change their mind at any time.
+  // GDPR Art. 7(3): withdrawing consent must be as easy as giving it.
+  window.pmgOpenConsent = function () {
+    if (!document.getElementById('consent-banner')) showBanner();
+  };
+
+  var choice = getStored('pmg-consent');
+  if (choice === 'granted') {
+    gtag('consent', 'update', { analytics_storage: 'granted' });
+    loadGA();
+    return;
+  }
+  if (choice === 'denied') return;
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', showBanner);
