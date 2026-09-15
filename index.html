@@ -39,7 +39,7 @@
     <link rel="stylesheet" href="./assets/fonts/fonts.css?v=1" />
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="style.css?v=25" />
+    <link rel="stylesheet" href="style.css?v=26" />
     <link rel="stylesheet" href="mediaqueries.css?v=9" />
 
     <!-- JSON-LD Structured Data -->
@@ -936,26 +936,23 @@
       <p class="section__text__p1">Get In Touch</p>
       <h2 class="title">Contact Us</h2>
       <div class="booking-container">
-        <!-- Click-to-load: the Bookings iframe is injected only after the visitor
-             asks for it, so no request reaches Microsoft (and no IP address is
-             disclosed) until they act.
+        <!-- Click-to-load: nothing is requested from Microsoft until the
+             visitor asks for it, so no IP address is disclosed before they act.
 
-             TODO: paste the real embed URL below. In the Microsoft Bookings app
-             open your SHARED booking page -> Share -> Embed, and copy the src.
-             It looks like:
-               https://outlook.office365.com/owa/calendar/<page>@pmg-services.net/bookings/
-             Do NOT use a "Bookings with me" (/bookwithme/) link -- those redirect
-             to bookings.cloud.microsoft, whose frame-ancestors policy refuses to
-             be embedded on any external site. -->
+             This is a "Bookings with me" page. bookings.cloud.microsoft sets
+             frame-ancestors to a Microsoft-only allowlist, so it cannot be
+             embedded -- the loader detects /bookwithme/ and opens a new tab
+             instead. To embed the calendar inline instead, create a shared
+             page in the Bookings app and paste its Share -> Embed src here. -->
         <div class="booking-embed"
              id="bookingEmbed"
-             data-booking-url="https://outlook.office365.com/owa/calendar/contact@pmg-services.net/bookings/">
+             data-booking-url="https://outlook.office.com/bookwithme/user/6d6033bbc85f495a9f33bc7930c285f4@pmg-services.net?anonymous">
           <div class="booking-placeholder" id="bookingPlaceholder">
-            <span class="booking-kicker" id="booking-kicker">30 MINUTES &middot; NO OBLIGATION</span>
-            <h3 class="booking-heading" id="booking-heading">Find a time that works</h3>
-            <p class="booking-intro" id="booking-intro">Pick a slot that suits you and we will come prepared. Tell us what is not working in your finance function, or what you are trying to build.</p>
+            <span class="booking-kicker" id="booking-kicker">30-MINUTE DISCOVERY CALL</span>
+            <h3 class="booking-heading" id="booking-heading">Let&rsquo;s scope it together</h3>
+            <p class="booking-intro" id="booking-intro">A short call to understand the scope &mdash; what is not working, what you are trying to build, and whether we are the right fit. No pitch deck, no obligation.</p>
             <button type="button" class="btn btn-color-1" id="bookingLoadBtn">Show available times</button>
-            <p class="booking-note" id="booking-note">Opens Microsoft Bookings in this page. Nothing is sent to Microsoft until you choose to load it &mdash; see our <a href="./privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.</p>
+            <p class="booking-note" id="booking-note">Opens Microsoft Bookings in a new tab. Nothing is sent to Microsoft until you choose to open it &mdash; see our <a href="./privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.</p>
           </div>
         </div>
         <p class="booking-fallback" id="bookingFallback" hidden>
@@ -1037,7 +1034,7 @@
       </svg>
     </button>
 
-    <script src="script.js?v=9"></script>
+    <script src="script.js?v=14"></script>
 
     <!-- ─── KPI STATEMENT ANIMATION ─── -->
     <script>

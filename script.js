@@ -63,11 +63,12 @@ const translations = {
     // Contact Section
     contactSub: "Start a Conversation",
     contactTitle: "Book a Call",
-    bookingKicker: "30 MINUTES · NO OBLIGATION",
-    bookingHeading: "Find a time that works",
-    bookingIntro: "Pick a slot that suits you and we will come prepared. Tell us what is not working in your finance function, or what you are trying to build.",
+    bookingKicker: "30-MINUTE DISCOVERY CALL",
+    bookingHeading: "Let’s scope it together",
+    bookingIntro: "A short call to understand the scope — what is not working, what you are trying to build, and whether we are the right fit. No pitch deck, no obligation.",
     bookingBtn: "Show available times",
-    bookingNote: "Opens Microsoft Bookings in this page. Nothing is sent to Microsoft until you choose to load it — see our <a href=\"./privacy-policy.html\" target=\"_blank\" rel=\"noopener noreferrer\">Privacy Policy</a>.",
+    bookingFallback: "Calendar not loading? Open it in a new tab →",
+    bookingNote: "Opens Microsoft Bookings in a new tab. Nothing is sent to Microsoft until you choose to open it — see our <a href=\"./privacy-policy.html\" target=\"_blank\" rel=\"noopener noreferrer\">Privacy Policy</a>.",
 
     // Footer
     footer: "Copyright © 2026 PMG Services. All Rights Reserved.",
@@ -185,11 +186,12 @@ const translations = {
     // Contact Section
     contactSub: "Kontakt aufnehmen",
     contactTitle: "Termin vereinbaren",
-    bookingKicker: "30 MINUTEN · UNVERBINDLICH",
-    bookingHeading: "Finden Sie einen passenden Termin",
-    bookingIntro: "Wählen Sie einen passenden Termin — wir bereiten uns vor. Sagen Sie uns, was in Ihrem Finanzbereich nicht funktioniert oder was Sie aufbauen möchten.",
+    bookingKicker: "30-MINÜTIGES ERSTGESPRÄCH",
+    bookingHeading: "Lassen Sie uns den Umfang klären",
+    bookingIntro: "Ein kurzes Gespräch, um den Umfang zu verstehen — was nicht funktioniert, was Sie aufbauen möchten und ob wir zueinander passen. Keine Präsentation, keine Verpflichtung.",
     bookingBtn: "Verfügbare Zeiten anzeigen",
-    bookingNote: "Öffnet Microsoft Bookings auf dieser Seite. Es werden keine Daten an Microsoft übertragen, bevor Sie den Kalender laden — siehe unsere <a href=\"./privacy-policy.html\" target=\"_blank\" rel=\"noopener noreferrer\">Datenschutzerklärung</a>.",
+    bookingFallback: "Kalender lädt nicht? In neuem Tab öffnen →",
+    bookingNote: "Öffnet Microsoft Bookings in einem neuen Tab. Es werden keine Daten an Microsoft übertragen, bevor Sie ihn öffnen — siehe unsere <a href=\"./privacy-policy.html\" target=\"_blank\" rel=\"noopener noreferrer\">Datenschutzerklärung</a>.",
 
     // Footer
     footer: "Copyright © 2026 PMG Services. Alle Rechte vorbehalten.",
@@ -349,6 +351,8 @@ function setLanguage(lang) {
   });
   const bookingNote = document.getElementById('booking-note');
   if (bookingNote) bookingNote.innerHTML = t.bookingNote;
+  const bookingFallbackLink = document.getElementById('bookingFallbackLink');
+  if (bookingFallbackLink && t.bookingFallback) bookingFallbackLink.innerText = t.bookingFallback;
 
   // Footer
   const footerCopyright = document.getElementById('footer-copyright');
@@ -578,13 +582,26 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   if (!embed) return;
   const btn = document.getElementById('bookingLoadBtn');
   const placeholder = document.getElementById('bookingPlaceholder');
-  const url = embed.getAttribute('data-booking-url');
-  if (!btn || !placeholder || !url) return;
+  if (!btn || !placeholder || !embed.getAttribute('data-booking-url')) return;
 
   btn.addEventListener('click', function () {
     if (embed.querySelector('iframe')) return;
 
+    // Read at click time so the URL can be swapped without reloading.
+    const url = embed.getAttribute('data-booking-url');
+    if (!url) return;
+
     const lang = (localStorage.getItem('pmg-lang') || 'en');
+
+    // "Bookings with me" links (/bookwithme/) redirect to bookings.cloud.microsoft,
+    // whose frame-ancestors policy refuses every external origin -- embedding one
+    // yields a silent blank box. Those open in a new tab instead. Only a shared
+    // Bookings page (Bookings app -> Share -> Embed) can actually be framed.
+    if (url.indexOf('/bookwithme/') !== -1) {
+      window.open(url, '_blank', 'noopener,noreferrer');
+      if (window.pmgTrack) pmgTrack('generate_lead', { method: 'booking_calendar_newtab' });
+      return;
+    }
     const frame = document.createElement('iframe');
     frame.src = url;
     frame.className = 'booking-frame';
@@ -596,6 +613,15 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     placeholder.remove();
     embed.classList.add('is-loaded');
     embed.appendChild(frame);
+
+    // A cross-origin frame that refuses to be embedded fails silently -- the
+    // visitor just gets a white box. Always surface a way out to a new tab.
+    const fallback = document.getElementById('bookingFallback');
+    const fallbackLink = document.getElementById('bookingFallbackLink');
+    if (fallback && fallbackLink) {
+      fallbackLink.href = url;
+      fallback.hidden = false;
+    }
 
     if (window.pmgTrack) pmgTrack('generate_lead', { method: 'booking_calendar_opened' });
   });

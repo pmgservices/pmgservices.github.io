@@ -3404,6 +3404,20 @@ footer p {
 /* Once loaded the iframe owns the card. */
 .booking-embed.is-loaded { box-shadow: 0 10px 40px rgba(11, 29, 44, 0.08); }
 
+.booking-fallback {
+  margin: 0.9rem 0 0;
+  text-align: center;
+  font-size: 0.82rem;
+}
+
+.booking-fallback a {
+  color: var(--text-body);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.booking-fallback a:hover { color: var(--red); }
+
 .booking-frame {
   display: block;
   width: 100%;
