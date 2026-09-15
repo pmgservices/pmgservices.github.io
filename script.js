@@ -62,12 +62,12 @@ const translations = {
 
     // Contact Section
     contactSub: "Start a Conversation",
-    contactTitle: "Contact Us",
-    emailLabel: "Email Address",
-    messageLabel: "Message",
-    messagePlaceholder: "Tell us what's not working in your finance function — or what you're trying to build. We'll take it from there.",
-    sendBtn: "Send Message",
-    privacyLabel: "I have read and agree to the <a href=\"./privacy-policy.html\" target=\"_blank\">Privacy Policy</a>",
+    contactTitle: "Book a Call",
+    bookingKicker: "30 MINUTES · NO OBLIGATION",
+    bookingHeading: "Find a time that works",
+    bookingIntro: "Pick a slot that suits you and we will come prepared. Tell us what is not working in your finance function, or what you are trying to build.",
+    bookingBtn: "Show available times",
+    bookingNote: "Opens Microsoft Bookings in this page. Nothing is sent to Microsoft until you choose to load it — see our <a href=\"./privacy-policy.html\" target=\"_blank\" rel=\"noopener noreferrer\">Privacy Policy</a>.",
 
     // Footer
     footer: "Copyright © 2026 PMG Services. All Rights Reserved.",
@@ -184,12 +184,12 @@ const translations = {
 
     // Contact Section
     contactSub: "Kontakt aufnehmen",
-    contactTitle: "Kontaktieren Sie uns",
-    emailLabel: "E-Mail-Adresse",
-    messageLabel: "Nachricht",
-    messagePlaceholder: "Erzählen Sie uns von Ihrem Bedarf an finanzieller Transformation...",
-    sendBtn: "Nachricht senden",
-    privacyLabel: "Ich habe die <a href=\"./privacy-policy.html\" target=\"_blank\">Datenschutzerklärung</a> gelesen und stimme ihr zu",
+    contactTitle: "Termin vereinbaren",
+    bookingKicker: "30 MINUTEN · UNVERBINDLICH",
+    bookingHeading: "Finden Sie einen passenden Termin",
+    bookingIntro: "Wählen Sie einen passenden Termin — wir bereiten uns vor. Sagen Sie uns, was in Ihrem Finanzbereich nicht funktioniert oder was Sie aufbauen möchten.",
+    bookingBtn: "Verfügbare Zeiten anzeigen",
+    bookingNote: "Öffnet Microsoft Bookings auf dieser Seite. Es werden keine Daten an Microsoft übertragen, bevor Sie den Kalender laden — siehe unsere <a href=\"./privacy-policy.html\" target=\"_blank\" rel=\"noopener noreferrer\">Datenschutzerklärung</a>.",
 
     // Footer
     footer: "Copyright © 2026 PMG Services. Alle Rechte vorbehalten.",
@@ -333,15 +333,22 @@ function setLanguage(lang) {
   // Contact
   const contactSubEl = document.querySelector('#contact .section__text__p1');
   if (contactSubEl) contactSubEl.innerText = t.contactSub;
-  document.querySelector('#contact .title').innerText = t.contactTitle;
-  document.querySelector('label[for="email"]').innerText = t.emailLabel;
-  document.querySelector('label[for="message"]').innerText = t.messageLabel;
-  document.getElementById('message').placeholder = t.messagePlaceholder;
-  document.querySelector('.contact-submit-btn').innerText = t.sendBtn;
+  const contactTitleEl = document.querySelector('#contact .title');
+  if (contactTitleEl) contactTitleEl.innerText = t.contactTitle;
 
-  // Privacy checkbox label
-  const privacyLabelEl = document.querySelector('label[for="privacy"]');
-  if (privacyLabelEl) privacyLabelEl.innerHTML = t.privacyLabel;
+  // Booking block
+  const bk = {
+    'booking-kicker': t.bookingKicker,
+    'booking-heading': t.bookingHeading,
+    'booking-intro': t.bookingIntro,
+    'bookingLoadBtn': t.bookingBtn
+  };
+  Object.keys(bk).forEach(function (id) {
+    const el = document.getElementById(id);
+    if (el && bk[id]) el.innerText = bk[id];
+  });
+  const bookingNote = document.getElementById('booking-note');
+  if (bookingNote) bookingNote.innerHTML = t.bookingNote;
 
   // Footer
   const footerCopyright = document.getElementById('footer-copyright');
@@ -561,101 +568,38 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 })();
 
-// --- Interactive Contact Form ---
-(function() {
-  const form = document.getElementById('contactForm');
-  const emailInput = document.getElementById('email');
-  const messageInput = document.getElementById('message');
-  const charCount = document.getElementById('charCount');
-  const charCounter = document.querySelector('.char-counter');
-  const submitBtn = document.getElementById('submitBtn');
-  const privacyCheckbox = document.getElementById('privacy');
-  
-  // Email validation
-  function validateEmail(email) {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(email);
-  }
-  
-  // Real-time email validation
-  emailInput.addEventListener('input', function() {
-    const statusEl = document.querySelector('[data-field="email"]');
-    if (this.value.length === 0) {
-      statusEl.textContent = '';
-      statusEl.className = 'field-status';
-    } else if (validateEmail(this.value)) {
-      statusEl.textContent = '✓ Valid email';
-      statusEl.className = 'field-status valid';
-    } else {
-      statusEl.textContent = '✗ Please enter a valid email';
-      statusEl.className = 'field-status invalid';
-    }
-  });
-  
-  // Character counter
-  messageInput.addEventListener('input', function() {
-    const count = this.value.length;
-    charCount.textContent = count;
-    
-    if (count > 450) {
-      charCounter.className = 'char-counter limit';
-    } else if (count > 400) {
-      charCounter.className = 'char-counter warning';
-    } else {
-      charCounter.className = 'char-counter';
-    }
-    
-    const statusEl = document.querySelector('[data-field="message"]');
-    if (count >= 10) {
-      statusEl.textContent = '✓ Message looks good';
-      statusEl.className = 'field-status valid';
-    } else if (count > 0) {
-      statusEl.textContent = 'Message should be at least 10 characters';
-      statusEl.className = 'field-status invalid';
-    } else {
-      statusEl.textContent = '';
-      statusEl.className = 'field-status';
-    }
-  });
-  
-  // Form submission with animation
-  if (form) {
-    form.addEventListener('submit', function(e) {
-      if (!privacyCheckbox.checked) {
-        e.preventDefault();
-        alert('Please accept the Privacy Policy');
-        return;
-      }
-      
-      if (!validateEmail(emailInput.value)) {
-        e.preventDefault();
-        alert('Please enter a valid email address');
-        return;
-      }
-      
-      if (messageInput.value.length < 10) {
-        e.preventDefault();
-        alert('Message should be at least 10 characters');
-        return;
-      }
-      
-      // Show loading state
-      submitBtn.disabled = true;
-      submitBtn.querySelector('.btn-text').textContent = 'Sending...';
-      submitBtn.querySelector('.btn-icon').style.animation = 'spin 1s linear infinite';
-    });
-  }
-})();
+// --- Booking calendar (click to load) ---
+// The Microsoft Bookings iframe is not in the markup. It is created only when
+// the visitor asks for it, so no connection to Microsoft is made -- and no IP
+// address disclosed -- before they act. That click is the consent, which is why
+// this needs no extra cookie-banner category.
+(function () {
+  const embed = document.getElementById('bookingEmbed');
+  if (!embed) return;
+  const btn = document.getElementById('bookingLoadBtn');
+  const placeholder = document.getElementById('bookingPlaceholder');
+  const url = embed.getAttribute('data-booking-url');
+  if (!btn || !placeholder || !url) return;
 
-// Spin animation for button icon
-const style = document.createElement('style');
-style.textContent = `
-  @keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-  }
-`;
-document.head.appendChild(style);
+  btn.addEventListener('click', function () {
+    if (embed.querySelector('iframe')) return;
+
+    const lang = (localStorage.getItem('pmg-lang') || 'en');
+    const frame = document.createElement('iframe');
+    frame.src = url;
+    frame.className = 'booking-frame';
+    frame.title = lang === 'de' ? 'Termin buchen' : 'Book a call';
+    frame.loading = 'lazy';
+    frame.setAttribute('referrerpolicy', 'no-referrer');
+    frame.allow = 'clipboard-write';
+
+    placeholder.remove();
+    embed.classList.add('is-loaded');
+    embed.appendChild(frame);
+
+    if (window.pmgTrack) pmgTrack('generate_lead', { method: 'booking_calendar_opened' });
+  });
+})();
 
 // Duplicate observer for .details-container removed — handled by IIFE observer above.
 
@@ -669,21 +613,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   const lang = localStorage.getItem('pmg-lang') || 'en';
   setLanguage(lang);
-
-  // Form submission confirmation (Formspree redirects back with ?sent=1)
-  if (params.get('sent') === '1') {
-    const form = document.getElementById('contactForm');
-    if (form) {
-      const note = document.createElement('div');
-      note.className = 'form-success-note';
-      note.setAttribute('role', 'status');
-      note.textContent = lang === 'de'
-        ? 'Vielen Dank! Ihre Nachricht wurde gesendet — wir melden uns innerhalb von 1–2 Werktagen.'
-        : "Thank you! Your message has been sent — we'll get back to you within 1–2 business days.";
-      form.parentElement.insertBefore(note, form);
-      if (window.pmgTrack) pmgTrack('generate_lead', { method: 'contact_form_confirmed' });
-    }
-  }
 });
 
 // ═══════════════════════════════════════════════════
@@ -877,9 +806,9 @@ const pmgCoarsePointer = window.matchMedia('(pointer: coarse)').matches;
     }));
   });
 
-  // Contact form submit (fires before the Formspree redirect)
-  const form = document.getElementById('contactForm');
-  if (form) form.addEventListener('submit', () => track('generate_lead', { method: 'contact_form' }));
+  // Booking calendar open (the booking IIFE also fires its own event)
+  const bookingBtn = document.getElementById('bookingLoadBtn');
+  if (bookingBtn) bookingBtn.addEventListener('click', () => track('booking_calendar_open', {}));
 
   // FAQ engagement
   document.querySelectorAll('.faq-item').forEach(d => {

@@ -39,7 +39,7 @@
     <link rel="stylesheet" href="./assets/fonts/fonts.css?v=1" />
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="style.css?v=24" />
+    <link rel="stylesheet" href="style.css?v=25" />
     <link rel="stylesheet" href="mediaqueries.css?v=9" />
 
     <!-- JSON-LD Structured Data -->
@@ -935,52 +935,32 @@
       <span class="section-label">Reach out</span>
       <p class="section__text__p1">Get In Touch</p>
       <h2 class="title">Contact Us</h2>
-      <div class="contact-form-container">
-        <!-- TODO: Replace YOUR_FORM_ID with your actual Formspree endpoint -->
-        <form action="https://formspree.io/f/xkoplpva" method="POST" class="contact-form" id="contactForm">
-         <input type="hidden" name="_next" value="https://pmg-services.net/?sent=1#contact">
-          <div class="form-group">
-            <label for="email">
-              <span class="label-content">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <rect x="2" y="4" width="20" height="16" rx="2"></rect>
-                  <path d="M22 7l-10 7L2 7"></path>
-                </svg>
-                Email Address
-              </span>
-            </label>
-            <input type="email" id="email" name="email" placeholder="your.email@company.com" required />
-            <span class="field-status" data-field="email"></span>
+      <div class="booking-container">
+        <!-- Click-to-load: the Bookings iframe is injected only after the visitor
+             asks for it, so no request reaches Microsoft (and no IP address is
+             disclosed) until they act.
+
+             TODO: paste the real embed URL below. In the Microsoft Bookings app
+             open your SHARED booking page -> Share -> Embed, and copy the src.
+             It looks like:
+               https://outlook.office365.com/owa/calendar/<page>@pmg-services.net/bookings/
+             Do NOT use a "Bookings with me" (/bookwithme/) link -- those redirect
+             to bookings.cloud.microsoft, whose frame-ancestors policy refuses to
+             be embedded on any external site. -->
+        <div class="booking-embed"
+             id="bookingEmbed"
+             data-booking-url="https://outlook.office365.com/owa/calendar/contact@pmg-services.net/bookings/">
+          <div class="booking-placeholder" id="bookingPlaceholder">
+            <span class="booking-kicker" id="booking-kicker">30 MINUTES &middot; NO OBLIGATION</span>
+            <h3 class="booking-heading" id="booking-heading">Find a time that works</h3>
+            <p class="booking-intro" id="booking-intro">Pick a slot that suits you and we will come prepared. Tell us what is not working in your finance function, or what you are trying to build.</p>
+            <button type="button" class="btn btn-color-1" id="bookingLoadBtn">Show available times</button>
+            <p class="booking-note" id="booking-note">Opens Microsoft Bookings in this page. Nothing is sent to Microsoft until you choose to load it &mdash; see our <a href="./privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.</p>
           </div>
-          <div class="form-group">
-            <label for="message">
-              <span class="label-content">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                </svg>
-                Message
-              </span>
-              <span class="char-counter"><span id="charCount">0</span> / 500</span>
-            </label>
-            <textarea id="message" name="message" placeholder="Tell us about your financial transformation needs..." required maxlength="500"></textarea>
-            <span class="field-status" data-field="message"></span>
-          </div>
-          <div class="privacy-checkbox">
-            <input type="checkbox" id="privacy" name="privacy" required />
-            <label for="privacy">
-              I have read and agree to the <a href="./privacy-policy.html" target="_blank">Privacy Policy</a>
-            </label>
-          </div>
-          <div class="form-actions-inner">
-            <button type="submit" class="btn btn-color-1 contact-submit-btn" id="submitBtn">
-              <span class="btn-text">Send Message</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon">
-                <line x1="22" y1="2" x2="11" y2="13"></line>
-                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-              </svg>
-            </button>
-          </div>
-        </form>
+        </div>
+        <p class="booking-fallback" id="bookingFallback" hidden>
+          <a id="bookingFallbackLink" href="#" target="_blank" rel="noopener noreferrer">Calendar not loading? Open it in a new tab &rarr;</a>
+        </p>
       </div>
       <div class="contact-direct-info">
         <p class="contact-direct-intro" id="contact-direct-intro">Prefer to reach out directly? Send us an email or connect on LinkedIn.</p>
@@ -1057,7 +1037,7 @@
       </svg>
     </button>
 
-    <script src="script.js?v=7"></script>
+    <script src="script.js?v=9"></script>
 
     <!-- ─── KPI STATEMENT ANIMATION ─── -->
     <script>

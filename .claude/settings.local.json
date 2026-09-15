@@ -12,7 +12,10 @@
       "Bash(git fetch *)",
       "WebSearch",
       "Bash(python \"C:/Users/gansk/AppData/Local/Temp/claude/C--Users-gansk-OneDrive-Documentos-GitHub-pmgservices-github-io/0545eb50-93bd-49d4-8a46-5ac3cf07ec7e/scratchpad/selfhost_fonts.py\")",
-      "Bash(curl -s -A 'Mozilla/5.0 \\(Windows NT 10.0; Win64; x64\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/131.0.0.0 Safari/537.36' 'https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap' -o C:/Users/gansk/AppData/Local/Temp/claude/C--Users-gansk-OneDrive-Documentos-GitHub-pmgservices-github-io/0545eb50-93bd-49d4-8a46-5ac3cf07ec7e/scratchpad/gf.css)"
+      "Bash(curl -s -A 'Mozilla/5.0 \\(Windows NT 10.0; Win64; x64\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/131.0.0.0 Safari/537.36' 'https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap' -o C:/Users/gansk/AppData/Local/Temp/claude/C--Users-gansk-OneDrive-Documentos-GitHub-pmgservices-github-io/0545eb50-93bd-49d4-8a46-5ac3cf07ec7e/scratchpad/gf.css)",
+      "Bash(curl -s -w \"HTTP %{http_code}\\\\n\" \"https://pmg-services.net/googleb03ffee3fb23a494.html?cb=$\\(date +%s\\)\")",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}  %{size_download} bytes\\\\n\" \"https://pmg-services.net/assets/fonts/fonts.css?cb=$\\(date +%s\\)\")",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}  %{size_download} bytes\\\\n\" \"https://pmg-services.net/assets/fonts/space-grotesk-400-latin.woff2\")"
     ]
   }
 }
