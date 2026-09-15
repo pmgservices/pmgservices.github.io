@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PMG Services — Landing Mockup</title>
+<meta name="robots" content="noindex, nofollow" />
+<link rel="icon" href="./assets/favicon.png" type="image/png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" />
+<style>
+/* Tokens per PMG Services Design System (colors_and_type.css) */
+:root{
+  --navy:        #0b1d2c;
+  --navy-mid:    #152d3e;
+  --red:         #b61818;
+  --red-light:   #d42020;
+  --white:       #ffffff;
+  --off-white:   #f4f6f8;
+  --text-body:   #4a5a63;
+  --muted:       #7a8a92;
+  --border:      #dde1ea;
+  --hair:        rgba(244,246,248,.10);
+  --hair-2:      rgba(244,246,248,.05);
+  --accent-glow: rgba(182,24,24,0.3);
+  --font-sans:   'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --ease-card:   cubic-bezier(0.4, 0, 0.2, 1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:auto}
+body{
+  background:var(--navy);
+  color:var(--white);
+  font-family:var(--font-sans);
+  font-weight:400;
+  letter-spacing:0.01em;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--red);color:var(--white)}
+
+/* ── grain ─────────────────────────────────────── */
+body::after{
+  content:"";position:fixed;inset:-50%;z-index:60;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  opacity:.04;animation:grain 7s steps(10) infinite;
+}
+@keyframes grain{
+  0%,100%{transform:translate(0,0)}20%{transform:translate(-3%,2%)}
+  40%{transform:translate(2%,-3%)}60%{transform:translate(-2%,-2%)}80%{transform:translate(3%,3%)}
+}
+
+/* ── nav ───────────────────────────────────────── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.3rem 2.6rem;height:4.5rem;
+}
+nav .brand{display:flex;align-items:baseline;gap:.9rem;text-decoration:none;color:var(--white)}
+nav .brand img{height:30px;display:block;filter:drop-shadow(0 0 12px rgba(11,29,44,.5))}
+nav .brand .wordmark{
+  font-size:.68rem;font-weight:600;letter-spacing:.18em;
+  color:var(--muted);text-transform:uppercase;
+}
+nav ul{display:flex;gap:2.2rem;list-style:none;align-items:center}
+nav ul a{
+  color:rgba(255,255,255,.82);text-decoration:none;
+  font-size:.88rem;font-weight:500;letter-spacing:.08em;
+  transition:color .3s;position:relative;
+}
+nav ul a::after{
+  content:"";position:absolute;left:0;bottom:-6px;height:2px;width:0;
+  background:var(--red-light);transition:width .3s ease;
+}
+nav ul a:hover{color:var(--white)}
+nav ul a:hover::after{width:100%}
+nav .cta-pill{
+  font-size:.82rem;font-weight:600;letter-spacing:.02em;
+  color:var(--white);background:var(--red);text-decoration:none;
+  padding:.65rem 1.4rem;border-radius:8px;white-space:nowrap;
+  box-shadow:0 4px 14px var(--accent-glow);
+  transition:background .3s,transform .3s,box-shadow .3s;
+}
+nav .cta-pill:hover{background:var(--red-light);transform:translateY(-2px);box-shadow:0 6px 20px var(--accent-glow)}
+.nav-lang{font-size:.78rem;font-weight:500;letter-spacing:.08em;color:var(--muted);white-space:nowrap}
+.nav-lang b{color:var(--white);font-weight:600}
+@media (max-width:1150px){
+  nav .brand .wordmark{display:none}
+  nav ul{gap:1.3rem}
+}
+
+/* ── the reel ──────────────────────────────────── */
+#reel{height:640vh;position:relative}
+#stage{
+  position:sticky;top:0;height:100vh;overflow:hidden;
+}
+#field{position:absolute;inset:0;width:100%;height:100%;display:block}
+
+/* cinematic vignette over the 3D scene */
+#stage::after{
+  content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:radial-gradient(ellipse 120% 90% at 50% 42%, transparent 42%, rgba(8,20,31,.62) 100%);
+}
+
+/* editorial column hairlines */
+.grid-lines{position:absolute;inset:0;pointer-events:none;z-index:1}
+.grid-lines i{
+  position:absolute;top:0;bottom:0;width:1px;background:var(--hair-2);
+}
+.grid-lines i:nth-child(1){left:8%}
+.grid-lines i:nth-child(2){left:38.5%}
+.grid-lines i:nth-child(3){left:69%}
+.grid-lines i:nth-child(4){left:92%}
+.grid-lines::before,.grid-lines::after{
+  content:"";position:absolute;left:0;right:0;height:1px;background:var(--hair-2);
+}
+.grid-lines::before{top:12%}
+.grid-lines::after{bottom:9%}
+
+/* ── acts (content layers) ─────────────────────── */
+.act{
+  position:absolute;inset:0;z-index:3;
+  opacity:0;visibility:hidden;pointer-events:none;
+  will-change:transform,opacity;
+}
+.act.live{visibility:visible}
+.act .inner{position:absolute;inset:0}
+
+/* marginalia — annotations pinned to edges */
+.marg{
+  position:absolute;font-size:.64rem;font-weight:600;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
+  white-space:nowrap;
+}
+.marg em{color:var(--red-light);font-style:normal}
+.marg.rot{writing-mode:vertical-rl;letter-spacing:.18em}
+
+/* kicker — DS section label (red caps, wide tracking) */
+.kicker{
+  display:inline-flex;align-items:center;gap:.8rem;
+  font-size:.75rem;font-weight:600;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--red-light);
+}
+.kicker::before{content:"";width:2.6rem;height:1px;background:var(--red)}
+
+/* display headings — Space Grotesk, DS tracking */
+.display{
+  font-weight:600;
+  line-height:1.05;letter-spacing:-0.02em;color:var(--white);
+  text-shadow:0 2px 40px rgba(11,29,44,.7);
+}
+.display .b{font-weight:700}
+.display .rd{color:var(--red-light);font-weight:700}
+.display .dim{color:var(--muted);font-weight:500}
+
+/* word reveal masks */
+.wline{display:block;overflow:hidden}
+.wline > span{display:inline-block;transform:translateY(110%);transition:transform 1.1s cubic-bezier(.19,1,.22,1)}
+.live .wline > span{transform:translateY(0)}
+.wline:nth-child(2) > span{transition-delay:.09s}
+.wline:nth-child(3) > span{transition-delay:.18s}
+.wline:nth-child(4) > span{transition-delay:.27s}
+
+/* ── ACT 0 · hero ──────────────────────────────── */
+#act0 .inner{padding:0 0 0 8%}
+#act0 .kicker{position:absolute;top:19vh;left:8%}
+#act0 h1{
+  position:absolute;top:26vh;left:8%;
+  font-size:clamp(2.8rem,7.6vw,7.6rem);max-width:84%;
+}
+#act0 h1 .indent{padding-left:1.2em}
+#act0 .lede{
+  position:absolute;left:69.6%;bottom:16vh;max-width:22rem;
+  font-size:.95rem;line-height:1.72;color:rgba(255,255,255,.72);font-weight:400;
+}
+#act0 .lede b{color:var(--white);font-weight:600}
+#act0 .fig{left:8%;bottom:10.5vh}
+#act0 .coord{right:2.2rem;top:50vh;transform:translateY(-50%)}
+
+/* ── ACT 1 · the problem stat ──────────────────── */
+#act1 .kicker{position:absolute;top:15vh;left:8%}
+#act1 .stat-block{position:absolute;top:24vh;left:8%;display:flex;align-items:flex-start;gap:1.4rem}
+#act1 .stat{
+  font-weight:700;
+  font-size:clamp(9rem,25vw,24rem);line-height:.85;letter-spacing:-0.03em;
+  color:var(--white);font-variant-numeric:tabular-nums;
+  text-shadow:0 2px 60px rgba(11,29,44,.8);
+}
+#act1 .stat-unit{
+  font-size:.75rem;font-weight:600;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--muted);margin-top:1.4rem;
+}
+#act1 .stat-unit em{display:block;color:var(--red-light);font-style:normal;margin-top:.4rem}
+#act1 .claim{
+  position:absolute;left:41%;bottom:18vh;max-width:30rem;
+  font-weight:500;
+  font-size:clamp(1.3rem,2.2vw,1.9rem);line-height:1.4;letter-spacing:-0.01em;color:var(--white);
+  text-shadow:0 2px 30px rgba(11,29,44,.7);
+}
+#act1 .claim .rd{color:var(--red-light);font-weight:600}
+#act1 .fig{left:8%;bottom:10.5vh}
+#act1 .strike{
+  position:absolute;height:3px;background:var(--red);top:0;left:0;
+  transform-origin:left center;width:100%;
+}
+
+/* ── ACT 2 · noise → signal ────────────────────── */
+#act2 .kicker{position:absolute;top:15vh;left:8%}
+#act2 h2{
+  position:absolute;top:22vh;left:8%;
+  font-size:clamp(2.2rem,5vw,5rem);max-width:60%;
+}
+#act2 .readout{
+  position:absolute;right:8%;bottom:14vh;text-align:right;
+}
+#act2 .readout .pct{
+  font-size:clamp(2.8rem,5.5vw,5rem);color:var(--red-light);font-weight:700;
+  font-variant-numeric:tabular-nums;letter-spacing:-0.03em;
+  text-shadow:0 0 34px var(--accent-glow);
+}
+#act2 .readout .lbl{font-size:.7rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:.5rem}
+#act2 .fig{left:8%;bottom:10.5vh}
+
+/* ── ACT 3 · capabilities ──────────────────────── */
+#act3 .kicker{position:absolute;top:13vh;left:8%}
+#act3 h2{
+  position:absolute;top:19vh;left:8%;
+  font-size:clamp(1.9rem,4vw,3.8rem);
+}
+#act3 .cards{
+  position:absolute;left:8%;right:8%;top:40vh;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;
+}
+.cap{
+  background:rgba(21,45,62,.55);
+  border:1px solid var(--hair);
+  border-radius:1.5rem;
+  padding:2rem 1.8rem 2.2rem;position:relative;
+  backdrop-filter:blur(6px);
+  will-change:transform,opacity;
+  transition:border-color .4s var(--ease-card),box-shadow .4s var(--ease-card),background .3s;
+  overflow:hidden;
+}
+.cap:hover{
+  background:rgba(21,45,62,.75);
+  border-color:var(--red);
+  box-shadow:0 12px 40px rgba(11,29,44,.4);
+}
+.cap::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:4px;
+  background:linear-gradient(90deg,var(--red),var(--red-light));
+  transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease-card);
+}
+.cap:hover::before{transform:scaleX(1)}
+.cap:nth-child(2){top:3.4rem}
+.cap:nth-child(3){top:6.8rem}
+.cap .idx{
+  font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--red-light);display:flex;justify-content:space-between;
+}
+.cap .idx s{text-decoration:none;color:var(--muted);font-weight:600}
+.cap h3{
+  font-weight:600;font-size:1.4rem;line-height:1.2;
+  margin:2.4rem 0 .9rem;letter-spacing:-0.01em;
+}
+.cap p{font-size:.86rem;line-height:1.7;color:rgba(255,255,255,.66)}
+
+/* ── ACT 4 · engage ────────────────────────────── */
+#act4 .inner{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:0 8%}
+#act4 .kicker{margin-bottom:2.4rem}
+#act4 h2{font-size:clamp(2.6rem,6.4vw,6.4rem);max-width:90%}
+#act4 .row{display:flex;align-items:center;gap:3rem;margin-top:3.6rem;flex-wrap:wrap}
+.btn-major{
+  display:inline-flex;align-items:center;gap:.9rem;text-decoration:none;
+  font-size:.95rem;font-weight:600;letter-spacing:.02em;
+  color:var(--white);background:var(--red);padding:1.05rem 2.1rem;border-radius:8px;
+  box-shadow:0 4px 14px var(--accent-glow);
+  transition:background .3s,transform .3s,box-shadow .3s;
+}
+.btn-major:hover{background:var(--red-light);transform:translateY(-2px);box-shadow:0 8px 24px var(--accent-glow)}
+.btn-major svg{width:15px;height:15px}
+.btn-ghost{
+  font-size:.9rem;font-weight:500;letter-spacing:.02em;
+  color:rgba(255,255,255,.78);text-decoration:none;border-bottom:1px solid var(--hair);
+  padding-bottom:.4rem;transition:color .3s,border-color .3s;
+}
+.btn-ghost:hover{color:var(--white);border-color:var(--red)}
+#act4 .terms{
+  margin-top:4.5rem;display:flex;gap:4rem;flex-wrap:wrap;
+  font-size:.7rem;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--muted);
+}
+#act4 .terms b{display:block;color:var(--white);font-weight:600;font-size:.88rem;margin-bottom:.45rem;letter-spacing:.04em;text-transform:none}
+
+/* ── progress rail ─────────────────────────────── */
+#rail{
+  position:absolute;right:2.2rem;top:50%;transform:translateY(-50%);
+  z-index:5;display:flex;flex-direction:column;gap:1.6rem;
+}
+#rail .stop{
+  display:flex;align-items:center;gap:.7rem;cursor:pointer;
+  font-size:.62rem;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--muted);transition:color .3s;
+}
+#rail .stop i{
+  width:1.6rem;height:1px;background:var(--muted);opacity:.4;
+  transition:width .4s,background .3s,opacity .3s;display:block;
+}
+#rail .stop.on{color:var(--white)}
+#rail .stop.on i{width:3rem;background:var(--red-light);opacity:1}
+#rail .stop span{opacity:0;transform:translateX(6px);transition:opacity .3s,transform .3s}
+#rail .stop.on span{opacity:1;transform:none}
+
+/* scroll hint */
+#hint{
+  position:absolute;left:50%;bottom:2.4rem;transform:translateX(-50%);
+  z-index:5;display:flex;flex-direction:column;align-items:center;gap:.7rem;
+  font-size:.6rem;font-weight:600;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--muted);
+  transition:opacity .5s;
+}
+#hint .wheel{
+  width:1px;height:3rem;background:var(--hair);position:relative;overflow:hidden;
+}
+#hint .wheel::after{
+  content:"";position:absolute;left:0;top:-40%;width:100%;height:40%;
+  background:var(--red-light);animation:drip 1.8s cubic-bezier(.65,0,.35,1) infinite;
+}
+@keyframes drip{to{top:110%}}
+
+/* ── handoff / stub section ────────────────────── */
+#handoff{
+  position:relative;z-index:4;background:var(--off-white);color:var(--navy);
+  padding:7rem 8% 6rem;
+  border-radius:2.2rem 2.2rem 0 0;
+  margin-top:-2.2rem;
+}
+#handoff .kicker{color:var(--red)}
+#handoff .kicker::before{background:var(--red)}
+#handoff h2{
+  font-weight:700;font-size:clamp(2rem,4.2vw,4rem);
+  line-height:1.1;letter-spacing:-0.02em;max-width:56rem;margin-top:1.6rem;
+}
+#handoff h2 .rd{color:var(--red)}
+#handoff .note{
+  margin-top:2.4rem;max-width:34rem;font-size:.98rem;line-height:1.72;color:var(--text-body);
+}
+#handoff .strip{
+  margin-top:5rem;padding-top:2rem;border-top:1px solid var(--border);
+  display:flex;gap:2.6rem;flex-wrap:wrap;
+  font-size:.72rem;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--muted);
+}
+#handoff .strip span b{color:var(--red);margin-right:2.6rem}
+
+footer{
+  background:var(--off-white);color:var(--muted);padding:2rem 8% 2.6rem;
+  font-size:.68rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;
+}
+
+/* ── responsive ────────────────────────────────── */
+@media (max-width:900px){
+  nav{padding:1.1rem 1.4rem}
+  nav ul{display:none}
+  #rail{right:1rem}
+  #rail .stop span{display:none}
+  #act0 h1{max-width:92%}
+  #act0 .lede{left:8%;right:8%;bottom:11vh;max-width:none}
+  #act0 .fig{display:none}
+  #act1 .claim{left:8%;right:8%;bottom:12vh;max-width:none}
+  #act2 h2{max-width:84%}
+  #act3 .cards{grid-template-columns:1fr;top:32vh;gap:.8rem}
+  .cap:nth-child(2),.cap:nth-child(3){top:0}
+  .cap{padding:1.2rem 1.2rem 1.4rem;border-radius:1rem}
+  .cap h3{margin-top:1.2rem;font-size:1.2rem}
+  .cap p{display:none}
+  #act4 .terms{gap:2rem}
+  .marg.rot{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  body::after{animation:none}
+  #hint .wheel::after{animation:none}
+  .wline > span{transition:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav>
+  <a class="brand" href="#">
+    <img src="./assets/LOGO_PMG_white.png" alt="PMG Services" />
+    <span class="wordmark">Finance&nbsp;Transformation</span>
+  </a>
+  <ul>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Projects</a></li>
+    <li><a href="#">How We Work</a></li>
+    <li><span class="nav-lang"><b>EN</b> / DE</span></li>
+  </ul>
+  <a class="cta-pill" href="#">Work With Us</a>
+</nav>
+
+<!-- ─── THE REEL ─── -->
+<div id="reel">
+  <div id="stage">
+    <canvas id="field"></canvas>
+    <div class="grid-lines" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+
+    <!-- ACT 0 · HERO -->
+    <section class="act" id="act0" aria-label="Intro">
+      <div class="inner">
+        <span class="kicker">PMG Services — Financial Transformation</span>
+        <h1 class="display">
+          <span class="wline"><span>Your numbers</span></span>
+          <span class="wline"><span>already <span class="b">know.</span></span></span>
+          <span class="wline indent"><span><span class="dim">We make them</span> <span class="rd">speak.</span></span></span>
+        </h1>
+        <p class="lede">Behavioral science, driver-based FP&amp;A, and custom-built financial systems — <b>one integrated transformation</b> for mid-market companies that have outgrown the spreadsheet.</p>
+        <span class="marg fig">Fig. 01 — Ledger entropy, unresolved</span>
+        <span class="marg rot coord">Engagements worldwide — EN / DE</span>
+      </div>
+    </section>
+
+    <!-- ACT 1 · PROBLEM -->
+    <section class="act" id="act1" aria-label="The problem">
+      <div class="inner">
+        <span class="kicker">The Reality</span>
+        <div class="stat-block">
+          <div style="position:relative">
+            <span class="stat" id="statDays">12</span>
+            <span class="strike" id="strike"></span>
+          </div>
+          <div class="stat-unit">Days to close<br>the books<em id="statDelta">&nbsp;</em></div>
+        </div>
+        <p class="claim">By the time the close is finished, <span class="rd">the decision window has closed with it.</span> Most finance functions are built to report — not to decide.</p>
+        <span class="marg fig">Fig. 02 — The reporting lag <em>· observed across 6 industries</em></span>
+      </div>
+    </section>
+
+    <!-- ACT 2 · NOISE → SIGNAL -->
+    <section class="act" id="act2" aria-label="Noise to signal">
+      <div class="inner">
+        <span class="kicker">The Transformation</span>
+        <h2 class="display">
+          <span class="wline"><span>Ledger noise, rebuilt</span></span>
+          <span class="wline"><span>into a <span class="rd">decision engine.</span></span></span>
+        </h2>
+        <div class="readout">
+          <div class="pct" id="pctErr">−0%</div>
+          <div class="lbl">Forecast error · after driver model</div>
+        </div>
+        <span class="marg fig">Fig. 03 — Convergence: raw entries → driver signal</span>
+      </div>
+    </section>
+
+    <!-- ACT 3 · CAPABILITIES -->
+    <section class="act" id="act3" aria-label="Capabilities">
+      <div class="inner">
+        <span class="kicker">Three Linked Capabilities</span>
+        <h2 class="display"><span class="wline"><span>One integrated <span class="b">system.</span></span></span></h2>
+        <div class="cards">
+          <article class="cap">
+            <div class="idx"><span>01</span><s>Bias → Discipline</s></div>
+            <h3>Behavioral Finance</h3>
+            <p>We audit where anchoring, overconfidence and loss aversion distort your planning — then embed the correction into the process itself.</p>
+          </article>
+          <article class="cap">
+            <div class="idx"><span>02</span><s>Budget → Model</s></div>
+            <h3>FP&amp;A</h3>
+            <p>Static budgets become driver-based rolling forecasts your board can act on. Close cycles cut from weeks to days.</p>
+          </article>
+          <article class="cap">
+            <div class="idx"><span>03</span><s>Silos → One Layer</s></div>
+            <h3>Custom Financial Ecosystem</h3>
+            <p>Bespoke ERP &amp; BI integration, automation pipelines, and financial tooling built around your operating model — not the average company's.</p>
+          </article>
+        </div>
+        <span class="marg fig" style="position:absolute;left:8%;bottom:6.5vh">Fig. 04 — The PMG operating stack</span>
+      </div>
+    </section>
+
+    <!-- ACT 4 · ENGAGE -->
+    <section class="act" id="act4" aria-label="Engage">
+      <div class="inner">
+        <span class="kicker">Entry Point — Fixed Scope, Fixed Price</span>
+        <h2 class="display">
+          <span class="wline"><span>The 90-Day</span></span>
+          <span class="wline"><span><span class="rd">Diagnostic Sprint.</span></span></span>
+        </h2>
+        <div class="row">
+          <a class="btn-major" href="#handoff">
+            Request a Quote
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn-ghost" href="#handoff">See How We Work ↓</a>
+        </div>
+        <div class="terms">
+          <div><b>Weeks 1–3</b>Discovery &amp; bias audit</div>
+          <div><b>Weeks 4–10</b>Driver model build</div>
+          <div><b>Weeks 11–13</b>Handover &amp; roadmap</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- progress rail -->
+    <div id="rail" aria-hidden="true">
+      <div class="stop" data-go="0"><span>Intro</span><i></i></div>
+      <div class="stop" data-go="1"><span>Problem</span><i></i></div>
+      <div class="stop" data-go="2"><span>Signal</span><i></i></div>
+      <div class="stop" data-go="3"><span>System</span><i></i></div>
+      <div class="stop" data-go="4"><span>Engage</span><i></i></div>
+    </div>
+
+    <div id="hint"><span>Scroll</span><span class="wheel"></span></div>
+  </div>
+</div>
+
+<!-- ─── HANDOFF (rest of site continues) ─── -->
+<section id="handoff">
+  <span class="kicker">Continues Below</span>
+  <h2>The rest of the site — services, projects, method, FAQ — <span class="rd">unchanged for now.</span></h2>
+  <p class="note">This mockup replaces only the landing experience. Existing sections would follow here on the light ground, so the dark reel above lands with maximum contrast.</p>
+  <div class="strip">
+    <span><b>We work across</b></span>
+    <span>Manufacturing</span><span>SaaS</span><span>Financial Services</span>
+    <span>Pharma</span><span>Aviation</span><span>Professional Services</span>
+  </div>
+</section>
+
+<footer>
+  <span>© PMG Services — pmg-services.net</span>
+  <span>Landing mockup · v3 — WebGL, brand-aligned</span>
+</footer>
+
+<!-- ═══ SCROLL ENGINE (classic script — works even if WebGL fails) ═══ -->
+<script>
+(() => {
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const reel   = document.getElementById('reel');
+  const acts   = [...document.querySelectorAll('.act')];
+  const caps   = [...document.querySelectorAll('.cap')];
+  const stops  = [...document.querySelectorAll('#rail .stop')];
+  const hint   = document.getElementById('hint');
+  const statEl = document.getElementById('statDays');
+  const deltaEl= document.getElementById('statDelta');
+  const strike = document.getElementById('strike');
+  const pctEl  = document.getElementById('pctErr');
+
+  // act ranges over global progress P ∈ [0,1]
+  const R = [
+    [0.00, 0.20],   // act0 hero
+    [0.20, 0.42],   // act1 problem
+    [0.42, 0.64],   // act2 signal
+    [0.64, 0.84],   // act3 system
+    [0.84, 1.001],  // act4 engage
+  ];
+
+  const clamp = (v,a,b) => Math.min(b, Math.max(a, v));
+  const seg   = (p,a,b) => clamp((p-a)/(b-a), 0, 1);
+  const smooth= t => t*t*(3-2*t);
+  const easeO = t => 1-Math.pow(1-t,3);
+
+  // shared state the 3D layer reads every frame
+  const S = window.__reel = { sP: 0, vel: 0, seg, smooth, R };
+
+  let P = 0;
+
+  function readScroll(){
+    const max = reel.offsetHeight - innerHeight;
+    P = clamp(scrollY / max, 0, 1);
+  }
+
+  function layoutActs(){
+    const sP = S.sP;
+    acts.forEach((el, i) => {
+      const [a,b] = R[i];
+      const isLast = i === acts.length-1;
+      const inP  = i === 0 ? 1 : smooth(seg(sP, a, a + (b-a)*0.22));
+      const outP = isLast ? 0 : smooth(seg(sP, b - (b-a)*0.18, b));
+      const vis  = inP * (1-outP);
+      el.style.opacity = vis;
+      el.style.transform =
+        `translateY(${(1-inP)*7 - outP*9}vh) scale(${0.985 + inP*0.015})`;
+      el.classList.toggle('live', vis > 0.01);
+      el.style.pointerEvents = vis > 0.5 ? 'auto' : 'none';
+    });
+    let cur = R.findIndex(([a,b]) => sP >= a && sP < b);
+    if (cur < 0) cur = R.length-1;
+    stops.forEach((s,i)=>s.classList.toggle('on', i===cur));
+    hint.style.opacity = sP < 0.03 ? 1 : 0;
+
+    // act1 counter: 12 → 3 days
+    const cp = easeO(seg(sP, 0.26, 0.36));
+    statEl.textContent = Math.round(12 - 9*cp);
+    deltaEl.innerHTML = cp > 0.95 ? 'after PMG' : '&nbsp;';
+    strike.style.transform = `translateY(${5.2 + cp*2}rem) scaleX(${cp})`;
+    strike.style.opacity = cp > 0.02 ? .9 : 0;
+
+    // act2 counter: forecast error −34%
+    const ep = easeO(seg(sP, 0.47, 0.58));
+    pctEl.textContent = '−' + Math.round(34*ep) + '%';
+
+    // act3 cards: staggered unfold
+    const l3 = seg(sP, R[3][0], R[3][1]);
+    caps.forEach((c,i)=>{
+      const cpp = smooth(seg(l3, 0.06 + i*0.10, 0.34 + i*0.10));
+      c.style.opacity = cpp;
+      c.style.transform = `translateY(${(1-cpp)*8}vh) rotate(${(1-cpp)*(i-1)*1.2}deg)`;
+    });
+  }
+
+  stops.forEach(s => s.addEventListener('click', () => {
+    const i = +s.dataset.go;
+    const max = reel.offsetHeight - innerHeight;
+    scrollTo({ top: (R[i][0] + 0.06) * max, behavior: 'smooth' });
+  }));
+
+  function tick(){
+    readScroll();
+    const prev = S.sP;
+    S.sP += (P - S.sP) * (reduced ? 1 : 0.085);
+    if (Math.abs(P - S.sP) < 0.0004) S.sP = P;
+    S.vel += ((S.sP - prev) - S.vel) * 0.1;
+    layoutActs();
+    requestAnimationFrame(tick);
+  }
+
+  readScroll();
+  S.sP = P;
+  tick();
+})();
+</script>
+
+<!-- ═══ 3D SCENE (module — progressive enhancement) ═══ -->
+<script type="module">
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js';
+
+const S = window.__reel;
+const { seg, smooth } = S;
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const cv = document.getElementById('field');
+
+let renderer;
+try {
+  renderer = new THREE.WebGLRenderer({ canvas: cv, antialias: true, alpha: true, powerPreference: 'high-performance' });
+} catch { /* no WebGL — DOM reel still works */ }
+
+if (renderer) {
+  renderer.setClearColor(0x000000, 0);
+  renderer.setPixelRatio(Math.min(devicePixelRatio || 1, 2));
+
+  const scene = new THREE.Scene();
+  scene.fog = new THREE.FogExp2(0x0b1d2c, 0.024);
+
+  const camera = new THREE.PerspectiveCamera(46, 1, 0.1, 220);
+
+  /* ── graph-paper floor, far below (depth cue) ── */
+  const grid = new THREE.GridHelper(220, 90, 0x1c3a50, 0x152d3e);
+  grid.material.transparent = true;
+  grid.material.opacity = 0.5;
+  grid.position.y = -13;
+  scene.add(grid);
+
+  const grid2 = new THREE.GridHelper(220, 18, 0x27455c, 0x27455c);
+  grid2.material.transparent = true;
+  grid2.material.opacity = 0.32;
+  grid2.position.y = -12.98;
+  scene.add(grid2);
+
+  /* ── glyph atlas: real ledger strings ─────────── */
+  const CODES = ['GL-4020','AP-118','FX-EUR','ACCR','Q3-VAR','OPEX','CAPEX','DSO','EBITDA','WC-Δ','REV-EU','COGS'];
+  const amount = () => (Math.random()*98000+120).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+
+  const GRID_N = 8, CELL = 256, ATLAS = GRID_N * CELL;
+  function buildAtlas(){
+    const c = document.createElement('canvas');
+    c.width = c.height = ATLAS;
+    const g = c.getContext('2d');
+    g.textAlign = 'center'; g.textBaseline = 'middle';
+    g.fillStyle = '#ffffff';
+    for (let i = 0; i < GRID_N*GRID_N; i++){
+      const txt = Math.random() < 0.7 ? amount() : CODES[(Math.random()*CODES.length)|0];
+      const cx = (i % GRID_N)*CELL + CELL/2;
+      const cy = ((i / GRID_N)|0)*CELL + CELL/2;
+      g.font = '400 42px "Space Grotesk", sans-serif';
+      const w = g.measureText(txt).width;
+      if (w > CELL-24) g.font = `400 ${Math.floor(42*(CELL-24)/w)}px "Space Grotesk", sans-serif`;
+      g.fillText(txt, cx, cy);
+    }
+    const tex = new THREE.CanvasTexture(c);
+    tex.anisotropy = 4;
+    return tex;
+  }
+
+  /* ── the 3D signal curve ───────────────────────── */
+  const curve = new THREE.CatmullRomCurve3([
+    new THREE.Vector3(-30, -9.5, -20),
+    new THREE.Vector3(-16, -8.0, -13),
+    new THREE.Vector3( -4, -4.5, -10),
+    new THREE.Vector3(  7,  0.5,  -8),
+    new THREE.Vector3( 16,  5.0, -10),
+    new THREE.Vector3( 24,  9.5, -15),
+  ]);
+
+  /* ── glyph particle field ──────────────────────── */
+  const N = innerWidth < 900 ? 700 : 1500;
+  const uni = {
+    uTime:    { value: 0 },
+    uConv:    { value: 0 },
+    uAgitate: { value: 0 },
+    uFade:    { value: 0 },
+    uProg:    { value: 0 },
+    uAtlas:   { value: null },
+    uGrid:    { value: GRID_N },
+    uPx:      { value: 1 },
+  };
+
+  function buildPoints(){
+    const geo = new THREE.BufferGeometry();
+    const pos = new Float32Array(N*3), tgt = new Float32Array(N*3);
+    const cell = new Float32Array(N), size = new Float32Array(N);
+    const phase = new Float32Array(N), speed = new Float32Array(N);
+    const online = new Float32Array(N), stag = new Float32Array(N), tpar = new Float32Array(N);
+    const v = new THREE.Vector3(), perp = new THREE.Vector3();
+
+    for (let i = 0; i < N; i++){
+      // scatter: a deep box the camera flies through
+      pos[i*3]   = (Math.random()-0.5) * 56;
+      pos[i*3+1] = (Math.random()-0.5) * 26;
+      pos[i*3+2] = -34 + Math.random() * 46;
+
+      const t = i / (N-1);
+      tpar[i] = t;
+      curve.getPoint(t, v);
+      // loose stack around the curve
+      perp.set((Math.random()-0.5), (Math.random()-0.5), (Math.random()-0.5)).multiplyScalar(0.9);
+      tgt[i*3] = v.x + perp.x; tgt[i*3+1] = v.y + perp.y; tgt[i*3+2] = v.z + perp.z;
+
+      cell[i]   = (Math.random()*GRID_N*GRID_N)|0;
+      size[i]   = 4.5 + Math.random()*6.5;
+      phase[i]  = Math.random()*Math.PI*2;
+      speed[i]  = 0.25 + Math.random()*0.7;
+      online[i] = Math.random() < 0.4 ? 1 : 0;
+      stag[i]   = Math.random();
+    }
+    geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+    geo.setAttribute('aTarget',  new THREE.BufferAttribute(tgt, 3));
+    geo.setAttribute('aCell',    new THREE.BufferAttribute(cell, 1));
+    geo.setAttribute('aSize',    new THREE.BufferAttribute(size, 1));
+    geo.setAttribute('aPhase',   new THREE.BufferAttribute(phase, 1));
+    geo.setAttribute('aSpeed',   new THREE.BufferAttribute(speed, 1));
+    geo.setAttribute('aOnLine',  new THREE.BufferAttribute(online, 1));
+    geo.setAttribute('aStagger', new THREE.BufferAttribute(stag, 1));
+    geo.setAttribute('aT',       new THREE.BufferAttribute(tpar, 1));
+
+    const mat = new THREE.ShaderMaterial({
+      uniforms: uni,
+      transparent: true,
+      depthWrite: false,
+      vertexShader: /* glsl */`
+        attribute float aCell, aSize, aPhase, aSpeed, aOnLine, aStagger, aT;
+        attribute vec3 aTarget;
+        uniform float uTime, uConv, uAgitate, uPx;
+        varying float vCell, vMix, vFlick, vDepth, vGone, vT;
+        void main(){
+          vec3 p = position;
+          float wob = 0.5 + uAgitate*1.6;
+          p += vec3(
+            sin(uTime*aSpeed + aPhase),
+            cos(uTime*aSpeed*0.8 + aPhase*1.3),
+            sin(uTime*aSpeed*0.6 + aPhase*2.1)
+          ) * wob;
+          float e = clamp(uConv*1.45 - aStagger*0.45, 0.0, 1.0);
+          e = e*e*(3.0-2.0*e);
+          float m = e * aOnLine;
+          p = mix(p, aTarget, m);
+          vMix = m;
+          vGone = uConv * (1.0 - aOnLine);
+          vFlick = step(0.86, sin(aPhase*37.0 + uTime*6.0)) * uAgitate;
+          vT = aT;
+          vec4 mv = modelViewMatrix * vec4(p, 1.0);
+          vDepth = -mv.z;
+          gl_PointSize = aSize * uPx * (170.0 / max(vDepth, 1.0));
+          gl_Position = projectionMatrix * mv;
+          vCell = aCell;
+        }`,
+      fragmentShader: /* glsl */`
+        uniform sampler2D uAtlas;
+        uniform float uGrid, uFade, uProg;
+        varying float vCell, vMix, vFlick, vDepth, vGone, vT;
+        void main(){
+          vec2 cuv = vec2(mod(vCell, uGrid), floor(vCell / uGrid));
+          vec2 uv = (cuv + vec2(gl_PointCoord.x, 1.0 - gl_PointCoord.y)) / uGrid;
+          vec4 t = texture2D(uAtlas, uv);
+          if (t.a < 0.05) discard;
+          /* brand tones: muted #7a8a92, white, red-light #d42020 */
+          vec3 slate = vec3(0.478, 0.541, 0.573);
+          vec3 bone  = vec3(1.0, 1.0, 1.0);
+          vec3 red   = vec3(0.831, 0.125, 0.125);
+          float head = smoothstep(0.035, 0.0, abs(vT - uProg))
+                     * step(0.01, uProg) * (1.0 - step(0.99, uProg)) * vMix;
+          vec3 col = mix(slate, bone, vMix);
+          col = mix(col, red, max(vFlick*0.8, head));
+          float a = t.a * (0.42 + vMix*0.45 + head*0.3);
+          a *= 1.0 - clamp((vDepth - 32.0) / 38.0, 0.0, 1.0);  // depth haze
+          a *= 1.0 - vGone*0.85;
+          a *= 1.0 - uFade*0.8;
+          if (a < 0.01) discard;
+          gl_FragColor = vec4(col, a);
+        }`,
+    });
+    return new THREE.Points(geo, mat);
+  }
+
+  /* ── signal tube + glow ────────────────────────── */
+  function tubeMat(radiusGlow){
+    return new THREE.ShaderMaterial({
+      uniforms: uni,
+      transparent: true,
+      depthWrite: false,
+      blending: THREE.AdditiveBlending,
+      side: THREE.DoubleSide,
+      vertexShader: /* glsl */`
+        varying vec2 vUv;
+        void main(){
+          vUv = uv;
+          gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+        }`,
+      fragmentShader: /* glsl */`
+        uniform float uProg, uFade;
+        varying vec2 vUv;
+        void main(){
+          if (vUv.x > uProg) discard;
+          float tail = smoothstep(0.0, 0.08, uProg - vUv.x);
+          /* brand red #b61818 → red-light #d42020 toward the head */
+          vec3 red = vec3(0.714, 0.094, 0.094);
+          vec3 hot = vec3(0.910, 0.180, 0.160);
+          vec3 col = mix(red, hot, smoothstep(0.6, 1.0, vUv.x));
+          float a = ${radiusGlow ? '0.10' : '0.85'} * tail * (1.0 - uFade*0.85);
+          gl_FragColor = vec4(col, a);
+        }`,
+    });
+  }
+  const tubeGeo  = new THREE.TubeGeometry(curve, 240, 0.045, 8, false);
+  const glowGeo  = new THREE.TubeGeometry(curve, 240, 0.34, 8, false);
+  scene.add(new THREE.Mesh(tubeGeo, tubeMat(false)));
+  scene.add(new THREE.Mesh(glowGeo, tubeMat(true)));
+
+  /* head glow sprite */
+  function glowTexture(){
+    const c = document.createElement('canvas'); c.width = c.height = 128;
+    const g = c.getContext('2d');
+    const r = g.createRadialGradient(64,64,0, 64,64,64);
+    r.addColorStop(0, 'rgba(228,60,50,1)');
+    r.addColorStop(0.25, 'rgba(212,32,32,0.55)');
+    r.addColorStop(1, 'rgba(212,32,32,0)');
+    g.fillStyle = r; g.fillRect(0,0,128,128);
+    return new THREE.CanvasTexture(c);
+  }
+  const head = new THREE.Sprite(new THREE.SpriteMaterial({
+    map: glowTexture(), blending: THREE.AdditiveBlending, depthWrite: false, transparent: true,
+  }));
+  head.scale.setScalar(2.4);
+  head.visible = false;
+  scene.add(head);
+
+  /* ── points join once the font is ready ───────── */
+  let points = null;
+  const addPoints = () => { uni.uAtlas.value = buildAtlas(); points = buildPoints(); scene.add(points); };
+  if (document.fonts && document.fonts.load) {
+    document.fonts.load('400 42px "Space Grotesk"').then(addPoints).catch(addPoints);
+  } else addPoints();
+
+  /* ── camera rig: keyframed dolly through the field ── */
+  const KEY = [
+    { p: 0.00, pos: [ 0.0,  0.6, 17.0], look: [ 0.0,  0.0,  -8] },
+    { p: 0.20, pos: [-1.2,  0.1, 13.5], look: [ 0.5, -0.5,  -8] },
+    { p: 0.42, pos: [ 1.8, -0.8, 11.0], look: [ 1.0, -1.0,  -9] },
+    { p: 0.64, pos: [ 4.5,  2.6, 14.5], look: [ 1.5,  0.5,  -9] },
+    { p: 0.84, pos: [ 2.0,  5.4, 17.5], look: [ 0.0,  2.0,  -9] },
+    { p: 1.00, pos: [ 0.0,  6.8, 19.5], look: [ 0.0,  3.0, -10] },
+  ];
+  const camPos = new THREE.Vector3(), camLook = new THREE.Vector3();
+  function rig(sP){
+    let k = 0;
+    while (k < KEY.length-2 && sP > KEY[k+1].p) k++;
+    const A = KEY[k], B = KEY[k+1];
+    const t = smooth(seg(sP, A.p, B.p));
+    camPos.set(
+      A.pos[0] + (B.pos[0]-A.pos[0])*t,
+      A.pos[1] + (B.pos[1]-A.pos[1])*t,
+      A.pos[2] + (B.pos[2]-A.pos[2])*t,
+    );
+    camLook.set(
+      A.look[0] + (B.look[0]-A.look[0])*t,
+      A.look[1] + (B.look[1]-A.look[1])*t,
+      A.look[2] + (B.look[2]-A.look[2])*t,
+    );
+  }
+
+  /* mouse parallax */
+  let mx = 0, my = 0, smx = 0, smy = 0;
+  addEventListener('pointermove', e => {
+    mx = (e.clientX / innerWidth  - 0.5) * 2;
+    my = (e.clientY / innerHeight - 0.5) * 2;
+  }, { passive: true });
+
+  function resize(){
+    const w = innerWidth, h = innerHeight;
+    renderer.setSize(w, h, false);
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+    uni.uPx.value = Math.min(devicePixelRatio || 1, 2) * (h / 900);
+  }
+  addEventListener('resize', resize, { passive: true });
+  resize();
+
+  const headV = new THREE.Vector3();
+  let T = 0, last = performance.now();
+
+  function frame(now){
+    const dt = Math.min((now - last) / 1000, 0.05);
+    last = now;
+    T += dt * (reduced ? 0 : 1);
+
+    const sP = S.sP;
+    uni.uTime.value    = T;
+    uni.uAgitate.value = smooth(seg(sP, 0.22, 0.34)) * (1 - smooth(seg(sP, 0.40, 0.50)));
+    uni.uConv.value    = smooth(seg(sP, 0.42, 0.60));
+    uni.uProg.value    = smooth(seg(sP, 0.50, 0.66));
+    uni.uFade.value    = smooth(seg(sP, 0.68, 0.82));
+
+    // head glow follows the draw front
+    const pr = uni.uProg.value;
+    if (pr > 0.005 && pr < 0.995){
+      curve.getPoint(pr, headV);
+      head.position.copy(headV);
+      head.visible = true;
+      const pulse = 1 + Math.sin(T*5)*0.12;
+      head.scale.setScalar(2.4 * pulse * (1 - uni.uFade.value*0.7));
+      head.material.opacity = 1 - uni.uFade.value*0.8;
+    } else head.visible = false;
+
+    // camera: keyframed dolly + parallax + reel-velocity roll + act1 shake
+    rig(sP);
+    smx += (mx - smx) * 0.04;
+    smy += (my - smy) * 0.04;
+    const shake = uni.uAgitate.value * 0.06;
+    camera.position.set(
+      camPos.x + smx*0.9 + Math.sin(T*13.7)*shake,
+      camPos.y - smy*0.5 + Math.cos(T*11.3)*shake,
+      camPos.z
+    );
+    camera.lookAt(camLook.x + smx*0.4, camLook.y - smy*0.25, camLook.z);
+    camera.rotation.z += THREE.MathUtils.clamp(-S.vel * 14, -0.05, 0.05);
+
+    // grid floor breathes away in the calm final acts
+    const gf = 1 - uni.uFade.value*0.5;
+    grid.material.opacity  = 0.5 * gf;
+    grid2.material.opacity = 0.32 * gf;
+
+    renderer.render(scene, camera);
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+}
+</script>
+</body>
+</html>

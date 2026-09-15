@@ -11,37 +11,37 @@ const translations = {
     navFaq: "FAQ",
 
     // Hero Section
-    heroTitle: "Financial Transformation & FP&A Consulting.",
-    heroDesc: "Most finance teams spend more time closing last month than planning next quarter. We change that — replacing spreadsheet-based finance with driver-based models, automation, and behavioral discipline built to last.",
+    heroTitle: "Financial planning that keeps up with your business.",
+    heroDesc: "We are a finance consulting company. We work on FP&A, financial modelling, reporting and automation, building the forecast models and the systems that keep them running.",
     btnServices: "See What We Build",
     btnWork: "Work With Us",
 
     // Services Section
     servicesTitle: "Services",
-    colHeader1: "Behavioral Finance Implementation",
-    colHeader2: "FP&A (Financial Planning & Analysis)",
+    colHeader1: "FP&A (Financial Planning & Analysis)",
+    colHeader2: "Financial Process Automation",
     colHeader3: "Custom Financial Ecosystem",
 
-    // Services List Items — Card 1: Behavioral Finance
-    li1: "Decision Bias Audit",
-    li2: "Nudge Framework Design",
-    li3: "Behavioral Governance",
-    li4: "Change & Adoption Management",
-    // Card 2: FP&A
-    li5: "Driver-Based Forecasting",
-    li6: "Rolling Budget Cycles",
-    li7: "KPI Dashboards",
-    li8: "Variance & Scenario Analysis",
+    // Services List Items — Card 1: FP&A
+    li1: "Driver-Based Forecasting",
+    li2: "Rolling Budget Cycles",
+    li3: "KPI & Management Reporting",
+    li4: "Variance & Scenario Analysis",
+    // Card 2: Financial Process Automation
+    li5: "AI Agents & Document Processing",
+    li6: "MCP & System Integration",
+    li7: "Close & Reconciliation Automation",
+    li8: "Reporting Pipelines",
     // Card 3: Custom Financial Ecosystem
-    li9: "ERP & BI Integration",
-    li10: "Process Automation",
-    li11: "Custom Financial Tooling",
-    li12: "Data Architecture",
+    li9: "Bespoke Finance Tools",
+    li10: "ERP & BI Integration",
+    li11: "Data Architecture",
+    li12: "Machine Learning Models",
 
     // Expertise Descriptions
-    expDesc1: "Most financial decisions are undermined by cognitive bias before any data reaches the table. We audit your decision architecture, design behavioral frameworks to correct it, and embed governance that makes better judgment the default — not the exception.",
-    expDesc2: "Static annual budgets are a strategic liability — they tell you what happened, not what's coming. We build driver-based rolling forecasts, real-time KPI dashboards, and close-cycle automation that give your CFO the visibility to act, not just report.",
-    expDesc3: "Off-the-shelf platforms were built for the average company. We architect bespoke ERP integrations, automation pipelines, and custom financial tools that fit your operating model exactly — so your team spends time on insight, not workarounds.",
+    expDesc1: "An annual budget agreed in November is out of date by March. We build driver-based rolling forecasts, KPI reporting and scenario models that move when the business moves, so the plan stays useful all year.",
+    expDesc2: "Invoice coding, reconciliation and month-end reporting still run on copy-paste in a lot of finance functions. We connect the systems, automate the repetitive steps, and put AI agents on the work that needs a document read or an exception flagged.",
+    expDesc3: "Sometimes the tool you need does not exist yet. We build it: liquidity engines, pricing models, operating model tooling, and the data layer underneath, designed around how your company actually runs.",
 
     // Tech Section
     techTitle: "Technology",
@@ -79,15 +79,15 @@ const translations = {
 
     // About Us Section
     auLabel: "Who we are",
-    auHeadline: "We engineer<br><span class=\"au-headline-accent\">financial clarity.</span>",
-    auLead: "Most finance transformations fail because they treat the symptom — the spreadsheet, the ERP, the dashboard — without changing the underlying decision architecture. We fix both.",
-    auBody: "We are not a staffing agency. We are not a Big Four offshoot. We are a focused team of finance operators, behavioral scientists, and engineers who have built, automated, and scaled financial systems for companies around the world.",
-    auPillar1Title: "Behavioral Finance Implementation",
-    auPillar1Desc: "We identify where cognitive bias distorts your financial decisions and redesign the architecture to eliminate it.",
-    auPillar2Title: "FP&A (Financial Planning & Analysis)",
-    auPillar2Desc: "We replace static annual budgets with driver-based rolling forecasts your board can act on — real-time KPI visibility, variance analysis, and close cycles cut from weeks to days.",
+    auHeadline: "You have the data.<br><span class=\"au-headline-accent\">We make it useful.</span>",
+    auLead: "If your team has the data but struggles to turn it into useful insights, or simply spends too much time on manual work, that's when we come in.",
+    auBody: "We turn your data into reliable forecasts and clear management reporting that give you a better view of where your business is heading and what to do next.",
+    auPillar1Title: "FP&A (Financial Planning & Analysis)",
+    auPillar1Desc: "Driver-based forecasting, rolling budgets, and management reporting your board can actually read. When something changes in the business, the plan changes with it.",
+    auPillar2Title: "Financial Process Automation",
+    auPillar2Desc: "A lot of finance work is moving numbers between systems by hand. We automate the collection, reconciliation and reporting steps so your team stops rebuilding the same files every month.",
     auPillar3Title: "Custom Financial Ecosystem",
-    auPillar3Desc: "We architect bespoke ERP integrations, automation pipelines, and custom financial tools built precisely around your operating model.\n",
+    auPillar3Desc: "When off-the-shelf tools don't fit how you operate, we build what does: ERP and BI integrations, data pipelines, and finance tools made for your business.",
 
     // How We Work Section
     hwwLabel: "Our process",
@@ -102,7 +102,7 @@ const translations = {
       "Stakeholder alignment sessions"
     ],
     hwwStep2Title: "Design",
-    hwwStep2Desc: "We architect the solution — from behavioral frameworks to technical blueprints. Every design decision is tied to a measurable outcome. No gold-plating, no scope creep.",
+    hwwStep2Desc: "We design the solution, from the process rules to the technical blueprint. Every design decision is tied to a measurable outcome, and we agree the scope before anyone writes code.",
     hwwStep2Bullets: [
       "Solution architecture",
       "KPI & success metrics",
@@ -133,37 +133,37 @@ const translations = {
     navFaq: "FAQ",
 
     // Hero Section
-    heroTitle: "Finanzielle Transformation & Digitalisierung",
-    heroDesc: "Wir verbinden Behavioral Science, fortschrittliche FP&A und individuelle Technologie, um Finanzfunktionen aufzubauen, die bessere Entscheidungen treffen — schneller, mit weniger Reibung und auf Enterprise-Niveau.",
+    heroTitle: "Finanzplanung, die mit Ihrem Unternehmen Schritt hält.",
+    heroDesc: "Wir sind eine Finanzberatung. Wir arbeiten an FP&A, Finanzmodellierung, Reporting und Automatisierung und bauen die Forecast-Modelle und die Systeme, die sie am Laufen halten.",
     btnServices: "Unsere Leistungen",
     btnWork: "Kontaktieren Sie uns",
 
     // Services Section
     servicesTitle: "Leistungen",
-    colHeader1: "Behavioral Finance Implementation",
-    colHeader2: "FP&A (Finanzplanung & -analyse)",
-    colHeader3: "Custom Financial Ecosystem",
+    colHeader1: "FP&A (Finanzplanung & -analyse)",
+    colHeader2: "Automatisierung von Finanzprozessen",
+    colHeader3: "Individuelles Finanz-Ökosystem",
 
-    // Services List Items — Card 1: Behavioral Finance
-    li1: "Entscheidungs-Bias-Audit",
-    li2: "Nudge-Framework-Design",
-    li3: "Behavioral Governance",
-    li4: "Change- & Adoptions-Management",
-    // Card 2: FP&A
-    li5: "Treiberbasierte Prognose",
-    li6: "Rolling-Budget-Zyklen",
-    li7: "KPI-Dashboards",
-    li8: "Varianz- & Szenarioanalyse",
-    // Card 3: Custom Financial Ecosystem
-    li9: "ERP- & BI-Integration",
-    li10: "Prozessautomatisierung",
-    li11: "Individuelle Finanztools",
-    li12: "ML-Implementierung",
+    // Services List Items — Card 1: FP&A
+    li1: "Treiberbasierte Prognose",
+    li2: "Rolling-Budget-Zyklen",
+    li3: "KPI- & Management-Reporting",
+    li4: "Varianz- & Szenarioanalyse",
+    // Card 2: Automatisierung von Finanzprozessen
+    li5: "KI-Agenten & Dokumentenverarbeitung",
+    li6: "MCP & Systemintegration",
+    li7: "Close- & Abstimmungsautomatisierung",
+    li8: "Reporting-Pipelines",
+    // Card 3: Individuelles Finanz-Ökosystem
+    li9: "Individuelle Finanztools",
+    li10: "ERP- & BI-Integration",
+    li11: "Datenarchitektur",
+    li12: "Machine-Learning-Modelle",
 
     // Expertise Descriptions
-    expDesc1: "Die meisten Finanzentscheidungen werden durch kognitive Verzerrungen beeinträchtigt, bevor Daten überhaupt ausgewertet werden. Wir analysieren Ihre Entscheidungsarchitektur, entwickeln Verhaltens-Nudge-Rahmen und verankern Behavioral Governance in Ihren Planungs- und Reportingprozessen.",
-    expDesc2: "Statische Jahresbudgets sind eine strategische Schwachstelle. Wir entwickeln treiberbasierte Rolling-Forecasts, Echtzeit-KPI-Dashboards und automatisierte Close-Prozesse — damit Ihr CFO handeln kann, nicht nur berichten.",
-    expDesc3: "Standardlösungen wurden für das Durchschnittsunternehmen entwickelt. Wir konzipieren maßgeschneiderte ERP-Integrationen, Automatisierungs-Pipelines und individuelle Finanztools, die exakt auf Ihr Betriebsmodell zugeschnitten sind.",
+    expDesc1: "Ein im November verabschiedetes Jahresbudget ist im März überholt. Wir bauen treiberbasierte Rolling-Forecasts, KPI-Reporting und Szenariomodelle, die sich mitbewegen, wenn sich das Geschäft bewegt — damit der Plan das ganze Jahr über brauchbar bleibt.",
+    expDesc2: "Belegkontierung, Abstimmung und Monatsreporting laufen in vielen Finanzabteilungen noch über Copy-Paste. Wir verbinden die Systeme, automatisieren die wiederkehrenden Schritte und setzen KI-Agenten dort ein, wo ein Dokument gelesen oder eine Abweichung markiert werden muss.",
+    expDesc3: "Manchmal gibt es das passende Werkzeug schlicht noch nicht. Dann bauen wir es: Liquiditäts-Engines, Preismodelle, Tooling für das Zielbetriebsmodell und die Datenschicht darunter, zugeschnitten darauf, wie Ihr Unternehmen tatsächlich arbeitet.",
 
     // Tech Section
     techTitle: "Technologie",
@@ -201,15 +201,15 @@ const translations = {
 
     // About Us Section
     auLabel: "Wer wir sind",
-    auHeadline: "Wir entwickeln<br><span class=\"au-headline-accent\">finanzielle Klarheit.</span>",
-    auLead: "Die meisten Finanztransformationen scheitern, weil die zugrundeliegenden Entscheidungen, Prozesse und Tools nie gemeinsam neu gestaltet wurden. PMG Services ändert das — von der menschlichen Ebene bis zur Datenebene.",
-    auBody: "Wir sind keine Personalvermittlung. Wir sind kein Big-Four-Ableger. Wir sind ein fokussiertes Team aus Finanzexperten, Verhaltenswissenschaftlern und Ingenieuren, die Finanzsysteme für Unternehmen weltweit aufgebaut, automatisiert und skaliert haben.",
-    auPillar1Title: "Behavioral Finance Implementation",
-    auPillar1Desc: "Wir identifizieren, wo kognitive Verzerrungen Ihre Finanzentscheidungen beeinflussen, und gestalten die Architektur so um, dass diese eliminiert werden — eingebettet in Ihre Prozesse, nicht aufgesetzt.",
-    auPillar2Title: "FP&A (Finanzplanung & -analyse)",
-    auPillar2Desc: "Wir ersetzen statische Jahresbudgets durch treiberbasierte Rolling Forecasts, auf die Ihr Vorstand reagieren kann — Echtzeit-KPI-Sichtbarkeit, Varianzanalyse und Close-Zyklen von Wochen auf Tage verkürzt.",
+    auHeadline: "Sie haben die Daten.<br><span class=\"au-headline-accent\">Wir machen sie nutzbar.</span>",
+    auLead: "Wenn Ihr Team die Daten hat, aber Schwierigkeiten hat, daraus verwertbare Erkenntnisse zu gewinnen, oder schlicht zu viel Zeit mit manueller Arbeit verbringt: genau dann kommen wir ins Spiel.",
+    auBody: "Wir machen aus Ihren Daten verlässliche Forecasts und ein klares Management-Reporting, das Ihnen zeigt, wohin sich Ihr Unternehmen entwickelt und was als Nächstes zu tun ist.",
+    auPillar1Title: "FP&A (Finanzplanung & -analyse)",
+    auPillar1Desc: "Treiberbasierte Forecasts, rollierende Budgets und ein Management-Reporting, das Ihr Vorstand tatsächlich liest. Ändert sich etwas im Geschäft, ändert sich der Plan mit.",
+    auPillar2Title: "Automatisierung von Finanzprozessen",
+    auPillar2Desc: "Ein großer Teil der Finanzarbeit besteht darin, Zahlen manuell zwischen Systemen zu bewegen. Wir automatisieren Erfassung, Abstimmung und Reporting, damit Ihr Team nicht jeden Monat dieselben Dateien neu baut.",
     auPillar3Title: "Individuelles Finanz-Ökosystem",
-    auPillar3Desc: "Wir entwerfen maßgeschneiderte ERP-Integrationen, Automatisierungs-Pipelines und individuelle Finanztools, die präzise um Ihr Betriebsmodell gebaut sind — keine generischen Plattformen, keine Kompromisse.",
+    auPillar3Desc: "Wenn Standardlösungen nicht zu Ihren Abläufen passen, bauen wir, was passt: ERP- und BI-Integrationen, Datenpipelines und Finanztools für Ihr Unternehmen.",
 
     // How We Work Section
     hwwLabel: "Unser Prozess",
@@ -224,7 +224,7 @@ const translations = {
       "Stakeholder-Alignment"
     ],
     hwwStep2Title: "Gestalten",
-    hwwStep2Desc: "Wir entwerfen die Lösung — von Verhaltensrahmen bis zu technischen Blaupausen. Jede Design-Entscheidung ist an ein messbares Ergebnis geknüpft. Kein Gold-Plating, kein Scope Creep.",
+    hwwStep2Desc: "Wir entwerfen die Lösung, von den Prozessregeln bis zur technischen Blaupause. Jede Design-Entscheidung ist an ein messbares Ergebnis geknüpft, und der Umfang steht fest, bevor jemand Code schreibt.",
     hwwStep2Bullets: [
       "Lösungsarchitektur",
       "KPI & Erfolgskennzahlen",
