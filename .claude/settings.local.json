@@ -21,7 +21,13 @@
       "Bash(curl -s \"https://wl-api.mf.gov.pl/api/search/nip/5342699106?date=2026-09-15\")",
       "Bash(python -c ' *)",
       "Bash(sed -i 's|script\\\\.js?v=14|script.js?v=15|' index.html)",
-      "Bash(python -)"
+      "Bash(python -)",
+      "Bash(python -c \"import pypdf; print\\('pypdf', pypdf.__version__\\)\")",
+      "Bash(python -c \"import fitz; print\\('pymupdf ok'\\)\")",
+      "Bash(python -c \"import pdfplumber; print\\('pdfplumber ok'\\)\")",
+      "Bash(awk -F: '{print $1}')",
+      "Bash(grep -n -E \"^\\\\s{4,10}\\(erp|forecast|cloud|sap|liquidity|aws|fpa|[a-z]+\\):\\\\s*\\\\{\" index.html)",
+      "Bash(python \"C:/Users/gansk/AppData/Local/Temp/claude/C--Users-gansk-OneDrive-Documentos-GitHub-pmgservices-github-io/0545eb50-93bd-49d4-8a46-5ac3cf07ec7e/scratchpad/rebuild_cases.py\")"
     ]
   }
 }

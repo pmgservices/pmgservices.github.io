@@ -50,10 +50,10 @@ const translations = {
 
     // Projects Section
     projectsTitle: "Projects",
-    p1Name: "Custom ERP Integration",
-    p1Desc: "An aviation startup was running its finance operation entirely on manual data entry. We built a bespoke ecosystem — Invoice OCR, Liquidity Engine, and Target Operating Model tooling — fully integrated with their existing accounting platform, eliminating manual entry entirely.",
-    p2Name: "Driver-Based Forecasting",
-    p2Desc: "For a pharmaceutical company, we built an Anaplan-based driver forecasting model with scenario planning — replacing a static annual budget and achieving 98% revenue prediction accuracy across all major markets.",
+    p1Name: "Head of FP&A, Aviation Start-up",
+    p1Desc: "Financial modelling, vendor contract analysis and macroeconomic forecasting (e.g. fuel prices) with SQL and machine learning. Built custom finance tools, including invoice OCR and a liquidity engine, integrated with the existing platforms.",
+    p2Name: "Integrated Planning in Anaplan",
+    p2Desc: "End-to-end Anaplan implementation for a large global healthcare company. Combined the sales and financial planning cycles into one driver-based model, so sales inputs flow directly into the financial forecast.",
     p3Name: "",
     p3Desc: "",
     p4Name: "",
@@ -81,8 +81,9 @@ const translations = {
     // About Us Section
     auLabel: "Who we are",
     auHeadline: "You have the data.<br><span class=\"au-headline-accent\">We make it useful.</span>",
-    auLead: "If your team has the data but not the answers — or spends its best hours rebuilding the same spreadsheets — that is where we come in. We build the forecast models, reporting and automation that turn what you already hold into decisions you can defend.",
+    auLead: "If your team has the data but struggles to turn it into useful insights, or spends too much time on manual work, that is when we come in. We build the forecast models, reporting and automation that give you a clear view of where the business is heading.",
     auFounderRole: "Founder & CEO",
+    auFounderBio: "I founded PMG Services to close the gap between the data finance teams already have and the decisions they actually have to make. I previously worked in finance transformation at a Big Four firm, and I have led teams of 100+ people on S/4HANA transformation projects in multinational companies. We build the forecast models, reporting and automation that make that data usable, and we build them to keep running without us.",
     founderCta: "Book a discovery call",
 
     // How We Work Section
@@ -168,10 +169,10 @@ const translations = {
 
     // Projects Section
     projectsTitle: "Projekte",
-    p1Name: "Custom ERP Integration",
-    p1Desc: "Ein Luftfahrt-Startup betrieb seine Finanzabteilung vollstaendig manuell. Wir entwickelten ein massgeschneidertes Oekosystem — Invoice OCR, Liquidity Engine und Target Operating Model — vollstaendig integriert in die bestehende Buchhaltungsplattform.",
-    p2Name: "Treiberbasierte Prognose",
-    p2Desc: "Fuer ein Pharmaunternehmen haben wir ein Anaplan-basiertes treibergesteuertes Prognosemodell mit Szenarioplanung entwickelt — mit 98% Umsatzprognose-Genauigkeit in den wichtigsten Maerkten weltweit.",
+    p1Name: "Head of FP&A, Luftfahrt-Start-up",
+    p1Desc: "Finanzmodellierung, Analyse von Lieferantenverträgen und makroökonomische Prognosen (z. B. Treibstoffpreise) mit SQL und Machine Learning. Eigene Finanztools gebaut, darunter Invoice OCR und eine Liquiditäts-Engine, integriert in die bestehenden Plattformen.",
+    p2Name: "Integrierte Planung in Anaplan",
+    p2Desc: "End-to-End-Anaplan-Implementierung für ein großes globales Healthcare-Unternehmen. Vertriebs- und Finanzplanung in einem treiberbasierten Modell zusammengeführt, sodass Vertriebsinputs direkt in die Finanzprognose einfließen.",
     p3Name: "",
     p3Desc: "",
     p4Name: "",
@@ -199,8 +200,9 @@ const translations = {
     // About Us Section
     auLabel: "Wer wir sind",
     auHeadline: "Sie haben die Daten.<br><span class=\"au-headline-accent\">Wir machen sie nutzbar.</span>",
-    auLead: "Wenn Ihr Team die Daten hat, aber nicht die Antworten — oder seine beste Zeit damit verbringt, dieselben Tabellen neu zu bauen — genau dann kommen wir ins Spiel. Wir bauen die Forecast-Modelle, das Reporting und die Automatisierung, die aus Ihren Daten belastbare Entscheidungen machen.",
+    auLead: "Wenn Ihr Team die Daten hat, aber Mühe hat, daraus nützliche Erkenntnisse zu gewinnen, oder zu viel Zeit mit manueller Arbeit verbringt, dann kommen wir ins Spiel. Wir bauen die Forecast-Modelle, das Reporting und die Automatisierung, die Ihnen zeigen, wohin sich das Unternehmen entwickelt.",
     auFounderRole: "Gründer & CEO",
+    auFounderBio: "Ich habe PMG Services gegründet, um die Lücke zwischen den Daten, die Finanzteams bereits haben, und den Entscheidungen, die sie tatsächlich treffen müssen, zu schließen. Zuvor habe ich bei einer Big-Four-Gesellschaft im Bereich Finance Transformation gearbeitet, und ich habe Teams von über 100 Personen in S/4HANA-Transformationsprojekten bei multinationalen Unternehmen geleitet. Wir bauen die Forecast-Modelle, das Reporting und die Automatisierung, die diese Daten nutzbar machen, und zwar so, dass sie auch ohne uns weiterlaufen.",
     founderCta: "Erstgespräch buchen",
 
     // How We Work Section
@@ -373,6 +375,8 @@ function setLanguage(lang) {
   if (auLead) auLead.innerText = t.auLead;
   const founderRole = document.getElementById('founder-role');
   if (founderRole) founderRole.innerText = t.auFounderRole;
+  const founderBio = document.getElementById('founder-bio');
+  if (founderBio) founderBio.innerText = t.auFounderBio;
   const founderCta = document.getElementById('founder-cta');
   if (founderCta) founderCta.innerText = t.founderCta;
 
@@ -500,8 +504,10 @@ document.addEventListener("click", function(e) {
 // --- Smooth Section Navigation ---
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
+    const href = this.getAttribute('href');
+    if (href === '#') return;
     e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
+    const target = document.querySelector(href);
     if (target) {
       target.scrollIntoView({
         behavior: 'smooth',

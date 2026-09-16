@@ -1065,6 +1065,14 @@ section {
   color: var(--text-muted);
 }
 
+.au-sig-bio {
+  margin-top: 0.7rem;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--text-body);
+  max-width: 52ch;
+}
+
 .au-cta { margin-top: 0; }
 
 @media (max-width: 900px) {
