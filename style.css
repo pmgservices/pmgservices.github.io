@@ -1067,10 +1067,10 @@ section {
 
 .au-cta { margin-top: 0; }
 
-@media (max-width: 860px) {
+@media (max-width: 900px) {
   #about-us { padding: 4rem var(--page-gutter); }
   .au-container { grid-template-columns: 1fr; gap: 2.5rem; }
-  .au-photo { max-width: 400px; }
+  .au-photo { max-width: 400px; align-self: start; }
   .au-photo img { height: auto; }
   .au-lead { max-width: none; }
 }
@@ -1249,20 +1249,13 @@ section {
 
 /* ── Responsive ── */
 
+/* Stacking for #about-us lives with the rest of its rules, at 900px.
+   This block used to stack it here too, at a different breakpoint from
+   the photo rules, which left 861-900px with a full-width stretched
+   portrait. */
 @media screen and (max-width: 900px) {
-  .au-container {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-  .au-statement {
-    position: static;
-  }
   .au-headline {
     font-size: 2.2rem;
-  }
-  .au-trust-mark {
-    margin-top: 2rem;
-    padding-top: 2rem;
   }
 }
 

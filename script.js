@@ -39,9 +39,9 @@ const translations = {
     li12: "Machine Learning Models",
 
     // Expertise Descriptions
-    expDesc1: "An annual budget agreed in November is out of date by March. We build driver-based rolling forecasts, KPI reporting and scenario models that move when the business moves, so the plan stays useful all year.",
-    expDesc2: "Invoice coding, reconciliation and month-end reporting still run on copy-paste in a lot of finance functions. We connect the systems, automate the repetitive steps, and put AI agents on the work that needs a document read or an exception flagged.",
-    expDesc3: "Sometimes the tool you need does not exist yet. We build it: liquidity engines, pricing models, operating model tooling, and the data layer underneath, designed around how your company actually runs.",
+    expDesc1: "A budget agreed in November is usually out of date by March. We build driver-based rolling forecasts and reporting that get updated as the business changes, so the plan still means something later in the year.",
+    expDesc2: "In a lot of finance teams, invoice coding, reconciliation and month-end reporting are still done by hand. We connect the systems and automate the repetitive parts, and we use AI agents where something needs to be read or checked.",
+    expDesc3: "Sometimes the tool you need does not exist yet. We build it for you: liquidity tools, pricing models, and the data setup behind them, made to fit how your company works.",
 
     // Tech Section
     techTitle: "Technology",
@@ -88,9 +88,9 @@ const translations = {
     // How We Work Section
     hwwLabel: "Our process",
     hwwTitle: "How We Work",
-    hwwIntro: "Three phases with a defined end. You know what you get at each stage, and what it costs, before we start.",
+    hwwIntro: "Three phases, with a clear end date. You know what you get at each stage and what it costs before we start.",
     hwwStep1Title: "Discover",
-    hwwStep1Desc: "We look at how your finance function actually runs today: the data, the processes, the tools, and the spreadsheets nobody has documented. You get an honest write-up before we propose anything.",
+    hwwStep1Desc: "We start by looking at how your finance team works today: the data, the processes, the tools and the spreadsheets nobody wrote down. Then we send you what we found, before suggesting anything.",
     hwwStep1Bullets: [
       "Process & decision audit",
       "Data quality assessment",
@@ -98,7 +98,7 @@ const translations = {
       "Stakeholder alignment sessions"
     ],
     hwwStep2Title: "Design",
-    hwwStep2Desc: "We design the solution, from the process rules to the technical blueprint. Every design decision is tied to a measurable outcome, and we agree the scope before anyone writes code.",
+    hwwStep2Desc: "We design the solution, from the process rules to the technical setup. Every part of it is tied to something you can measure, and we agree the scope before anyone starts building.",
     hwwStep2Bullets: [
       "Solution architecture",
       "KPI & success metrics",
@@ -106,7 +106,7 @@ const translations = {
       "Risk & change management"
     ],
     hwwStep3Title: "Deploy",
-    hwwStep3Desc: "We build it with your team rather than around them, handing over documentation and training as we go, so nothing depends on us still being there afterwards.",
+    hwwStep3Desc: "We build it together with your team and train them as we go, so the work keeps running after we leave.",
     hwwStep3Bullets: [
       "Agile delivery sprints",
       "Integration & testing",
@@ -157,9 +157,9 @@ const translations = {
     li12: "Machine-Learning-Modelle",
 
     // Expertise Descriptions
-    expDesc1: "Ein im November verabschiedetes Jahresbudget ist im März überholt. Wir bauen treiberbasierte Rolling-Forecasts, KPI-Reporting und Szenariomodelle, die sich mitbewegen, wenn sich das Geschäft bewegt — damit der Plan das ganze Jahr über brauchbar bleibt.",
-    expDesc2: "Belegkontierung, Abstimmung und Monatsreporting laufen in vielen Finanzabteilungen noch über Copy-Paste. Wir verbinden die Systeme, automatisieren die wiederkehrenden Schritte und setzen KI-Agenten dort ein, wo ein Dokument gelesen oder eine Abweichung markiert werden muss.",
-    expDesc3: "Manchmal gibt es das passende Werkzeug schlicht noch nicht. Dann bauen wir es: Liquiditäts-Engines, Preismodelle, Tooling für das Zielbetriebsmodell und die Datenschicht darunter, zugeschnitten darauf, wie Ihr Unternehmen tatsächlich arbeitet.",
+    expDesc1: "Ein im November verabschiedetes Budget ist im März meist überholt. Wir bauen treiberbasierte Rolling-Forecasts und Reporting, die mitlaufen, wenn sich das Geschäft ändert, damit der Plan auch später im Jahr noch etwas wert ist.",
+    expDesc2: "In vielen Finanzteams werden Belegkontierung, Abstimmung und Monatsreporting noch von Hand gemacht. Wir verbinden die Systeme und automatisieren die wiederkehrenden Teile, und wir setzen KI-Agenten dort ein, wo etwas gelesen oder geprüft werden muss.",
+    expDesc3: "Manchmal gibt es das passende Werkzeug noch nicht. Dann bauen wir es für Sie: Liquiditätstools, Preismodelle und die Datenbasis dahinter, passend dazu, wie Ihr Unternehmen arbeitet.",
 
     // Tech Section
     techTitle: "Technologie",
@@ -206,9 +206,9 @@ const translations = {
     // How We Work Section
     hwwLabel: "Unser Prozess",
     hwwTitle: "Wie wir arbeiten",
-    hwwIntro: "Drei Phasen mit einem definierten Ende. Sie wissen vorab, was Sie in jeder Phase bekommen und was es kostet.",
+    hwwIntro: "Drei Phasen mit einem klaren Enddatum. Sie wissen vorab, was Sie in jeder Phase bekommen und was es kostet.",
     hwwStep1Title: "Entdecken",
-    hwwStep1Desc: "Wir sehen uns an, wie Ihre Finanzfunktion heute tatsächlich arbeitet: die Daten, die Prozesse, die Tools und die Tabellen, die nie jemand dokumentiert hat. Sie bekommen eine ehrliche Bestandsaufnahme, bevor wir etwas vorschlagen.",
+    hwwStep1Desc: "Wir schauen uns zuerst an, wie Ihr Finanzteam heute arbeitet: die Daten, die Prozesse, die Tools und die Tabellen, die nie jemand aufgeschrieben hat. Danach schicken wir Ihnen, was wir gefunden haben, bevor wir etwas vorschlagen.",
     hwwStep1Bullets: [
       "Prozess- & Entscheidungs-Audit",
       "Datenqualitätsbewertung",
@@ -216,7 +216,7 @@ const translations = {
       "Stakeholder-Alignment"
     ],
     hwwStep2Title: "Gestalten",
-    hwwStep2Desc: "Wir entwerfen die Lösung, von den Prozessregeln bis zur technischen Blaupause. Jede Design-Entscheidung ist an ein messbares Ergebnis geknüpft, und der Umfang steht fest, bevor jemand Code schreibt.",
+    hwwStep2Desc: "Wir entwerfen die Lösung, von den Prozessregeln bis zur technischen Umsetzung. Jeder Teil davon ist an etwas Messbares geknüpft, und der Umfang steht fest, bevor jemand mit dem Bauen anfängt.",
     hwwStep2Bullets: [
       "Lösungsarchitektur",
       "KPI & Erfolgskennzahlen",
@@ -224,7 +224,7 @@ const translations = {
       "Risiko- & Change-Management"
     ],
     hwwStep3Title: "Umsetzen",
-    hwwStep3Desc: "Wir bauen gemeinsam mit Ihrem Team statt an ihm vorbei und übergeben Dokumentation und Schulung laufend, damit am Ende nichts davon abhängt, dass wir noch da sind.",
+    hwwStep3Desc: "Wir bauen gemeinsam mit Ihrem Team und schulen es dabei, damit die Lösung weiterläuft, wenn wir weg sind.",
     hwwStep3Bullets: [
       "Agile Delivery-Sprints",
       "Integration & Testing",
