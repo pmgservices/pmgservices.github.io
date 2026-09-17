@@ -60,15 +60,18 @@ const translations = {
     seeStory: "See the story →",
 
     // Contact Section
-    contactTitle: "Book a call",
+    contactSub: "Start a Conversation",
+    contactTitle: "Book a Call",
     bookingKicker: "FREE · 30 MINUTES",
+    bookingHeading: "Let’s scope it together",
+    bookingIntro: "A short call to see what you need and whether we are a good fit.",
     bookingBtn: "Show available times",
     bookingFallback: "Calendar not loading? Open it in a new tab →",
-    bookingNote: "<a href=\"./privacy-policy.html\" target=\"_blank\" rel=\"noopener noreferrer\">Privacy Policy</a>",
+    bookingNote: "Opens Microsoft Bookings in a new tab. Nothing is sent until you open it. <a href=\"./privacy-policy.html\" target=\"_blank\" rel=\"noopener noreferrer\">Privacy Policy</a>",
 
     // Footer
     footer: "Copyright © 2026 PMG Services. All Rights Reserved.",
-    footerTagline: "Financial planning that keeps up with your business.",
+    footerTagline: "Building finance functions that make better decisions.",
     footerContactHeading: "Contact",
     footerLegalHeading: "Legal",
     footerPrivacyLink: "Privacy Policy",
@@ -77,9 +80,10 @@ const translations = {
     // About Us Section
     auLabel: "About",
     auHeadline: "You have the data.<br><span class=\"au-headline-accent\">We make it useful.</span>",
-    auLead: "If your team has the data but struggles to turn it into useful insights, or spends too much time on manual work, that is when we come in. We are a finance consulting company. We work on FP&A, financial modelling, reporting and automation, building the forecast models and the systems that keep them running.",
+    auLead: "If your team has the data but struggles to turn it into useful insights, or spends too much time on manual work, that is when we come in.",
     auFounderRole: "Founder & CEO",
     auFounderBio: "I founded PMG Services to close the gap between the data finance teams already have and the decisions they actually have to make. I previously worked in finance transformation at a Big Four firm, and I have led teams of 100+ people on S/4HANA transformation projects in multinational companies. We build the forecast models, reporting and automation that make that data usable, and we build them to keep running without us.",
+    founderCta: "Book a discovery call",
 
     // How We Work Section
     hwwLabel: "Our process",
@@ -173,15 +177,18 @@ const translations = {
     seeStory: "Projekt ansehen →",
 
     // Contact Section
-    contactTitle: "Gespräch buchen",
+    contactSub: "Kontakt aufnehmen",
+    contactTitle: "Termin vereinbaren",
     bookingKicker: "KOSTENLOS · 30 MINUTEN",
+    bookingHeading: "Lassen Sie uns den Umfang klären",
+    bookingIntro: "Ein kurzes Gespräch, um zu sehen, was Sie brauchen und ob wir zueinander passen.",
     bookingBtn: "Verfügbare Zeiten anzeigen",
     bookingFallback: "Kalender lädt nicht? In neuem Tab öffnen →",
-    bookingNote: "<a href=\"./privacy-policy.html\" target=\"_blank\" rel=\"noopener noreferrer\">Datenschutzerklärung</a>",
+    bookingNote: "Öffnet Microsoft Bookings in einem neuen Tab. Es werden keine Daten übertragen, bevor Sie ihn öffnen. <a href=\"./privacy-policy.html\" target=\"_blank\" rel=\"noopener noreferrer\">Datenschutzerklärung</a>",
 
     // Footer
     footer: "Copyright © 2026 PMG Services. Alle Rechte vorbehalten.",
-    footerTagline: "Finanzplanung, die mit Ihrem Unternehmen Schritt hält.",
+    footerTagline: "Finanzielle Transformation & Digitalisierungsberatung",
     footerContactHeading: "Kontakt",
     footerLegalHeading: "Rechtliches",
     footerPrivacyLink: "Datenschutz",
@@ -190,9 +197,10 @@ const translations = {
     // About Us Section
     auLabel: "Über uns",
     auHeadline: "Sie haben die Daten.<br><span class=\"au-headline-accent\">Wir machen sie nutzbar.</span>",
-    auLead: "Wenn Ihr Team die Daten hat, aber Mühe hat, daraus nützliche Erkenntnisse zu gewinnen, oder zu viel Zeit mit manueller Arbeit verbringt, dann kommen wir ins Spiel. Wir sind eine Finanzberatung. Wir arbeiten an FP&A, Finanzmodellierung, Reporting und Automatisierung und bauen die Forecast-Modelle und die Systeme, die sie am Laufen halten.",
+    auLead: "Wenn Ihr Team die Daten hat, aber Mühe hat, daraus nützliche Erkenntnisse zu gewinnen, oder zu viel Zeit mit manueller Arbeit verbringt, dann kommen wir ins Spiel.",
     auFounderRole: "Gründer & CEO",
     auFounderBio: "Ich habe PMG Services gegründet, um die Lücke zwischen den Daten, die Finanzteams bereits haben, und den Entscheidungen, die sie tatsächlich treffen müssen, zu schließen. Zuvor habe ich bei einer Big-Four-Gesellschaft im Bereich Finance Transformation gearbeitet, und ich habe Teams von über 100 Personen in S/4HANA-Transformationsprojekten bei multinationalen Unternehmen geleitet. Wir bauen die Forecast-Modelle, das Reporting und die Automatisierung, die diese Daten nutzbar machen, und zwar so, dass sie auch ohne uns weiterlaufen.",
+    founderCta: "Erstgespräch buchen",
 
     // How We Work Section
     hwwLabel: "Unser Prozess",
@@ -312,12 +320,16 @@ function setLanguage(lang) {
   });
 
   // Contact
+  const contactSubEl = document.querySelector('#contact .section__text__p1');
+  if (contactSubEl) contactSubEl.innerText = t.contactSub;
   const contactTitleEl = document.querySelector('#contact .title');
   if (contactTitleEl) contactTitleEl.innerText = t.contactTitle;
 
   // Booking block
   const bk = {
     'booking-kicker': t.bookingKicker,
+    'booking-heading': t.bookingHeading,
+    'booking-intro': t.bookingIntro,
     'bookingLoadBtn': t.bookingBtn
   };
   Object.keys(bk).forEach(function (id) {
@@ -360,6 +372,8 @@ function setLanguage(lang) {
   if (founderRole) founderRole.innerText = t.auFounderRole;
   const founderBio = document.getElementById('founder-bio');
   if (founderBio) founderBio.innerText = t.auFounderBio;
+  const founderCta = document.getElementById('founder-cta');
+  if (founderCta) founderCta.innerText = t.founderCta;
 
   // How We Work Section
   const hwwLabel = document.querySelector('#how-we-work .section-label');

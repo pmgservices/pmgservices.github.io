@@ -18,7 +18,6 @@
   /* ── Layout system ── */
   --content-max:     1200px;    /* max content width */
   --page-gutter:     clamp(1.5rem, 5vw, 5rem);  /* responsive side padding */
-  --section-y: clamp(2.75rem, 5.5vw, 4.5rem);   /* vertical rhythm for every section */
 }
 
 /* ─── SKIP LINK ─── */
@@ -918,7 +917,7 @@ section {
 
 #about-us {
   height: auto;
-  padding: var(--section-y) var(--page-gutter);
+  padding: 6rem var(--page-gutter);
   position: relative;
   background-color: #ffffff;
   max-width: none;
@@ -929,7 +928,10 @@ section {
 .au-container {
   max-width: var(--content-max);
   margin: 0 auto;
-  display: block;
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: clamp(2.5rem, 5vw, 4.5rem);
+  align-items: center;
 }
 
 /* Portrait keeps its own 3:3.5 frame rather than a circle crop, so the
@@ -1074,7 +1076,7 @@ section {
 .au-cta { margin-top: 0; }
 
 @media (max-width: 900px) {
-  #about-us { padding: var(--section-y) var(--page-gutter); }
+  #about-us { padding: 4rem var(--page-gutter); }
   .au-container { grid-template-columns: 1fr; gap: 2.5rem; }
   .au-photo { max-width: 400px; align-self: start; }
   .au-photo img { height: auto; }
@@ -1098,7 +1100,7 @@ section {
    ═══════════════════════════════════════════════════ */
 
 .founder-section {
-  padding: var(--section-y) var(--page-gutter);
+  padding: 7rem var(--page-gutter);
   background: var(--off-white);
 }
 
@@ -1166,7 +1168,7 @@ section {
 .founder-cta { margin-top: 0; }
 
 @media (max-width: 860px) {
-  .founder-section { padding: var(--section-y) var(--page-gutter); }
+  .founder-section { padding: 4.5rem var(--page-gutter); }
   .founder-inner {
     grid-template-columns: 1fr;
     gap: 2.75rem;
@@ -1273,7 +1275,7 @@ section {
   background:
     linear-gradient(rgba(11, 29, 44, 0.84), rgba(11, 29, 44, 0.84)),
     url('./assets/inspiration.jfif') center/cover no-repeat;
-  padding: var(--section-y) var(--page-gutter);
+  padding: 8rem var(--page-gutter);
   width: 100%;
   max-width: none;
   margin: 0;
@@ -1582,7 +1584,7 @@ section {
 .cs-content {
   max-width: var(--content-max);
   margin: 0 auto;
-  padding: var(--section-y) var(--page-gutter) var(--section-y);
+  padding: 4rem var(--page-gutter) 6rem;
 }
 
 .cs-tag-line {
@@ -1756,7 +1758,7 @@ section {
 /* Responsive case study */
 @media screen and (max-width: 768px) {
   .cs-content {
-    padding: var(--section-y) var(--page-gutter) var(--section-y);
+    padding: 2.5rem var(--page-gutter) 4rem;
   }
   .cs-title {
     font-size: 1.8rem;
@@ -1778,7 +1780,7 @@ section {
 
 #about {
   height: auto;
-  padding: var(--section-y) var(--page-gutter) var(--section-y);
+  padding: 5rem var(--page-gutter) 6rem;
   position: relative;
   background-color: #ffffff;
   max-width: none;
@@ -1809,7 +1811,7 @@ section {
   background-color: #ffffff;
   max-width: none;
   margin: 0;
-  padding: var(--section-y) var(--page-gutter);
+  padding: 8rem var(--page-gutter);
   width: 100%;
   position: relative;
 }
@@ -1831,7 +1833,7 @@ section {
 /* ─── HOW WE WORK ─── */
 
 #how-we-work {
-  padding: var(--section-y) var(--page-gutter);
+  padding: 8rem var(--page-gutter);
   background: var(--off-white-dark);
   max-width: none;
   width: 100%;
@@ -1887,7 +1889,7 @@ section {
   background: #fff;
   border-radius: 1.5rem;
   border: 1px solid var(--border);
-  padding: 2rem 1.75rem;
+  padding: 2.5rem 2rem;
   transition: border-color 0.4s ease, box-shadow 0.4s ease,
               opacity 0.7s ease, transform 0.7s ease;
   opacity: 0;
@@ -2509,7 +2511,7 @@ section {
 
 .problem-section {
   background: var(--navy);
-  padding: var(--section-y) var(--page-gutter);
+  padding: clamp(5rem, 10vw, 9rem) var(--page-gutter);
   width: 100%;
   max-width: none;
   margin: 0;
@@ -2620,7 +2622,7 @@ section {
 /* ─── FAQ SECTION ─── */
 
 #faq {
-  padding: var(--section-y) var(--page-gutter);
+  padding: clamp(4rem, 8vw, 7rem) var(--page-gutter);
   max-width: var(--content-max);
   margin: 0 auto;
 }
@@ -2708,7 +2710,7 @@ section {
 
 .qs-section {
   background: var(--navy);
-  padding: var(--section-y) var(--page-gutter);
+  padding: clamp(4rem, 8vw, 7rem) var(--page-gutter);
 }
 
 .qs-inner {
@@ -2747,7 +2749,7 @@ section {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.09);
   border-radius: 16px;
-  padding: 2rem;
+  padding: 2.5rem;
 }
 
 .qs-badge {
@@ -2875,7 +2877,7 @@ section {
 
 #experience {
   height: auto;
-  padding: var(--section-y) var(--page-gutter);
+  padding: 8rem var(--page-gutter);
   background-color: #ffffff;
   max-width: none;
   width: 100%;
@@ -3067,7 +3069,7 @@ section {
 
 #projects {
   height: auto;
-  padding: var(--section-y) var(--page-gutter);
+  padding: 8rem var(--page-gutter);
   position: relative;
   background-color: #ffffff;
   max-width: none;
@@ -3375,7 +3377,7 @@ section {
 
 footer {
   background: var(--navy);
-  padding: 2.5rem var(--page-gutter);
+  padding: 3rem var(--page-gutter);
   margin: 0;
 }
 
@@ -4327,12 +4329,4 @@ body.dark-theme, nav.dark-theme {
 @media (prefers-reduced-motion: reduce) {
   .service-svg *, .project-svg *, .cs-hero-svg * { animation-delay: 0s !important; }
   .svg-pulse-ring { display: none; }
-}
-
-/* photo moved here from the About block: keep it to a sensible size */
-.founder-inner .au-photo { max-width: 420px; margin: 0; }
-.founder-inner .au-photo img { width: 100%; height: auto; border-radius: var(--radius-2xl); }
-.founder-inner .au-signature { margin-bottom: 1.75rem; }
-@media (max-width: 900px) {
-  .founder-inner .au-photo { max-width: 340px; }
 }

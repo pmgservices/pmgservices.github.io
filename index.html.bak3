@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Financial planning that keeps up with your business | PMG Services</title>
-    <meta name="description" content="Financial planning that keeps up with your business. PMG Services builds driver-based forecasts, reporting and finance automation. Book a free 30-min call." />
+    <title>PMG Services | Financial Transformation &amp; Digitalization Consulting</title>
+    <meta name="description" content="PMG Services turns finance data into reliable forecasts and clear reporting — FP&amp;A, financial process automation with AI agents, and custom ERP integration for businesses worldwide." />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://pmg-services.net/" />
     <link rel="icon" href="./assets/favicon.png" type="image/png" />
@@ -20,18 +20,15 @@
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="PMG Services" />
-    <meta property="og:locale" content="en" />
-    <meta property="og:locale:alternate" content="de" />
-    <meta property="og:title" content="Financial planning that keeps up with your business | PMG Services" />
-    <meta property="og:description" content="Financial planning that keeps up with your business. PMG Services builds driver-based forecasts, reporting and finance automation. Book a free 30-min call." />
+    <meta property="og:title" content="PMG Services | Financial Transformation &amp; Digitalization Consulting" />
+    <meta property="og:description" content="FP&amp;A, financial process automation with AI agents, and custom financial systems — we turn your data into forecasts and reporting you can act on." />
     <meta property="og:image" content="https://pmg-services.net/assets/logo.png" />
     <meta property="og:url" content="https://pmg-services.net/" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Financial planning that keeps up with your business | PMG Services" />
-    <meta name="twitter:description" content="Financial planning that keeps up with your business. PMG Services builds driver-based forecasts, reporting and finance automation. Book a free 30-min call." />
+    <meta name="twitter:title" content="PMG Services | Financial Transformation &amp; Digitalization Consulting" />
+    <meta name="twitter:description" content="FP&amp;A, financial process automation with AI agents, and custom financial systems for mid-market finance teams." />
     <meta name="twitter:image" content="https://pmg-services.net/assets/logo.png" />
 
     <!-- hreflang -->
@@ -42,7 +39,7 @@
     <link rel="stylesheet" href="./assets/fonts/fonts.css?v=1" />
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="style.css?v=36" />
+    <link rel="stylesheet" href="style.css?v=34" />
     <link rel="stylesheet" href="mediaqueries.css?v=9" />
 
     <!-- JSON-LD Structured Data -->
@@ -51,38 +48,15 @@
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
       "name": "PMG Services",
-      "legalName": "PMG Services Piotr Ganski",
-      "alternateName": "PMG",
-      "slogan": "Financial planning that keeps up with your business.",
-      "description": "Financial planning that keeps up with your business. PMG Services builds driver-based forecasts, management reporting and finance automation for mid-market companies.",
+      "description": "Financial transformation and digitalization consulting — FP&A, financial process automation, and custom financial systems.",
       "url": "https://pmg-services.net",
       "logo": "https://pmg-services.net/assets/logo.png",
-      "image": "https://pmg-services.net/assets/logo.png",
-      "email": "contact@pmg-services.net",
-      "taxID": "5342699106",
-      "founder": {
-        "@type": "Person",
-        "name": "Piotr Ganski",
-        "jobTitle": "Founder & CEO",
-        "sameAs": "https://www.linkedin.com/in/pmganski"
-      },
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Warszawa",
-        "addressCountry": "PL"
-      },
-      "sameAs": [
-        "https://www.linkedin.com/company/p-m-g-services/",
-        "https://www.linkedin.com/in/pmganski"
-      ],
-      "knowsLanguage": ["en", "de", "pl", "ru"],
       "serviceType": ["Financial Consulting", "FP&A", "Financial Process Automation", "ERP Integration"],
       "areaServed": { "@type": "Place", "name": "Worldwide" },
       "contactPoint": {
         "@type": "ContactPoint",
         "contactType": "customer service",
-        "email": "contact@pmg-services.net",
-        "availableLanguage": ["English", "German", "Polish"]
+        "email": "contact@pmg-services.net"
       }
     }
     </script>
@@ -276,7 +250,7 @@
         <div class="au-statement">
           <span class="section-label">About</span>
           <h2 class="au-headline">You have the data.<br><span class="au-headline-accent">We make it useful.</span></h2>
-          <p class="au-lead">If your team has the data but struggles to turn it into useful insights, or spends too much time on manual work, that is when we come in. We are a finance consulting company. We work on FP&amp;A, financial modelling, reporting and automation, building the forecast models and the systems that keep them running.</p>
+          <p class="au-lead">If your team has the data but struggles to turn it into useful insights, or spends too much time on manual work, that is when we come in.</p>
         </div>
 
       </div>
@@ -294,7 +268,7 @@
         <!-- Card 1: FP&A -->
         <div class="service-card">
           <div class="service-visual-top">
-            <svg viewBox="0 0 300 130" class="service-svg" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three noisy input lines pass through a red PMG filter and emerge as one calibrated rising trend produced by a driver-based model">
+            <svg viewBox="0 0 300 130" class="service-svg" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three noisy input lines pass through a red PMG filter and emerge as one calibrated rising trend, reducing forecast error by 34 percent">
               <defs>
                 <pattern id="s1-dots" width="16" height="16" patternUnits="userSpaceOnUse"><circle cx="8" cy="8" r="0.7" fill="#0b1d2c" opacity="0.05"/></pattern>
                 <linearGradient id="s1-sig" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0b1d2c"/><stop offset="1" stop-color="#b61818"/></linearGradient>
@@ -314,7 +288,8 @@
               <circle class="svg-pulse-ring" cx="276" cy="38" r="7" fill="none" stroke="#b61818" stroke-width="1"/>
               <g class="svg-fade" style="--d:1.15s">
                 <rect x="170" y="96" width="106" height="20" rx="10" fill="#ffffff" stroke="#e2e7ed"/>
-                <text x="223" y="109" text-anchor="middle" font-size="5.8" font-weight="700" fill="#0b1d2c" opacity="0.65" letter-spacing="0.6" font-family="Space Grotesk,sans-serif">DRIVER-BASED MODEL</text>
+                <text x="181" y="109.5" font-size="8" font-weight="700" fill="#b61818" font-family="Space Grotesk,sans-serif">&#8722;34%</text>
+                <text x="207" y="109" font-size="5.8" font-weight="600" fill="#0b1d2c" opacity="0.55" letter-spacing="0.8" font-family="Space Grotesk,sans-serif">FORECAST ERROR</text>
               </g>
             </svg>
           </div>
@@ -662,7 +637,8 @@
     <div class="section-divider divider--glass" aria-hidden="true"></div>
 
     <section id="contact">
-      <h2 class="title">Book a call</h2>
+      <p class="section__text__p1">Get In Touch</p>
+      <h2 class="title">Contact Us</h2>
       <div class="booking-container">
         <!-- Click-to-load: nothing is requested from Microsoft until the
              visitor asks for it, so no IP address is disclosed before they act.
@@ -676,9 +652,11 @@
              id="bookingEmbed"
              data-booking-url="https://outlook.office.com/bookwithme/user/6d6033bbc85f495a9f33bc7930c285f4@pmg-services.net?anonymous">
           <div class="booking-placeholder" id="bookingPlaceholder">
-            <span class="booking-kicker" id="booking-kicker">FREE &middot; 30 MINUTES</span>
+            <span class="booking-kicker" id="booking-kicker">30-MINUTE DISCOVERY CALL</span>
+            <h3 class="booking-heading" id="booking-heading">Let&rsquo;s scope it together</h3>
+            <p class="booking-intro" id="booking-intro">A short call to understand the scope &mdash; what is not working, what you are trying to build, and whether we are the right fit. No pitch deck, no obligation.</p>
             <button type="button" class="btn btn-color-1" id="bookingLoadBtn">Show available times</button>
-            <p class="booking-note" id="booking-note"><a href="./privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a></p>
+            <p class="booking-note" id="booking-note">Opens Microsoft Bookings in a new tab. Nothing is sent to Microsoft until you choose to open it &mdash; see our <a href="./privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.</p>
           </div>
         </div>
         <p class="booking-fallback" id="bookingFallback" hidden>
@@ -714,7 +692,7 @@
         <img src="./assets/founder-piotr-ganski-620.jpg"
         srcset="./assets/founder-piotr-ganski-620.jpg 620w, ./assets/founder-piotr-ganski-1240.jpg 1240w"
         sizes="(max-width: 860px) 88vw, 42vw"
-        width="1240" height="1456" decoding="async" loading="lazy"
+        width="1240" height="1456" decoding="async"
         alt="Piotr Ganski, founder and CEO of PMG Services, outside the New York Stock Exchange">
         </picture>
         </figure>
@@ -724,6 +702,7 @@
           <span class="au-sig-role" id="founder-role">Founder &amp; CEO</span>
           <span class="au-sig-bio" id="founder-bio">I founded PMG Services to close the gap between the data finance teams already have and the decisions they actually have to make. I previously worked in finance transformation at a Big Four firm, and I have led teams of 100+ people on S/4HANA transformation projects in multinational companies. We build the forecast models, reporting and automation that make that data usable, and we build them to keep running without us.</span>
           </div>
+          <a href="#contact" class="btn btn-color-1 au-cta" id="founder-cta">Book a discovery call</a>
         </div>
       </div>
     </section>
@@ -753,7 +732,7 @@
         <div class="footer-top">
           <div class="footer-brand">
             <img src="./assets/LOGO_PMG_white.png" alt="PMG Services" class="footer-logo" loading="lazy" />
-            <p class="footer-tagline" id="footer-tagline">Financial planning that keeps up with your business.</p>
+            <p class="footer-tagline" id="footer-tagline">Financial Transformation &amp;<br>Digitalization Consulting</p>
           </div>
           <div class="footer-contact-col">
             <h3 class="footer-heading" id="footer-contact-heading">Contact</h3>
@@ -786,7 +765,7 @@
       </svg>
     </button>
 
-    <script src="script.js?v=29"></script>
+    <script src="script.js?v=26"></script>
 
     
 

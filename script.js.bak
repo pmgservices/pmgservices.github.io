@@ -12,8 +12,9 @@ const translations = {
 
     // Hero Section
     heroTitle: "Financial planning that keeps up with your business.",
-    btnServices: "See Our Services",
-    btnWork: "Book a discovery call",
+    heroDesc: "We are a finance consulting company. We work on FP&A, financial modelling, reporting and automation, building the forecast models and the systems that keep them running.",
+    btnServices: "See What We Build",
+    btnWork: "Work With Us",
 
     // Services Section
     servicesTitle: "Services",
@@ -22,25 +23,25 @@ const translations = {
     colHeader3: "Custom Financial Ecosystem",
 
     // Services List Items — Card 1: FP&A
-    li1: "Driver-based forecasting",
-    li2: "Rolling budget cycles",
-    li3: "KPI & management reporting",
-    li4: "Variance & scenario analysis",
+    li1: "Driver-Based Forecasting",
+    li2: "Rolling Budget Cycles",
+    li3: "KPI & Management Reporting",
+    li4: "Variance & Scenario Analysis",
     // Card 2: Financial Process Automation
-    li5: "AI agents & document processing",
-    li6: "MCP & system integration",
-    li7: "Close & reconciliation automation",
-    li8: "Reporting pipelines",
+    li5: "AI Agents & Document Processing",
+    li6: "MCP & System Integration",
+    li7: "Close & Reconciliation Automation",
+    li8: "Reporting Pipelines",
     // Card 3: Custom Financial Ecosystem
-    li9: "Bespoke finance tools",
-    li10: "ERP & BI integration",
-    li11: "Data architecture",
-    li12: "Machine learning models",
+    li9: "Bespoke Finance Tools",
+    li10: "ERP & BI Integration",
+    li11: "Data Architecture",
+    li12: "Machine Learning Models",
 
     // Expertise Descriptions
     expDesc1: "A budget agreed in November is usually out of date by March. We build driver-based rolling forecasts and reporting that get updated as the business changes, so the plan still means something later in the year.",
-    expDesc2: "In a lot of finance teams, invoice coding, reconciliation and month-end reporting are still done by hand. We connect the systems, automate the repetitive steps, and apply AI agents where a document has to be interpreted or an exception reviewed.",
-    expDesc3: "Sometimes the tool you need does not exist yet. We build it for you: liquidity tools, pricing models, and the data setup behind them, made to fit your business needs.",
+    expDesc2: "In a lot of finance teams, invoice coding, reconciliation and month-end reporting are still done by hand. We connect the systems and automate the repetitive parts, and we use AI agents where something needs to be read or checked.",
+    expDesc3: "Sometimes the tool you need does not exist yet. We build it for you: liquidity tools, pricing models, and the data setup behind them, made to fit how your company works.",
 
     // Tech Section
     techTitle: "Technology",
@@ -60,32 +61,37 @@ const translations = {
     seeStory: "See the story →",
 
     // Contact Section
-    contactTitle: "Book a call",
-    bookingKicker: "FREE · 30 MINUTES",
+    contactSub: "Start a Conversation",
+    contactTitle: "Book a Call",
+    bookingKicker: "30-MINUTE DISCOVERY CALL",
+    bookingHeading: "Let’s scope it together",
+    bookingIntro: "A short call to understand the scope — what is not working, what you are trying to build, and whether we are the right fit. No pitch deck, no obligation.",
     bookingBtn: "Show available times",
     bookingFallback: "Calendar not loading? Open it in a new tab →",
-    bookingNote: "<a href=\"./privacy-policy.html\" target=\"_blank\" rel=\"noopener noreferrer\">Privacy Policy</a>",
+    bookingNote: "Opens Microsoft Bookings in a new tab. Nothing is sent to Microsoft until you choose to open it — see our <a href=\"./privacy-policy.html\" target=\"_blank\" rel=\"noopener noreferrer\">Privacy Policy</a>.",
 
     // Footer
     footer: "Copyright © 2026 PMG Services. All Rights Reserved.",
-    footerTagline: "Financial planning that keeps up with your business.",
+    footerTagline: "Building finance functions that make better decisions.",
     footerContactHeading: "Contact",
     footerLegalHeading: "Legal",
     footerPrivacyLink: "Privacy Policy",
     footerImpressumLink: "Impressum",
 
     // About Us Section
-    auLabel: "About",
+    auLabel: "Who we are",
     auHeadline: "You have the data.<br><span class=\"au-headline-accent\">We make it useful.</span>",
-    auLead: "If your team has the data but struggles to turn it into useful insights, or spends too much time on manual work, that is when we come in. We are a finance consulting company. We work on FP&A, financial modelling, reporting and automation, building the forecast models and the systems that keep them running.",
+    auLead: "If your team has the data but struggles to turn it into useful insights, or spends too much time on manual work, that is when we come in. We build the forecast models, reporting and automation that give you a clear view of where the business is heading.",
     auFounderRole: "Founder & CEO",
     auFounderBio: "I founded PMG Services to close the gap between the data finance teams already have and the decisions they actually have to make. I previously worked in finance transformation at a Big Four firm, and I have led teams of 100+ people on S/4HANA transformation projects in multinational companies. We build the forecast models, reporting and automation that make that data usable, and we build them to keep running without us.",
+    founderCta: "Book a discovery call",
 
     // How We Work Section
     hwwLabel: "Our process",
     hwwTitle: "How We Work",
+    hwwIntro: "Three phases, with a clear end date. You know what you get at each stage and what it costs before we start.",
     hwwStep1Title: "Discover",
-    hwwStep1Desc: "We start by looking at how your finance team works today: the data, the processes and the tools. Then we send you what we found, before suggesting anything.",
+    hwwStep1Desc: "We start by looking at how your finance team works today: the data, the processes, the tools and the spreadsheets nobody wrote down. Then we send you what we found, before suggesting anything.",
     hwwStep1Bullets: [
       "Process & decision audit",
       "Data quality assessment",
@@ -110,7 +116,7 @@ const translations = {
     ],
 
     // Contact direct
-    contactDirectIntro: "Other ways to reach us"
+    contactDirectIntro: "Prefer a direct conversation? Send us an email or find us on LinkedIn — no pitch decks, just a conversation about what you're trying to solve."
   },
   de: {
     // Navigation
@@ -125,8 +131,9 @@ const translations = {
 
     // Hero Section
     heroTitle: "Finanzplanung, die mit Ihrem Unternehmen Schritt hält.",
+    heroDesc: "Wir sind eine Finanzberatung. Wir arbeiten an FP&A, Finanzmodellierung, Reporting und Automatisierung und bauen die Forecast-Modelle und die Systeme, die sie am Laufen halten.",
     btnServices: "Unsere Leistungen",
-    btnWork: "Gespräch buchen",
+    btnWork: "Kontaktieren Sie uns",
 
     // Services Section
     servicesTitle: "Leistungen",
@@ -152,8 +159,8 @@ const translations = {
 
     // Expertise Descriptions
     expDesc1: "Ein im November verabschiedetes Budget ist im März meist überholt. Wir bauen treiberbasierte Rolling-Forecasts und Reporting, die mitlaufen, wenn sich das Geschäft ändert, damit der Plan auch später im Jahr noch etwas wert ist.",
-    expDesc2: "In vielen Finanzteams werden Belegkontierung, Abstimmung und Monatsreporting noch von Hand gemacht. Wir verbinden die Systeme und automatisieren die wiederkehrenden Teile, und setzen KI-Agenten dort ein, wo ein Beleg interpretiert oder eine Abweichung geprüft werden muss.",
-    expDesc3: "Manchmal gibt es das passende Werkzeug noch nicht. Dann bauen wir es für Sie: Liquiditätstools, Preismodelle und die Datenbasis dahinter, zugeschnitten auf die Anforderungen Ihres Unternehmens.",
+    expDesc2: "In vielen Finanzteams werden Belegkontierung, Abstimmung und Monatsreporting noch von Hand gemacht. Wir verbinden die Systeme und automatisieren die wiederkehrenden Teile, und wir setzen KI-Agenten dort ein, wo etwas gelesen oder geprüft werden muss.",
+    expDesc3: "Manchmal gibt es das passende Werkzeug noch nicht. Dann bauen wir es für Sie: Liquiditätstools, Preismodelle und die Datenbasis dahinter, passend dazu, wie Ihr Unternehmen arbeitet.",
 
     // Tech Section
     techTitle: "Technologie",
@@ -173,32 +180,37 @@ const translations = {
     seeStory: "Projekt ansehen →",
 
     // Contact Section
-    contactTitle: "Gespräch buchen",
-    bookingKicker: "KOSTENLOS · 30 MINUTEN",
+    contactSub: "Kontakt aufnehmen",
+    contactTitle: "Termin vereinbaren",
+    bookingKicker: "30-MINÜTIGES ERSTGESPRÄCH",
+    bookingHeading: "Lassen Sie uns den Umfang klären",
+    bookingIntro: "Ein kurzes Gespräch, um den Umfang zu verstehen — was nicht funktioniert, was Sie aufbauen möchten und ob wir zueinander passen. Keine Präsentation, keine Verpflichtung.",
     bookingBtn: "Verfügbare Zeiten anzeigen",
     bookingFallback: "Kalender lädt nicht? In neuem Tab öffnen →",
-    bookingNote: "<a href=\"./privacy-policy.html\" target=\"_blank\" rel=\"noopener noreferrer\">Datenschutzerklärung</a>",
+    bookingNote: "Öffnet Microsoft Bookings in einem neuen Tab. Es werden keine Daten an Microsoft übertragen, bevor Sie ihn öffnen — siehe unsere <a href=\"./privacy-policy.html\" target=\"_blank\" rel=\"noopener noreferrer\">Datenschutzerklärung</a>.",
 
     // Footer
     footer: "Copyright © 2026 PMG Services. Alle Rechte vorbehalten.",
-    footerTagline: "Finanzplanung, die mit Ihrem Unternehmen Schritt hält.",
+    footerTagline: "Finanzielle Transformation & Digitalisierungsberatung",
     footerContactHeading: "Kontakt",
     footerLegalHeading: "Rechtliches",
     footerPrivacyLink: "Datenschutz",
     footerImpressumLink: "Impressum",
 
     // About Us Section
-    auLabel: "Über uns",
+    auLabel: "Wer wir sind",
     auHeadline: "Sie haben die Daten.<br><span class=\"au-headline-accent\">Wir machen sie nutzbar.</span>",
-    auLead: "Wenn Ihr Team die Daten hat, aber Mühe hat, daraus nützliche Erkenntnisse zu gewinnen, oder zu viel Zeit mit manueller Arbeit verbringt, dann kommen wir ins Spiel. Wir sind eine Finanzberatung. Wir arbeiten an FP&A, Finanzmodellierung, Reporting und Automatisierung und bauen die Forecast-Modelle und die Systeme, die sie am Laufen halten.",
+    auLead: "Wenn Ihr Team die Daten hat, aber Mühe hat, daraus nützliche Erkenntnisse zu gewinnen, oder zu viel Zeit mit manueller Arbeit verbringt, dann kommen wir ins Spiel. Wir bauen die Forecast-Modelle, das Reporting und die Automatisierung, die Ihnen zeigen, wohin sich das Unternehmen entwickelt.",
     auFounderRole: "Gründer & CEO",
     auFounderBio: "Ich habe PMG Services gegründet, um die Lücke zwischen den Daten, die Finanzteams bereits haben, und den Entscheidungen, die sie tatsächlich treffen müssen, zu schließen. Zuvor habe ich bei einer Big-Four-Gesellschaft im Bereich Finance Transformation gearbeitet, und ich habe Teams von über 100 Personen in S/4HANA-Transformationsprojekten bei multinationalen Unternehmen geleitet. Wir bauen die Forecast-Modelle, das Reporting und die Automatisierung, die diese Daten nutzbar machen, und zwar so, dass sie auch ohne uns weiterlaufen.",
+    founderCta: "Erstgespräch buchen",
 
     // How We Work Section
     hwwLabel: "Unser Prozess",
     hwwTitle: "Wie wir arbeiten",
+    hwwIntro: "Drei Phasen mit einem klaren Enddatum. Sie wissen vorab, was Sie in jeder Phase bekommen und was es kostet.",
     hwwStep1Title: "Entdecken",
-    hwwStep1Desc: "Wir schauen uns zuerst an, wie Ihr Finanzteam heute arbeitet: die Daten, die Prozesse und die Tools. Danach schicken wir Ihnen, was wir gefunden haben, bevor wir etwas vorschlagen.",
+    hwwStep1Desc: "Wir schauen uns zuerst an, wie Ihr Finanzteam heute arbeitet: die Daten, die Prozesse, die Tools und die Tabellen, die nie jemand aufgeschrieben hat. Danach schicken wir Ihnen, was wir gefunden haben, bevor wir etwas vorschlagen.",
     hwwStep1Bullets: [
       "Prozess- & Entscheidungs-Audit",
       "Datenqualitätsbewertung",
@@ -223,7 +235,7 @@ const translations = {
     ],
 
     // Contact direct
-    contactDirectIntro: "Weitere Wege, uns zu erreichen"
+    contactDirectIntro: "Lieber direkt Kontakt aufnehmen? Senden Sie uns eine E-Mail oder verbinden Sie sich auf LinkedIn."
   }
 };
 
@@ -255,6 +267,7 @@ function setLanguage(lang) {
 
   // Hero Section
   document.querySelector('#profile .title').innerText = t.heroTitle;
+  document.querySelector('.hero-description-text p').innerText = t.heroDesc;
   const heroBtnServices = document.querySelector('#profile .btn-color-2');
   if (heroBtnServices) heroBtnServices.innerText = t.btnServices;
   const heroBtnWork = document.querySelector('#profile .btn-color-1');
@@ -312,12 +325,16 @@ function setLanguage(lang) {
   });
 
   // Contact
+  const contactSubEl = document.querySelector('#contact .section__text__p1');
+  if (contactSubEl) contactSubEl.innerText = t.contactSub;
   const contactTitleEl = document.querySelector('#contact .title');
   if (contactTitleEl) contactTitleEl.innerText = t.contactTitle;
 
   // Booking block
   const bk = {
     'booking-kicker': t.bookingKicker,
+    'booking-heading': t.bookingHeading,
+    'booking-intro': t.bookingIntro,
     'bookingLoadBtn': t.bookingBtn
   };
   Object.keys(bk).forEach(function (id) {
@@ -360,12 +377,16 @@ function setLanguage(lang) {
   if (founderRole) founderRole.innerText = t.auFounderRole;
   const founderBio = document.getElementById('founder-bio');
   if (founderBio) founderBio.innerText = t.auFounderBio;
+  const founderCta = document.getElementById('founder-cta');
+  if (founderCta) founderCta.innerText = t.founderCta;
 
   // How We Work Section
   const hwwLabel = document.querySelector('#how-we-work .section-label');
   if (hwwLabel) hwwLabel.innerText = t.hwwLabel;
   const hwwTitle = document.querySelector('#how-we-work .title');
   if (hwwTitle) hwwTitle.innerText = t.hwwTitle;
+  const hwwIntro = document.querySelector('.hww-intro');
+  if (hwwIntro) hwwIntro.innerText = t.hwwIntro;
   const hwwSteps = document.querySelectorAll('.hww-step');
   const hwwData = [
     { title: t.hwwStep1Title, desc: t.hwwStep1Desc, bullets: t.hwwStep1Bullets },

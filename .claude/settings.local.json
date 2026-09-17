@@ -27,7 +27,16 @@
       "Bash(python -c \"import pdfplumber; print\\('pdfplumber ok'\\)\")",
       "Bash(awk -F: '{print $1}')",
       "Bash(grep -n -E \"^\\\\s{4,10}\\(erp|forecast|cloud|sap|liquidity|aws|fpa|[a-z]+\\):\\\\s*\\\\{\" index.html)",
-      "Bash(python \"C:/Users/gansk/AppData/Local/Temp/claude/C--Users-gansk-OneDrive-Documentos-GitHub-pmgservices-github-io/0545eb50-93bd-49d4-8a46-5ac3cf07ec7e/scratchpad/rebuild_cases.py\")"
+      "Bash(python \"C:/Users/gansk/AppData/Local/Temp/claude/C--Users-gansk-OneDrive-Documentos-GitHub-pmgservices-github-io/0545eb50-93bd-49d4-8a46-5ac3cf07ec7e/scratchpad/rebuild_cases.py\")",
+      "Bash(curl -s \"https://pmg-services.net/impressum.html?cb=$\\(date +%s\\)\")",
+      "Bash(curl -s \"https://pmg-services.net/?cb=$\\(date +%s\\)\")",
+      "Bash(awk '/<section id=\"about-us\"/,/<\\\\/section>/' index.html)",
+      "Bash(awk '/<section id=\"contact\"/,0' index.html)",
+      "Bash(python \"C:/Users/gansk/AppData/Local/Temp/claude/C--Users-gansk-OneDrive-Documentos-GitHub-pmgservices-github-io/0545eb50-93bd-49d4-8a46-5ac3cf07ec7e/scratchpad/pass1_text.py\")",
+      "Bash(PYTHONIOENCODING=utf-8 python -)",
+      "Bash(awk '{print $6, $7}')",
+      "Bash(PYTHONIOENCODING=utf-8 python \"C:/Users/gansk/AppData/Local/Temp/claude/C--Users-gansk-OneDrive-Documentos-GitHub-pmgservices-github-io/0545eb50-93bd-49d4-8a46-5ac3cf07ec7e/scratchpad/pass3_booking.py\")",
+      "Bash(PYTHONIOENCODING=utf-8 python \"C:/Users/gansk/AppData/Local/Temp/claude/C--Users-gansk-OneDrive-Documentos-GitHub-pmgservices-github-io/0545eb50-93bd-49d4-8a46-5ac3cf07ec7e/scratchpad/spacing.py\")"
     ]
   }
 }
